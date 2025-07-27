@@ -1,0 +1,65 @@
+:root {
+    --header-height: 4rem;
+    --background-rgb: 244, 244, 244;
+    --background-color: #f4f4f4;
+    --text-color: #000000;
+    --subtitle-color: #777777;
+    --card-background: #f0f0f0;
+    --border-color: #bdbdbd;
+    --download-button-bg: var(--background-color);
+    --download-button-hover-bg: #292929;
+    --icon-color: #292929;
+    --resolution-color: #555555;
+    --search-border-color: #cccccc;
+    --search-focus-border-color: #292929;
+    --sort-bg-color: transparent;
+    --sort-border-color: #cccccc;
+    --sort-text-color: #000000;
+    --anime-info-font-size: 1.2rem;
+    --toggle-hover-bg: rgba(0, 0, 0, 0.1);
+    --icon-hover-color: #3c3c3c;
+    --floating-search-bg: #121212;
+    --floating-search-text: #ffffff;
+    --floating-search-icon: #aaaaaa;
+    --floating-search-border: #555555;
+    --floating-search-clear-hover: rgba(255, 255, 255, 0.1);
+    --modal-close-hover-bg: #e0e0e0;
+    --view-mode-active-bg: #292929;
+    --view-mode-active-color: #292929;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 3.5rem;
+        --filter-bar-height-mobile: 4rem;
+    }
+}
+
+html.dark-mode {
+    --background-rgb: 26, 26, 26;
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --subtitle-color: #777777;
+    --card-background: #1e1e1e;
+    --border-color: #3a3a3a;
+    --download-button-bg: var(--background-color);
+    --download-button-hover-bg: #292929;
+    --icon-color: #aaaaaa;
+    --resolution-color: #bbbbbb;
+    --search-border-color: #555555;
+    --search-focus-border-color: #292929;
+    --sort-bg-color: transparent;
+    --sort-border-color: #555555;
+    --sort-text-color: #ffffff;
+    --anime-info-font-size: 1.2rem;
+    --toggle-hover-bg: rgba(255, 255, 255, 0.1);
+    --icon-hover-color: #ffffff;
+    --floating-search-bg: #ffffff;
+    --floating-search-text: #000000;
+    --floating-search-icon: #292929;
+    --floating-search-border: #000000;
+    --floating-search-clear-hover: rgba(0, 0, 0, 0.1);
+    --modal-close-hover-bg: #292929;
+    --view-mode-active-bg: #f0f0f0;
+    --view-mode-active-color: #AAAAAA;
+} 

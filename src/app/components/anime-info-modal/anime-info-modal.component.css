@@ -1,0 +1,80 @@
+:host {
+    display: contents;
+}
+
+.anime-info-modal-content {
+    background: var(--card-background);
+    color: var(--text-color);
+    border-radius: 16px;
+    max-width: 420px;
+    width: calc(100vw - 2rem);
+    max-height: 80vh;
+    margin: 1rem;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    position: relative;
+    animation: popIn 0.2s;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.anime-info-modal-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.anime-info-modal-copy,
+.anime-info-modal-close {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.anime-info-modal-copy:hover {
+    background: var(--modal-close-hover-bg);
+}
+
+.anime-info-modal-close:hover {
+    background: var(--modal-close-hover-bg);
+}
+
+.anime-info-modal-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    word-break: break-word;
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 0 0.5rem;
+    min-height: 1.5em;
+}
+
+.anime-info-modal-content .modal-section {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.anime-info-modal-content strong {
+    font-weight: 600;
+}

@@ -1,0 +1,49 @@
+.top-sort-controls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.sort-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: var(--icon-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: color 0.2s, opacity 0.2s, background-color 0.2s;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+.sort-button .sort-icon {
+    font-size: 20px;
+    color: var(--icon-color);
+    transition: color 0.2s, opacity 0.2s;
+    opacity: 0.8;
+}
+
+.sort-button:hover {
+    color: var(--text-color);
+    opacity: 1.0;
+}
+
+.sort-button:hover .material-symbols-outlined,
+.sort-button:hover .sort-icon {
+    color: var(--text-color);
+}
+
+.sort-button:active {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .top-sort-controls {
+        justify-content: center;
+    }
+}

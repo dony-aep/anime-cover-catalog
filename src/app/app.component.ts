@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { BackToTopButtonComponent } from './components/back-to-top-button/back-to-top-button.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { inject } from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -18,4 +19,8 @@ import { ModalComponent } from './components/modal/modal.component';
 })
 export class AppComponent {
   title = 'anime-cover-catalog-angular';
+
+  constructor() {
+    inject();
+  }
 }

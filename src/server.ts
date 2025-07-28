@@ -30,23 +30,21 @@ const commonEngine = new CommonEngine();
  * ```
  */
 
-app.set('view engine', 'html');
-app.set('views', browserDistFolder);
-
 /**
  * Serve static files from /browser
  */
 app.get(
-  '*.*',
+  '**',
   express.static(browserDistFolder, {
     maxAge: '1y',
-  })
+    index: 'index.html'
+  }),
 );
 
 /**
  * Handle all other requests by rendering the Angular application.
  */
-app.get('*', (req, res, next) => {
+app.get('**', (req, res, next) => {
   const { protocol, originalUrl, baseUrl, headers } = req;
 
   // Log each request

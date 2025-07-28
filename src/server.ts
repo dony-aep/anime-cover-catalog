@@ -9,12 +9,6 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
-// Vercel build logs
-console.log('--- Serverless Function Initialized ---');
-console.log(`serverDistFolder: ${serverDistFolder}`);
-console.log(`browserDistFolder: ${browserDistFolder}`);
-console.log(`indexHtml: ${indexHtml}`);
-
 const app = express();
 const commonEngine = new CommonEngine();
 
@@ -30,27 +24,25 @@ const commonEngine = new CommonEngine();
  * ```
  */
 
-app.set('view engine', 'html');
-app.set('views', browserDistFolder);
-
 /**
  * Serve static files from /browser
+ * Use specific paths to serve static assets
  */
-app.get(
-  '*.*',
-  express.static(browserDistFolder, {
-    maxAge: '1y',
-  })
-);
+app.use('/assets', express.static(join(browserDistFolder, 'assets'), {
+  maxAge: '1y'
+}));
+
+app.use(express.static(browserDistFolder, {
+  maxAge: '1y',
+  index: false
+}));
 
 /**
  * Handle all other requests by rendering the Angular application.
+ * This will properly handle routes like catalog/:type/:value
  */
 app.get('*', (req, res, next) => {
   const { protocol, originalUrl, baseUrl, headers } = req;
-
-  // Log each request
-  console.log(`[REQUEST] Handling request for ${originalUrl}`);
 
   commonEngine
     .render({
@@ -61,11 +53,7 @@ app.get('*', (req, res, next) => {
       providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
     })
     .then((html) => res.send(html))
-    .catch((err) => {
-      // Log errors
-      console.error(`[ERROR] Failed to render ${originalUrl}`, err);
-      next(err);
-    });
+    .catch((err) => next(err));
 });
 
 /**

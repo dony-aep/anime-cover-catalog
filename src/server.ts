@@ -9,12 +9,6 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 const indexHtml = join(serverDistFolder, 'index.server.html');
 
-// Vercel build logs
-console.log('--- Serverless Function Initialized ---');
-console.log(`serverDistFolder: ${serverDistFolder}`);
-console.log(`browserDistFolder: ${browserDistFolder}`);
-console.log(`indexHtml: ${indexHtml}`);
-
 const app = express();
 const commonEngine = new CommonEngine();
 
@@ -47,9 +41,6 @@ app.get(
 app.get('**', (req, res, next) => {
   const { protocol, originalUrl, baseUrl, headers } = req;
 
-  // Log each request
-  console.log(`[REQUEST] Handling request for ${originalUrl}`);
-
   commonEngine
     .render({
       bootstrap,
@@ -59,11 +50,7 @@ app.get('**', (req, res, next) => {
       providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
     })
     .then((html) => res.send(html))
-    .catch((err) => {
-      // Log errors
-      console.error(`[ERROR] Failed to render ${originalUrl}`, err);
-      next(err);
-    });
+    .catch((err) => next(err));
 });
 
 /**

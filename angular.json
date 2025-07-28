@@ -35,7 +35,10 @@
             "prerender": true,
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "externalDependencies": [
+              "@vercel/analytics"
+            ]
           },
           "configurations": {
             "production": {

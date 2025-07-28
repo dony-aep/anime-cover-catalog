@@ -45,9 +45,9 @@ export class FilterBarComponent {
 
   getRouterLinkForFilter(filter: FilterOption): any[] {
     if (filter.type === 'all') {
-      return ['/catalog'];
+      return ['/'];
     }
     const routeParam = this.filterService.getRouteParamFromValue(filter.value);
-    return routeParam ? ['/catalog', filter.type, routeParam] : ['/catalog'];
+    return routeParam ? ['/catalog', filter.type, routeParam] : ['/'];
   }
 } 

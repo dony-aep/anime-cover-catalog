@@ -3,7 +3,7 @@
         <div class="card anime-card" *ngFor="let anime of animeService.visibleAnimes()">
             <img 
                 class="card-image"
-                [src]="'assets/' + anime.imageUrl" 
+                [src]="'assets/' + anime.imageUrl.replace('AnimeImages', 'AnimeImages_thumbs')" 
                 [alt]="anime.title"
                 (load)="onImageLoad($event, anime)">
 
@@ -34,7 +34,7 @@
                         {{ copiedStatus()[anime.imageUrl] === 'url' ? 'check' : 'link' }}
                     </span>
                 </button>
-                <button class="download-button" title="Download Cover" (click)="downloadImage(anime)">
+                <button class="download-button" title="Download cover in high quality and resolution" (click)="downloadImage(anime)">
                     <span class="material-symbols-outlined" translate="no">download</span>
                 </button>
                 <button class="trailer-button" title="Watch Trailer" *ngIf="anime.trailerUrl" (click)="showTrailer(anime)">

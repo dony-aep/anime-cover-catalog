@@ -1,0 +1,65 @@
+<div *ngIf="!animeService.noResults(); else noResultsTemplate" class="gallery-wrapper">
+    <div id="animeGallery" class="gallery-container">
+        <div class="card anime-card" *ngFor="let anime of animeService.visibleAnimes()">
+            <img 
+                class="card-image"
+                [src]="'assets/' + anime.imageUrl.replace('AnimeImages', 'AnimeImages_thumbs')" 
+                [alt]="anime.title"
+                (load)="onImageLoad($event, anime)">
+
+            <div class="card-info-overlay" (click)="onCardClick(anime)">
+                <h5 class="card-title" translate="no" (click)="copyTitle(anime, $event)">
+                    {{ anime.title }}
+                    <span 
+                        class="material-symbols-outlined copy-icon" 
+                        [class.show]="copiedStatus()[anime.imageUrl] === 'title'"
+                        translate="no">
+                        {{ copiedStatus()[anime.imageUrl] === 'title' ? 'check' : 'content_copy' }}
+                    </span>
+                </h5>
+                <p class="resolution" *ngIf="imageResolutions().has(anime.imageUrl); else loadingResolution">
+                    Resolution: {{ imageResolutions().get(anime.imageUrl) }}
+                </p>
+                <ng-template #loadingResolution>
+                    <p class="resolution">Resolution: Loading...</p>
+                </ng-template>
+            </div>
+
+            <div class="action-buttons">
+                <button class="info-button" title="Show Information" (click)="showInfo(anime)">
+                    <span class="material-symbols-outlined" translate="no">description</span>
+                </button>
+                <button class="link-button" title="Copy Image URL" (click)="copyImageUrl(anime, $event)">
+                    <span class="material-symbols-outlined" translate="no">
+                        {{ copiedStatus()[anime.imageUrl] === 'url' ? 'check' : 'link' }}
+                    </span>
+                </button>
+                <button class="download-button" title="Download cover in high quality and resolution" (click)="downloadImage(anime)">
+                    <span class="material-symbols-outlined" translate="no">download</span>
+                </button>
+                <button class="trailer-button" title="Watch Trailer" *ngIf="anime.trailerUrl" (click)="showTrailer(anime)">
+                    <span class="material-symbols-outlined" translate="no">smart_display</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- No results template -->
+<ng-template #noResultsTemplate>
+    <div class="gallery-container no-results-container">
+        <div class="no-results">
+            <h2>Couldn't find the Cover</h2>
+            <p *ngIf="animeService.searchTerm()">Search Term: "<strong>{{ animeService.searchTerm() }}</strong>"</p>
+            <p *ngIf="animeService.activeFilter().type !== 'all'">Filter: <strong>{{ animeService.activeFilter().value }}</strong></p>
+            <span class="material-symbols-outlined" translate="no">search_off</span>
+        </div>
+    </div>
+</ng-template>
+
+<div class="load-all-container" *ngIf="showLoadMoreButton()">
+    <button id="loadAllBtn" class="load-all-btn" (click)="loadAll()">
+        <span class="material-symbols-outlined" translate="no">arrow_downward</span>
+        <span class="button-text">Load All Animes ({{ remainingCount() }} more)</span>
+    </button>
+</div>

@@ -20,10 +20,11 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('anime-cover-catalog-angular');
   });
 
-  it('should render title', () => {
+  it('should render app components', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, anime-cover-catalog-angular');
+    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('app-back-to-top-button')).toBeTruthy();
   });
 });

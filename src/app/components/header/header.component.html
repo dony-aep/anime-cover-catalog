@@ -1,0 +1,16 @@
+<div class="fixed-header">
+    <div class="header">
+        <div class="header-left">
+            <h1><a href="/">Anime Cover Catalog</a></h1>
+            <div class="subtitle">What anime cover are you looking for?</div>
+        </div>
+        <div class="header-right">
+            <a href="https://donyaep.vercel.app/" target="_blank" class="header-button author-link" title="Author's Website">
+                <span class="material-symbols-outlined" translate="no">public</span>
+            </a>
+            <span class="material-symbols-outlined mode-toggle" (click)="toggleTheme()" [title]="themeService.currentTheme() === 'dark' ? 'Light Mode' : 'Dark Mode'" translate="no">
+                {{ themeService.currentTheme() === 'dark' ? 'light_mode' : 'dark_mode' }}
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="side-controls">
+    <a 
+        *ngFor="let filter of filters"
+        class="filter-button"
+        [routerLink]="getRouterLinkForFilter(filter)"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: filter.type === 'all' }">
+        {{ filter.label }}
+        <span 
+            *ngIf="(filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0)) > 0"
+            class="filter-badge">
+            {{ filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0) }}
+        </span>
+    </a>
+</div> 

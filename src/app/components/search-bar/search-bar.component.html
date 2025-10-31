@@ -1,0 +1,20 @@
+<div class="floating-search">
+    <div class="search-container" [class.has-text]="animeService.searchTerm()">
+        <span class="material-symbols-outlined search-icon" translate="no">search</span>
+        <span class="search-label">Search Anime</span>
+        <input 
+            type="text" 
+            id="searchInput" 
+            [placeholder]="placeholderText()"
+            [value]="animeService.searchTerm()"
+            (input)="onSearch($event)">
+        <button 
+            id="clearSearch" 
+            class="clear-search" 
+            title="Clear search"
+            [class.visible]="animeService.searchTerm()"
+            (click)="clearSearch()">
+            <span class="material-symbols-outlined" translate="no">close</span>
+        </button>
+    </div>
+</div>

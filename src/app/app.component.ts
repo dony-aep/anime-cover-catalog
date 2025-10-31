@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { BackToTopButtonComponent } from './components/back-to-top-button/back-to-top-button.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    BackToTopButtonComponent,
+    ModalComponent
+  ],
 })
 export class AppComponent {
   title = 'anime-cover-catalog-angular';

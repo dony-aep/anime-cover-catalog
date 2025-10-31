@@ -1,0 +1,21 @@
+<div class="anime-info-modal-content" (click)="$event.stopPropagation()">
+    <div class="anime-info-modal-header">
+        <button class="anime-info-modal-copy" title="Copy Information" (click)="copyInfo()">
+            <span class="material-symbols-outlined" translate="no">
+                {{ copyState() === 'copied' ? 'check' : 'content_copy' }}
+            </span>
+        </button>
+        <button class="anime-info-modal-close" title="Close" (click)="close()">
+            <span class="material-symbols-outlined" translate="no">close</span>
+        </button>
+    </div>
+    <div class="anime-info-modal-title">{{ anime.title }}</div>
+    <div class="modal-section"><strong>Release: </strong> {{ anime.releaseYear }}</div>
+    <div class="modal-section"><strong>Studio: </strong> {{ anime.studio }}</div>
+    <div class="modal-section"><strong>Type: </strong> {{ anime.type }}</div>
+    <div class="modal-section"><strong>Episodes: </strong> {{ anime.episodes || 'Unknown' }}</div>
+    <div class="modal-section"><strong>Demographic: </strong> {{ anime.demographic || 'Unknown' }}</div>
+    <div class="modal-section"><strong>Theme: </strong> {{ anime.theme || 'Unknown' }}</div>
+    <div class="modal-section"><strong>Genres: </strong>{{ anime.genres || 'Unknown' }}</div>
+    <div class="modal-section"><strong>Synopsis: </strong>{{ anime.synopsis }}</div>
+</div>

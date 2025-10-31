@@ -1,0 +1,10 @@
+<div class="top-sort-controls" *ngIf="!animeService.noResults()">
+    <button id="nameSortBtn" class="sort-button" (click)="toggleNameSort()" [attr.data-order]="animeService.nameSort()">
+        <span class="material-symbols-outlined sort-icon" translate="no">{{ nameSortButtonIcon() }}</span>
+        <span class="sort-text">{{ nameSortButtonText() }}</span>
+    </button>
+    <button id="dateSortBtn" class="sort-button" (click)="toggleDateSort()" [attr.data-order]="animeService.dateSort()">
+        <span class="material-symbols-outlined sort-icon" translate="no">{{ dateSortButtonIcon() }}</span>
+        <span class="sort-text">{{ dateSortButtonText() }}</span>
+    </button>
+</div>

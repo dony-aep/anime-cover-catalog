@@ -1,0 +1,292 @@
+/* Overlay */
+.side-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-bg);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s ease 0.3s;
+}
+
+.side-menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s ease 0s;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    max-width: 85vw;
+    /* Fallback para navegadores antiguos */
+    height: 100vh;
+    /* Viewport dinámico que considera barras del navegador móvil */
+    height: 100dvh;
+    /* Altura máxima como respaldo adicional */
+    max-height: -webkit-fill-available;
+    background-color: var(--background-color);
+    box-shadow: var(--shadow-xl);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    /* Asegurar que el contenido no se desborde */
+    overflow: hidden;
+}
+
+.side-menu.open {
+    transform: translateX(0);
+}
+
+/* Header */
+.side-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    height: 2rem;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Invertir el logo en modo claro (cuando NO hay clase dark-mode) */
+:host-context(html:not(.dark-mode)) .logo-icon {
+    filter: invert(1);
+}
+
+.close-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    color: var(--subtitle-color);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: var(--toggle-hover-bg);
+    color: var(--text-color);
+}
+
+.close-button .material-symbols-rounded {
+    font-size: 22px;
+}
+
+/* Content */
+.side-menu-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0.75rem;
+    /* Espacio adicional al final para dispositivos con navegación gestual */
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+    /* Scroll suave en iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Asegurar que el contenido sea scrolleable */
+    min-height: 0;
+    /* Máscara para difuminar el borde superior */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12px, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 12px, black 100%);
+}
+
+/* Section */
+.menu-section {
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--subtitle-color);
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Navigation Tabs */
+.navigation-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    opacity: 0.8;
+}
+
+.nav-tab:hover {
+    opacity: 1;
+    background-color: var(--surface-hover);
+}
+
+.nav-tab.active {
+    opacity: 1;
+    font-weight: 600;
+    background-color: var(--surface-hover);
+}
+
+.nav-tab .material-symbols-rounded {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.nav-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 0.4rem;
+    margin-left: auto;
+    background-color: var(--icon-color);
+    color: var(--background-color);
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.nav-tab:hover .nav-badge {
+    opacity: 1;
+}
+
+.nav-tab.active .nav-badge {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    opacity: 1;
+}
+
+/* Filters List */
+.filters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.filter-button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    justify-content: space-between;
+    gap: 0;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    background-color: transparent;
+    color: var(--text-color);
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    opacity: 0.8;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.filter-button:hover {
+    opacity: 1;
+    background-color: var(--surface-hover);
+}
+
+.filter-button.active {
+    opacity: 1;
+    font-weight: 600;
+    background-color: var(--surface-hover);
+}
+
+/* Badge */
+.filter-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 0.4rem;
+    margin-left: auto;
+    background-color: var(--icon-color);
+    color: var(--background-color);
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.filter-button:hover .filter-badge {
+    opacity: 1;
+}
+
+.filter-button.active .filter-badge {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    opacity: 1;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .side-menu {
+        width: 280px;
+    }
+
+    .nav-tab {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    .filter-button {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.875rem;
+    }
+
+    .side-menu-content {
+        /* Más espacio al final en móviles para evitar cortes */
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 20px));
+    }
+}
+
+/* Soporte para dispositivos con notch o navegación gestual */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .side-menu-content {
+        padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    }
+    
+    @media (max-width: 480px) {
+        .side-menu-content {
+            padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+        }
+    }
+}

@@ -1,17 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
+import { SideMenuComponent } from '../side-menu/side-menu.component';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [],
+  imports: [RouterLink, SideMenuComponent],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  constructor(public themeService: ThemeService) {}
+  themeService = inject(ThemeService);
+  isSideMenuOpen = signal(false);
 
   toggleTheme() {
     this.themeService.toggleTheme();
+  }
+
+  openSideMenu() {
+    this.isSideMenuOpen.set(true);
+  }
+
+  closeSideMenu() {
+    this.isSideMenuOpen.set(false);
   }
 } 

@@ -1,7 +1,12 @@
-<main class="main-content">
-  <app-search-bar></app-search-bar>
-  <app-top-controls></app-top-controls>
-  <app-anime-gallery></app-anime-gallery>
-</main>
+<app-search-bar></app-search-bar>
+
+<div class="main-content-wrapper">
+  <main class="main-content">
+    @if (showTopControls()) {
+      <app-top-controls></app-top-controls>
+    }
+    <app-anime-gallery></app-anime-gallery>
+  </main>
+</div>
 
 <app-filter-bar></app-filter-bar> 

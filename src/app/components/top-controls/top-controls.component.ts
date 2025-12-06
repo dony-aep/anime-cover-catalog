@@ -1,16 +1,22 @@
-import { Component, computed, inject } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
+import { Component, ChangeDetectionStrategy, computed, inject, input } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
+import { FavoritesService } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-top-controls',
-  standalone: true,
-  imports: [CommonModule, NgIf],
+  imports: [],
   templateUrl: './top-controls.component.html',
-  styleUrls: ['./top-controls.component.css']
+  styleUrls: ['./top-controls.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TopControlsComponent {
   animeService = inject(AnimeService);
+  private favoritesService = inject(FavoritesService);
+
+  isFavoritesPage = input(false);
+
+  animeCount = computed(() => this.animeService.filteredAnimes().length);
+  favoritesCount = this.favoritesService.favoritesCount;
 
   nameSortButtonText = computed(() => 
     this.animeService.nameSort() === 'asc' ? 'Sort A-Z' : 'Sort Z-A'
@@ -32,5 +38,11 @@ export class TopControlsComponent {
 
   toggleDateSort() {
     this.animeService.toggleDateSort();
+  }
+
+  clearAllFavorites() {
+    if (confirm('Are you sure you want to clear all favorites?')) {
+      this.favoritesService.clearAllFavorites();
+    }
   }
 } 

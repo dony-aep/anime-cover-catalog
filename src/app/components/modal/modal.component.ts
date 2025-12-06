@@ -1,13 +1,11 @@
-import { Component, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-modal',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  styleUrls: ['./modal.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalComponent {
   modalService = inject(ModalService);

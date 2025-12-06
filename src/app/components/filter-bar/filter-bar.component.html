@@ -1,15 +1,20 @@
-<div class="side-controls">
-    <a 
-        *ngFor="let filter of filters"
-        class="filter-button"
-        [routerLink]="getRouterLinkForFilter(filter)"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: filter.type === 'all' }">
-        {{ filter.label }}
-        <span 
-            *ngIf="(filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0)) > 0"
-            class="filter-badge">
-            {{ filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0) }}
-        </span>
-    </a>
+<app-navigation-tabs></app-navigation-tabs>
+
+<div class="side-controls-wrapper">
+    <div class="side-controls">
+        @for (filter of filters; track filter.type + '-' + filter.value) {
+            <a 
+                class="filter-button"
+                [routerLink]="getRouterLinkForFilter(filter)"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: filter.type === 'all' }">
+                {{ filter.label }}
+                @if ((filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0)) > 0) {
+                    <span class="filter-badge">
+                        {{ filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0) }}
+                    </span>
+                }
+            </a>
+        }
+    </div>
 </div> 

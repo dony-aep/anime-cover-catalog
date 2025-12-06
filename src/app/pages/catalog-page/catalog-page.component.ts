@@ -1,31 +1,32 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, OnInit, computed } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AnimeService } from '../../services/anime.service';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { TopControlsComponent } from '../../components/top-controls/top-controls.component';
 import { AnimeGalleryComponent } from '../../components/anime-gallery/anime-gallery.component';
-import { CommonModule } from '@angular/common';
 import { FilterType } from '../../models/anime.model';
 import { FilterService } from '../../services/filter.service';
 
 @Component({
   selector: 'app-catalog-page',
-  standalone: true,
   imports: [
-    CommonModule,
     FilterBarComponent,
     SearchBarComponent,
     TopControlsComponent,
     AnimeGalleryComponent,
   ],
   templateUrl: './catalog-page.component.html',
-  styleUrls: ['./catalog-page.component.css']
+  styleUrls: ['./catalog-page.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CatalogPageComponent implements OnInit {
   private route = inject(ActivatedRoute);
-  private animeService = inject(AnimeService);
+  animeService = inject(AnimeService);
   private filterService = inject(FilterService);
+
+  // Show top-controls only when there are results to display
+  showTopControls = computed(() => !this.animeService.noResults());
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

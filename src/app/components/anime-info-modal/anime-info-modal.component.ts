@@ -1,22 +1,26 @@
-import { Component, Input, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, Input, inject, signal } from '@angular/core';
 import { Anime } from '../../models/anime.model';
 import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-anime-info-modal',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './anime-info-modal.component.html',
-  styleUrls: ['./anime-info-modal.component.css']
+  styleUrls: ['./anime-info-modal.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AnimeInfoModalComponent {
   @Input() anime!: Anime;
-  modalService = inject(ModalService);
+  private modalService = inject(ModalService);
   copyState = signal<'idle' | 'copied'>('idle');
 
   close() {
     this.modalService.close();
+  }
+
+  getGenresList(): string[] {
+    if (!this.anime.genres) return [];
+    return this.anime.genres.split(',').map(g => g.trim()).filter(g => g.length > 0);
   }
 
   async copyInfo() {

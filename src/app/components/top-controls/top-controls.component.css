@@ -1,49 +1,172 @@
+:host {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(var(--background-rgb), 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    margin: 0 -1.5rem;
+    padding: 0.5rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 16px 16px 0 0;
+}
+
+.top-controls-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
 .top-sort-controls {
     display: flex;
     justify-content: flex-start;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    margin-left: -0.5rem;
 }
 
 .sort-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
+    gap: 0.3rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
     font-family: 'Poppins', sans-serif;
     background-color: transparent;
-    color: var(--icon-color);
+    color: var(--subtitle-color);
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: color 0.2s, opacity 0.2s, background-color 0.2s;
+    transition: transform 0.2s ease;
     white-space: nowrap;
-    opacity: 0.8;
 }
 
 .sort-button .sort-icon {
     font-size: 20px;
-    color: var(--icon-color);
-    transition: color 0.2s, opacity 0.2s;
-    opacity: 0.8;
 }
 
 .sort-button:hover {
     color: var(--text-color);
-    opacity: 1.0;
+    background-color: var(--toggle-hover-bg);
 }
 
-.sort-button:hover .material-symbols-outlined,
 .sort-button:hover .sort-icon {
     color: var(--text-color);
 }
 
 .sort-button:active {
-    opacity: 0.9;
+    transform: scale(0.98);
+}
+
+.anime-count {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--subtitle-color);
+    font-size: 0.875rem;
+    padding: 0.4rem 0.75rem;
+    background-color: var(--card-background);
+    border-radius: 20px;
+}
+
+.anime-count .count-icon {
+    font-size: 20px;
+    color: var(--subtitle-color);
+}
+
+.anime-count .count-number {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.anime-count .count-label {
+    color: var(--subtitle-color);
+}
+
+.anime-count .count-separator {
+    color: var(--subtitle-color);
+    margin: 0 0.1rem;
+}
+
+.favorites-header {
+    justify-content: space-between;
+}
+
+.clear-favorites-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: var(--subtitle-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    white-space: nowrap;
+}
+
+.clear-favorites-button .material-symbols-rounded {
+    font-size: 22px;
+}
+
+.clear-favorites-button:hover {
+    color: #e74c3c;
+    background-color: var(--toggle-hover-bg);
+}
+
+.clear-favorites-button:hover .material-symbols-rounded {
+    color: #e74c3c;
+}
+
+.clear-favorites-button:active {
+    transform: scale(0.98);
 }
 
 @media (max-width: 768px) {
+    :host {
+        margin: 0 -1rem;
+        padding: 0.75rem 1rem;
+        border-radius: 12px 12px 0 0;
+    }
+
     .top-sort-controls {
-        justify-content: center;
+        margin-left: -0.25rem;
+        gap: 0;
+    }
+
+    .sort-button {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .sort-button .sort-icon {
+        font-size: 16px;
+    }
+
+    .anime-count {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.6rem;
+    }
+
+    .anime-count .count-icon {
+        font-size: 16px;
+    }
+
+    .clear-favorites-button {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .clear-favorites-button .material-symbols-rounded {
+        font-size: 22px;
+    }
+
+    .clear-favorites-button .button-text {
+        display: none;
     }
 }

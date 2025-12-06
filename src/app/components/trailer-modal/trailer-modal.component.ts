@@ -1,15 +1,13 @@
-import { Component, Input, OnInit, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, OnInit, inject, signal, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ModalService } from '../../services/modal.service';
 import { Anime } from '../../models/anime.model';
 
 @Component({
   selector: 'app-trailer-modal',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './trailer-modal.component.html',
-  styleUrls: ['./trailer-modal.component.css']
+  styleUrls: ['./trailer-modal.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TrailerModalComponent implements OnInit {
   @Input() anime!: Anime;

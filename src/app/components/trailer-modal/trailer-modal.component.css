@@ -2,19 +2,22 @@
     display: contents;
 }
 
-.trailer-content {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    background-color: var(--card-background);
+.trailer-modal-wrapper {
+    background: var(--card-background);
     border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: popIn 0.2s;
-    display: flex;
-    flex-direction: column;
+    width: 90%;
+    max-width: 900px;
     max-height: 90vh;
     margin: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    animation: popIn 0.2s;
+}
+
+.trailer-modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 @keyframes popIn {
@@ -26,28 +29,61 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: var(--card-background);
-    border-bottom: 1px solid var(--border-color);
-    flex-shrink: 0;
+    padding: 0.75rem 1rem;
+    gap: 1rem;
 }
 
-.trailer-header h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--text-color);
+.trailer-title {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    overflow: hidden;
-    text-overflow: clip;
-    white-space: normal;
+    min-width: 0;
+    flex: 1;
 }
 
-.trailer-header h2 .material-symbols-outlined {
+.trailer-title .youtube-icon {
     color: #FF0000;
     font-size: 28px;
     flex-shrink: 0;
+}
+
+.trailer-title .title-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.trailer-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.header-btn {
+    background: none;
+    border: none;
+    color: var(--subtitle-color);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.header-btn .material-symbols-rounded {
+    font-size: 20px;
+}
+
+.header-btn:hover {
+    background: var(--modal-close-hover-bg);
+    color: var(--text-color);
 }
 
 .trailer-video-container {
@@ -55,7 +91,6 @@
     width: 100%;
     aspect-ratio: 16/9;
     background-color: #000;
-    min-height: 0;
 }
 
 .trailer-video-container iframe {
@@ -78,53 +113,31 @@
     align-items: center;
     justify-content: center;
     background-color: var(--card-background);
-    color: var(--text-color);
+    color: var(--subtitle-color);
 }
 
-.no-trailer-message .material-symbols-outlined {
-    font-size: 48px;
+.no-trailer-message .material-symbols-rounded {
+    font-size: 64px;
     margin-bottom: 1rem;
-    color: var(--subtitle-color);
+    opacity: 0.5;
 }
 
 .no-trailer-message p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0;
-    color: var(--subtitle-color);
-}
-
-.trailer-header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-shrink: 0;
-}
-
-.copy-trailer-url,
-.close-trailer {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transition: background-color 0.1s ease;
-}
-
-.copy-trailer-url:hover,
-.close-trailer:hover {
-    background-color: var(--toggle-hover-bg);
 }
 
 @media (max-width: 768px) {
-    .trailer-header h2 {
-        font-size: 1.2rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    .trailer-modal-wrapper {
+        width: calc(100% - 2rem);
+        max-height: 85vh;
+    }
+
+    .trailer-title .title-text {
+        font-size: 1rem;
+    }
+
+    .trailer-title .youtube-icon {
+        font-size: 24px;
     }
 }

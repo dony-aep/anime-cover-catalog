@@ -1,0 +1,21 @@
+<app-search-bar></app-search-bar>
+
+<div class="main-content-wrapper">
+  <main class="main-content">
+    <app-top-controls [isFavoritesPage]="true"></app-top-controls>
+    
+    @if (!hasFavorites()) {
+      <div class="empty-favorites">
+        <span class="material-symbols-rounded empty-icon" translate="no">favorite</span>
+        <h2>No favorites yet</h2>
+        <p>Start adding anime to your favorites by clicking the heart icon on any anime card.</p>
+      </div>
+    }
+
+    @if (hasFavorites()) {
+      <app-anime-gallery [showOnlyFavorites]="true"></app-anime-gallery>
+    }
+  </main>
+</div>
+
+<app-filter-bar></app-filter-bar>

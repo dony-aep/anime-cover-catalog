@@ -1,19 +1,19 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
-import { NgFor, NgIf } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FilterService, FilterOption } from '../../services/filter.service';
+import { NavigationTabsComponent } from '../navigation-tabs/navigation-tabs.component';
 
 @Component({
   selector: 'app-filter-bar',
-  standalone: true,
-  imports: [NgFor, NgIf, RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NavigationTabsComponent],
   templateUrl: './filter-bar.component.html',
-  styleUrl: './filter-bar.component.css'
+  styleUrl: './filter-bar.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterBarComponent {
-  animeService = inject(AnimeService);
-  filterService = inject(FilterService);
+  private animeService = inject(AnimeService);
+  private filterService = inject(FilterService);
 
   filters: FilterOption[] = this.filterService.getFilters();
 

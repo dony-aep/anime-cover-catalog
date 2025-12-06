@@ -1,12 +1,11 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
 
 @Component({
   selector: 'app-search-bar',
-  standalone: true,
-  imports: [],
   templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.css'
+  styleUrl: './search-bar.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchBarComponent {
   animeService = inject(AnimeService);

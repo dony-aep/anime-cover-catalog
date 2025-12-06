@@ -36,11 +36,13 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-CHANGELOG.md
 
 # System files
 .DS_Store
 Thumbs.db
 
 # Project Scripts
-/scripts
+/scripts/process_images.py
+
+# GitHub
+/.github

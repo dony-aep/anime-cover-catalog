@@ -1,25 +1,32 @@
-<div class="trailer-content" (click)="$event.stopPropagation()">
-    <div class="trailer-header">
-        <h2>
-            <span class="material-symbols-outlined" translate="no">smart_display</span>
-            {{ anime.title }} - Trailer
-        </h2>
-        <div class="trailer-header-buttons">
-            <button class="copy-trailer-url" title="Copy Trailer URL" (click)="copyTrailerUrl()" *ngIf="videoId">
-                <span class="material-symbols-outlined" translate="no">
-                    {{ copyState() === 'copied' ? 'check' : 'link' }}
-                </span>
-            </button>
-            <button class="close-trailer" title="Close Trailer" (click)="close()">
-                <span class="material-symbols-outlined" translate="no">close</span>
-            </button>
+<div class="trailer-modal-wrapper" (click)="$event.stopPropagation()">
+    <div class="trailer-modal-content">
+        <div class="trailer-header">
+            <div class="trailer-title">
+                <span class="material-symbols-rounded youtube-icon" translate="no">smart_display</span>
+                <span class="title-text">{{ anime.title }}</span>
+            </div>
+            <div class="trailer-header-buttons">
+                @if (videoId) {
+                    <button class="header-btn" title="Copy Trailer URL" (click)="copyTrailerUrl()">
+                        <span class="material-symbols-rounded" translate="no">
+                            {{ copyState() === 'copied' ? 'check' : 'link' }}
+                        </span>
+                    </button>
+                }
+                <button class="header-btn" title="Close" (click)="close()">
+                    <span class="material-symbols-rounded" translate="no">close</span>
+                </button>
+            </div>
         </div>
-    </div>
-    <div class="trailer-video-container">
-        <iframe *ngIf="sanitizedTrailerUrl" [src]="sanitizedTrailerUrl" frameborder="0" allowfullscreen></iframe>
-        <div class="no-trailer-message" *ngIf="!videoId">
-            <span class="material-symbols-outlined" translate="no">videocam_off</span>
-            <p>Trailer Not Available</p>
+        <div class="trailer-video-container">
+            @if (sanitizedTrailerUrl) {
+                <iframe [src]="sanitizedTrailerUrl" frameborder="0" allowfullscreen></iframe>
+            } @else {
+                <div class="no-trailer-message">
+                    <span class="material-symbols-rounded" translate="no">videocam_off</span>
+                    <p>Trailer Not Available</p>
+                </div>
+            }
         </div>
     </div>
 </div>

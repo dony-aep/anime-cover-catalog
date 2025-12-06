@@ -19,7 +19,7 @@
 .card {
     background-color: var(--card-background);
     border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
     text-align: left;
     opacity: 0;
@@ -39,7 +39,7 @@
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow-lg);
 }
 
 .card img.card-image {
@@ -81,19 +81,27 @@
     pointer-events: auto;
 }
 
+.card-info-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
 .card-info-overlay .card-title {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin: 0 0 0.2rem 0;
+    margin: 0;
     text-align: left;
     color: #ffffff;
     cursor: pointer;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 5px;
     position: relative;
     width: 100%;
     word-break: break-word;
+    line-height: 1.3;
 }
 
 .card-info-overlay .card-title:hover .copy-icon {
@@ -106,6 +114,7 @@
     transition: opacity 0.3s ease;
     color: rgba(255, 255, 255, 0.8);
     flex-shrink: 0;
+    margin-top: 2px;
 }
 
 .card-info-overlay .copy-icon.show {
@@ -113,12 +122,31 @@
     color: #ffffff;
 }
 
-.card-info-overlay .resolution {
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.card-meta .anime-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+.card-meta .release-year {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.85);
-    text-align: left;
     margin: 0;
-    line-height: 1.3;
+    line-height: 1;
 }
 
 
@@ -129,7 +157,7 @@
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 5px;
+    gap: 6px;
     z-index: 2;
     pointer-events: auto;
 }
@@ -142,23 +170,23 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 38px;
+    height: 38px;
     background-color: rgba(var(--background-rgb), 0.8);
     color: var(--icon-color);
     text-decoration: none;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    box-shadow: var(--shadow-sm);
 }
 
-.info-button .material-symbols-outlined,
-.link-button .material-symbols-outlined,
-.download-button .material-symbols-outlined,
-.trailer-button .material-symbols-outlined {
-    font-size: 18px;
+.info-button .material-symbols-rounded,
+.link-button .material-symbols-rounded,
+.download-button .material-symbols-rounded,
+.trailer-button .material-symbols-rounded {
+    font-size: 22px;
     background-color: transparent;
 }
 
@@ -166,15 +194,60 @@
 .link-button:hover,
 .download-button:hover,
 .trailer-button:hover {
-    background-color: var(--download-button-hover-bg);
-    color: #ffffff;
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
 }
 
-.trailer-button .material-symbols-outlined {
+.trailer-button .material-symbols-rounded {
     color: #FF0000;
 }
-.trailer-button:hover .material-symbols-outlined {
+.trailer-button:hover .material-symbols-rounded {
     color: #FF0000;
+}
+
+/* Favorite Button Styles */
+.favorite-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    z-index: 3;
+}
+
+.favorite-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.favorite-button.is-favorite {
+    color: #e74c3c;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.favorite-button.is-favorite:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.favorite-button .material-symbols-rounded {
+    font-size: 20px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-button:active {
+    transform: scale(0.9);
 }
 
 /* Load All Animes Button Styles */
@@ -182,7 +255,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 2rem auto 100px;
+    margin: 2rem auto 1rem;
     padding-left: 0;
     box-sizing: border-box;
 }
@@ -196,7 +269,7 @@
     border: 1px solid var(--border-color);
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: transform 0.2s ease;
     display: inline-flex;
     flex-direction: row;
     align-items: center;
@@ -206,7 +279,7 @@
     position: relative;
 }
 
-.load-all-btn .material-symbols-outlined {
+.load-all-btn .material-symbols-rounded {
     font-size: 20px;
     display: inline-flex;
     align-items: center;
@@ -218,22 +291,16 @@
     transform: translateY(0);
 }
 
-html.dark-mode .load-all-btn {
-    background-color: var(--sort-bg-color);
-    color: var(--sort-text-color);
-    border: 1px solid var(--sort-border-color);
-}
-
 .load-all-btn:hover {
-    background-color: #292929;
-    color: #ffffff;
-    border-color: #292929;
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    border-color: var(--button-hover-bg);
 }
 
 .load-all-btn:disabled {
-    background-color: #cccccc;
-    border-color: #cccccc;
-    color: #666666;
+    background-color: var(--border-color);
+    border-color: var(--border-color);
+    color: var(--text-muted);
     cursor: not-allowed;
 }
 
@@ -257,27 +324,52 @@ html.dark-mode .load-all-btn {
     transform: translate(-50%, -50%);
 }
 
-.no-results .material-symbols-outlined {
+.no-results .empty-icon {
     font-size: 64px;
     color: var(--subtitle-color);
-    margin-bottom: 1.5rem;
-    order: -1;
+    margin-bottom: 1rem;
+    opacity: 0.5;
 }
 
 .no-results h2 {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
 }
 
 .no-results p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--subtitle-color);
-    margin: 0.5rem 0 0 0;
-    white-space: nowrap;
+    margin: 0;
+    line-height: 1.5;
 }
 
-html.dark-mode .no-results {
-    color: var(--text-color);
+/* Clear Filters Button */
+.clear-filters-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    background-color: var(--sort-bg-color);
+    color: var(--sort-text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    border-color: var(--button-hover-bg);
+}
+
+.clear-filters-btn .material-symbols-rounded {
+    font-size: 20px;
 }
 
 /* Screens between 768px and 1200px */
@@ -349,11 +441,11 @@ html.dark-mode .no-results {
         width: 36px;
         height: 36px;
     }
-     .gallery-container.cozy .info-button .material-symbols-outlined,
-     .gallery-container.cozy .copy-button .material-symbols-outlined,
-     .gallery-container.cozy .link-button .material-symbols-outlined,
-     .gallery-container.cozy .download-button .material-symbols-outlined,
-     .gallery-container.cozy .trailer-button .material-symbols-outlined {
+     .gallery-container.cozy .info-button .material-symbols-rounded,
+     .gallery-container.cozy .copy-button .material-symbols-rounded,
+     .gallery-container.cozy .link-button .material-symbols-rounded,
+     .gallery-container.cozy .download-button .material-symbols-rounded,
+     .gallery-container.cozy .trailer-button .material-symbols-rounded {
         font-size: 20px;
     }
 
@@ -368,7 +460,6 @@ html.dark-mode .no-results {
         margin: 1rem auto 1rem;
         padding: 0;
         box-sizing: border-box;
-        margin-bottom: 80px; 
     }
 
     .sort-control-item {

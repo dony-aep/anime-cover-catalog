@@ -1,0 +1,62 @@
+<div class="side-menu-overlay" [class.open]="isOpen()" (click)="onOverlayClick($event)"></div>
+<aside class="side-menu" [class.open]="isOpen()">
+    <div class="side-menu-header">
+        <img src="assets/icons/catalog_icon.png" alt="Anime Cover Catalog" class="logo-icon">
+        <button class="close-button" (click)="closeMenu()" title="Close menu">
+            <span class="material-symbols-rounded" translate="no">close</span>
+        </button>
+    </div>
+    
+    <div class="side-menu-content">
+        <!-- Navigation Tabs Section -->
+        <div class="menu-section">
+            <div class="section-title">Navigation</div>
+            <nav class="navigation-tabs">
+                <a 
+                    class="nav-tab"
+                    routerLink="/"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    (click)="onFilterClick()">
+                    <span class="material-symbols-rounded" translate="no">home</span>
+                    Home
+                </a>
+                <a 
+                    class="nav-tab"
+                    routerLink="/favorites"
+                    routerLinkActive="active"
+                    (click)="onFilterClick()">
+                    <span class="material-symbols-rounded" translate="no">favorite</span>
+                    Favorites
+                    @if (favoritesCount() > 0) {
+                        <span class="nav-badge">
+                            {{ favoritesCount() }}
+                        </span>
+                    }
+                </a>
+            </nav>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="menu-section">
+            <div class="section-title">Filters</div>
+            <div class="filters-list">
+                @for (filter of filters; track filter.type + '-' + filter.value) {
+                    <a 
+                        class="filter-button"
+                        [routerLink]="getRouterLinkForFilter(filter)"
+                        routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: filter.type === 'all' }"
+                        (click)="onFilterClick()">
+                        {{ filter.label }}
+                        @if ((filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0)) > 0) {
+                            <span class="filter-badge">
+                                {{ filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0) }}
+                            </span>
+                        }
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</aside>

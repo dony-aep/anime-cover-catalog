@@ -1,3 +1,16 @@
+# Angular 20.3.16 Patch Update v3.1.1 - 2026-01-16
+
+- **Angular Patch Update**:
+  - Updated Angular core packages from 20.3.14 to 20.3.16
+  - Updated Angular CLI from 20.3.12 to 20.3.14
+  - Updated @angular-devkit/build-angular from 20.3.12 to 20.3.14
+  - All Angular packages now on latest patch version (20.3.16) for improved stability and bug fixes
+
+- **Security Fixes**:
+  - Added package override for `tar` dependency to address vulnerability GHSA-8qq5-rm4j-mr97
+  - Forced tar version to ^7.5.3 to fix path sanitization bypass on Windows
+  - Resolved high severity vulnerabilities in development dependencies
+
 # UI/UX Redesign: Floating Containers & Minimal Header v3.1.0 - 2025-12-5
 
 - **Angular 20 Update**:

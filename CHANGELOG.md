@@ -1,3 +1,25 @@
+# Angular 21.2.0 Major Update v4.0.0 - 2026-02-28
+
+- **Angular Major Update (20 → 21)**:
+  - Updated Angular core packages from 20.3.16 to 21.2.0
+  - Updated Angular CLI from 20.3.14 to 21.2.0
+  - Updated @angular-devkit/build-angular from 20.3.14 to 21.2.0
+  - Updated @angular/compiler-cli from 20.3.16 to 21.2.0
+  - Upgraded TypeScript from 5.8 to 5.9.3 (required by Angular 21)
+  - Updated zone.js from ~0.15.0 to ~0.16.0
+  - All Angular packages now on latest stable version (21.2.0)
+
+- **UI/UX Design Overhaul — Refined Monochrome Editorial**:
+  - Redesigned the entire visual identity with a refined monochrome editorial aesthetic
+  - Updated color system with zinc-based dark palette and subtle accent colors
+  - Improved typography, spacing, and visual hierarchy across all components
+
+- **Alternative Covers Feature**:
+  - Added support for alternative cover images per anime entry
+  - Gallery cards display alternative covers with indicator badge and navigation
+  - Anime info modal shows all available covers with thumbnail strip and selection
+  - Alternative covers stored in `alternativeCovers` array field in `animes.json`
+
 # Angular 20.3.16 Patch Update v3.1.1 - 2026-01-16
 
 - **Angular Patch Update**:

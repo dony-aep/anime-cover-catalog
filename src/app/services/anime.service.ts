@@ -55,7 +55,12 @@ export class AnimeService {
       return animes;
     }
 
-    return animes.filter(a => a.title.toLowerCase().includes(searchTerm));
+    return animes.filter(a => {
+      const term = searchTerm;
+      return a.title.toLowerCase().includes(term)
+        || (a.titleEnglish?.toLowerCase().includes(term) ?? false)
+        || (a.titleJapanese?.toLowerCase().includes(term) ?? false);
+    });
   });
 
   // Pre-compute all 4 sort combinations and cache them

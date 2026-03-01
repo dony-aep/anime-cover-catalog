@@ -1,6 +1,6 @@
 <div class="search-wrapper">
     <div class="search-container" [class.has-text]="animeService.searchTerm()">
-        <span class="material-symbols-rounded search-icon" translate="no">search</span>
+        <span class="material-symbols-outlined search-icon" translate="no">search</span>
         <input 
             type="text" 
             id="searchInput" 
@@ -12,7 +12,7 @@
             title="Clear search"
             [class.visible]="animeService.searchTerm()"
             (click)="clearSearch()">
-            <span class="material-symbols-rounded" translate="no">close</span>
+            <span class="material-symbols-outlined" translate="no">close</span>
         </button>
     </div>
 </div>

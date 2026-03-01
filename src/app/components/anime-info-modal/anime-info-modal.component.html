@@ -1,89 +1,96 @@
 <div class="anime-info-modal-wrapper" (click)="$event.stopPropagation()">
     <div class="anime-info-modal-content">
-        <div class="anime-info-modal-header">
-            <button class="anime-info-modal-copy" title="Copy Information" (click)="copyInfo()">
-                <span class="material-symbols-rounded" translate="no">
-                    {{ copyState() === 'copied' ? 'check' : 'content_copy' }}
-                </span>
-            </button>
-            <button class="anime-info-modal-close" title="Close" (click)="close()">
-                <span class="material-symbols-rounded" translate="no">close</span>
-            </button>
-        </div>
-        
-        <div class="anime-info-modal-title">{{ anime.title }}</div>
-        
-        <div class="info-grid">
-            <div class="info-item">
-                <span class="material-symbols-rounded info-icon" translate="no">calendar_month</span>
-                <div class="info-content">
-                    <span class="info-label">Release</span>
-                    <span class="info-value">{{ anime.releaseYear }}</span>
-                </div>
+        <!-- Header with title and actions -->
+        <div class="modal-header-section">
+            <div class="title-block">
+                <div class="anime-info-modal-title">{{ anime.title }}</div>
+                @if (anime.titleEnglish || anime.titleJapanese) {
+                    <div class="alt-titles">
+                        @if (anime.titleEnglish) {
+                            <span class="alt-title">{{ anime.titleEnglish }}</span>
+                        }
+                        @if (anime.titleJapanese) {
+                            <span class="alt-title japanese">{{ anime.titleJapanese }}</span>
+                        }
+                    </div>
+                }
             </div>
-            
-            <div class="info-item">
-                <span class="material-symbols-rounded info-icon" translate="no">apartment</span>
-                <div class="info-content">
-                    <span class="info-label">Studio</span>
-                    <span class="info-value">{{ anime.studio }}</span>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <span class="material-symbols-rounded info-icon" translate="no">movie</span>
-                <div class="info-content">
-                    <span class="info-label">Type</span>
-                    <span class="info-value">{{ anime.type }}</span>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <span class="material-symbols-rounded info-icon" translate="no">format_list_numbered</span>
-                <div class="info-content">
-                    <span class="info-label">Episodes</span>
-                    <span class="info-value">{{ anime.episodes || 'Unknown' }}</span>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <span class="material-symbols-rounded info-icon" translate="no">group</span>
-                <div class="info-content">
-                    <span class="info-label">Demographic</span>
-                    <span class="info-value">{{ anime.demographic || 'Unknown' }}</span>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <span class="material-symbols-rounded info-icon" translate="no">category</span>
-                <div class="info-content">
-                    <span class="info-label">Theme</span>
-                    <span class="info-value">{{ anime.theme || 'Unknown' }}</span>
-                </div>
+            <div class="header-actions">
+                <button class="action-btn" title="Copy Information" (click)="copyInfo()">
+                    <span class="material-symbols-outlined" translate="no">
+                        {{ copyState() === 'copied' ? 'check' : 'content_copy' }}
+                    </span>
+                </button>
+                <button class="action-btn" title="Close" (click)="close()">
+                    <span class="material-symbols-outlined" translate="no">close</span>
+                </button>
             </div>
         </div>
+
+        <!-- Detail list — all info with labels -->
+        <div class="detail-list">
+            @if (anime.releaseYear) {
+                <div class="detail-row">
+                    <span class="material-symbols-outlined detail-icon" translate="no">calendar_month</span>
+                    <span class="detail-label">Release Year</span>
+                    <span class="detail-value">{{ anime.releaseYear }}</span>
+                </div>
+            }
+            <div class="detail-row">
+                <span class="material-symbols-outlined detail-icon" translate="no">apartment</span>
+                <span class="detail-label">Studio</span>
+                <span class="detail-value">{{ anime.studio || 'Unknown' }}</span>
+            </div>
+            @if (anime.type) {
+                <div class="detail-row">
+                    <span class="material-symbols-outlined detail-icon" translate="no">movie</span>
+                    <span class="detail-label">Type</span>
+                    <span class="detail-value">{{ anime.type }}</span>
+                </div>
+            }
+            @if (anime.episodes) {
+                <div class="detail-row">
+                    <span class="material-symbols-outlined detail-icon" translate="no">playlist_play</span>
+                    <span class="detail-label">Episodes</span>
+                    <span class="detail-value">{{ anime.episodes }}</span>
+                </div>
+            }
+            @if (anime.demographic) {
+                <div class="detail-row">
+                    <span class="material-symbols-outlined detail-icon" translate="no">group</span>
+                    <span class="detail-label">Demographic</span>
+                    <span class="detail-value">{{ anime.demographic }}</span>
+                </div>
+            }
+            @if (anime.theme) {
+                <div class="detail-row">
+                    <span class="material-symbols-outlined detail-icon" translate="no">category</span>
+                    <span class="detail-label">Theme</span>
+                    <span class="detail-value">{{ anime.theme }}</span>
+                </div>
+            }
+        </div>
         
+        <!-- Genres -->
         <div class="info-section">
-            <div class="section-header">
-                <span class="material-symbols-rounded section-icon" translate="no">local_offer</span>
-                <span class="section-title">Genres</span>
-            </div>
+            <div class="section-label">Genres</div>
             <div class="genres-container">
                 @for (genre of getGenresList(); track genre) {
                     <span class="genre-tag">{{ genre }}</span>
                 }
                 @empty {
-                    <span class="info-value">Unknown</span>
+                    <span class="detail-value">Unknown</span>
                 }
             </div>
         </div>
         
-        <div class="info-section">
-            <div class="section-header">
-                <span class="material-symbols-rounded section-icon" translate="no">description</span>
-                <span class="section-title">Synopsis</span>
+        <!-- Synopsis -->
+        @if (anime.synopsis) {
+            <div class="info-section">
+                <div class="section-label">Synopsis</div>
+                <p class="synopsis-text">{{ anime.synopsis }}</p>
             </div>
-            <p class="synopsis-text">{{ anime.synopsis || 'No synopsis available.' }}</p>
-        </div>
+        }
+
     </div>
 </div>

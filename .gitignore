@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 # Project Scripts
-/scripts/process_images.py
+/scripts/
 
 # GitHub
 /.github

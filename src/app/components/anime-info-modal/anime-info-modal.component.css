@@ -4,146 +4,168 @@
 
 .anime-info-modal-wrapper {
     background: var(--card-background);
-    border-radius: 16px;
-    max-width: 480px;
+    border-radius: 18px;
+    max-width: 440px;
     width: calc(100vw - 2rem);
-    max-height: 85vh;
+    max-height: 90vh;
     margin: 1rem;
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     position: relative;
-    animation: popIn 0.2s;
+    animation: popIn 0.2s ease-out;
+    border: 1px solid var(--border-color);
 }
 
 .anime-info-modal-content {
     color: var(--text-color);
     height: 100%;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
-    padding: 1rem;
+    padding: 1.25rem;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.anime-info-modal-content > * {
+    flex-shrink: 0;
 }
 
 @keyframes popIn {
-    from { transform: scale(0.95); opacity: 0; }
+    from { transform: scale(0.96); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
 
-.anime-info-modal-header {
+/* Header section — title left, actions right */
+.modal-header-section {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 0.25rem;
-    margin-bottom: 0.5rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
-.anime-info-modal-copy,
-.anime-info-modal-close {
-    background: none;
-    border: none;
-    color: var(--subtitle-color);
-    cursor: pointer;
-    border-radius: 50%;
-    transition: transform 0.2s ease;
+.title-block {
+    flex: 1;
+    min-width: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-}
-
-.anime-info-modal-copy .material-symbols-rounded,
-.anime-info-modal-close .material-symbols-rounded {
-    font-size: 20px;
-}
-
-.anime-info-modal-copy:hover,
-.anime-info-modal-close:hover {
-    background: var(--modal-close-hover-bg);
-    color: var(--text-color);
+    flex-direction: column;
+    gap: 0.35rem;
 }
 
 .anime-info-modal-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 1.25rem;
     word-break: break-word;
-    text-align: center;
-    line-height: 1.4;
+    line-height: 1.35;
+    padding-top: 0.25rem;
 }
 
-/* Info Grid */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.625rem;
-    background: var(--background-color);
-    border-radius: 10px;
-}
-
-.info-icon {
-    font-size: 18px;
-    color: var(--subtitle-color);
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.info-content {
+.alt-titles {
     display: flex;
     flex-direction: column;
-    gap: 0.125rem;
-    min-width: 0;
+    gap: 0.15rem;
 }
 
-.info-label {
-    font-size: 0.7rem;
-    color: var(--subtitle-color);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
-}
-
-.info-value {
-    font-size: 0.85rem;
-    color: var(--text-color);
-    font-weight: 500;
+.alt-title {
+    font-size: 0.775rem;
+    color: var(--text-tertiary);
+    line-height: 1.4;
     word-break: break-word;
 }
 
-/* Info Sections */
-.info-section {
-    margin-bottom: 1rem;
+.alt-title.japanese {
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
-.info-section:last-child {
-    margin-bottom: 0;
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    flex-shrink: 0;
 }
 
-.section-header {
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: color 0.15s ease, background-color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+}
+
+.action-btn .material-symbols-outlined {
+    font-size: 20px;
+}
+
+.action-btn:hover {
+    background: var(--surface-hover);
+    color: var(--text-color);
+}
+
+/* Detail rows — clean labeled list */
+.detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--background-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.detail-row {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding: 0.65rem 0.75rem;
 }
 
-.section-icon {
+.detail-row + .detail-row {
+    border-top: 1px solid var(--border-light);
+}
+
+.detail-icon {
     font-size: 18px;
-    color: var(--subtitle-color);
+    color: var(--text-muted);
+    flex-shrink: 0;
 }
 
-.section-title {
-    font-size: 0.75rem;
-    color: var(--subtitle-color);
+.detail-label {
+    font-size: 0.775rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    min-width: 50px;
+}
+
+.detail-value {
+    font-size: 0.825rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: auto;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* Info sections — genres & synopsis */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.section-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.06em;
     font-weight: 600;
 }
 
@@ -151,57 +173,54 @@
 .genres-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.375rem;
+    gap: 0.3rem;
 }
 
 .genre-tag {
     display: inline-flex;
     align-items: center;
-    padding: 0.3rem 0.6rem;
-    background: var(--background-color);
+    padding: 0.25rem 0.5rem;
+    background: var(--toggle-bg);
     border-radius: 6px;
-    font-size: 0.8rem;
-    color: var(--text-color);
+    font-size: 0.775rem;
+    color: var(--text-secondary);
     font-weight: 500;
+    border: 1px solid var(--border-light);
 }
 
 /* Synopsis */
 .synopsis-text {
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: var(--text-color);
+    font-size: 0.825rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
     margin: 0;
     padding: 0.75rem;
-    background: var(--background-color);
-    border-radius: 10px;
-    text-align: justify;
+    background: var(--background-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
 }
+
+
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
     .anime-info-modal-content {
-        padding: 1.25rem;
+        padding: 1rem;
         max-height: 80vh;
+        gap: 0.875rem;
     }
 
     .anime-info-modal-title {
-        font-size: 1.1rem;
-        padding: 0 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.05rem;
     }
 
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-
-    .info-item {
-        padding: 0.5rem;
+    .detail-row {
+        padding: 0.55rem 0.65rem;
     }
 
     .genre-tag {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
+        font-size: 0.725rem;
+        padding: 0.2rem 0.45rem;
     }
 
     .synopsis-text {

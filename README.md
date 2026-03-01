@@ -2,7 +2,7 @@
 
 A web application for browsing and discovering anime cover art. Built with Angular, this catalog provides an intuitive interface to explore, search, and organize anime artwork.
 
-![Anime Cover Catalog - Home](src/assets/images/home-anime-cover-catalog.jpg)
+![Anime Cover Catalog - Home](home-anime-cover-catalog.jpg)
 
 ## Features
 
@@ -10,6 +10,7 @@ A web application for browsing and discovering anime cover art. Built with Angul
 - **Advanced Filtering**: Filter anime by genre, demographic, theme, and type (TV, Movie, OVA, Special, etc.)
 - **Search Functionality**: Quickly find specific anime titles with real-time search
 - **Sorting Options**: Sort by name (A-Z, Z-A) or release date (newest, oldest)
+- **Alternative Covers**: Multiple cover images per anime with navigation and selection
 - **Favorites System**: Save your favorite anime covers with persistent local storage
 - **Dark/Light Theme**: Toggle between dark and light modes for comfortable viewing
 - **Responsive Design**: Optimized for desktop and mobile devices
@@ -19,8 +20,8 @@ A web application for browsing and discovering anime cover art. Built with Angul
 
 ## Technology Stack
 
-- **Framework**: Angular 20.3.14
-- **Language**: TypeScript 5.8
+- **Framework**: Angular 21.2.0
+- **Language**: TypeScript 5.9.3
 - **Styling**: CSS with CSS Variables for theming
 - **State Management**: Angular Signals
 - **Routing**: Angular Router with lazy loading

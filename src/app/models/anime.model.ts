@@ -1,6 +1,9 @@
 export interface Anime {
     title: string;
+    titleEnglish?: string;
+    titleJapanese?: string;
     imageUrl: string;
+    alternativeCovers?: string[];
     releaseYear: string;
     studio: string;
     type: string;

@@ -3,16 +3,16 @@
         <div class="top-controls-header">
             <div class="top-sort-controls">
                 <button id="nameSortBtn" class="sort-button" (click)="toggleNameSort()" [attr.data-order]="animeService.nameSort()">
-                    <span class="material-symbols-rounded sort-icon" translate="no">{{ nameSortButtonIcon() }}</span>
+                    <span class="material-symbols-outlined sort-icon" translate="no">{{ nameSortButtonIcon() }}</span>
                     <span class="sort-text">{{ nameSortButtonText() }}</span>
                 </button>
                 <button id="dateSortBtn" class="sort-button" (click)="toggleDateSort()" [attr.data-order]="animeService.dateSort()">
-                    <span class="material-symbols-rounded sort-icon" translate="no">{{ dateSortButtonIcon() }}</span>
+                    <span class="material-symbols-outlined sort-icon" translate="no">{{ dateSortButtonIcon() }}</span>
                     <span class="sort-text">{{ dateSortButtonText() }}</span>
                 </button>
             </div>
             <div class="anime-count">
-                <span class="material-symbols-rounded count-icon" translate="no">photo_library</span>
+                <span class="material-symbols-outlined count-icon" translate="no">photo_library</span>
                 <span class="count-number">{{ animeCount() }}</span>
                 <span class="count-label">Covers</span>
             </div>
@@ -21,7 +21,7 @@
 } @else {
     <div class="top-controls-header favorites-header">
         <div class="anime-count">
-            <span class="material-symbols-rounded count-icon" translate="no">photo_library</span>
+            <span class="material-symbols-outlined count-icon" translate="no">photo_library</span>
             <span class="count-label">Covers</span>
             <span class="count-separator">-</span>
             <span class="count-number">{{ favoritesCount() }}</span>
@@ -29,7 +29,7 @@
         </div>
         @if (favoritesCount() > 0) {
             <button class="clear-favorites-button" (click)="clearAllFavorites()" title="Clear all favorites">
-                <span class="material-symbols-rounded" translate="no">delete_sweep</span>
+                <span class="material-symbols-outlined" translate="no">delete_sweep</span>
                 <span class="button-text">Clear All</span>
             </button>
         }

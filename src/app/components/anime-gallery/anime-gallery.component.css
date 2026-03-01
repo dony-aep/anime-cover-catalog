@@ -11,35 +11,37 @@
     padding: 0;
     max-width: none;
     position: relative;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.625rem;
 }
 
 /* Card Styles */
 .card {
     background-color: var(--card-background);
-    border-radius: 16px;
-    box-shadow: var(--shadow-md);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
     text-align: left;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s forwards;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transform: translateY(12px);
+    animation: fadeInUp 0.35s ease-out forwards;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     position: relative;
     display: block;
+    border: 1px solid var(--border-light);
 }
 
 @keyframes fadeInUp {
     to {
-    opacity: 1;
+        opacity: 1;
         transform: translateY(0);
     }
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-color);
 }
 
 .card img.card-image {
@@ -60,7 +62,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0) 100%);
     color: #ffffff;
     padding: 0.8rem 0.8rem 3.5rem 0.8rem;
     opacity: 0;
@@ -150,62 +152,74 @@
 }
 
 
-/* Adjust Action Buttons Styles */
+/* Action Buttons — fade in on hover */
 .action-buttons {
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(4px);
     display: flex;
     gap: 6px;
     z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover .action-buttons {
+    opacity: 1;
     pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
 }
 
 .info-button,
 .copy-button,
 .link-button,
 .download-button,
+.covers-button,
 .trailer-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    background-color: rgba(var(--background-rgb), 0.8);
+    width: 34px;
+    height: 34px;
+    background-color: rgba(var(--background-rgb), 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     color: var(--icon-color);
     text-decoration: none;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.2s ease;
-    box-shadow: var(--shadow-sm);
+    transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 
-.info-button .material-symbols-rounded,
-.link-button .material-symbols-rounded,
-.download-button .material-symbols-rounded,
-.trailer-button .material-symbols-rounded {
-    font-size: 22px;
+.info-button .material-symbols-outlined,
+.link-button .material-symbols-outlined,
+.download-button .material-symbols-outlined,
+.covers-button .material-symbols-outlined,
+.trailer-button .material-symbols-outlined {
+    font-size: 20px;
     background-color: transparent;
 }
 
 .info-button:hover,
 .link-button:hover,
 .download-button:hover,
+.covers-button:hover,
 .trailer-button:hover {
     background-color: var(--button-hover-bg);
     color: var(--button-hover-text);
 }
 
-.trailer-button .material-symbols-rounded {
+.trailer-button .material-symbols-outlined {
     color: #FF0000;
 }
-.trailer-button:hover .material-symbols-rounded {
+.trailer-button:hover .material-symbols-outlined {
     color: #FF0000;
 }
 
-/* Favorite Button Styles */
+/* Favorite Button — hidden until hover or active */
 .favorite-button {
     position: absolute;
     top: 10px;
@@ -213,37 +227,44 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.45);
     color: #ffffff;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.15s ease;
     z-index: 3;
+    opacity: 0;
+}
+
+.card:hover .favorite-button {
+    opacity: 1;
+}
+
+.favorite-button.is-favorite {
+    opacity: 1;
+    color: #e74c3c;
+    background-color: rgba(0, 0, 0, 0.55);
 }
 
 .favorite-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.favorite-button.is-favorite {
-    color: #e74c3c;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
 .favorite-button.is-favorite:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
-.favorite-button .material-symbols-rounded {
+.favorite-button .material-symbols-outlined {
     font-size: 20px;
     line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.favorite-button.is-favorite .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
 }
 
 .favorite-button:active {
@@ -263,7 +284,7 @@
 .load-all-btn {
     padding: 0.8rem 2rem;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Google Sans', sans-serif;
     background-color: var(--sort-bg-color);
     color: var(--sort-text-color);
     border: 1px solid var(--border-color);
@@ -279,7 +300,7 @@
     position: relative;
 }
 
-.load-all-btn .material-symbols-rounded {
+.load-all-btn .material-symbols-outlined {
     font-size: 20px;
     display: inline-flex;
     align-items: center;
@@ -352,7 +373,7 @@
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
     font-size: 0.95rem;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Google Sans', sans-serif;
     font-weight: 500;
     background-color: var(--sort-bg-color);
     color: var(--sort-text-color);
@@ -368,37 +389,19 @@
     border-color: var(--button-hover-bg);
 }
 
-.clear-filters-btn .material-symbols-rounded {
+.clear-filters-btn .material-symbols-outlined {
     font-size: 20px;
 }
 
 /* Screens between 768px and 1200px */
 @media (min-width: 768px) and (max-width: 1200px) {
-
     .gallery-container {
-        display: grid;
         gap: 0.8rem;
     }
 
-    .gallery-container.cozy {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 0.8rem;
-    }
-    
     .card {
         width: 100%;
         box-sizing: border-box;
-    }
-
-    #animeGallery {
-        max-width: 1000px;
-    }
-}
-
-/* Screens between 768px and 1024px */
-@media (max-width: 1024px) {
-    #viewModeToggleBtn {
-        display: none;
     }
 }
 
@@ -408,45 +411,10 @@
         width: 100%;
     }
 
-    /* Gallery */
     .gallery-container {
         width: 100%;
         grid-template-columns: 1fr;
         gap: 1rem;
-    }
-
-    .gallery-container.cozy .card img {
-         height: auto; 
-         aspect-ratio: 3/4; 
-    }
-    .gallery-container.cozy .card-body {
-        padding: 1rem;
-    }
-     .gallery-container.cozy .card-title {
-        font-size: 1.1rem;
-    }
-    .gallery-container.cozy .resolution {
-         font-size: 0.85rem;
-         margin-bottom: 2.8rem;
-    }
-    .gallery-container.cozy .action-buttons {
-        bottom: 10px;
-        gap: 5px;
-    }
-     .gallery-container.cozy .info-button,
-     .gallery-container.cozy .copy-button,
-     .gallery-container.cozy .link-button,
-     .gallery-container.cozy .download-button,
-     .gallery-container.cozy .trailer-button {
-        width: 36px;
-        height: 36px;
-    }
-     .gallery-container.cozy .info-button .material-symbols-rounded,
-     .gallery-container.cozy .copy-button .material-symbols-rounded,
-     .gallery-container.cozy .link-button .material-symbols-rounded,
-     .gallery-container.cozy .download-button .material-symbols-rounded,
-     .gallery-container.cozy .trailer-button .material-symbols-rounded {
-        font-size: 20px;
     }
 
     .card {
@@ -462,55 +430,11 @@
         box-sizing: border-box;
     }
 
-    .sort-control-item {
-        width: auto;
-        max-width: none;
-        justify-content: center;
-    }
-
-    .sort-button {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-
-    .sort-button .sort-icon {
-        font-size: 18px;
-    }
-
-    .gallery-and-sort-container {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .top-sort-controls {
-        justify-content: center;
-        padding-right: 0;
-    }
-
     .card-info-overlay {
         justify-content: flex-end;
     }
-    
+
     .action-buttons {
         bottom: 15px;
-    }
-    
-    .gallery-container.cozy .card-info-overlay {
-        padding: 0.8rem 0.8rem 1.5rem 0.8rem;
-    }
-}
-
-/* Very Small Screens (up to 360px) */
-@media (max-width: 360px) {
-    .gallery-container.cozy {
-        grid-template-columns: 1fr;
-    }
-
-    .card-info-overlay {
-        padding: 0.8rem 0.8rem 5rem 0.8rem;
-    }
-    
-    .action-buttons {
-        bottom: 18px;
     }
 } 

@@ -5,36 +5,27 @@
 
 /* For Firefox */
 * {
-  scrollbar-color: var(--subtitle-color) var(--card-background);
-}
-
-/* For Chrome, Safari, and other WebKit-based browsers */
-*::-webkit-scrollbar {
-  width: 8px;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--card-background);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--subtitle-color);
-  border-radius: 20px;
-  border: 2px solid var(--card-background);
+  scrollbar-color: var(--border-dark) transparent;
 }
 
 html {
     scroll-padding-top: var(--header-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
     background-color: var(--body-background);
     color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Google Sans', sans-serif;
+    font-optical-sizing: auto;
     margin: 0;
     padding: 0;
     height: 100vh;
     overflow: hidden;
+    line-height: 1.5;
+    letter-spacing: -0.011em;
 }
 
 @media (max-width: 768px) {

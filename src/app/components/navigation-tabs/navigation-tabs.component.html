@@ -4,14 +4,14 @@
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }">
-        <span class="material-symbols-rounded" translate="no">home</span>
+        <span class="material-symbols-outlined" translate="no">home</span>
         Home
     </a>
     <a 
         class="nav-tab"
         routerLink="/favorites"
         routerLinkActive="active">
-        <span class="material-symbols-rounded" translate="no">favorite</span>
+        <span class="material-symbols-outlined" translate="no">favorite</span>
         Favorites
         @if (favoritesCount() > 0) {
             <span class="favorites-badge">

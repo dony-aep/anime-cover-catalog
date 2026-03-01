@@ -2,7 +2,7 @@
     <div class="header">
         <div class="header-left">
             <button class="menu-button" (click)="openSideMenu()" title="Open menu">
-                <span class="material-symbols-rounded" translate="no">menu</span>
+                <span class="material-symbols-outlined" translate="no">menu</span>
             </button>
             <a routerLink="/" class="logo-link">
                 <img src="assets/icons/catalog_icon.png" alt="Anime Cover Catalog" class="logo-icon">
@@ -17,9 +17,9 @@
                     class="github-icon">
             </a>
             <a href="https://donyaep.vercel.app/" target="_blank" class="header-button author-link" title="Author's Website">
-                <span class="material-symbols-rounded" translate="no">public</span>
+                <span class="material-symbols-outlined" translate="no">public</span>
             </a>
-            <span class="material-symbols-rounded mode-toggle" (click)="toggleTheme()" [title]="themeService.currentTheme() === 'dark' ? 'Light Mode' : 'Dark Mode'" translate="no">
+            <span class="material-symbols-outlined mode-toggle" (click)="toggleTheme()" [title]="themeService.currentTheme() === 'dark' ? 'Light Mode' : 'Dark Mode'" translate="no">
                 {{ themeService.currentTheme() === 'dark' ? 'light_mode' : 'dark_mode' }}
             </span>
         </div>

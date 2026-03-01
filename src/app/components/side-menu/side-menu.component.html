@@ -3,7 +3,7 @@
     <div class="side-menu-header">
         <img src="assets/icons/catalog_icon.png" alt="Anime Cover Catalog" class="logo-icon">
         <button class="close-button" (click)="closeMenu()" title="Close menu">
-            <span class="material-symbols-rounded" translate="no">close</span>
+            <span class="material-symbols-outlined" translate="no">close</span>
         </button>
     </div>
     
@@ -18,7 +18,7 @@
                     routerLinkActive="active"
                     [routerLinkActiveOptions]="{ exact: true }"
                     (click)="onFilterClick()">
-                    <span class="material-symbols-rounded" translate="no">home</span>
+                    <span class="material-symbols-outlined" translate="no">home</span>
                     Home
                 </a>
                 <a 
@@ -26,7 +26,7 @@
                     routerLink="/favorites"
                     routerLinkActive="active"
                     (click)="onFilterClick()">
-                    <span class="material-symbols-rounded" translate="no">favorite</span>
+                    <span class="material-symbols-outlined" translate="no">favorite</span>
                     Favorites
                     @if (favoritesCount() > 0) {
                         <span class="nav-badge">

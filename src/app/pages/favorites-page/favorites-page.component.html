@@ -6,9 +6,13 @@
     
     @if (!hasFavorites()) {
       <div class="empty-favorites">
-        <span class="material-symbols-rounded empty-icon" translate="no">favorite</span>
+        <span class="material-symbols-outlined empty-icon" translate="no">favorite</span>
         <h2>No favorites yet</h2>
         <p>Start adding anime to your favorites by clicking the heart icon on any anime card.</p>
+        <a routerLink="/" class="home-link">
+          <span class="material-symbols-outlined" translate="no">search</span>
+          Browse Catalog
+        </a>
       </div>
     }
 

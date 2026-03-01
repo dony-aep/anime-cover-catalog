@@ -1,14 +1,15 @@
 
 .main-content-wrapper {
   position: fixed;
-  top: calc(var(--header-height) + 5rem);
+  top: calc(var(--header-height) + 4.25rem);
   left: 1rem;
-  right: calc(260px + 2rem);
-  bottom: 1rem;
-  border-radius: 16px;
+  right: calc(260px + 1.5rem);
+  bottom: 0.75rem;
+  border-radius: 14px;
   overflow: hidden;
   background-color: var(--main-container-bg);
   box-shadow: var(--main-container-shadow);
+  border: 1px solid var(--border-light);
 }
 
 .main-content {
@@ -24,10 +25,10 @@
 
 @media (max-width: 768px) {
   .main-content-wrapper {
-    top: calc(var(--header-height) + 4rem);
+    top: calc(var(--header-height) + 3.75rem);
     left: 0.75rem;
     right: 0.75rem;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .main-content {

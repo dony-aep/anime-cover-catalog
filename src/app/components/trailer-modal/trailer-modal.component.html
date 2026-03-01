@@ -2,19 +2,19 @@
     <div class="trailer-modal-content">
         <div class="trailer-header">
             <div class="trailer-title">
-                <span class="material-symbols-rounded youtube-icon" translate="no">smart_display</span>
+                <span class="material-symbols-outlined youtube-icon" translate="no">smart_display</span>
                 <span class="title-text">{{ anime.title }}</span>
             </div>
             <div class="trailer-header-buttons">
                 @if (videoId) {
                     <button class="header-btn" title="Copy Trailer URL" (click)="copyTrailerUrl()">
-                        <span class="material-symbols-rounded" translate="no">
+                        <span class="material-symbols-outlined" translate="no">
                             {{ copyState() === 'copied' ? 'check' : 'link' }}
                         </span>
                     </button>
                 }
                 <button class="header-btn" title="Close" (click)="close()">
-                    <span class="material-symbols-rounded" translate="no">close</span>
+                    <span class="material-symbols-outlined" translate="no">close</span>
                 </button>
             </div>
         </div>
@@ -23,7 +23,7 @@
                 <iframe [src]="sanitizedTrailerUrl" frameborder="0" allowfullscreen></iframe>
             } @else {
                 <div class="no-trailer-message">
-                    <span class="material-symbols-rounded" translate="no">videocam_off</span>
+                    <span class="material-symbols-outlined" translate="no">videocam_off</span>
                     <p>Trailer Not Available</p>
                 </div>
             }

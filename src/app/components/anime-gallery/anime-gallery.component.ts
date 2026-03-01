@@ -6,6 +6,7 @@ import { Anime } from '../../models/anime.model';
 import { ModalService } from '../../services/modal.service';
 import { AnimeInfoModalComponent } from '../anime-info-modal/anime-info-modal.component';
 import { TrailerModalComponent } from '../trailer-modal/trailer-modal.component';
+import { CoversModalComponent } from '../covers-modal/covers-modal.component';
 
 @Component({
   selector: 'app-anime-gallery',
@@ -70,6 +71,10 @@ export class AnimeGalleryComponent {
 
   showTrailer(anime: Anime) {
     this.modalService.open(TrailerModalComponent, { anime: anime });
+  }
+
+  showCovers(anime: Anime) {
+    this.modalService.open(CoversModalComponent, { anime: anime });
   }
 
   toggleFavorite(anime: Anime, event: MouseEvent) {

@@ -1,0 +1,61 @@
+<div class="covers-modal-wrapper" (click)="$event.stopPropagation()">
+    <div class="covers-modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+            <div class="header-title">
+                <span class="material-symbols-outlined header-icon" translate="no">photo_library</span>
+                <span>Covers</span>
+                <span class="covers-count">{{ allCovers().length }}</span>
+            </div>
+            <button class="close-btn" title="Close" (click)="close()">
+                <span class="material-symbols-outlined" translate="no">close</span>
+            </button>
+        </div>
+
+        <!-- Anime title -->
+        <div class="anime-title">{{ anime.title }}</div>
+
+        <!-- Thumbnails row -->
+        <div class="covers-gallery">
+            @for (cover of allCovers(); track cover; let i = $index) {
+                <button 
+                    class="cover-thumb" 
+                    [class.active]="selectedCoverIndex() === i"
+                    (click)="selectCover(i)"
+                    [title]="i === 0 ? 'Main cover' : 'Alternative cover ' + i">
+                    <img [src]="'assets/' + cover.replace('AnimeImages', 'AnimeImages_thumbs')" [alt]="anime.title + ' cover ' + (i + 1)">
+                    @if (i === 0) {
+                        <span class="cover-main-badge">Main</span>
+                    } @else {
+                        <span class="cover-main-badge alt">Alt {{ i }}</span>
+                    }
+                </button>
+            }
+        </div>
+
+        <!-- Tip -->
+        <div class="cover-tip">
+            <span class="material-symbols-outlined tip-icon" translate="no">touch_app</span>
+            <span>Tap the preview to view the original image</span>
+        </div>
+
+        <!-- Preview -->
+        <div class="cover-preview">
+            <img 
+                class="cover-preview-img" 
+                [src]="'assets/' + allCovers()[selectedCoverIndex()].replace('AnimeImages', 'AnimeImages_thumbs')" 
+                [alt]="anime.title + ' cover preview'"
+                (click)="openCoverFullscreen()">
+            <div class="cover-preview-actions">
+                <button class="cover-action-btn" title="Download this cover" (click)="downloadCover()">
+                    <span class="material-symbols-outlined" translate="no">download</span>
+                </button>
+                <button class="cover-action-btn" title="Copy cover URL" (click)="copyCoverUrl()">
+                    <span class="material-symbols-outlined" translate="no">
+                        {{ coverCopyState() === 'copied' ? 'check' : 'link' }}
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

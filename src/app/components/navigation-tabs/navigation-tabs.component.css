@@ -1,12 +1,13 @@
 .navigation-tabs {
     display: flex;
     flex-direction: column;
-    gap: 0.35rem;
+    gap: 0.25rem;
     padding: 0.5rem;
     background: var(--main-container-bg);
-    border-radius: 12px;
+    border-radius: 14px;
     margin-bottom: 0.5rem;
     box-shadow: var(--main-container-shadow);
+    border: 1px solid var(--border-light);
 }
 
 .nav-tab {
@@ -14,8 +15,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-family: 'Google Sans', sans-serif;
     font-weight: 500;
     text-decoration: none;
     color: var(--text-color);
@@ -23,9 +24,10 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: opacity 0.2s ease;
-    opacity: 0.7;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+    opacity: 0.65;
     justify-content: flex-start;
+    letter-spacing: -0.01em;
 }
 
 .nav-tab:hover {
@@ -39,7 +41,7 @@
     background-color: var(--surface-hover);
 }
 
-.nav-tab .material-symbols-rounded {
+.nav-tab .material-symbols-outlined {
     font-size: 20px;
     flex-shrink: 0;
 }

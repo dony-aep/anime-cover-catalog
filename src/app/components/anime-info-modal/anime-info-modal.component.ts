@@ -26,8 +26,12 @@ export class AnimeInfoModalComponent {
   async copyInfo() {
     if (this.copyState() === 'copied') return;
 
-    const textToCopy = [
+    const lines = [
         `Title: ${this.anime.title}`,
+    ];
+    if (this.anime.titleEnglish) lines.push(`English: ${this.anime.titleEnglish}`);
+    if (this.anime.titleJapanese) lines.push(`Japanese: ${this.anime.titleJapanese}`);
+    lines.push(
         `Release Year: ${this.anime.releaseYear}`,
         `Studio: ${this.anime.studio}`,
         `Type: ${this.anime.type}`,
@@ -36,7 +40,8 @@ export class AnimeInfoModalComponent {
         `Theme: ${this.anime.theme || 'Unknown'}`,
         `Genres: ${this.anime.genres || 'Unknown'}`,
         `Synopsis: ${this.anime.synopsis}`
-    ].join('\n');
+    );
+    const textToCopy = lines.join('\n');
     try {
         await navigator.clipboard.writeText(textToCopy);
         this.copyState.set('copied');

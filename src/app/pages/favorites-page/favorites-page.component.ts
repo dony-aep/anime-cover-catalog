@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AnimeService } from '../../services/anime.service';
 import { FavoritesService } from '../../services/favorites.service';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
@@ -9,6 +10,7 @@ import { AnimeGalleryComponent } from '../../components/anime-gallery/anime-gall
 @Component({
   selector: 'app-favorites-page',
   imports: [
+    RouterLink,
     FilterBarComponent,
     SearchBarComponent,
     TopControlsComponent,

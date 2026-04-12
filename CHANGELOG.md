@@ -1,3 +1,16 @@
+# Security Patch Update v4.0.1 - 2026-04-12
+
+- **MCP Config Migration**:
+  - Added root `.mcp.json` using `mcpServers` format for Copilot CLI MCP support.
+
+- **Security & Dependency Updates**:
+  - Updated Angular runtime packages from `21.2.0` to `21.2.8`.
+  - Updated Angular tooling from `21.2.0` to `21.2.7` (`@angular/cli`, `@angular-devkit/build-angular`).
+  - Updated `@angular/compiler-cli` to `21.2.8`.
+  - Updated security overrides to `tar@7.5.11` and `undici@7.24.0`.
+  - Refreshed lockfile with patched transitive dependencies (`vite`, `picomatch`, `hono`, `@hono/node-server`, `lodash`, and related tree).
+  - `npm audit` now reports **0 vulnerabilities** (all deps and prod deps).
+
 # Angular 21.2.0 Major Update v4.0.0 - 2026-02-28
 
 - **Angular Major Update (20 → 21)**:

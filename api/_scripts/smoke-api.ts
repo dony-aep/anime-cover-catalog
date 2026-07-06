@@ -90,6 +90,7 @@ async function main() {
   // Validation: bad query
   const badLimit = await get('/api/v1/animes?limit=9999');
   assert(badLimit.status === 400, `limit>100 rejected -> 400 (got ${badLimit.status})`);
+  assert(typeof badLimit.body.error === 'string', '400 returns standardized { error } body');
 
   // CORS + cache headers
   const headed = await app.fetch(new Request(BASE + '/api/v1/animes'));

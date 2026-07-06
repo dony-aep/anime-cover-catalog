@@ -12,7 +12,18 @@ import {
 } from './_lib/api-schema.js';
 import { findBySlug, getFilters, queryAnimes, toApiAnime } from './_lib/data.js';
 
-const app = new OpenAPIHono().basePath('/api');
+const app = new OpenAPIHono({
+  // Standardize request-validation failures to the same { error } shape as the
+  // rest of the API (instead of the raw Zod error).
+  defaultHook: (result, c) => {
+    if (!result.success) {
+      return c.json(
+        { error: result.error.issues[0]?.message ?? 'Invalid request parameters' },
+        400,
+      );
+    }
+  },
+}).basePath('/api');
 
 // Public API: allow any origin.
 app.use('/*', cors());
@@ -38,6 +49,10 @@ const listRoute = createRoute({
     200: {
       content: { 'application/json': { schema: AnimeListResponseSchema } },
       description: 'Paginated list of animes',
+    },
+    400: {
+      content: { 'application/json': { schema: ErrorSchema } },
+      description: 'Invalid query parameters',
     },
   },
 });
@@ -119,7 +134,7 @@ app.get('/v1', (c) => {
       filters: `${origin}/api/v1/filters`,
     },
     attribution:
-      'Metadata and cover images curated from public sources (e.g. MyAnimeList) for educational, non-commercial use.',
+      'Metadata extracted from public sources (e.g. MyAnimeList); cover images sourced from various providers. Curated, stored and served by this project for educational, non-commercial use.',
   });
 });
 

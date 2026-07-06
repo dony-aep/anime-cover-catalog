@@ -167,7 +167,7 @@
     <h2 id="ep-limits">Limits &amp; fair use</h2>
     <ul class="notes">
       <li><strong>Pagination:</strong> <code>limit</code> is capped at <strong>100</strong> items per page (default 24). Use <code>page</code> to iterate.</li>
-      <li><strong>Caching:</strong> responses are cached at the edge (<code>Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>). The data changes only on deploy, so most requests are served from cache.</li>
+      <li><strong>Caching:</strong> responses are cached on Vercel's edge network (server-side — not your browser) via <code>Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>: fresh for 24&nbsp;h, then served stale for up to 7&nbsp;days while it revalidates. The cache is invalidated on each deploy, so most requests never reach the function.</li>
       <li><strong>Be kind:</strong> there is no hard rate limit today, but please cache on your side and avoid hammering the API. Abusive traffic may be throttled.</li>
       <li><strong>CORS:</strong> open to any origin — safe to call from the browser.</li>
     </ul>
@@ -176,21 +176,33 @@
   <!-- Errors -->
   <section class="endpoint" aria-labelledby="ep-errors">
     <h2 id="ep-errors">Errors</h2>
-    <p>Errors use standard HTTP status codes with a JSON body:</p>
+    <p>All errors use standard HTTP status codes and share the same JSON shape, so you can handle them uniformly:</p>
     <div class="code-block">
-      <div class="code-head"><span class="code-lang">404 · JSON</span></div>
+      <div class="code-head"><span class="code-lang">JSON</span></div>
       <pre><code>{{ '{' }} "error": "Anime not found: does-not-exist" {{ '}' }}</code></pre>
     </div>
-    <p class="muted">Invalid query parameters (e.g. <code>limit</code> above 100) return <code>400</code>.</p>
+    <div class="table-scroll">
+      <table>
+        <caption class="visually-hidden">Error status codes</caption>
+        <thead>
+          <tr><th scope="col">Status</th><th scope="col">When</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>200</code></td><td>Success.</td></tr>
+          <tr><td><code>400</code></td><td>Invalid query parameter — e.g. <code>limit</code> above 100, or a non-numeric <code>year</code>. The <code>error</code> message says what failed.</td></tr>
+          <tr><td><code>404</code></td><td>No anime matches the requested <code>slug</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <!-- License -->
   <section class="endpoint" aria-labelledby="ep-license">
     <h2 id="ep-license">License &amp; attribution</h2>
     <ul class="notes">
-      <li>Metadata and cover images are curated from publicly available sources (e.g. <a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a>) for educational and non-commercial use.</li>
-      <li>Cover art belongs to its respective rights holders. If you use the images, credit the original works.</li>
-      <li>The API is provided as-is, with no uptime guarantee.</li>
+      <li><strong>Metadata</strong> (titles, genres, studios, synopsis…) is extracted from public sources such as <a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a>, but it is curated, stored and served by this project.</li>
+      <li><strong>Cover images</strong> come from various providers and are hosted by this project. They belong to their respective rights holders — credit the original works if you use them.</li>
+      <li>Intended for educational, non-commercial use. The API is provided as-is, with no uptime guarantee.</li>
     </ul>
   </section>
 

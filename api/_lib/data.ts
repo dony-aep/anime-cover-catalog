@@ -1,4 +1,4 @@
-import rawAnimes from '../_data/animes.json';
+import rawAnimes from '../_data/animes.json' with { type: 'json' };
 import type { Anime } from './schema';
 import type { AnimeResponse } from './api-schema';
 

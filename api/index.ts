@@ -1,7 +1,7 @@
 import { OpenAPIHono, createRoute } from '@hono/zod-openapi';
 import { swaggerUI } from '@hono/swagger-ui';
 import { cors } from 'hono/cors';
-import { handle } from 'hono/vercel';
+import { getRequestListener } from '@hono/node-server';
 import {
   AnimeListResponseSchema,
   AnimeResponseSchema,
@@ -116,4 +116,7 @@ app.doc('/v1/openapi.json', {
 app.get('/v1/docs', swaggerUI({ url: '/api/v1/openapi.json' }));
 
 export { app };
-export default handle(app);
+
+// Vercel invokes Node-runtime functions with (req, res); getRequestListener
+// bridges those to the Web-standard fetch handler the Hono app exposes.
+export default getRequestListener((request) => app.fetch(request));

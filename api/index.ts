@@ -15,10 +15,10 @@ import { findBySlug, getFilters, queryAnimes, toApiAnime } from './_lib/data.js'
 const app = new OpenAPIHono().basePath('/api');
 
 // Public API: allow any origin.
-app.use('/v1/*', cors());
+app.use('/*', cors());
 
 // Data is immutable between deploys, so let the edge cache absorb the load.
-app.use('/v1/*', async (c, next) => {
+app.use('/*', async (c, next) => {
   await next();
   if (c.req.method === 'GET' && c.res.status === 200) {
     c.header('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800');
@@ -103,6 +103,26 @@ const filtersRoute = createRoute({
 
 app.openapi(filtersRoute, (c) => c.json(getFilters(), 200));
 
+// Discovery index — what a client hitting the API root should find.
+app.get('/v1', (c) => {
+  const origin = originOf(c.req.url);
+  return c.json({
+    name: 'Anime Cover Catalog API',
+    version: '1.0.0',
+    description: 'Public, read-only API to browse the curated anime cover catalog.',
+    documentation: `${origin}/docs`,
+    openapi: `${origin}/api/v1/openapi.json`,
+    swagger: `${origin}/api/v1/docs`,
+    endpoints: {
+      animes: `${origin}/api/v1/animes`,
+      anime: `${origin}/api/v1/animes/{slug}`,
+      filters: `${origin}/api/v1/filters`,
+    },
+    attribution:
+      'Metadata and cover images curated from public sources (e.g. MyAnimeList) for educational, non-commercial use.',
+  });
+});
+
 // OpenAPI spec + interactive docs.
 app.doc('/v1/openapi.json', {
   openapi: '3.0.0',
@@ -111,6 +131,7 @@ app.doc('/v1/openapi.json', {
     version: '1.0.0',
     description: 'Public, read-only API to browse the curated anime cover catalog.',
   },
+  servers: [{ url: '/', description: 'Current host' }],
 });
 
 app.get('/v1/docs', swaggerUI({ url: '/api/v1/openapi.json' }));

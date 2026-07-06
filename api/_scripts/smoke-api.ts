@@ -109,10 +109,17 @@ async function main() {
     `preflight returns CORS headers (${preflight.status})`,
   );
 
+  // Discovery index
+  const index = await get('/api/v1');
+  assert(index.status === 200, 'GET /api/v1 -> 200');
+  assert(!!index.body.documentation && !!index.body.endpoints, 'index exposes documentation + endpoints');
+  assert(typeof index.body.endpoints.animes === 'string', 'index links the animes endpoint');
+
   // OpenAPI spec
   const spec = await get('/api/v1/openapi.json');
   assert(spec.status === 200, 'GET /api/v1/openapi.json -> 200');
   assert(spec.body.openapi === '3.0.0', 'spec has openapi version');
+  assert(Array.isArray(spec.body.servers) && spec.body.servers.length > 0, 'spec declares servers');
   assert(!!spec.body.paths['/api/v1/animes'], 'spec documents /api/v1/animes');
   assert(!!spec.body.paths['/api/v1/animes/{slug}'], 'spec documents detail route');
   assert(!!spec.body.paths['/api/v1/filters'], 'spec documents /api/v1/filters');

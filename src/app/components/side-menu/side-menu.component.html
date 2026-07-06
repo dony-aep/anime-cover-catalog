@@ -21,7 +21,7 @@
                     <span class="material-symbols-outlined" translate="no">home</span>
                     Home
                 </a>
-                <a 
+                <a
                     class="nav-tab"
                     routerLink="/favorites"
                     routerLinkActive="active"
@@ -33,6 +33,14 @@
                             {{ favoritesCount() }}
                         </span>
                     }
+                </a>
+                <a
+                    class="nav-tab"
+                    routerLink="/docs"
+                    routerLinkActive="active"
+                    (click)="onFilterClick()">
+                    <span class="material-symbols-outlined" translate="no">api</span>
+                    API
                 </a>
             </nav>
         </div>

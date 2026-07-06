@@ -16,7 +16,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { AnimeListSchema, type Anime } from '../_lib/schema';
+import { AnimeListSchema, type Anime } from '../_lib/schema.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '../..');

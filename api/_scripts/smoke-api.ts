@@ -1,5 +1,5 @@
 /** Temporary smoke test for the API — exercises app.fetch() without Vercel. */
-import { app } from '../index';
+import { app } from '../index.js';
 
 const BASE = 'https://catalog.example.com';
 

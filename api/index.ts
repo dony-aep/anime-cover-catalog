@@ -9,8 +9,8 @@ import {
   FiltersResponseSchema,
   ListQuerySchema,
   SlugParamSchema,
-} from './_lib/api-schema';
-import { findBySlug, getFilters, queryAnimes, toApiAnime } from './_lib/data';
+} from './_lib/api-schema.js';
+import { findBySlug, getFilters, queryAnimes, toApiAnime } from './_lib/data.js';
 
 const app = new OpenAPIHono().basePath('/api');
 

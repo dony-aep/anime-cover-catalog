@@ -11,7 +11,7 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { app } from '../index';
+import { app } from '../index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ASSETS_ROOT = resolve(__dirname, '../../src/assets');

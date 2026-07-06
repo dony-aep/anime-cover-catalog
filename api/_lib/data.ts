@@ -1,6 +1,6 @@
 import rawAnimes from '../_data/animes.json' with { type: 'json' };
-import type { Anime } from './schema';
-import type { AnimeResponse } from './api-schema';
+import type { Anime } from './schema.js';
+import type { AnimeResponse } from './api-schema.js';
 
 const animes = rawAnimes as Anime[];
 

@@ -158,6 +158,31 @@
   border-color: var(--button-hover-bg);
 }
 
+/* ===== Important notice ===== */
+.callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.1rem;
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.callout .material-symbols-outlined {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.callout strong {
+  color: var(--text-color);
+}
+
 /* ===== Endpoint sections ===== */
 .endpoint {
   background: var(--surface-color);
@@ -249,10 +274,15 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
-td:nth-child(2),
-td:nth-child(3) {
+.params-table td:nth-child(2),
+.params-table td:nth-child(3) {
   white-space: nowrap;
   color: var(--text-secondary);
+}
+
+/* Space a table out from a code block directly above it (e.g. Errors). */
+.code-block + .table-scroll {
+  margin-top: 0.85rem;
 }
 
 /* ===== Code blocks ===== */

@@ -92,6 +92,9 @@ async function main() {
   assert(badLimit.status === 400, `limit>100 rejected -> 400 (got ${badLimit.status})`);
   assert(typeof badLimit.body.error === 'string', '400 returns standardized { error } body');
 
+  const longQ = await get('/api/v1/animes?q=' + 'a'.repeat(101));
+  assert(longQ.status === 400, `q over 100 chars rejected -> 400 (got ${longQ.status})`);
+
   // CORS + cache headers
   const headed = await app.fetch(new Request(BASE + '/api/v1/animes'));
   assert(headed.headers.get('access-control-allow-origin') === '*', 'CORS allows any origin');

@@ -62,7 +62,12 @@ export const ErrorSchema = z
 
 /** Query parameters accepted by GET /v1/animes. */
 export const ListQuerySchema = z.object({
-  q: z.string().optional().openapi({ param: { name: 'q', in: 'query' }, example: 'blue' }),
+  q: z
+    .string()
+    .trim()
+    .max(100)
+    .optional()
+    .openapi({ param: { name: 'q', in: 'query' }, example: 'blue' }),
   genre: z.string().optional().openapi({ param: { name: 'genre', in: 'query' }, example: 'Romance' }),
   theme: z.string().optional().openapi({ param: { name: 'theme', in: 'query' }, example: 'School' }),
   demographic: z
@@ -99,5 +104,5 @@ export const ListQuerySchema = z.object({
 });
 
 export const SlugParamSchema = z.object({
-  slug: z.string().openapi({ param: { name: 'slug', in: 'path' }, example: 'ao-no-hako' }),
+  slug: z.string().max(120).openapi({ param: { name: 'slug', in: 'path' }, example: 'ao-no-hako' }),
 });

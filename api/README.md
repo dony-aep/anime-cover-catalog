@@ -20,7 +20,7 @@ A branded, human-friendly guide also lives in the app at `/docs`
 
 ### `GET /api/v1/animes` query params
 
-`q` (search title/EN/JP) · `genre` · `theme` · `demographic` · `type` ·
+`q` (search title/EN/JP, max 100 chars) · `genre` · `theme` · `demographic` · `type` ·
 `year` · `sort=title|year` · `order=asc|desc` · `page` (≥1) · `limit` (1–100, default 24)
 
 Response envelope:

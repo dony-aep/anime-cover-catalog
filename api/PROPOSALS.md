@@ -132,10 +132,67 @@ Firewall rule first: zero code, adjustable without a deploy.
 
 ---
 
+## 6. Case-insensitive filter matching
+
+**Status: planned — ships with proposal 2 (touches the same predicates).**
+
+**Current behavior (verified 2026-07-07):** filter values must match the
+dataset casing exactly: `?genre=Comedy` → 109 results, but `?genre=comedy`,
+`?genre=COMEDY` and `?type=tv` → `200` with 0 results, silently. A consumer
+that doesn't reproduce the exact casing concludes there is no data.
+
+**Design:** compare lowercased values in the `queryAnimes` predicates (`genre`,
+`theme`, `demographic`, `type`). Backward compatible: exact-cased values keep
+working.
+
+**Touched files:** `_lib/data.ts`, `_scripts/smoke-api.ts`.
+
+---
+
+## 7. Accent-insensitive search
+
+**Status: proposed (own small PR, after 2).**
+
+**Current behavior (verified 2026-07-07):** the dataset contains accented
+titles (*Code Geass: Dakkan no Rozé*, *Megami no Café Terrace*). `?q=rozé`
+→ 1 result, but `?q=roze` and `?q=cafe` → 0. Nobody types the accent when
+searching.
+
+**Design:** normalize with `NFD` and strip combining marks on both the title
+fields and `q` before the `includes` comparison.
+
+**Touched files:** `_lib/data.ts`, `_scripts/smoke-api.ts`.
+
+---
+
+## 8. Reject unknown facet values — open discussion
+
+**Current behavior (verified 2026-07-07):** `?genre=Comedia` (not a real
+facet) → `200` with 0 results, indistinguishable from "valid but empty".
+Since the facets are precomputed (`getFilters()`), the API could return
+`400 { error }` listing the valid values instead.
+
+**Open question:** silent-empty is also a legitimate API convention (filters
+as predicates, not enums). Decide before implementing; at minimum, document
+that `/filters` is the source of valid values.
+
+---
+
+## 9. Pagination links — open discussion
+
+Add `next` / `prev` absolute URLs to `meta` (or a `links` object) so clients
+don't build pagination URLs by hand. Cheap, but grows every list response;
+decide together with 8.
+
+---
+
 ## Suggested order
 
-1. **Sparse fieldsets** — the original motivation, immediate client value.
-2. **Multi-value filters** — complements 1; both touch the same validation layer.
+1. **Sparse fieldsets** — ✅ implemented (2026-07-07).
+2. **Multi-value filters** — complements 1; ships together with **6**
+   (case-insensitive matching), same predicates.
 3. **ETag** — cheap, independent, pure win given immutable data.
-4. **Random endpoint** — nice-to-have, do when a consumer feature needs it.
-5. **Rate limiting** — reactive; ship when traffic justifies it (revisit after 1–2).
+4. **Accent-insensitive search (7)** — small, self-contained.
+5. **Random endpoint** — nice-to-have, do when a consumer feature needs it.
+6. **Rate limiting** — reactive; ship when traffic justifies it.
+7. **8 and 9** — open discussions, decide before picking up.

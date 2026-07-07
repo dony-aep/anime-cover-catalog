@@ -1,0 +1,198 @@
+# API Proposals — flexibility improvements
+
+Proposals for making the public API more flexible for consumers. Each entry
+notes its status, explains the behavior before the change (verified against
+production), why the change is worth it, and a minimal design consistent with
+the existing code (`@hono/zod-openapi` validation, `{ error }` failures,
+edge-cached responses).
+
+Verification standard for every proposal: extend `api/_scripts/smoke-api.ts`
+with cases that fail before the change and pass after, then confirm on a
+preview deploy.
+
+---
+
+## 1. Sparse fieldsets — `fields` query param
+
+**Status: implemented (2026-07-07).** `fields` works on both `GET /animes` and
+`GET /animes/{slug}`; unknown names → `400 { error }`. Open decision resolved:
+the response contains exactly the requested fields — `slug` is not implicitly
+added.
+
+**Behavior before the change (verified 2026-07-07):** `GET /api/v1/animes?fields=genres`
+returns `200` with all 15 fields per anime. Unknown query params are silently
+stripped by the Zod schema, so the client has no way to trim the payload.
+
+**Why it's worth it:** a list response at `limit=100` is dominated by
+`synopsis` and `images`. A client that only needs titles and genres (e.g. a
+tag cloud, an autocomplete, a stats script) downloads the full payload anyway.
+The edge cache absorbs the server cost but not the client's bandwidth or parse
+time.
+
+**Design:**
+
+```
+GET /api/v1/animes?fields=slug,title,genres
+→ { "data": [ { "slug": "…", "title": "…", "genres": […] } ], "meta": { … } }
+```
+
+- `fields` is a comma-separated list validated against the key names of
+  `AnimeResponseSchema`; an unknown field name → `400 { error }`, consistent
+  with the rest of the request validation.
+- Applies to both `GET /animes` and `GET /animes/{slug}`.
+- Open decision: whether `slug` is always included as the identifier even when
+  not requested.
+
+**Touched files:** `_lib/api-schema.ts` (new param + response typing),
+`index.ts` or `_lib/data.ts` (projection), `_scripts/smoke-api.ts` (cases:
+valid subset, unknown field → 400, detail route).
+
+---
+
+## 2. Multiple values per filter
+
+**Current behavior (verified 2026-07-07):** each filter accepts a single value.
+`?genre=Romance` works; `?genre=Romance,Comedy` treats the comma as a literal
+(matches nothing → `total: 0`), and repeating the param (`?genre=A&genre=B`)
+fails with `400 { "error": "Expected string, received array" }`.
+
+**Why it's worth it:** the Angular app's filter UI allows multi-selection
+concepts (genres, themes), and any consumer building a similar UI must fire N
+requests and merge client-side — N cache entries at the edge instead of one.
+
+**Design:** accept comma-separated values, OR within a param, AND across
+params (matches how faceted catalogs conventionally behave):
+
+```
+GET /api/v1/animes?genre=Romance,Comedy&theme=School
+→ (Romance OR Comedy) AND School
+```
+
+Backward compatible: single values keep working unchanged.
+
+**Touched files:** `_lib/api-schema.ts` (transform `string → string[]`),
+`_lib/data.ts` (`queryAnimes` filter predicates), `_scripts/smoke-api.ts`.
+
+---
+
+## 3. Conditional requests — `ETag` / `If-None-Match`
+
+**Current behavior:** responses carry `Cache-Control: public, s-maxage=86400,
+stale-while-revalidate=604800`, which Vercel's edge consumes (clients see
+`Cache-Control: public`). There is no validator, so a client re-fetching gets
+the full body every time its own cache expires.
+
+**Why it's worth it:** the dataset is immutable between deploys — the ideal
+case for ETags. Repeat clients get `304 Not Modified` with an empty body. Very
+cheap to implement precisely because immutability makes the tag trivial.
+
+**Design:** derive one ETag per deploy (e.g. hash of `animes.json` computed
+once at module load, like `buildFilters()` does) and set it on every 200 GET in
+the existing cache middleware; return `304` when `If-None-Match` matches.
+
+**Touched files:** `index.ts` (middleware), `_scripts/smoke-api.ts`
+(200-with-ETag, then 304 on replay).
+
+---
+
+## 4. Random anime — `GET /animes/random`
+
+**Current behavior:** no way to get a random pick; a client must fetch a page
+and choose locally, or know `total` and request a random page.
+
+**Why it's worth it:** enables "surprise me" / daily-pick features in the app
+or any consumer with a single call. Small, self-contained, good API ergonomics.
+
+**Design:** `GET /api/v1/animes/random` returns one `Anime` (same shape as the
+detail route). Optionally honors the same filter params as the list
+(`?genre=…` → random pick within the filtered set; empty result → 404).
+Caveat: the route must opt out of the edge cache (`Cache-Control: no-store`)
+or every client gets the same "random" anime for 24h. Route order matters:
+register it before `/{slug}` so `random` isn't matched as a slug.
+
+**Touched files:** `index.ts` (new route), `_lib/data.ts` (pick helper),
+`_scripts/smoke-api.ts`.
+
+---
+
+## 5. Rate limiting (already noted in `README.md`)
+
+**Current behavior:** no rate limit; the edge cache absorbs traffic, but any
+uncached path (unique query-param combinations) reaches the function.
+
+**Why it's worth it:** `fields` and multi-value filters (proposals 1–2)
+multiply the space of distinct URLs, which multiplies cache misses. If the API
+gets abusive traffic, a per-IP limit protects function invocations.
+
+**Design:** per the existing note in `api/README.md` — `@upstash/ratelimit`
+backed by a Marketplace Redis, or a Vercel Firewall rule (no code). Prefer the
+Firewall rule first: zero code, adjustable without a deploy.
+
+**Touched files:** none (Firewall) or `index.ts` middleware (Upstash).
+
+---
+
+## 6. Case-insensitive filter matching
+
+**Status: planned — ships with proposal 2 (touches the same predicates).**
+
+**Current behavior (verified 2026-07-07):** filter values must match the
+dataset casing exactly: `?genre=Comedy` → 109 results, but `?genre=comedy`,
+`?genre=COMEDY` and `?type=tv` → `200` with 0 results, silently. A consumer
+that doesn't reproduce the exact casing concludes there is no data.
+
+**Design:** compare lowercased values in the `queryAnimes` predicates (`genre`,
+`theme`, `demographic`, `type`). Backward compatible: exact-cased values keep
+working.
+
+**Touched files:** `_lib/data.ts`, `_scripts/smoke-api.ts`.
+
+---
+
+## 7. Accent-insensitive search
+
+**Status: proposed (own small PR, after 2).**
+
+**Current behavior (verified 2026-07-07):** the dataset contains accented
+titles (*Code Geass: Dakkan no Rozé*, *Megami no Café Terrace*). `?q=rozé`
+→ 1 result, but `?q=roze` and `?q=cafe` → 0. Nobody types the accent when
+searching.
+
+**Design:** normalize with `NFD` and strip combining marks on both the title
+fields and `q` before the `includes` comparison.
+
+**Touched files:** `_lib/data.ts`, `_scripts/smoke-api.ts`.
+
+---
+
+## 8. Reject unknown facet values — open discussion
+
+**Current behavior (verified 2026-07-07):** `?genre=Comedia` (not a real
+facet) → `200` with 0 results, indistinguishable from "valid but empty".
+Since the facets are precomputed (`getFilters()`), the API could return
+`400 { error }` listing the valid values instead.
+
+**Open question:** silent-empty is also a legitimate API convention (filters
+as predicates, not enums). Decide before implementing; at minimum, document
+that `/filters` is the source of valid values.
+
+---
+
+## 9. Pagination links — open discussion
+
+Add `next` / `prev` absolute URLs to `meta` (or a `links` object) so clients
+don't build pagination URLs by hand. Cheap, but grows every list response;
+decide together with 8.
+
+---
+
+## Suggested order
+
+1. **Sparse fieldsets** — ✅ implemented (2026-07-07).
+2. **Multi-value filters** — complements 1; ships together with **6**
+   (case-insensitive matching), same predicates.
+3. **ETag** — cheap, independent, pure win given immutable data.
+4. **Accent-insensitive search (7)** — small, self-contained.
+5. **Random endpoint** — nice-to-have, do when a consumer feature needs it.
+6. **Rate limiting** — reactive; ship when traffic justifies it.
+7. **8 and 9** — open discussions, decide before picking up.

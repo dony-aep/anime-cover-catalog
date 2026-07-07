@@ -107,6 +107,30 @@ async function main() {
     `alt covers match dataset (${WITH_ALTS.images.alternatives.length}, got ${detail.body?.images?.alternatives?.length})`,
   );
 
+  // Sparse fieldsets
+  const sparse = await get('/api/v1/animes?fields=slug,title,genres&limit=5');
+  assert(sparse.status === 200, 'GET ?fields=slug,title,genres -> 200');
+  assert(
+    sparse.body.data.every(
+      (a: any) => Object.keys(a).sort().join(',') === 'genres,slug,title',
+    ),
+    'list items contain exactly the requested fields',
+  );
+  const sparseDetail = await get(`/api/v1/animes/${WITH_ALTS.slug}?fields=title,synopsis`);
+  assert(sparseDetail.status === 200, 'detail with ?fields -> 200');
+  assert(
+    Object.keys(sparseDetail.body).sort().join(',') === 'synopsis,title',
+    'detail contains exactly the requested fields',
+  );
+  const badField = await get('/api/v1/animes?fields=slug,nope');
+  assert(badField.status === 400, `unknown field rejected -> 400 (got ${badField.status})`);
+  assert(
+    typeof badField.body.error === 'string' && badField.body.error.includes('nope'),
+    `400 names the unknown field (${badField.body?.error})`,
+  );
+  const emptyFields = await get('/api/v1/animes?fields=');
+  assert(emptyFields.status === 400, `empty fields rejected -> 400 (got ${emptyFields.status})`);
+
   // 404
   const missing = await get('/api/v1/animes/does-not-exist');
   assert(missing.status === 404, 'GET unknown slug -> 404');

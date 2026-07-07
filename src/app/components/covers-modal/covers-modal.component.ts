@@ -18,8 +18,12 @@ export class CoversModalComponent {
 
   allCovers = computed(() => {
     if (!this.anime) return [];
-    return [this.anime.imageUrl, ...(this.anime.alternativeCovers || [])];
+    return [this.anime.images.cover, ...this.anime.images.alternatives];
   });
+
+  thumbUrl(cover: string): string {
+    return cover.replace('/AnimeImages/', '/AnimeImages_thumbs/');
+  }
 
   selectCover(index: number) {
     this.selectedCoverIndex.set(index);
@@ -27,12 +31,12 @@ export class CoversModalComponent {
 
   openCoverFullscreen() {
     const cover = this.allCovers()[this.selectedCoverIndex()];
-    if (cover) window.open('assets/' + cover, '_blank');
+    if (cover) window.open(cover, '_blank');
   }
 
   downloadCover() {
     const cover = this.allCovers()[this.selectedCoverIndex()];
-    if (cover) window.open('assets/' + cover, '_blank');
+    if (cover) window.open(cover, '_blank');
   }
 
   async copyCoverUrl() {
@@ -40,7 +44,7 @@ export class CoversModalComponent {
     const cover = this.allCovers()[this.selectedCoverIndex()];
     if (!cover) return;
     try {
-      await navigator.clipboard.writeText(new URL('assets/' + cover, window.location.origin).href);
+      await navigator.clipboard.writeText(cover);
       this.coverCopyState.set('copied');
       setTimeout(() => this.coverCopyState.set('idle'), 2000);
     } catch (err) {

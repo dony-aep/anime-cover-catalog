@@ -27,7 +27,7 @@ export class TrailerModalComponent implements OnInit {
     }
   }
   
-  extractYouTubeId(url: string): string | null {
+  extractYouTubeId(url: string | null): string | null {
     if (!url) return null;
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);

@@ -20,7 +20,7 @@ export class SideMenuComponent {
   menuClosed = output<void>();
 
   favoritesCount = this.favoritesService.favoritesCount;
-  filters: FilterOption[] = this.filterService.getFilters();
+  filters = this.filterService.filters;
 
   filterCounts = computed(() => {
     const counts: { [key: string]: number } = {};
@@ -32,8 +32,8 @@ export class SideMenuComponent {
         continue;
       }
 
-      (anime.genres?.split(', ') ?? []).forEach(g => counts[g] = (counts[g] || 0) + 1);
-      (anime.theme?.split(', ') ?? []).forEach(t => counts[t] = (counts[t] || 0) + 1);
+      anime.genres.forEach(g => counts[g] = (counts[g] || 0) + 1);
+      anime.themes.forEach(t => counts[t] = (counts[t] || 0) + 1);
       if (anime.type) counts[anime.type] = (counts[anime.type] || 0) + 1;
       if (anime.demographic) counts[anime.demographic] = (counts[anime.demographic] || 0) + 1;
     }

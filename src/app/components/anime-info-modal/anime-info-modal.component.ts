@@ -18,9 +18,12 @@ export class AnimeInfoModalComponent {
     this.modalService.close();
   }
 
-  getGenresList(): string[] {
-    if (!this.anime.genres) return [];
-    return this.anime.genres.split(',').map(g => g.trim()).filter(g => g.length > 0);
+  studiosText(): string {
+    return this.anime.studios.join(', ') || 'Unknown';
+  }
+
+  themesText(): string {
+    return this.anime.themes.join(', ') || 'Unknown';
   }
 
   async copyInfo() {
@@ -32,13 +35,13 @@ export class AnimeInfoModalComponent {
     if (this.anime.titleEnglish) lines.push(`English: ${this.anime.titleEnglish}`);
     if (this.anime.titleJapanese) lines.push(`Japanese: ${this.anime.titleJapanese}`);
     lines.push(
-        `Release Year: ${this.anime.releaseYear}`,
-        `Studio: ${this.anime.studio}`,
+        `Release Year: ${this.anime.releaseYear ?? 'Unknown'}`,
+        `Studio: ${this.studiosText()}`,
         `Type: ${this.anime.type}`,
-        `Episodes: ${this.anime.episodes || 'Unknown'}`,
+        `Episodes: ${this.anime.episodes ?? 'Unknown'}`,
         `Demographic: ${this.anime.demographic || 'Unknown'}`,
-        `Theme: ${this.anime.theme || 'Unknown'}`,
-        `Genres: ${this.anime.genres || 'Unknown'}`,
+        `Theme: ${this.themesText()}`,
+        `Genres: ${this.anime.genres.join(', ') || 'Unknown'}`,
         `Synopsis: ${this.anime.synopsis}`
     );
     const textToCopy = lines.join('\n');

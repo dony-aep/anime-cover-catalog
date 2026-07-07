@@ -1,7 +1,8 @@
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Anime, DateSortOrder, Filter, SortOrder } from '../models/anime.model';
+import { forkJoin, map, of, switchMap } from 'rxjs';
+import { Anime, AnimeListResponse, DateSortOrder, Filter, SortOrder } from '../models/anime.model';
 
 type SortKey = `${SortOrder}-${DateSortOrder}`;
 
@@ -11,9 +12,25 @@ type SortKey = `${SortOrder}-${DateSortOrder}`;
 export class AnimeService {
   private http = inject(HttpClient);
   private readonly INITIAL_LOAD_COUNT = 24;
+  private readonly API_URL = '/api/v1/animes';
+  private readonly PAGE_SIZE = 100; // API max per page
 
-  private animes$ = this.http.get<Anime[]>('assets/data/animes.json');
-  
+  // Fetch the whole catalog: page 1 tells us totalPages, the rest load in parallel.
+  private animes$ = this.http
+    .get<AnimeListResponse>(`${this.API_URL}?limit=${this.PAGE_SIZE}&page=1`)
+    .pipe(
+      switchMap(first => {
+        const remaining = [];
+        for (let page = 2; page <= first.meta.totalPages; page++) {
+          remaining.push(this.http.get<AnimeListResponse>(`${this.API_URL}?limit=${this.PAGE_SIZE}&page=${page}`));
+        }
+        return remaining.length === 0
+          ? of([first])
+          : forkJoin(remaining).pipe(map(rest => [first, ...rest]));
+      }),
+      map(pages => pages.flatMap(page => page.data))
+    );
+
   animes = toSignal(this.animes$, { initialValue: [] });
   searchTerm = signal<string>('');
   activeFilter = signal<Filter>({ type: 'all', value: '' });
@@ -32,15 +49,15 @@ export class AnimeService {
     return animes.filter(anime => {
       switch (filter.type) {
         case 'genre':
-          return anime.genres?.includes(filter.value);
+          return anime.genres.includes(filter.value);
         case 'theme':
-          return anime.theme?.includes(filter.value);
+          return anime.themes.includes(filter.value);
         case 'type':
           return anime.type === filter.value;
         case 'demographic':
           return anime.demographic === filter.value;
         case 'explicitGenre':
-          return anime.explicitGenres?.includes(filter.value);
+          return anime.explicitGenres.includes(filter.value);
         default:
           return true;
       }
@@ -71,8 +88,8 @@ export class AnimeService {
     // Helper function to sort once
     const sortAnimes = (nameOrder: SortOrder, dateOrder: DateSortOrder): Anime[] => {
       return [...animes].sort((a, b) => {
-        const yearA = parseInt(a.releaseYear, 10) || 0;
-        const yearB = parseInt(b.releaseYear, 10) || 0;
+        const yearA = a.releaseYear ?? 0;
+        const yearB = b.releaseYear ?? 0;
         if (yearA !== yearB) {
           return dateOrder === 'newest' ? yearB - yearA : yearA - yearB;
         }

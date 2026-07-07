@@ -1,0 +1,225 @@
+<div class="main-content-wrapper">
+  <main class="main-content">
+    <div class="docs" id="api-docs">
+  <!-- Screen-reader announcement for copy actions -->
+  <div class="visually-hidden" aria-live="polite">{{ copiedId() ? 'Copied to clipboard' : '' }}</div>
+
+  <!-- Intro -->
+  <header class="docs-hero">
+    <p class="eyebrow">API Reference</p>
+    <h1>Anime Cover Catalog API</h1>
+    <p class="lede">
+      A public, read-only REST API to browse the curated anime cover catalog — titles, metadata
+      and cover images. No API key required.
+    </p>
+
+    <ul class="facts" aria-label="API at a glance">
+      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">public</span> Public &amp; free</li>
+      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">lock_open</span> No authentication</li>
+      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">data_object</span> JSON responses</li>
+      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">bolt</span> Edge-cached</li>
+    </ul>
+
+    <div class="base-url">
+      <span class="base-url-label">Base URL</span>
+      <code>{{ baseUrl }}</code>
+      <button
+        type="button"
+        class="copy-btn"
+        [class.copied]="copiedId() === 'base'"
+        (click)="copy('base', baseUrl)"
+        [attr.aria-label]="copiedId() === 'base' ? 'Copied' : 'Copy base URL'">
+        <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === 'base' ? 'check' : 'content_copy' }}</span>
+      </button>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/api/v1/docs" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined" translate="no" aria-hidden="true">api</span>
+        Open interactive docs (Swagger)
+      </a>
+      <a class="btn btn-secondary" href="/api/v1/openapi.json" target="_blank" rel="noopener">
+        <span class="material-symbols-outlined" translate="no" aria-hidden="true">description</span>
+        OpenAPI spec
+      </a>
+    </div>
+  </header>
+
+  <!-- Important notice -->
+  <aside class="callout" aria-label="Important notice">
+    <span class="material-symbols-outlined" translate="no" aria-hidden="true">info</span>
+    <div>
+      <strong>Please build something new.</strong>
+      Don't use this API to clone this catalog into the same kind of product. It is
+      intentionally open for <em>other</em> uses — web and mobile apps, integrations,
+      experiments, or anywhere an anime catalog is genuinely useful. Build on it, don't
+      duplicate it.
+    </div>
+  </aside>
+
+  <!-- Endpoint: list -->
+  <section class="endpoint" aria-labelledby="ep-list">
+    <h2 id="ep-list"><span class="method get">GET</span> <code>/animes</code></h2>
+    <p>Returns a paginated, filterable and sortable list of animes.</p>
+
+    <h3>Query parameters</h3>
+    <div class="table-scroll">
+      <table class="params-table">
+        <caption class="visually-hidden">Query parameters for GET /animes</caption>
+        <thead>
+          <tr>
+            <th scope="col">Parameter</th>
+            <th scope="col">Type</th>
+            <th scope="col">Default</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>q</code></td><td>string</td><td>—</td><td>Search across title, English and Japanese titles (max 100 characters).</td></tr>
+          <tr><td><code>genre</code></td><td>string</td><td>—</td><td>Exact genre, e.g. <code>Romance</code>.</td></tr>
+          <tr><td><code>theme</code></td><td>string</td><td>—</td><td>Exact theme, e.g. <code>School</code>.</td></tr>
+          <tr><td><code>demographic</code></td><td>string</td><td>—</td><td>Exact demographic, e.g. <code>Shounen</code>.</td></tr>
+          <tr><td><code>type</code></td><td>string</td><td>—</td><td>Exact type, e.g. <code>TV</code>, <code>Movie</code>.</td></tr>
+          <tr><td><code>year</code></td><td>integer</td><td>—</td><td>Release year, e.g. <code>2024</code>.</td></tr>
+          <tr><td><code>sort</code></td><td><code>title</code> | <code>year</code></td><td><code>title</code></td><td>Field to sort by.</td></tr>
+          <tr><td><code>order</code></td><td><code>asc</code> | <code>desc</code></td><td><code>asc</code></td><td>Sort direction.</td></tr>
+          <tr><td><code>page</code></td><td>integer ≥ 1</td><td><code>1</code></td><td>Page number.</td></tr>
+          <tr><td><code>limit</code></td><td>integer 1–100</td><td><code>24</code></td><td>Items per page (max 100).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Example request</h3>
+    @let listCurl = example('list-curl');
+    <div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">{{ listCurl.label }}</span>
+        <button type="button" class="copy-btn" [class.copied]="copiedId() === listCurl.id"
+          (click)="copy(listCurl.id, listCurl.code)"
+          [attr.aria-label]="copiedId() === listCurl.id ? 'Copied' : 'Copy cURL example'">
+          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === listCurl.id ? 'check' : 'content_copy' }}</span>
+        </button>
+      </div>
+      <pre><code>{{ listCurl.code }}</code></pre>
+    </div>
+
+    @let listJs = example('list-js');
+    <div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">{{ listJs.label }}</span>
+        <button type="button" class="copy-btn" [class.copied]="copiedId() === listJs.id"
+          (click)="copy(listJs.id, listJs.code)"
+          [attr.aria-label]="copiedId() === listJs.id ? 'Copied' : 'Copy JavaScript example'">
+          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === listJs.id ? 'check' : 'content_copy' }}</span>
+        </button>
+      </div>
+      <pre><code>{{ listJs.code }}</code></pre>
+    </div>
+
+    <h3>Example response</h3>
+    <div class="code-block">
+      <div class="code-head"><span class="code-lang">200 · JSON</span></div>
+      <pre><code>{{ '{' }}
+  "data": [
+    {{ '{' }}
+      "slug": "ao-no-hako",
+      "title": "Ao no Hako",
+      "images": {{ '{' }} "cover": "{{ origin }}/assets/AnimeImages/Ao_no_hako.jpeg", "alternatives": [ … ] {{ '}' }},
+      "releaseYear": 2024,
+      "genres": ["Romance", "Sports"],
+      "episodes": 25,
+      "type": "TV"
+    {{ '}' }}
+  ],
+  "meta": {{ '{' }} "page": 1, "limit": 24, "total": 254, "totalPages": 11 {{ '}' }}
+{{ '}' }}</code></pre>
+    </div>
+  </section>
+
+  <!-- Endpoint: detail -->
+  <section class="endpoint" aria-labelledby="ep-detail">
+    <h2 id="ep-detail"><span class="method get">GET</span> <code>/animes/{{ '{' }}slug{{ '}' }}</code></h2>
+    <p>Returns a single anime by its stable <code>slug</code>. Responds <code>404</code> if not found.</p>
+
+    @let detailCurl = example('detail-curl');
+    <div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">{{ detailCurl.label }}</span>
+        <button type="button" class="copy-btn" [class.copied]="copiedId() === detailCurl.id"
+          (click)="copy(detailCurl.id, detailCurl.code)"
+          [attr.aria-label]="copiedId() === detailCurl.id ? 'Copied' : 'Copy cURL example'">
+          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === detailCurl.id ? 'check' : 'content_copy' }}</span>
+        </button>
+      </div>
+      <pre><code>{{ detailCurl.code }}</code></pre>
+    </div>
+  </section>
+
+  <!-- Endpoint: filters -->
+  <section class="endpoint" aria-labelledby="ep-filters">
+    <h2 id="ep-filters"><span class="method get">GET</span> <code>/filters</code></h2>
+    <p>Returns the distinct genres, themes, demographics, types and years available in the catalog — useful to build filter UIs.</p>
+
+    @let filtersCurl = example('filters-curl');
+    <div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">{{ filtersCurl.label }}</span>
+        <button type="button" class="copy-btn" [class.copied]="copiedId() === filtersCurl.id"
+          (click)="copy(filtersCurl.id, filtersCurl.code)"
+          [attr.aria-label]="copiedId() === filtersCurl.id ? 'Copied' : 'Copy cURL example'">
+          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === filtersCurl.id ? 'check' : 'content_copy' }}</span>
+        </button>
+      </div>
+      <pre><code>{{ filtersCurl.code }}</code></pre>
+    </div>
+  </section>
+
+  <!-- Limits -->
+  <section class="endpoint" aria-labelledby="ep-limits">
+    <h2 id="ep-limits">Limits &amp; fair use</h2>
+    <ul class="notes">
+      <li><strong>Pagination:</strong> <code>limit</code> is capped at <strong>100</strong> items per page (default 24). Use <code>page</code> to iterate.</li>
+      <li><strong>Caching:</strong> responses are cached on Vercel's edge network (server-side — not your browser) via <code>Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>: fresh for 24&nbsp;h, then served stale for up to 7&nbsp;days while it revalidates. The cache is invalidated on each deploy, so most requests never reach the function.</li>
+      <li><strong>Be kind:</strong> there is no hard rate limit today, but please cache on your side and avoid hammering the API. Abusive traffic may be throttled.</li>
+      <li><strong>CORS:</strong> open to any origin — safe to call from the browser.</li>
+    </ul>
+  </section>
+
+  <!-- Errors -->
+  <section class="endpoint" aria-labelledby="ep-errors">
+    <h2 id="ep-errors">Errors</h2>
+    <p>All errors use standard HTTP status codes and share the same JSON shape, so you can handle them uniformly:</p>
+    <div class="code-block">
+      <div class="code-head"><span class="code-lang">JSON</span></div>
+      <pre><code>{{ '{' }} "error": "Anime not found: does-not-exist" {{ '}' }}</code></pre>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <caption class="visually-hidden">Error status codes</caption>
+        <thead>
+          <tr><th scope="col">Status</th><th scope="col">When</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>200</code></td><td>Success.</td></tr>
+          <tr><td><code>400</code></td><td>Invalid query parameter — e.g. <code>limit</code> above 100, or a non-numeric <code>year</code>. The <code>error</code> message says what failed.</td></tr>
+          <tr><td><code>404</code></td><td>No anime matches the requested <code>slug</code>.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- License -->
+  <section class="endpoint" aria-labelledby="ep-license">
+    <h2 id="ep-license">License &amp; attribution</h2>
+    <ul class="notes">
+      <li><strong>Metadata</strong> (titles, genres, studios, synopsis…) is extracted from public sources such as <a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a>, but it is curated, stored and served by this project.</li>
+      <li><strong>Cover images</strong> come from various providers and are hosted by this project. They belong to their respective rights holders — credit the original works if you use them.</li>
+      <li>Intended for educational, non-commercial use. The API is provided as-is, with no uptime guarantee.</li>
+    </ul>
+  </section>
+
+    </div>
+  </main>
+</div>
+
+<app-filter-bar></app-filter-bar>

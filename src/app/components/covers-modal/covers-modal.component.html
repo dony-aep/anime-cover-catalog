@@ -23,7 +23,7 @@
                     [class.active]="selectedCoverIndex() === i"
                     (click)="selectCover(i)"
                     [title]="i === 0 ? 'Main cover' : 'Alternative cover ' + i">
-                    <img [src]="'assets/' + cover.replace('AnimeImages', 'AnimeImages_thumbs')" [alt]="anime.title + ' cover ' + (i + 1)">
+                    <img [src]="thumbUrl(cover)" [alt]="anime.title + ' cover ' + (i + 1)">
                     @if (i === 0) {
                         <span class="cover-main-badge">Main</span>
                     } @else {
@@ -43,7 +43,7 @@
         <div class="cover-preview">
             <img 
                 class="cover-preview-img" 
-                [src]="'assets/' + allCovers()[selectedCoverIndex()].replace('AnimeImages', 'AnimeImages_thumbs')" 
+                [src]="thumbUrl(allCovers()[selectedCoverIndex()])"
                 [alt]="anime.title + ' cover preview'"
                 (click)="openCoverFullscreen()">
             <div class="cover-preview-actions">

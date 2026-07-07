@@ -1,0 +1,12 @@
+# Vercel installs deps and builds on its servers — only upload source.
+node_modules
+dist
+.angular
+.git
+.vercel
+.vscode
+
+# Local-only tooling and scratch (the API scripts live in api/_scripts).
+scripts
+.claude
+.agents

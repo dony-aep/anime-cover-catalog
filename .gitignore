@@ -44,5 +44,5 @@ Thumbs.db
 # Project Scripts
 /scripts/
 
-# GitHub
-/.github
+# Vercel
+.vercel

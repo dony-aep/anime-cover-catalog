@@ -6,10 +6,10 @@ const animes = rawAnimes as Anime[];
 
 export interface ListParams {
   q?: string;
-  genre?: string;
-  theme?: string;
-  demographic?: string;
-  type?: string;
+  genre?: string[];
+  theme?: string[];
+  demographic?: string[];
+  type?: string[];
   year?: number;
   sort: 'title' | 'year';
   order: 'asc' | 'desc';
@@ -50,10 +50,24 @@ export function queryAnimes(params: ListParams): { items: Anime[]; total: number
         (a.titleJapanese?.toLowerCase().includes(q) ?? false),
     );
   }
-  if (params.genre) result = result.filter((a) => a.genres.includes(params.genre!));
-  if (params.theme) result = result.filter((a) => a.themes.includes(params.theme!));
-  if (params.demographic) result = result.filter((a) => a.demographic === params.demographic);
-  if (params.type) result = result.filter((a) => a.type === params.type);
+  // Multi-value filters: OR within a param, AND across params, case-insensitive.
+  const wanted = (values: string[]) => new Set(values.map((v) => v.toLowerCase()));
+  if (params.genre?.length) {
+    const set = wanted(params.genre);
+    result = result.filter((a) => a.genres.some((g) => set.has(g.toLowerCase())));
+  }
+  if (params.theme?.length) {
+    const set = wanted(params.theme);
+    result = result.filter((a) => a.themes.some((t) => set.has(t.toLowerCase())));
+  }
+  if (params.demographic?.length) {
+    const set = wanted(params.demographic);
+    result = result.filter((a) => a.demographic !== null && set.has(a.demographic.toLowerCase()));
+  }
+  if (params.type?.length) {
+    const set = wanted(params.type);
+    result = result.filter((a) => set.has(a.type.toLowerCase()));
+  }
   if (params.year !== undefined) result = result.filter((a) => a.releaseYear === params.year);
 
   const dir = params.order === 'asc' ? 1 : -1;

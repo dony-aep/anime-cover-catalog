@@ -90,6 +90,27 @@ export const ErrorSchema = z
   })
   .openapi('Error');
 
+/**
+ * A filter that accepts one value or a comma-separated list (OR semantics),
+ * e.g. `?genre=Romance,Comedy`. Matching is case-insensitive.
+ */
+const multiValueFilter = (name: string, example: string) =>
+  z
+    .string()
+    .transform((value) => value.split(',').map((v) => v.trim()).filter(Boolean))
+    .pipe(z.array(z.string()).min(1, { message: `${name} must name at least one value` }))
+    .optional()
+    .openapi({
+      param: {
+        name,
+        in: 'query',
+        description:
+          'One value or a comma-separated list; any listed value matches (OR). Case-insensitive.',
+      },
+      example,
+      type: 'string',
+    });
+
 /** Query parameters accepted by GET /v1/animes. */
 export const ListQuerySchema = z.object({
   q: z
@@ -98,13 +119,10 @@ export const ListQuerySchema = z.object({
     .max(100)
     .optional()
     .openapi({ param: { name: 'q', in: 'query' }, example: 'blue' }),
-  genre: z.string().optional().openapi({ param: { name: 'genre', in: 'query' }, example: 'Romance' }),
-  theme: z.string().optional().openapi({ param: { name: 'theme', in: 'query' }, example: 'School' }),
-  demographic: z
-    .string()
-    .optional()
-    .openapi({ param: { name: 'demographic', in: 'query' }, example: 'Shounen' }),
-  type: z.string().optional().openapi({ param: { name: 'type', in: 'query' }, example: 'TV' }),
+  genre: multiValueFilter('genre', 'Romance,Comedy'),
+  theme: multiValueFilter('theme', 'School'),
+  demographic: multiValueFilter('demographic', 'Shounen'),
+  type: multiValueFilter('type', 'TV'),
   year: z.coerce
     .number()
     .int()

@@ -34,17 +34,22 @@ URLs derived from the request host, pointing at the static assets on the CDN.
 
 ## Data
 
-The API reads `api/_data/animes.json`, generated from the app's source data:
-
-```bash
-npm run data:normalize   # src/assets/data/animes.json -> api/_data/animes.json
-```
-
-Re-run this whenever the source catalog changes. The output is validated against
+`api/_data/animes.json` is the **single canonical data source** for the whole
+project: the API serves it and the Angular app consumes it through `/api/v1`.
+Edit it directly to update the catalog; records must conform to
 `api/_lib/schema.ts` (unique slugs, typed fields).
 
 Helper scripts live in `api/_scripts/` (the `_` prefix keeps Vercel from treating
 them as functions).
+
+## Local development (app + API)
+
+The Angular dev server proxies `/api` to the local API (see `proxy.conf.json`):
+
+```bash
+npm run api:dev   # terminal 1 — API on http://localhost:8787
+npm start         # terminal 2 — app on http://localhost:4200 (proxied /api)
+```
 
 ## Verify
 

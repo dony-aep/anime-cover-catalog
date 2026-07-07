@@ -27,8 +27,8 @@ export class FilterBarComponent {
             continue;
         }
 
-        (anime.genres?.split(', ') ?? []).forEach(g => counts[g] = (counts[g] || 0) + 1);
-        (anime.theme?.split(', ') ?? []).forEach(t => counts[t] = (counts[t] || 0) + 1);
+        anime.genres.forEach(g => counts[g] = (counts[g] || 0) + 1);
+        anime.themes.forEach(t => counts[t] = (counts[t] || 0) + 1);
         if (anime.type) counts[anime.type] = (counts[anime.type] || 0) + 1;
         if (anime.demographic) counts[anime.demographic] = (counts[anime.demographic] || 0) + 1;
     }

@@ -86,13 +86,16 @@ export class AnimeGalleryComponent {
     return this.favoriteTitlesSet().has(anime.title);
   }
 
+  thumbUrl(anime: Anime): string {
+    return anime.images.cover.replace('/AnimeImages/', '/AnimeImages_thumbs/');
+  }
+
   async copyImageUrl(anime: Anime, event: MouseEvent) {
     try {
-      const fullImageUrl = new URL('assets/' + anime.imageUrl, window.location.origin).href;
-      await navigator.clipboard.writeText(fullImageUrl);
-      this.copiedStatus.update(status => ({ ...status, [anime.imageUrl]: 'url' }));
+      await navigator.clipboard.writeText(anime.images.cover);
+      this.copiedStatus.update(status => ({ ...status, [anime.slug]: 'url' }));
       setTimeout(() => {
-        this.copiedStatus.update(status => ({ ...status, [anime.imageUrl]: 'none' }));
+        this.copiedStatus.update(status => ({ ...status, [anime.slug]: 'none' }));
       }, 1500);
     } catch (err) {
       console.error('Failed to copy image URL: ', err);
@@ -100,16 +103,16 @@ export class AnimeGalleryComponent {
   }
 
   downloadImage(anime: Anime) {
-    window.open('assets/' + anime.imageUrl, '_blank');
+    window.open(anime.images.cover, '_blank');
   }
 
   async copyTitle(anime: Anime, event: MouseEvent) {
     event.stopPropagation();
     try {
       await navigator.clipboard.writeText(anime.title);
-      this.copiedStatus.update(status => ({ ...status, [anime.imageUrl]: 'title' }));
+      this.copiedStatus.update(status => ({ ...status, [anime.slug]: 'title' }));
       setTimeout(() => {
-        this.copiedStatus.update(status => ({ ...status, [anime.imageUrl]: 'none' }));
+        this.copiedStatus.update(status => ({ ...status, [anime.slug]: 'none' }));
       }, 1500);
     } catch (err) {
       console.error('Failed to copy title: ', err);

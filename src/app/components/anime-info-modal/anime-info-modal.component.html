@@ -39,7 +39,7 @@
             <div class="detail-row">
                 <span class="material-symbols-outlined detail-icon" translate="no">apartment</span>
                 <span class="detail-label">Studio</span>
-                <span class="detail-value">{{ anime.studio || 'Unknown' }}</span>
+                <span class="detail-value">{{ studiosText() }}</span>
             </div>
             @if (anime.type) {
                 <div class="detail-row">
@@ -62,11 +62,11 @@
                     <span class="detail-value">{{ anime.demographic }}</span>
                 </div>
             }
-            @if (anime.theme) {
+            @if (anime.themes.length) {
                 <div class="detail-row">
                     <span class="material-symbols-outlined detail-icon" translate="no">category</span>
                     <span class="detail-label">Theme</span>
-                    <span class="detail-value">{{ anime.theme }}</span>
+                    <span class="detail-value">{{ themesText() }}</span>
                 </div>
             }
         </div>
@@ -75,7 +75,7 @@
         <div class="info-section">
             <div class="section-label">Genres</div>
             <div class="genres-container">
-                @for (genre of getGenresList(); track genre) {
+                @for (genre of anime.genres; track genre) {
                     <span class="genre-tag">{{ genre }}</span>
                 }
                 @empty {

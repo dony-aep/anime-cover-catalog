@@ -1,11 +1,11 @@
 @if (!noResults()) {
     <div class="gallery-wrapper">
         <div id="animeGallery" class="gallery-container">
-            @for (anime of displayedAnimes(); track anime.title) {
+            @for (anime of displayedAnimes(); track anime.slug) {
                 <div class="card anime-card">
-                    <img 
+                    <img
                         class="card-image"
-                        [src]="'assets/' + anime.imageUrl.replace('AnimeImages', 'AnimeImages_thumbs')" 
+                        [src]="thumbUrl(anime)"
                         [alt]="anime.title">
 
                     <button 
@@ -20,11 +20,11 @@
                         <div class="card-info-content">
                             <h5 class="card-title" translate="no" (click)="copyTitle(anime, $event)">
                                 {{ anime.title }}
-                                <span 
-                                    class="material-symbols-outlined copy-icon" 
-                                    [class.show]="copiedStatus()[anime.imageUrl] === 'title'"
+                                <span
+                                    class="material-symbols-outlined copy-icon"
+                                    [class.show]="copiedStatus()[anime.slug] === 'title'"
                                     translate="no">
-                                    {{ copiedStatus()[anime.imageUrl] === 'title' ? 'check' : 'content_copy' }}
+                                    {{ copiedStatus()[anime.slug] === 'title' ? 'check' : 'content_copy' }}
                                 </span>
                             </h5>
                             <div class="card-meta">
@@ -44,13 +44,13 @@
                         </button>
                         <button class="link-button" title="Copy Image URL" (click)="copyImageUrl(anime, $event)">
                             <span class="material-symbols-outlined" translate="no">
-                                {{ copiedStatus()[anime.imageUrl] === 'url' ? 'check' : 'link' }}
+                                {{ copiedStatus()[anime.slug] === 'url' ? 'check' : 'link' }}
                             </span>
                         </button>
                         <button class="download-button" title="Download cover in high quality and resolution" (click)="downloadImage(anime)">
                             <span class="material-symbols-outlined" translate="no">download</span>
                         </button>
-                        @if (anime.alternativeCovers?.length) {
+                        @if (anime.images.alternatives.length) {
                             <button class="covers-button" title="View alternative covers" (click)="showCovers(anime)">
                                 <span class="material-symbols-outlined" translate="no">photo_library</span>
                             </button>

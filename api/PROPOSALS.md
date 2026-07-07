@@ -161,9 +161,11 @@ working.
 
 ## 7. Accent-insensitive search
 
-**Status: proposed (own small PR, after 2).**
+**Status: implemented (2026-07-07).** `NFD` + strip of combining marks
+`U+0300–U+036F` on both sides of the comparison; the range excludes kana
+voicing marks, so Japanese titles are unaffected.
 
-**Current behavior (verified 2026-07-07):** the dataset contains accented
+**Behavior before the change (verified 2026-07-07):** the dataset contains accented
 titles (*Code Geass: Dakkan no Rozé*, *Megami no Café Terrace*). `?q=rozé`
 → 1 result, but `?q=roze` and `?q=cafe` → 0. Nobody types the accent when
 searching.
@@ -201,7 +203,7 @@ decide together with 8.
 1. **Sparse fieldsets** — ✅ implemented (2026-07-07).
 2. **Multi-value filters + 6 (case-insensitive)** — ✅ implemented (2026-07-07).
 3. **ETag** — ✅ implemented (2026-07-07).
-4. **Accent-insensitive search (7)** — small, self-contained.
+4. **Accent-insensitive search (7)** — ✅ implemented (2026-07-07).
 5. **Random endpoint** — nice-to-have, do when a consumer feature needs it.
 6. **Rate limiting** — reactive; ship when traffic justifies it.
 7. **8 and 9** — open discussions, decide before picking up.

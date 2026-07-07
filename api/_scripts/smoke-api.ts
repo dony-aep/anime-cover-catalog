@@ -1,7 +1,24 @@
-/** Temporary smoke test for the API — exercises app.fetch() without Vercel. */
+/**
+ * Smoke test for the API — exercises app.fetch() without Vercel.
+ *
+ * Expected values are derived from the canonical dataset so the test keeps
+ * passing when the catalog grows or changes.
+ */
 import { app } from '../index.js';
+import rawAnimes from '../_data/animes.json' with { type: 'json' };
+import type { Anime } from '../_lib/schema.js';
 
+const animes = rawAnimes as Anime[];
 const BASE = 'https://catalog.example.com';
+
+const TOTAL = animes.length;
+const DEFAULT_LIMIT = 24;
+const TOTAL_PAGES = Math.ceil(TOTAL / DEFAULT_LIMIT);
+const ROMANCE_TOTAL = animes.filter((a) => a.genres.includes('Romance')).length;
+const BLUE_TOTAL = animes.filter((a) =>
+  [a.title, a.titleEnglish, a.titleJapanese].some((t) => t?.toLowerCase().includes('blue')),
+).length;
+const WITH_ALTS = animes.find((a) => a.images.alternatives.length > 0);
 
 async function get(path: string) {
   const res = await app.fetch(new Request(BASE + path));
@@ -28,9 +45,15 @@ async function main() {
   // List: default pagination
   const list = await get('/api/v1/animes');
   assert(list.status === 200, 'GET /api/v1/animes -> 200');
-  assert(list.body.data.length === 24, `default limit 24 (got ${list.body?.data?.length})`);
-  assert(list.body.meta.total === 254, `total 254 (got ${list.body?.meta?.total})`);
-  assert(list.body.meta.totalPages === 11, `totalPages 11 (got ${list.body?.meta?.totalPages})`);
+  assert(
+    list.body.data.length === Math.min(DEFAULT_LIMIT, TOTAL),
+    `default limit ${DEFAULT_LIMIT} (got ${list.body?.data?.length})`,
+  );
+  assert(list.body.meta.total === TOTAL, `total ${TOTAL} (got ${list.body?.meta?.total})`);
+  assert(
+    list.body.meta.totalPages === TOTAL_PAGES,
+    `totalPages ${TOTAL_PAGES} (got ${list.body?.meta?.totalPages})`,
+  );
   assert(
     typeof list.body.data[0].images.cover === 'string' &&
       list.body.data[0].images.cover.startsWith('https://catalog.example.com/assets/'),
@@ -44,12 +67,18 @@ async function main() {
     romance.body.data.every((a: any) => a.genres.includes('Romance')),
     'all results include genre Romance',
   );
-  assert(romance.body.meta.total < 254 && romance.body.meta.total > 0, `Romance subset (${romance.body?.meta?.total})`);
+  assert(
+    romance.body.meta.total === ROMANCE_TOTAL,
+    `Romance subset matches dataset (${ROMANCE_TOTAL}, got ${romance.body?.meta?.total})`,
+  );
 
   // Search
   const search = await get('/api/v1/animes?q=blue');
   assert(search.status === 200, 'GET ?q=blue -> 200');
-  assert(search.body.meta.total >= 1, `search finds matches (${search.body?.meta?.total})`);
+  assert(
+    search.body.meta.total === BLUE_TOTAL,
+    `search matches dataset (${BLUE_TOTAL}, got ${search.body?.meta?.total})`,
+  );
 
   // Sorting by year desc
   const byYear = await get('/api/v1/animes?sort=year&order=desc&limit=5');
@@ -61,14 +90,22 @@ async function main() {
 
   // Pagination page 2
   const page2 = await get('/api/v1/animes?page=2&limit=10');
-  assert(page2.body.meta.page === 2 && page2.body.data.length === 10, 'page 2 returns 10 items');
+  const expectedPage2 = Math.min(10, Math.max(0, TOTAL - 10));
+  assert(
+    page2.body.meta.page === 2 && page2.body.data.length === expectedPage2,
+    `page 2 returns ${expectedPage2} items`,
+  );
   assert(page2.body.data[0].slug !== list.body.data[0].slug, 'page 2 differs from page 1');
 
-  // Detail
-  const detail = await get('/api/v1/animes/ao-no-hako');
-  assert(detail.status === 200, 'GET /api/v1/animes/ao-no-hako -> 200');
-  assert(detail.body.slug === 'ao-no-hako', 'detail slug matches');
-  assert(detail.body.images.alternatives.length === 4, `alt covers present (${detail.body?.images?.alternatives?.length})`);
+  // Detail (first anime with alternative covers, from the dataset)
+  if (!WITH_ALTS) throw new Error('dataset has no anime with alternative covers');
+  const detail = await get(`/api/v1/animes/${WITH_ALTS.slug}`);
+  assert(detail.status === 200, `GET /api/v1/animes/${WITH_ALTS.slug} -> 200`);
+  assert(detail.body.slug === WITH_ALTS.slug, 'detail slug matches');
+  assert(
+    detail.body.images.alternatives.length === WITH_ALTS.images.alternatives.length,
+    `alt covers match dataset (${WITH_ALTS.images.alternatives.length}, got ${detail.body?.images?.alternatives?.length})`,
+  );
 
   // 404
   const missing = await get('/api/v1/animes/does-not-exist');

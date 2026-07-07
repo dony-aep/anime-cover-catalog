@@ -1,4 +1,5 @@
 import { OpenAPIHono, createRoute } from '@hono/zod-openapi';
+import type { Context } from 'hono';
 import { swaggerUI } from '@hono/swagger-ui';
 import { cors } from 'hono/cors';
 import { getRequestListener } from '@hono/node-server';
@@ -36,7 +37,15 @@ app.use('/*', async (c, next) => {
   }
 });
 
-const originOf = (url: string) => new URL(url).origin;
+// Vercel terminates TLS upstream, so the request reaches the function over a
+// plain socket and c.req.url comes out as http://; x-forwarded-proto carries
+// the original scheme.
+const originOf = (c: Context) => {
+  const url = new URL(c.req.url);
+  const proto = c.req.header('x-forwarded-proto')?.split(',')[0]?.trim();
+  if (proto) url.protocol = `${proto}:`;
+  return url.origin;
+};
 
 const listRoute = createRoute({
   method: 'get',
@@ -59,7 +68,7 @@ const listRoute = createRoute({
 
 app.openapi(listRoute, (c) => {
   const params = c.req.valid('query');
-  const origin = originOf(c.req.url);
+  const origin = originOf(c);
   const { items, total } = queryAnimes(params);
   return c.json(
     {
@@ -99,7 +108,7 @@ app.openapi(detailRoute, (c) => {
   if (!anime) {
     return c.json({ error: `Anime not found: ${slug}` }, 404);
   }
-  return c.json(toApiAnime(anime, originOf(c.req.url)), 200);
+  return c.json(toApiAnime(anime, originOf(c)), 200);
 });
 
 const filtersRoute = createRoute({
@@ -120,7 +129,7 @@ app.openapi(filtersRoute, (c) => c.json(getFilters(), 200));
 
 // Discovery index — what a client hitting the API root should find.
 app.get('/v1', (c) => {
-  const origin = originOf(c.req.url);
+  const origin = originOf(c);
   return c.json({
     name: 'Anime Cover Catalog API',
     version: '1.0.0',

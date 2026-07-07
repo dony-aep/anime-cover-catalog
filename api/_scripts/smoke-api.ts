@@ -132,6 +132,19 @@ async function main() {
   const longQ = await get('/api/v1/animes?q=' + 'a'.repeat(101));
   assert(longQ.status === 400, `q over 100 chars rejected -> 400 (got ${longQ.status})`);
 
+  // x-forwarded-proto: behind Vercel the socket is plain http; image URLs
+  // must still come out with the original (https) scheme.
+  const fwd = await app.fetch(
+    new Request('http://internal.host/api/v1/animes?limit=1', {
+      headers: { 'x-forwarded-proto': 'https' },
+    }),
+  );
+  const fwdBody = await fwd.json();
+  assert(
+    fwdBody.data[0].images.cover.startsWith('https://internal.host/'),
+    `image URLs honor x-forwarded-proto (got ${fwdBody?.data?.[0]?.images?.cover})`,
+  );
+
   // CORS + cache headers
   const headed = await app.fetch(new Request(BASE + '/api/v1/animes'));
   assert(headed.headers.get('access-control-allow-origin') === '*', 'CORS allows any origin');

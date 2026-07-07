@@ -120,6 +120,20 @@ async function main() {
     `?type=tv matches TV case-insensitively (${TV_TOTAL}, got ${lowerType.body?.meta?.total})`,
   );
 
+  // Unknown facet values -> 400 with a hint, instead of a silent empty result
+  const badGenre = await get('/api/v1/animes?genre=Comedia');
+  assert(badGenre.status === 400, `unknown genre rejected -> 400 (got ${badGenre.status})`);
+  assert(
+    typeof badGenre.body.error === 'string' &&
+      badGenre.body.error.includes('Comedia') &&
+      badGenre.body.error.includes('/filters'),
+    `400 names the value and points at /filters (${badGenre.body?.error})`,
+  );
+  const badMixed = await get('/api/v1/animes?genre=Romance,NoExiste');
+  assert(badMixed.status === 400, 'unknown value inside a multi-value list -> 400');
+  const badRandomFacet = await get('/api/v1/animes/random?theme=NoExiste');
+  assert(badRandomFacet.status === 400, `random rejects unknown facets too (got ${badRandomFacet.status})`);
+
   // Search
   const search = await get('/api/v1/animes?q=blue');
   assert(search.status === 200, 'GET ?q=blue -> 200');

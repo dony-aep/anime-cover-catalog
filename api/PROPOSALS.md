@@ -180,16 +180,18 @@ fields and `q` before the `includes` comparison.
 
 ---
 
-## 8. Reject unknown facet values — open discussion
+## 8. Reject unknown facet values
 
-**Current behavior (verified 2026-07-07):** `?genre=Comedia` (not a real
-facet) → `200` with 0 results, indistinguishable from "valid but empty".
-Since the facets are precomputed (`getFilters()`), the API could return
-`400 { error }` listing the valid values instead.
+**Status: implemented (2026-07-07).** Applies to the string facets (`genre`,
+`theme`, `demographic`, `type`) on both the list and random routes, matching
+case-insensitively against the precomputed facets. `year` stays a plain
+predicate (asking for a year with no entries is a valid empty result, and it
+doubles as the empty-pool case for `/animes/random`).
 
-**Open question:** silent-empty is also a legitimate API convention (filters
-as predicates, not enums). Decide before implementing; at minimum, document
-that `/filters` is the source of valid values.
+**Behavior before the change (verified 2026-07-07):** `?genre=Comedia` (not a
+real facet) → `200` with 0 results, indistinguishable from "valid but empty".
+Now: `400 { "error": "Unknown genre: Comedia. Valid values are listed at
+/api/v1/filters" }`.
 
 ---
 
@@ -209,4 +211,5 @@ decide together with 8.
 4. **Accent-insensitive search (7)** — ✅ implemented (2026-07-07).
 5. **Random endpoint** — ✅ implemented (2026-07-07), plus the HEAD-headers fix.
 6. **Rate limiting** — reactive; ship when traffic justifies it.
-7. **8 and 9** — open discussions, decide before picking up.
+7. **Reject unknown facet values (8)** — ✅ implemented (2026-07-07).
+8. **Pagination links (9)** — open discussion.

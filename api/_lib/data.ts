@@ -152,3 +152,26 @@ const filters = buildFilters();
 export function getFilters() {
   return filters;
 }
+
+// Lowercased facet values, to validate filter params case-insensitively.
+const facetSets = {
+  genre: new Set(filters.genres.map((v) => v.toLowerCase())),
+  theme: new Set(filters.themes.map((v) => v.toLowerCase())),
+  demographic: new Set(filters.demographics.map((v) => v.toLowerCase())),
+  type: new Set(filters.types.map((v) => v.toLowerCase())),
+};
+
+/**
+ * Returns an error message when a string-facet param names a value that does
+ * not exist in the catalog, so the API can answer 400 instead of a silent
+ * empty result. `year` is left as a plain predicate.
+ */
+export function findUnknownFacetValue(params: FilterParams): string | undefined {
+  for (const facet of ['genre', 'theme', 'demographic', 'type'] as const) {
+    const bad = params[facet]?.find((v) => !facetSets[facet].has(v.toLowerCase()));
+    if (bad !== undefined) {
+      return `Unknown ${facet}: ${bad}. Valid values are listed at /api/v1/filters`;
+    }
+  }
+  return undefined;
+}

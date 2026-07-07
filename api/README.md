@@ -23,7 +23,8 @@ A branded, human-friendly guide also lives in the app at `/docs`
 
 `q` (search title/EN/JP, case- and accent-insensitive, max 100 chars) · `genre` · `theme` · `demographic` · `type`
 (these four are case-insensitive and accept comma-separated values with OR semantics,
-e.g. `genre=Romance,Comedy`; separate params combine with AND) ·
+e.g. `genre=Romance,Comedy`; separate params combine with AND; values not present
+in the catalog → 400 pointing at `/filters`) ·
 `year` · `sort=title|year` · `order=asc|desc` · `page` (≥1) · `limit` (1–100, default 24) ·
 `fields` (comma-separated subset of fields to return, e.g. `fields=slug,title,genres`;
 unknown names → 400; also accepted on `/animes/{slug}`)

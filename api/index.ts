@@ -17,6 +17,7 @@ import {
 import {
   datasetEtag,
   findBySlug,
+  findUnknownFacetValue,
   getFilters,
   pickFields,
   pickRandom,
@@ -98,6 +99,10 @@ const listRoute = createRoute({
 
 app.openapi(listRoute, (c) => {
   const params = c.req.valid('query');
+  const unknownFacet = findUnknownFacetValue(params);
+  if (unknownFacet) {
+    return c.json({ error: unknownFacet }, 400);
+  }
   const origin = originOf(c);
   const { items, total } = queryAnimes(params);
   const data = items.map((a) => toApiAnime(a, origin));
@@ -145,6 +150,10 @@ const randomRoute = createRoute({
 
 app.openapi(randomRoute, (c) => {
   const params = c.req.valid('query');
+  const unknownFacet = findUnknownFacetValue(params);
+  if (unknownFacet) {
+    return c.json({ error: unknownFacet }, 400);
+  }
   const anime = pickRandom(params);
   if (!anime) {
     return c.json({ error: 'No anime matches the requested filters' }, 404);

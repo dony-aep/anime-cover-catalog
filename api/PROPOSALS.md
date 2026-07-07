@@ -195,11 +195,15 @@ Now: `400 { "error": "Unknown genre: Comedia. Valid values are listed at
 
 ---
 
-## 9. Pagination links — open discussion
+## 9. Pagination links
 
-Add `next` / `prev` absolute URLs to `meta` (or a `links` object) so clients
-don't build pagination URLs by hand. Cheap, but grows every list response;
-decide together with 8.
+**Status: implemented (2026-07-07).** The list response carries a top-level
+`links: { next, prev }` object with absolute URLs (honoring
+`x-forwarded-proto`) that preserve the active query params; `null` at the
+edges. Additive, so existing consumers are unaffected.
+
+**Original idea:** add `next` / `prev` absolute URLs so clients don't build
+pagination URLs by hand.
 
 ---
 
@@ -212,4 +216,4 @@ decide together with 8.
 5. **Random endpoint** — ✅ implemented (2026-07-07), plus the HEAD-headers fix.
 6. **Rate limiting** — reactive; ship when traffic justifies it.
 7. **Reject unknown facet values (8)** — ✅ implemented (2026-07-07).
-8. **Pagination links (9)** — open discussion.
+8. **Pagination links (9)** — ✅ implemented (2026-07-07).

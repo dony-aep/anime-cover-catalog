@@ -67,10 +67,21 @@ export const MetaSchema = z
   })
   .openapi('Meta');
 
+export const LinksSchema = z
+  .object({
+    next: z
+      .string()
+      .nullable()
+      .openapi({ example: 'https://example.com/api/v1/animes?page=2' }),
+    prev: z.string().nullable().openapi({ example: null }),
+  })
+  .openapi('Links');
+
 export const AnimeListResponseSchema = z
   .object({
     data: z.array(AnimeResponseSchema),
     meta: MetaSchema,
+    links: LinksSchema,
   })
   .openapi('AnimeList');
 

@@ -71,11 +71,20 @@ app.use('/*', async (c, next) => {
 // Vercel terminates TLS upstream, so the request reaches the function over a
 // plain socket and c.req.url comes out as http://; x-forwarded-proto carries
 // the original scheme.
-const originOf = (c: Context) => {
+const withForwardedProto = (c: Context) => {
   const url = new URL(c.req.url);
   const proto = c.req.header('x-forwarded-proto')?.split(',')[0]?.trim();
   if (proto) url.protocol = `${proto}:`;
-  return url.origin;
+  return url;
+};
+
+const originOf = (c: Context) => withForwardedProto(c).origin;
+
+/** Absolute URL of the current request with `page` swapped, for pagination links. */
+const pageUrl = (c: Context, page: number) => {
+  const url = withForwardedProto(c);
+  url.searchParams.set('page', String(page));
+  return url.toString();
 };
 
 const listRoute = createRoute({
@@ -106,6 +115,7 @@ app.openapi(listRoute, (c) => {
   const origin = originOf(c);
   const { items, total } = queryAnimes(params);
   const data = items.map((a) => toApiAnime(a, origin));
+  const totalPages = Math.ceil(total / params.limit);
   return c.json(
     {
       // The documented schema is the full Anime; `fields` projects it, so the
@@ -115,7 +125,11 @@ app.openapi(listRoute, (c) => {
         page: params.page,
         limit: params.limit,
         total,
-        totalPages: Math.ceil(total / params.limit),
+        totalPages,
+      },
+      links: {
+        next: params.page < totalPages ? pageUrl(c, params.page + 1) : null,
+        prev: params.page > 1 ? pageUrl(c, params.page - 1) : null,
       },
     },
     200,

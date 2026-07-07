@@ -22,17 +22,22 @@ export class ApiDocsPageComponent {
     {
       id: 'list-curl',
       label: 'cURL',
-      code: `curl "${this.baseUrl}/animes?genre=Romance&sort=year&order=desc&limit=5"`,
+      code: `curl "${this.baseUrl}/animes?genre=Romance,Comedy&fields=slug,title,genres&sort=year&order=desc&limit=5"`,
     },
     {
       id: 'list-js',
       label: 'JavaScript',
-      code: `const res = await fetch("${this.baseUrl}/animes?genre=Romance&limit=5");\nconst { data, meta } = await res.json();\nconsole.log(meta.total, data[0].title);`,
+      code: `const res = await fetch("${this.baseUrl}/animes?genre=Romance&limit=5");\nconst { data, meta, links } = await res.json();\nconsole.log(meta.total, data[0].title, links.next);`,
     },
     {
       id: 'detail-curl',
       label: 'cURL',
-      code: `curl "${this.baseUrl}/animes/ao-no-hako"`,
+      code: `curl "${this.baseUrl}/animes/ao-no-hako?fields=title,synopsis,studios"`,
+    },
+    {
+      id: 'random-curl',
+      label: 'cURL',
+      code: `curl "${this.baseUrl}/animes/random?genre=Romance&fields=slug,title"`,
     },
     {
       id: 'filters-curl',

@@ -82,7 +82,12 @@ Backward compatible: single values keep working unchanged.
 
 ## 3. Conditional requests — `ETag` / `If-None-Match`
 
-**Current behavior:** responses carry `Cache-Control: public, s-maxage=86400,
+**Status: implemented (2026-07-07).** One SHA-1 of the dataset per deploy,
+set on every 200 GET; `If-None-Match` (list and `W/` forms accepted) → `304`
+with no content headers. HEAD requests are not tagged (the cache middleware
+only marks GET, as before).
+
+**Behavior before the change:** responses carry `Cache-Control: public, s-maxage=86400,
 stale-while-revalidate=604800`, which Vercel's edge consumes (clients see
 `Cache-Control: public`). There is no validator, so a client re-fetching gets
 the full body every time its own cache expires.
@@ -195,7 +200,7 @@ decide together with 8.
 
 1. **Sparse fieldsets** — ✅ implemented (2026-07-07).
 2. **Multi-value filters + 6 (case-insensitive)** — ✅ implemented (2026-07-07).
-3. **ETag** — cheap, independent, pure win given immutable data.
+3. **ETag** — ✅ implemented (2026-07-07).
 4. **Accent-insensitive search (7)** — small, self-contained.
 5. **Random endpoint** — nice-to-have, do when a consumer feature needs it.
 6. **Rate limiting** — reactive; ship when traffic justifies it.

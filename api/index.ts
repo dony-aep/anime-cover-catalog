@@ -13,7 +13,14 @@ import {
   SlugParamSchema,
   type AnimeResponse,
 } from './_lib/api-schema.js';
-import { findBySlug, getFilters, pickFields, queryAnimes, toApiAnime } from './_lib/data.js';
+import {
+  datasetEtag,
+  findBySlug,
+  getFilters,
+  pickFields,
+  queryAnimes,
+  toApiAnime,
+} from './_lib/data.js';
 
 const app = new OpenAPIHono({
   // Standardize request-validation failures to the same { error } shape as the
@@ -31,11 +38,24 @@ const app = new OpenAPIHono({
 // Public API: allow any origin.
 app.use('/*', cors());
 
-// Data is immutable between deploys, so let the edge cache absorb the load.
+// Data is immutable between deploys, so let the edge cache absorb the load
+// and give clients a validator: one ETag per deploy, 304 on revalidation.
 app.use('/*', async (c, next) => {
   await next();
   if (c.req.method === 'GET' && c.res.status === 200) {
     c.header('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800');
+    c.header('ETag', datasetEtag);
+    const ifNoneMatch = c.req.header('if-none-match');
+    const matches =
+      ifNoneMatch !== undefined &&
+      (ifNoneMatch === '*' ||
+        ifNoneMatch.split(',').some((tag) => tag.trim().replace(/^W\//, '') === datasetEtag));
+    if (matches) {
+      const headers = new Headers(c.res.headers);
+      headers.delete('content-type');
+      headers.delete('content-length');
+      c.res = new Response(null, { status: 304, headers });
+    }
   }
 });
 

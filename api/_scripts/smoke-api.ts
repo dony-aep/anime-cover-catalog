@@ -213,6 +213,29 @@ async function main() {
     `image URLs honor x-forwarded-proto (got ${fwdBody?.data?.[0]?.images?.cover})`,
   );
 
+  // ETag / If-None-Match: 200 exposes the validator, replaying it gives 304
+  const tagged = await app.fetch(new Request(BASE + '/api/v1/animes?limit=1'));
+  const etag = tagged.headers.get('etag');
+  assert(!!etag && /^"[0-9a-f]{40}"$/.test(etag), `200 carries a quoted ETag (${etag})`);
+  const revalidated = await app.fetch(
+    new Request(BASE + '/api/v1/animes?limit=1', { headers: { 'If-None-Match': etag! } }),
+  );
+  assert(revalidated.status === 304, `If-None-Match replay -> 304 (got ${revalidated.status})`);
+  assert((await revalidated.text()) === '', '304 has an empty body');
+  assert(revalidated.headers.get('etag') === etag, '304 keeps the ETag');
+  assert(
+    (revalidated.headers.get('cache-control') ?? '').includes('s-maxage=86400'),
+    '304 keeps Cache-Control',
+  );
+  const stale = await app.fetch(
+    new Request(BASE + '/api/v1/animes?limit=1', { headers: { 'If-None-Match': '"stale-tag"' } }),
+  );
+  assert(stale.status === 200, `non-matching If-None-Match -> 200 (got ${stale.status})`);
+  const missTag = await app.fetch(
+    new Request(BASE + '/api/v1/animes/does-not-exist', { headers: { 'If-None-Match': etag! } }),
+  );
+  assert(missTag.status === 404 && !missTag.headers.get('etag'), '404 is never revalidated');
+
   // CORS + cache headers
   const headed = await app.fetch(new Request(BASE + '/api/v1/animes'));
   assert(headed.headers.get('access-control-allow-origin') === '*', 'CORS allows any origin');

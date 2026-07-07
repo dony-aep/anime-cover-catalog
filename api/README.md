@@ -65,6 +65,8 @@ npm run api:smoke        # exercises every route via app.fetch()
 
 - Responses are cached at the edge (`Cache-Control: public, s-maxage=86400,
   stale-while-revalidate=604800`) since data changes only on deploy.
+- Every 200 GET carries a deploy-scoped `ETag` (hash of the dataset); clients
+  revalidating with `If-None-Match` get `304 Not Modified` with an empty body.
 - CORS is open (`*`) — this is a public API.
 - Limits: `limit` is capped at 100 per page (default 24). There is no hard rate
   limit today — the edge cache absorbs traffic. If abuse appears, add a per-IP

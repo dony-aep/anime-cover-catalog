@@ -67,3 +67,5 @@ npm run api:smoke        # exercises every route via app.fetch()
   limit (`@upstash/ratelimit`) or a Vercel Firewall rule.
 - Routing: `vercel.json` rewrites `/api/(.*)` to the single `api/index.ts`
   function, which mounts the Hono app under `basePath('/api')`.
+- Planned flexibility improvements (sparse fieldsets, multi-value filters,
+  ETags, …) are documented in [PROPOSALS.md](PROPOSALS.md).

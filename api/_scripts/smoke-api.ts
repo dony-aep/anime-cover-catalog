@@ -172,6 +172,30 @@ async function main() {
   );
   assert(page2.body.data[0].slug !== list.body.data[0].slug, 'page 2 differs from page 1');
 
+  // Pagination links: absolute, preserve query params, null at the edges
+  assert(
+    list.body.links?.prev === null && typeof list.body.links?.next === 'string',
+    `page 1 links: prev null, next set (${JSON.stringify(list.body?.links)})`,
+  );
+  assert(
+    list.body.links.next.startsWith(BASE) && list.body.links.next.includes('page=2'),
+    `next is absolute and points at page 2 (${list.body?.links?.next})`,
+  );
+  assert(
+    page2.body.links?.prev?.includes('page=1') && page2.body.links?.prev?.includes('limit=10'),
+    `page 2 prev keeps page and limit (${page2.body?.links?.prev})`,
+  );
+  const lastPage = await get(`/api/v1/animes?page=${TOTAL_PAGES}`);
+  assert(
+    lastPage.body.links?.next === null && lastPage.body.links?.prev !== null,
+    `last page links: next null, prev set (${JSON.stringify(lastPage.body?.links)})`,
+  );
+  const filteredLinks = await get('/api/v1/animes?genre=Romance&limit=10');
+  assert(
+    filteredLinks.body.links?.next?.includes('genre=Romance'),
+    `links preserve active filters (${filteredLinks.body?.links?.next})`,
+  );
+
   // Detail (first anime with alternative covers, from the dataset)
   if (!WITH_ALTS) throw new Error('dataset has no anime with alternative covers');
   const detail = await get(`/api/v1/animes/${WITH_ALTS.slug}`);

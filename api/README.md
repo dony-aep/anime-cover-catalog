@@ -32,8 +32,15 @@ unknown names → 400; also accepted on `/animes/{slug}`)
 Response envelope:
 
 ```json
-{ "data": [ /* Anime[] */ ], "meta": { "page": 1, "limit": 24, "total": 254, "totalPages": 11 } }
+{
+  "data": [ /* Anime[] */ ],
+  "meta": { "page": 1, "limit": 24, "total": 254, "totalPages": 11 },
+  "links": { "next": "…/api/v1/animes?page=2", "prev": null }
+}
 ```
+
+`links.next` / `links.prev` are absolute URLs that preserve the active query
+params (`null` at the edges).
 
 Image fields (`images.cover`, `images.alternatives[]`) are returned as absolute
 URLs derived from the request host, pointing at the static assets on the CDN.

@@ -10,6 +10,7 @@ alongside the Angular app.
 | ------ | ----------------- | --------------------------------------------- |
 | GET    | `/api/v1`         | Discovery index (links to endpoints + docs)   |
 | GET    | `/animes`         | Paginated, filterable, sortable list          |
+| GET    | `/animes/random`  | One random anime (honors list filters + `fields`) |
 | GET    | `/animes/{slug}`  | Single anime by slug (404 if missing)         |
 | GET    | `/filters`        | Distinct genres, themes, demographics, types, years |
 | GET    | `/openapi.json`   | OpenAPI 3.0 spec                               |
@@ -64,7 +65,8 @@ npm run api:smoke        # exercises every route via app.fetch()
 ## Notes
 
 - Responses are cached at the edge (`Cache-Control: public, s-maxage=86400,
-  stale-while-revalidate=604800`) since data changes only on deploy.
+  stale-while-revalidate=604800`) since data changes only on deploy. The one
+  exception is `/animes/random` (`no-store`), so every request gets a fresh pick.
 - Every 200 GET carries a deploy-scoped `ETag` (hash of the dataset); clients
   revalidating with `If-None-Match` get `304 Not Modified` with an empty body.
 - CORS is open (`*`) — this is a public API.

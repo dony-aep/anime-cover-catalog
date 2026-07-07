@@ -157,6 +157,17 @@ export const DetailQuerySchema = z.object({
   fields: FieldsSchema,
 });
 
+/** Query parameters accepted by GET /v1/animes/random: the list filters + fields. */
+export const RandomQuerySchema = ListQuerySchema.pick({
+  q: true,
+  genre: true,
+  theme: true,
+  demographic: true,
+  type: true,
+  year: true,
+  fields: true,
+});
+
 export const SlugParamSchema = z.object({
   slug: z.string().max(120).openapi({ param: { name: 'slug', in: 'path' }, example: 'ao-no-hako' }),
 });

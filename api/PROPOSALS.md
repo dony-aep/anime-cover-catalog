@@ -84,8 +84,8 @@ Backward compatible: single values keep working unchanged.
 
 **Status: implemented (2026-07-07).** One SHA-1 of the dataset per deploy,
 set on every 200 GET; `If-None-Match` (list and `W/` forms accepted) → `304`
-with no content headers. HEAD requests are not tagged (the cache middleware
-only marks GET, as before).
+with no content headers. HEAD requests initially kept the old GET-only
+behavior; fixed alongside proposal 4 — HEAD now mirrors GET caching headers.
 
 **Behavior before the change:** responses carry `Cache-Control: public, s-maxage=86400,
 stale-while-revalidate=604800`, which Vercel's edge consumes (clients see
@@ -107,7 +107,10 @@ the existing cache middleware; return `304` when `If-None-Match` matches.
 
 ## 4. Random anime — `GET /animes/random`
 
-**Current behavior:** no way to get a random pick; a client must fetch a page
+**Status: implemented (2026-07-07).** Honors the list filters and `fields`,
+`Cache-Control: no-store`, registered before `/{slug}`, empty pool → 404.
+
+**Behavior before the change:** no way to get a random pick; a client must fetch a page
 and choose locally, or know `total` and request a random page.
 
 **Why it's worth it:** enables "surprise me" / daily-pick features in the app
@@ -204,6 +207,6 @@ decide together with 8.
 2. **Multi-value filters + 6 (case-insensitive)** — ✅ implemented (2026-07-07).
 3. **ETag** — ✅ implemented (2026-07-07).
 4. **Accent-insensitive search (7)** — ✅ implemented (2026-07-07).
-5. **Random endpoint** — nice-to-have, do when a consumer feature needs it.
+5. **Random endpoint** — ✅ implemented (2026-07-07), plus the HEAD-headers fix.
 6. **Rate limiting** — reactive; ship when traffic justifies it.
 7. **8 and 9** — open discussions, decide before picking up.

@@ -10,6 +10,7 @@ import {
   ErrorSchema,
   FiltersResponseSchema,
   ListQuerySchema,
+  RandomQuerySchema,
   SlugParamSchema,
   type AnimeResponse,
 } from './_lib/api-schema.js';
@@ -18,6 +19,7 @@ import {
   findBySlug,
   getFilters,
   pickFields,
+  pickRandom,
   queryAnimes,
   toApiAnime,
 } from './_lib/data.js';
@@ -40,9 +42,15 @@ app.use('/*', cors());
 
 // Data is immutable between deploys, so let the edge cache absorb the load
 // and give clients a validator: one ETag per deploy, 304 on revalidation.
+// HEAD mirrors GET headers per the HTTP spec. Routes that set their own
+// Cache-Control (e.g. /animes/random with no-store) are left untouched.
 app.use('/*', async (c, next) => {
   await next();
-  if (c.req.method === 'GET' && c.res.status === 200) {
+  if (
+    (c.req.method === 'GET' || c.req.method === 'HEAD') &&
+    c.res.status === 200 &&
+    !c.res.headers.has('cache-control')
+  ) {
     c.header('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800');
     c.header('ETag', datasetEtag);
     const ifNoneMatch = c.req.header('if-none-match');
@@ -109,6 +117,44 @@ app.openapi(listRoute, (c) => {
   );
 });
 
+// Registered before the detail route so "random" is not matched as a slug.
+const randomRoute = createRoute({
+  method: 'get',
+  path: '/v1/animes/random',
+  tags: ['Animes'],
+  summary: 'Get a random anime',
+  description:
+    'Returns one random anime. Honors the list filters (q, genre, theme, demographic, ' +
+    'type, year) and `fields`. Not cached: every request gets a fresh pick.',
+  request: { query: RandomQuerySchema },
+  responses: {
+    200: {
+      content: { 'application/json': { schema: AnimeResponseSchema } },
+      description: 'A random anime',
+    },
+    400: {
+      content: { 'application/json': { schema: ErrorSchema } },
+      description: 'Invalid query parameters',
+    },
+    404: {
+      content: { 'application/json': { schema: ErrorSchema } },
+      description: 'No anime matches the requested filters',
+    },
+  },
+});
+
+app.openapi(randomRoute, (c) => {
+  const params = c.req.valid('query');
+  const anime = pickRandom(params);
+  if (!anime) {
+    return c.json({ error: 'No anime matches the requested filters' }, 404);
+  }
+  // Opt out of the edge cache: a cached "random" would pin one pick for a day.
+  c.header('Cache-Control', 'no-store');
+  const full = toApiAnime(anime, originOf(c));
+  return c.json((params.fields ? pickFields(full, params.fields) : full) as AnimeResponse, 200);
+});
+
 const detailRoute = createRoute({
   method: 'get',
   path: '/v1/animes/{slug}',
@@ -172,6 +218,7 @@ app.get('/v1', (c) => {
     endpoints: {
       animes: `${origin}/api/v1/animes`,
       anime: `${origin}/api/v1/animes/{slug}`,
+      random: `${origin}/api/v1/animes/random`,
       filters: `${origin}/api/v1/filters`,
     },
     attribution:

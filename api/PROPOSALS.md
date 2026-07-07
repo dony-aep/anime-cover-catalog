@@ -51,7 +51,12 @@ valid subset, unknown field → 400, detail route).
 
 ## 2. Multiple values per filter
 
-**Current behavior (verified 2026-07-07):** each filter accepts a single value.
+**Status: implemented (2026-07-07)**, together with proposal 6. Applies to
+`genre`, `theme`, `demographic` and `type`; `year` stays single-valued.
+Repeating a param (`?genre=A&genre=B`) still fails with 400 — the supported
+form is the comma-separated list.
+
+**Behavior before the change (verified 2026-07-07):** each filter accepts a single value.
 `?genre=Romance` works; `?genre=Romance,Comedy` treats the comma as a literal
 (matches nothing → `total: 0`), and repeating the param (`?genre=A&genre=B`)
 fails with `400 { "error": "Expected string, received array" }`.
@@ -134,9 +139,9 @@ Firewall rule first: zero code, adjustable without a deploy.
 
 ## 6. Case-insensitive filter matching
 
-**Status: planned — ships with proposal 2 (touches the same predicates).**
+**Status: implemented (2026-07-07), shipped with proposal 2.**
 
-**Current behavior (verified 2026-07-07):** filter values must match the
+**Behavior before the change (verified 2026-07-07):** filter values must match the
 dataset casing exactly: `?genre=Comedy` → 109 results, but `?genre=comedy`,
 `?genre=COMEDY` and `?type=tv` → `200` with 0 results, silently. A consumer
 that doesn't reproduce the exact casing concludes there is no data.
@@ -189,8 +194,7 @@ decide together with 8.
 ## Suggested order
 
 1. **Sparse fieldsets** — ✅ implemented (2026-07-07).
-2. **Multi-value filters** — complements 1; ships together with **6**
-   (case-insensitive matching), same predicates.
+2. **Multi-value filters + 6 (case-insensitive)** — ✅ implemented (2026-07-07).
 3. **ETag** — cheap, independent, pure win given immutable data.
 4. **Accent-insensitive search (7)** — small, self-contained.
 5. **Random endpoint** — nice-to-have, do when a consumer feature needs it.

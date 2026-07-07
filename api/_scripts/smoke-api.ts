@@ -15,6 +15,16 @@ const TOTAL = animes.length;
 const DEFAULT_LIMIT = 24;
 const TOTAL_PAGES = Math.ceil(TOTAL / DEFAULT_LIMIT);
 const ROMANCE_TOTAL = animes.filter((a) => a.genres.includes('Romance')).length;
+const COMEDY_TOTAL = animes.filter((a) => a.genres.includes('Comedy')).length;
+const ROMANCE_OR_COMEDY_TOTAL = animes.filter(
+  (a) => a.genres.includes('Romance') || a.genres.includes('Comedy'),
+).length;
+const ROMCOM_SCHOOL_TOTAL = animes.filter(
+  (a) =>
+    (a.genres.includes('Romance') || a.genres.includes('Comedy')) &&
+    a.themes.includes('School'),
+).length;
+const TV_TOTAL = animes.filter((a) => a.type === 'TV').length;
 const BLUE_TOTAL = animes.filter((a) =>
   [a.title, a.titleEnglish, a.titleJapanese].some((t) => t?.toLowerCase().includes('blue')),
 ).length;
@@ -70,6 +80,40 @@ async function main() {
   assert(
     romance.body.meta.total === ROMANCE_TOTAL,
     `Romance subset matches dataset (${ROMANCE_TOTAL}, got ${romance.body?.meta?.total})`,
+  );
+
+  // Multi-value filters: OR within a param…
+  const romCom = await get('/api/v1/animes?genre=Romance,Comedy&limit=1');
+  assert(romCom.status === 200, 'GET ?genre=Romance,Comedy -> 200');
+  assert(
+    romCom.body.meta.total === ROMANCE_OR_COMEDY_TOTAL,
+    `Romance OR Comedy matches dataset (${ROMANCE_OR_COMEDY_TOTAL}, got ${romCom.body?.meta?.total})`,
+  );
+  // …AND across params
+  const romComSchool = await get('/api/v1/animes?genre=Romance,Comedy&theme=School&limit=100');
+  assert(
+    romComSchool.body.meta.total === ROMCOM_SCHOOL_TOTAL,
+    `(Romance OR Comedy) AND School matches dataset (${ROMCOM_SCHOOL_TOTAL}, got ${romComSchool.body?.meta?.total})`,
+  );
+  assert(
+    romComSchool.body.data.every(
+      (a: any) =>
+        (a.genres.includes('Romance') || a.genres.includes('Comedy')) &&
+        a.themes.includes('School'),
+    ),
+    'combined filter results satisfy both predicates',
+  );
+
+  // Case-insensitive filter matching
+  const lowerGenre = await get('/api/v1/animes?genre=comedy&limit=1');
+  assert(
+    lowerGenre.body.meta.total === COMEDY_TOTAL,
+    `?genre=comedy matches Comedy case-insensitively (${COMEDY_TOTAL}, got ${lowerGenre.body?.meta?.total})`,
+  );
+  const lowerType = await get('/api/v1/animes?type=tv&limit=1');
+  assert(
+    lowerType.body.meta.total === TV_TOTAL,
+    `?type=tv matches TV case-insensitively (${TV_TOTAL}, got ${lowerType.body?.meta?.total})`,
   );
 
   // Search

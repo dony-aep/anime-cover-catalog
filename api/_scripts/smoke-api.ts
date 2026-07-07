@@ -28,6 +28,10 @@ const TV_TOTAL = animes.filter((a) => a.type === 'TV').length;
 const BLUE_TOTAL = animes.filter((a) =>
   [a.title, a.titleEnglish, a.titleJapanese].some((t) => t?.toLowerCase().includes('blue')),
 ).length;
+const fold = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const CAFE_TOTAL = animes.filter((a) =>
+  [a.title, a.titleEnglish, a.titleJapanese].some((t) => t && fold(t).includes('cafe')),
+).length;
 const WITH_ALTS = animes.find((a) => a.images.alternatives.length > 0);
 
 async function get(path: string) {
@@ -122,6 +126,19 @@ async function main() {
   assert(
     search.body.meta.total === BLUE_TOTAL,
     `search matches dataset (${BLUE_TOTAL}, got ${search.body?.meta?.total})`,
+  );
+
+  // Accent-insensitive search: plain "cafe" finds accented "Café" titles,
+  // and the accented query returns the same subset.
+  const cafe = await get('/api/v1/animes?q=cafe');
+  assert(
+    cafe.body.meta.total === CAFE_TOTAL && CAFE_TOTAL > 0,
+    `q=cafe matches accented titles (${CAFE_TOTAL}, got ${cafe.body?.meta?.total})`,
+  );
+  const cafeAccent = await get(`/api/v1/animes?q=${encodeURIComponent('café')}`);
+  assert(
+    cafeAccent.body.meta.total === CAFE_TOTAL,
+    `q=café returns the same subset (${CAFE_TOTAL}, got ${cafeAccent.body?.meta?.total})`,
   );
 
   // Sorting by year desc

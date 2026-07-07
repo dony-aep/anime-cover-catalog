@@ -45,16 +45,27 @@ export function findBySlug(slug: string): Anime | undefined {
   return animes.find((anime) => anime.slug === slug);
 }
 
+/**
+ * Lowercases and strips Latin combining diacritics so "roze" matches "Rozé".
+ * The stripped range excludes kana voicing marks, so Japanese titles are untouched.
+ */
+export function foldForSearch(value: string): string {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
 export function queryAnimes(params: ListParams): { items: Anime[]; total: number } {
   let result = animes;
 
   if (params.q) {
-    const q = params.q.toLowerCase();
+    const q = foldForSearch(params.q);
     result = result.filter(
       (a) =>
-        a.title.toLowerCase().includes(q) ||
-        (a.titleEnglish?.toLowerCase().includes(q) ?? false) ||
-        (a.titleJapanese?.toLowerCase().includes(q) ?? false),
+        foldForSearch(a.title).includes(q) ||
+        (a.titleEnglish ? foldForSearch(a.titleEnglish).includes(q) : false) ||
+        (a.titleJapanese ? foldForSearch(a.titleJapanese).includes(q) : false),
     );
   }
   // Multi-value filters: OR within a param, AND across params, case-insensitive.

@@ -66,7 +66,7 @@ export function queryAnimes(params: ListParams): { items: Anime[]; total: number
   return { items, total };
 }
 
-export function getFilters() {
+function buildFilters() {
   const genres = new Set<string>();
   const themes = new Set<string>();
   const demographics = new Set<string>();
@@ -89,4 +89,11 @@ export function getFilters() {
     types: sortStr(types),
     years: [...years].sort((a, b) => b - a),
   };
+}
+
+// The dataset is immutable between deploys, so compute the facets once.
+const filters = buildFilters();
+
+export function getFilters() {
+  return filters;
 }

@@ -1,8 +1,15 @@
+import { createHash } from 'node:crypto';
 import rawAnimes from '../_data/animes.json' with { type: 'json' };
 import type { Anime } from './schema.js';
 import type { AnimeField, AnimeResponse } from './api-schema.js';
 
 const animes = rawAnimes as Anime[];
+
+// The dataset is immutable between deploys, so one validator per deploy is
+// enough for every response derived from it (quoted, per the ETag grammar).
+export const datasetEtag = `"${createHash('sha1')
+  .update(JSON.stringify(animes))
+  .digest('hex')}"`;
 
 export interface ListParams {
   q?: string;

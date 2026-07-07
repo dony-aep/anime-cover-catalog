@@ -56,7 +56,13 @@ export function foldForSearch(value: string): string {
     .toLowerCase();
 }
 
-export function queryAnimes(params: ListParams): { items: Anime[]; total: number } {
+/** The filtering subset of ListParams, shared by the list and random routes. */
+export type FilterParams = Pick<
+  ListParams,
+  'q' | 'genre' | 'theme' | 'demographic' | 'type' | 'year'
+>;
+
+function applyFilters(params: FilterParams): Anime[] {
   let result = animes;
 
   if (params.q) {
@@ -87,6 +93,18 @@ export function queryAnimes(params: ListParams): { items: Anime[]; total: number
     result = result.filter((a) => set.has(a.type.toLowerCase()));
   }
   if (params.year !== undefined) result = result.filter((a) => a.releaseYear === params.year);
+
+  return result;
+}
+
+/** Picks one random anime from the filtered set (undefined when nothing matches). */
+export function pickRandom(params: FilterParams): Anime | undefined {
+  const pool = applyFilters(params);
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+export function queryAnimes(params: ListParams): { items: Anime[]; total: number } {
+  const result = applyFilters(params);
 
   const dir = params.order === 'asc' ? 1 : -1;
   const sorted = [...result].sort((a, b) => {

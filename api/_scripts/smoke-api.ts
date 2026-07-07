@@ -192,6 +192,42 @@ async function main() {
   const emptyFields = await get('/api/v1/animes?fields=');
   assert(emptyFields.status === 400, `empty fields rejected -> 400 (got ${emptyFields.status})`);
 
+  // Random pick — registered before /{slug}, so "random" is not a slug
+  const random = await get('/api/v1/animes/random');
+  assert(random.status === 200, 'GET /api/v1/animes/random -> 200');
+  assert(
+    animes.some((a) => a.slug === random.body?.slug),
+    `random returns a catalog anime (${random.body?.slug})`,
+  );
+  const randomFiltered = await get('/api/v1/animes/random?genre=Romance&fields=slug,genres');
+  assert(
+    randomFiltered.body?.genres?.includes('Romance') === true,
+    'random honors the list filters',
+  );
+  assert(
+    Object.keys(randomFiltered.body ?? {}).sort().join(',') === 'genres,slug',
+    'random supports sparse fieldsets',
+  );
+  const randomEmpty = await get('/api/v1/animes/random?year=1800');
+  assert(randomEmpty.status === 404, `random with empty pool -> 404 (got ${randomEmpty.status})`);
+  const randomRes = await app.fetch(new Request(BASE + '/api/v1/animes/random'));
+  assert(
+    randomRes.headers.get('cache-control') === 'no-store',
+    `random opts out of the cache (${randomRes.headers.get('cache-control')})`,
+  );
+  assert(!randomRes.headers.get('etag'), 'random carries no ETag');
+
+  // HEAD mirrors GET caching headers
+  const head = await app.fetch(new Request(BASE + '/api/v1/animes?limit=1', { method: 'HEAD' }));
+  assert(
+    head.status === 200 && !!head.headers.get('etag'),
+    `HEAD gets the ETag (status ${head.status})`,
+  );
+  assert(
+    (head.headers.get('cache-control') ?? '').includes('s-maxage=86400'),
+    'HEAD gets Cache-Control',
+  );
+
   // 404
   const missing = await get('/api/v1/animes/does-not-exist');
   assert(missing.status === 404, 'GET unknown slug -> 404');

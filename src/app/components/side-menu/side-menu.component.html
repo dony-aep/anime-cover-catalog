@@ -49,7 +49,7 @@
         <div class="menu-section">
             <div class="section-title">Filters</div>
             <div class="filters-list">
-                @for (filter of filters; track filter.type + '-' + filter.value) {
+                @for (filter of filters(); track filter.type + '-' + filter.value) {
                     <a 
                         class="filter-button"
                         [routerLink]="getRouterLinkForFilter(filter)"

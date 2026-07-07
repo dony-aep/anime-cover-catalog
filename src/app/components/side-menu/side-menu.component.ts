@@ -20,7 +20,7 @@ export class SideMenuComponent {
   menuClosed = output<void>();
 
   favoritesCount = this.favoritesService.favoritesCount;
-  filters: FilterOption[] = this.filterService.getFilters();
+  filters = this.filterService.filters;
 
   filterCounts = computed(() => {
     const counts: { [key: string]: number } = {};

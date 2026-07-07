@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, inject, OnInit, computed } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject, computed, effect } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { AnimeService } from '../../services/anime.service';
 import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
@@ -20,18 +21,23 @@ import { FilterService } from '../../services/filter.service';
   styleUrls: ['./catalog-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CatalogPageComponent implements OnInit {
+export class CatalogPageComponent {
   private route = inject(ActivatedRoute);
   animeService = inject(AnimeService);
   private filterService = inject(FilterService);
 
+  private routeParams = toSignal(this.route.paramMap);
+
   // Show top-controls only when there are results to display
   showTopControls = computed(() => !this.animeService.noResults());
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const type = params.get('type');
-      const routeParam = params.get('value');
+  constructor() {
+    // Re-runs when the route changes AND when the catalog finishes loading,
+    // so deep links resolve once the derived filter list is available.
+    effect(() => {
+      const params = this.routeParams();
+      const type = params?.get('type');
+      const routeParam = params?.get('value');
 
       if (type && routeParam) {
         const value = this.filterService.getValueFromRouteParam(routeParam);
@@ -45,4 +51,4 @@ export class CatalogPageComponent implements OnInit {
       }
     });
   }
-} 
+}

@@ -15,7 +15,7 @@ export class FilterBarComponent {
   private animeService = inject(AnimeService);
   private filterService = inject(FilterService);
 
-  filters: FilterOption[] = this.filterService.getFilters();
+  filters = this.filterService.filters;
 
   filterCounts = computed(() => {
     const counts: { [key: string]: number } = {};

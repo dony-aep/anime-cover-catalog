@@ -21,7 +21,9 @@ A branded, human-friendly guide also lives in the app at `/docs`
 ### `GET /api/v1/animes` query params
 
 `q` (search title/EN/JP, max 100 chars) · `genre` · `theme` · `demographic` · `type` ·
-`year` · `sort=title|year` · `order=asc|desc` · `page` (≥1) · `limit` (1–100, default 24)
+`year` · `sort=title|year` · `order=asc|desc` · `page` (≥1) · `limit` (1–100, default 24) ·
+`fields` (comma-separated subset of fields to return, e.g. `fields=slug,title,genres`;
+unknown names → 400; also accepted on `/animes/{slug}`)
 
 Response envelope:
 

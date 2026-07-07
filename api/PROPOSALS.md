@@ -1,7 +1,7 @@
 # API Proposals — flexibility improvements
 
-Proposals for making the public API more flexible for consumers. None of these
-are implemented yet; each entry explains the current behavior (verified against
+Proposals for making the public API more flexible for consumers. Each entry
+notes its status, explains the behavior before the change (verified against
 production), why the change is worth it, and a minimal design consistent with
 the existing code (`@hono/zod-openapi` validation, `{ error }` failures,
 edge-cached responses).
@@ -14,7 +14,12 @@ preview deploy.
 
 ## 1. Sparse fieldsets — `fields` query param
 
-**Current behavior (verified 2026-07-07):** `GET /api/v1/animes?fields=genres`
+**Status: implemented (2026-07-07).** `fields` works on both `GET /animes` and
+`GET /animes/{slug}`; unknown names → `400 { error }`. Open decision resolved:
+the response contains exactly the requested fields — `slug` is not implicitly
+added.
+
+**Behavior before the change (verified 2026-07-07):** `GET /api/v1/animes?fields=genres`
 returns `200` with all 15 fields per anime. Unknown query params are silently
 stripped by the Zod schema, so the client has no way to trim the payload.
 

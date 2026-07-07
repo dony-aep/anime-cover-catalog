@@ -6,12 +6,14 @@ import { getRequestListener } from '@hono/node-server';
 import {
   AnimeListResponseSchema,
   AnimeResponseSchema,
+  DetailQuerySchema,
   ErrorSchema,
   FiltersResponseSchema,
   ListQuerySchema,
   SlugParamSchema,
+  type AnimeResponse,
 } from './_lib/api-schema.js';
-import { findBySlug, getFilters, queryAnimes, toApiAnime } from './_lib/data.js';
+import { findBySlug, getFilters, pickFields, queryAnimes, toApiAnime } from './_lib/data.js';
 
 const app = new OpenAPIHono({
   // Standardize request-validation failures to the same { error } shape as the
@@ -70,9 +72,12 @@ app.openapi(listRoute, (c) => {
   const params = c.req.valid('query');
   const origin = originOf(c);
   const { items, total } = queryAnimes(params);
+  const data = items.map((a) => toApiAnime(a, origin));
   return c.json(
     {
-      data: items.map((a) => toApiAnime(a, origin)),
+      // The documented schema is the full Anime; `fields` projects it, so the
+      // partial objects are cast back to satisfy the route typing.
+      data: (params.fields ? data.map((a) => pickFields(a, params.fields!)) : data) as AnimeResponse[],
       meta: {
         page: params.page,
         limit: params.limit,
@@ -89,11 +94,15 @@ const detailRoute = createRoute({
   path: '/v1/animes/{slug}',
   tags: ['Animes'],
   summary: 'Get anime by slug',
-  request: { params: SlugParamSchema },
+  request: { params: SlugParamSchema, query: DetailQuerySchema },
   responses: {
     200: {
       content: { 'application/json': { schema: AnimeResponseSchema } },
       description: 'The requested anime',
+    },
+    400: {
+      content: { 'application/json': { schema: ErrorSchema } },
+      description: 'Invalid query parameters',
     },
     404: {
       content: { 'application/json': { schema: ErrorSchema } },
@@ -104,11 +113,14 @@ const detailRoute = createRoute({
 
 app.openapi(detailRoute, (c) => {
   const { slug } = c.req.valid('param');
+  const { fields } = c.req.valid('query');
   const anime = findBySlug(slug);
   if (!anime) {
     return c.json({ error: `Anime not found: ${slug}` }, 404);
   }
-  return c.json(toApiAnime(anime, originOf(c)), 200);
+  const full = toApiAnime(anime, originOf(c));
+  // Same cast rationale as the list route: `fields` projects the documented shape.
+  return c.json((fields ? pickFields(full, fields) : full) as AnimeResponse, 200);
 });
 
 const filtersRoute = createRoute({

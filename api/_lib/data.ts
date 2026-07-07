@@ -1,6 +1,6 @@
 import rawAnimes from '../_data/animes.json' with { type: 'json' };
 import type { Anime } from './schema.js';
-import type { AnimeResponse } from './api-schema.js';
+import type { AnimeField, AnimeResponse } from './api-schema.js';
 
 const animes = rawAnimes as Anime[];
 
@@ -27,6 +27,11 @@ export function toApiAnime(anime: Anime, origin: string): AnimeResponse {
       alternatives: anime.images.alternatives.map(toUrl),
     },
   };
+}
+
+/** Projects an anime onto the requested fields (sparse fieldset). */
+export function pickFields(anime: AnimeResponse, fields: AnimeField[]): Partial<AnimeResponse> {
+  return Object.fromEntries(fields.map((f) => [f, anime[f]])) as Partial<AnimeResponse>;
 }
 
 export function findBySlug(slug: string): Anime | undefined {

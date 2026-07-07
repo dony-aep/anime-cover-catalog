@@ -28,6 +28,36 @@ export const AnimeResponseSchema = z
 
 export type AnimeResponse = z.infer<typeof AnimeResponseSchema>;
 
+/** Field names a client may request through the `fields` query param. */
+export const ANIME_FIELDS = AnimeResponseSchema.keyof().options;
+
+export type AnimeField = (typeof ANIME_FIELDS)[number];
+
+const FieldsSchema = z
+  .string()
+  .transform((value) => value.split(',').map((f) => f.trim()).filter(Boolean))
+  .pipe(
+    z
+      .array(
+        z.enum(ANIME_FIELDS, {
+          errorMap: (_issue, ctx) => ({ message: `Unknown field: ${ctx.data}` }),
+        }),
+      )
+      .min(1, { message: 'fields must name at least one field' }),
+  )
+  .optional()
+  .openapi({
+    param: {
+      name: 'fields',
+      in: 'query',
+      description:
+        'Comma-separated subset of fields to return. When present, response objects ' +
+        `contain only the requested fields. Valid names: ${ANIME_FIELDS.join(', ')}.`,
+    },
+    example: 'slug,title,genres',
+    type: 'string',
+  });
+
 export const MetaSchema = z
   .object({
     page: z.number().int().openapi({ example: 1 }),
@@ -101,6 +131,12 @@ export const ListQuerySchema = z.object({
     .max(100)
     .default(24)
     .openapi({ param: { name: 'limit', in: 'query' }, example: 24 }),
+  fields: FieldsSchema,
+});
+
+/** Query parameters accepted by GET /v1/animes/{slug}. */
+export const DetailQuerySchema = z.object({
+  fields: FieldsSchema,
 });
 
 export const SlugParamSchema = z.object({

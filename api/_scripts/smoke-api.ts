@@ -4,6 +4,9 @@
  * Expected values are derived from the canonical dataset so the test keeps
  * passing when the catalog grows or changes.
  */
+import { readdirSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { app } from '../index.js';
 import rawAnimes from '../_data/animes.json' with { type: 'json' };
 import type { Anime } from '../_lib/schema.js';
@@ -72,6 +75,43 @@ async function main() {
     typeof list.body.data[0].images.cover === 'string' &&
       list.body.data[0].images.cover.startsWith('https://catalog.example.com/assets/'),
     `absolute image URL (got ${list.body?.data?.[0]?.images?.cover})`,
+  );
+
+  // Thumbnails: optimized variants exposed next to the originals
+  const firstImages = list.body.data[0].images;
+  assert(
+    typeof firstImages.thumb === 'string' &&
+      firstImages.thumb.startsWith(`${BASE}/assets/AnimeImages_thumbs/`),
+    `thumb is absolute under /assets/AnimeImages_thumbs/ (got ${firstImages?.thumb})`,
+  );
+  assert(
+    firstImages.thumb?.split('/').pop() === firstImages.cover.split('/').pop(),
+    'thumb keeps the cover filename',
+  );
+  assert(
+    Array.isArray(firstImages.alternativesThumbs) &&
+      firstImages.alternativesThumbs.length === firstImages.alternatives.length,
+    'alternativesThumbs parallels alternatives',
+  );
+
+  // Thumbnail coverage: every image the dataset references has a same-named
+  // thumb, and the thumbs directory carries no orphans, so the derived thumb
+  // URLs never 404.
+  const assetsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../src/assets');
+  const coverFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages')));
+  const thumbFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages_thumbs')));
+  const referenced = animes
+    .flatMap((a) => [a.images.cover, ...a.images.alternatives])
+    .map((p) => p.split('/').pop()!);
+  const missingThumbs = referenced.filter((f) => !thumbFiles.has(f));
+  assert(
+    missingThumbs.length === 0,
+    `every dataset image has a thumb (missing: ${missingThumbs.slice(0, 3).join(', ') || 'none'})`,
+  );
+  const orphanThumbs = [...thumbFiles].filter((f) => !coverFiles.has(f));
+  assert(
+    orphanThumbs.length === 0,
+    `no orphan thumbs (found: ${orphanThumbs.slice(0, 3).join(', ') || 'none'})`,
   );
 
   // Filter by genre
@@ -204,6 +244,19 @@ async function main() {
   assert(
     detail.body.images.alternatives.length === WITH_ALTS.images.alternatives.length,
     `alt covers match dataset (${WITH_ALTS.images.alternatives.length}, got ${detail.body?.images?.alternatives?.length})`,
+  );
+  assert(
+    detail.body.images.alternativesThumbs?.length === WITH_ALTS.images.alternatives.length &&
+      detail.body.images.alternativesThumbs.every((u: string) =>
+        u.startsWith(`${BASE}/assets/AnimeImages_thumbs/`),
+      ),
+    'alternativesThumbs are thumb URLs, one per alternative',
+  );
+  const sparseImages = await get(`/api/v1/animes/${WITH_ALTS.slug}?fields=images`);
+  assert(
+    Object.keys(sparseImages.body?.images ?? {}).sort().join(',') ===
+      'alternatives,alternativesThumbs,cover,thumb',
+    `fields=images includes the thumb fields (${Object.keys(sparseImages.body?.images ?? {}).join(',')})`,
   );
 
   // Sparse fieldsets

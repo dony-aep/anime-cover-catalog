@@ -24,6 +24,11 @@ export interface ListParams {
   limit: number;
 }
 
+// Thumbs live in a sibling directory with identical filenames (see
+// scripts/process_images.py), so the path is derived instead of stored.
+const toThumbPath = (path: string) =>
+  path.replace('assets/AnimeImages/', 'assets/AnimeImages_thumbs/');
+
 /** Converts a stored anime into its API representation with absolute image URLs. */
 export function toApiAnime(anime: Anime, origin: string): AnimeResponse {
   const toUrl = (path: string) => `${origin}/${encodeURI(path)}`;
@@ -31,7 +36,9 @@ export function toApiAnime(anime: Anime, origin: string): AnimeResponse {
     ...anime,
     images: {
       cover: toUrl(anime.images.cover),
+      thumb: toUrl(toThumbPath(anime.images.cover)),
       alternatives: anime.images.alternatives.map(toUrl),
+      alternativesThumbs: anime.images.alternatives.map((p) => toUrl(toThumbPath(p))),
     },
   };
 }

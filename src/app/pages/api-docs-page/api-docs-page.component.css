@@ -118,6 +118,20 @@
   margin-top: 1.25rem;
 }
 
+.llms-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.llms-note .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--icon-color);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

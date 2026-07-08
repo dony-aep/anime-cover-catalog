@@ -236,6 +236,7 @@ app.get('/v1', (c) => {
     version: '1.0.0',
     description: 'Public, read-only API to browse the curated anime cover catalog.',
     documentation: `${origin}/docs`,
+    llms: `${origin}/llms.txt`,
     openapi: `${origin}/api/v1/openapi.json`,
     swagger: `${origin}/api/v1/docs`,
     endpoints: {

@@ -19,6 +19,11 @@ alongside the Angular app.
 A branded, human-friendly guide also lives in the app at `/docs`
 (`src/app/pages/api-docs-page`), with the Swagger UI linked from there.
 
+For LLMs/agents there is an [`llms.txt`](https://llmstxt.org) with the full
+reference in one markdown file, served at the site root (`public/llms.txt`).
+**When the API surface changes, update all three: this README, the `/docs`
+page and `public/llms.txt`.**
+
 ### `GET /api/v1/animes` query params
 
 `q` (search title/EN/JP, case- and accent-insensitive, max 100 chars) · `genre` · `theme` · `demographic` · `type`

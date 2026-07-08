@@ -118,6 +118,30 @@
   margin-top: 1.25rem;
 }
 
+.llms-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  max-width: 60ch;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.llms-note .material-symbols-outlined {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  font-size: 18px;
+  color: var(--icon-color);
+}
+
+.llms-note a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

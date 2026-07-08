@@ -350,6 +350,10 @@ async function main() {
   assert(index.status === 200, 'GET /api/v1 -> 200');
   assert(!!index.body.documentation && !!index.body.endpoints, 'index exposes documentation + endpoints');
   assert(typeof index.body.endpoints.animes === 'string', 'index links the animes endpoint');
+  assert(
+    index.body.llms === `${BASE}/llms.txt`,
+    `index links the LLM-friendly docs (${index.body?.llms})`,
+  );
 
   // OpenAPI spec
   const spec = await get('/api/v1/openapi.json');

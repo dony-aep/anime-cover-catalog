@@ -75,12 +75,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td><code>q</code></td><td>string</td><td>—</td><td>Search across title, English and Japanese titles (max 100 characters).</td></tr>
-          <tr><td><code>genre</code></td><td>string</td><td>—</td><td>Exact genre, e.g. <code>Romance</code>.</td></tr>
-          <tr><td><code>theme</code></td><td>string</td><td>—</td><td>Exact theme, e.g. <code>School</code>.</td></tr>
-          <tr><td><code>demographic</code></td><td>string</td><td>—</td><td>Exact demographic, e.g. <code>Shounen</code>.</td></tr>
-          <tr><td><code>type</code></td><td>string</td><td>—</td><td>Exact type, e.g. <code>TV</code>, <code>Movie</code>.</td></tr>
+          <tr><td><code>q</code></td><td>string</td><td>—</td><td>Search across title, English and Japanese titles. Case- and accent-insensitive (<code>roze</code> finds <em>Rozé</em>). Max 100 characters.</td></tr>
+          <tr><td><code>genre</code></td><td>string</td><td>—</td><td>One genre or a comma-separated list (OR), e.g. <code>Romance,Comedy</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
+          <tr><td><code>theme</code></td><td>string</td><td>—</td><td>One theme or a comma-separated list (OR), e.g. <code>School</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
+          <tr><td><code>demographic</code></td><td>string</td><td>—</td><td>One demographic or a comma-separated list (OR), e.g. <code>Shounen</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
+          <tr><td><code>type</code></td><td>string</td><td>—</td><td>One type or a comma-separated list (OR), e.g. <code>TV,Movie</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
           <tr><td><code>year</code></td><td>integer</td><td>—</td><td>Release year, e.g. <code>2024</code>.</td></tr>
+          <tr><td><code>fields</code></td><td>string</td><td>all fields</td><td>Comma-separated subset of fields to return, e.g. <code>slug,title,genres</code>. Unknown names → <code>400</code>.</td></tr>
           <tr><td><code>sort</code></td><td><code>title</code> | <code>year</code></td><td><code>title</code></td><td>Field to sort by.</td></tr>
           <tr><td><code>order</code></td><td><code>asc</code> | <code>desc</code></td><td><code>asc</code></td><td>Sort direction.</td></tr>
           <tr><td><code>page</code></td><td>integer ≥ 1</td><td><code>1</code></td><td>Page number.</td></tr>
@@ -88,6 +89,12 @@
         </tbody>
       </table>
     </div>
+
+    <p class="notes">
+      Different parameters combine with <strong>AND</strong>; commas inside one parameter
+      combine with <strong>OR</strong> — <code>?genre=Romance,Comedy&amp;theme=School</code>
+      means (Romance OR Comedy) AND School.
+    </p>
 
     <h3>Example request</h3>
     @let listCurl = example('list-curl');
@@ -131,15 +138,24 @@
       "type": "TV"
     {{ '}' }}
   ],
-  "meta": {{ '{' }} "page": 1, "limit": 24, "total": 254, "totalPages": 11 {{ '}' }}
+  "meta": {{ '{' }} "page": 1, "limit": 24, "total": 254, "totalPages": 11 {{ '}' }},
+  "links": {{ '{' }} "next": "{{ baseUrl }}/animes?page=2", "prev": null {{ '}' }}
 {{ '}' }}</code></pre>
     </div>
+    <p class="notes">
+      <code>links.next</code> / <code>links.prev</code> are ready-to-follow absolute URLs that
+      keep your active filters (<code>null</code> on the first/last page).
+    </p>
   </section>
 
   <!-- Endpoint: detail -->
   <section class="endpoint" aria-labelledby="ep-detail">
     <h2 id="ep-detail"><span class="method get">GET</span> <code>/animes/{{ '{' }}slug{{ '}' }}</code></h2>
-    <p>Returns a single anime by its stable <code>slug</code>. Responds <code>404</code> if not found.</p>
+    <p>
+      Returns a single anime by its stable <code>slug</code>. Responds <code>404</code> if not
+      found. Also accepts <code>fields</code> to trim the response, e.g.
+      <code>?fields=title,synopsis,studios</code>.
+    </p>
 
     @let detailCurl = example('detail-curl');
     <div class="code-block">
@@ -152,6 +168,31 @@
         </button>
       </div>
       <pre><code>{{ detailCurl.code }}</code></pre>
+    </div>
+  </section>
+
+  <!-- Endpoint: random -->
+  <section class="endpoint" aria-labelledby="ep-random">
+    <h2 id="ep-random"><span class="method get">GET</span> <code>/animes/random</code></h2>
+    <p>
+      Returns one random anime — ideal for "surprise me" or daily-pick features. Honors the
+      list filters (<code>q</code>, <code>genre</code>, <code>theme</code>,
+      <code>demographic</code>, <code>type</code>, <code>year</code>) and <code>fields</code>;
+      responds <code>404</code> when no anime matches. Never cached
+      (<code>Cache-Control: no-store</code>), so every request gets a fresh pick.
+    </p>
+
+    @let randomCurl = example('random-curl');
+    <div class="code-block">
+      <div class="code-head">
+        <span class="code-lang">{{ randomCurl.label }}</span>
+        <button type="button" class="copy-btn" [class.copied]="copiedId() === randomCurl.id"
+          (click)="copy(randomCurl.id, randomCurl.code)"
+          [attr.aria-label]="copiedId() === randomCurl.id ? 'Copied' : 'Copy cURL example'">
+          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === randomCurl.id ? 'check' : 'content_copy' }}</span>
+        </button>
+      </div>
+      <pre><code>{{ randomCurl.code }}</code></pre>
     </div>
   </section>
 
@@ -179,8 +220,9 @@
     <h2 id="ep-limits">Limits &amp; fair use</h2>
     <ul class="notes">
       <li><strong>Pagination:</strong> <code>limit</code> is capped at <strong>100</strong> items per page (default 24). Use <code>page</code> to iterate.</li>
-      <li><strong>Caching:</strong> responses are cached on Vercel's edge network (server-side — not your browser) via <code>Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>: fresh for 24&nbsp;h, then served stale for up to 7&nbsp;days while it revalidates. The cache is invalidated on each deploy, so most requests never reach the function.</li>
-      <li><strong>Be kind:</strong> there is no hard rate limit today, but please cache on your side and avoid hammering the API. Abusive traffic may be throttled.</li>
+      <li><strong>Caching:</strong> responses are cached on Vercel's edge network (server-side — not your browser) via <code>Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>: fresh for 24&nbsp;h, then served stale for up to 7&nbsp;days while it revalidates. The cache is invalidated on each deploy, so most requests never reach the function. <code>/animes/random</code> is the exception: never cached.</li>
+      <li><strong>Conditional requests:</strong> every 200 response carries an <code>ETag</code> that changes only on deploy. Re-fetch with <code>If-None-Match</code> and you'll get <code>304 Not Modified</code> with an empty body when nothing changed — free bandwidth for repeat clients.</li>
+      <li><strong>Rate limit:</strong> traffic is rate-limited per IP (100 requests per minute). Above that you may receive <code>429</code> responses — cache on your side and use the edge-friendly patterns above and you'll never notice it.</li>
       <li><strong>CORS:</strong> open to any origin — safe to call from the browser.</li>
     </ul>
   </section>
@@ -201,8 +243,10 @@
         </thead>
         <tbody>
           <tr><td><code>200</code></td><td>Success.</td></tr>
-          <tr><td><code>400</code></td><td>Invalid query parameter — e.g. <code>limit</code> above 100, or a non-numeric <code>year</code>. The <code>error</code> message says what failed.</td></tr>
-          <tr><td><code>404</code></td><td>No anime matches the requested <code>slug</code>.</td></tr>
+          <tr><td><code>304</code></td><td>Not modified — your <code>If-None-Match</code> ETag is still current; the body is empty.</td></tr>
+          <tr><td><code>400</code></td><td>Invalid query parameter — e.g. <code>limit</code> above 100, an unknown <code>fields</code> name, or a <code>genre</code>/<code>theme</code>/<code>demographic</code>/<code>type</code> value that doesn't exist in the catalog (the message points you at <code>/filters</code>).</td></tr>
+          <tr><td><code>404</code></td><td>No anime matches the requested <code>slug</code>, or no anime satisfies the filters passed to <code>/animes/random</code>.</td></tr>
+          <tr><td><code>429</code></td><td>Rate limit exceeded (100 requests per minute per IP) — back off and retry.</td></tr>
         </tbody>
       </table>
     </div>

@@ -10,7 +10,9 @@ export const AnimeResponseSchema = z
     images: z
       .object({
         cover: z.string().url(),
+        thumb: z.string().url(),
         alternatives: z.array(z.string().url()),
+        alternativesThumbs: z.array(z.string().url()),
       })
       .openapi('AnimeImages'),
     releaseYear: z.number().int().nullable().openapi({ example: 2024 }),

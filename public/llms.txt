@@ -3,7 +3,7 @@
 > Public, read-only REST API to browse a curated anime catalog (~254 titles):
 > titles, metadata and cover images. JSON over HTTPS, no API key, CORS open to
 > any origin, edge-cached. This file is the complete API reference for LLMs and
-> agents — reading it is sufficient; there is no need to scrape the HTML pages.
+> agents - reading it is sufficient; there is no need to scrape the HTML pages.
 
 Base URL: `https://animecovercatalog.vercel.app/api/v1` (all paths below are
 relative to it; the API also works from any deployment origin).
@@ -13,32 +13,32 @@ Machine-readable spec: `/api/v1/openapi.json` (OpenAPI 3.0). Interactive docs:
 
 ## Endpoints
 
-- `GET /api/v1` — discovery index (JSON links to every endpoint and to this file)
-- `GET /api/v1/animes` — paginated, filterable, sortable list
-- `GET /api/v1/animes/random` — one random anime; honors the list filters; never cached
-- `GET /api/v1/animes/{slug}` — single anime by its stable slug (404 if missing)
-- `GET /api/v1/filters` — distinct genres, themes, demographics, types and years in the catalog
+- `GET /api/v1` - discovery index (JSON links to every endpoint and to this file)
+- `GET /api/v1/animes` - paginated, filterable, sortable list
+- `GET /api/v1/animes/random` - one random anime; honors the list filters; never cached
+- `GET /api/v1/animes/{slug}` - single anime by its stable slug (404 if missing)
+- `GET /api/v1/filters` - distinct genres, themes, demographics, types and years in the catalog
 
-## GET /animes — query parameters
+## GET /animes - query parameters
 
 | Parameter | Type | Default | Behavior |
 | --- | --- | --- | --- |
-| `q` | string ≤ 100 chars | — | Searches title, English and Japanese titles. Case- and accent-insensitive (`roze` matches "Rozé"). |
-| `genre` | string | — | One value or comma-separated list, e.g. `Romance,Comedy` (OR). Case-insensitive. Unknown value → 400. |
-| `theme` | string | — | Same semantics as `genre`. |
-| `demographic` | string | — | Same semantics as `genre`. |
-| `type` | string | — | Same semantics as `genre`, e.g. `TV,Movie`. |
-| `year` | integer | — | Exact release year. A year with no entries returns an empty list (not 400). |
-| `fields` | string | all fields | Comma-separated subset of fields to return, e.g. `slug,title,genres`. Unknown name → 400. Also accepted by `/animes/{slug}` and `/animes/random`. |
-| `sort` | `title` \| `year` | `title` | Sort field. |
-| `order` | `asc` \| `desc` | `asc` | Sort direction. |
-| `page` | integer ≥ 1 | `1` | Page number. |
-| `limit` | integer 1–100 | `24` | Items per page. |
+| `q` | string, max 100 chars | none | Searches title, English and Japanese titles. Case- and accent-insensitive (`roze` matches "Rozé"). |
+| `genre` | string | none | One value or comma-separated list, e.g. `Romance,Comedy` (OR). Case-insensitive. Unknown value -> 400. |
+| `theme` | string | none | Same semantics as `genre`. |
+| `demographic` | string | none | Same semantics as `genre`. |
+| `type` | string | none | Same semantics as `genre`, e.g. `TV,Movie`. |
+| `year` | integer | none | Exact release year. A year with no entries returns an empty list (not 400). |
+| `fields` | string | all fields | Comma-separated subset of fields to return, e.g. `slug,title,genres`. Unknown name -> 400. Also accepted by `/animes/{slug}` and `/animes/random`. |
+| `sort` | `title` or `year` | `title` | Sort field. |
+| `order` | `asc` or `desc` | `asc` | Sort direction. |
+| `page` | integer >= 1 | `1` | Page number. |
+| `limit` | integer 1-100 | `24` | Items per page. |
 
 Filter semantics: different parameters combine with AND; commas inside one
 parameter combine with OR. `?genre=Romance,Comedy&theme=School` means
 (Romance OR Comedy) AND School. Valid facet values come from `GET /api/v1/filters`.
-Repeating a parameter (`?genre=A&genre=B`) is not supported (400) — use commas.
+Repeating a parameter (`?genre=A&genre=B`) is not supported (400) - use commas.
 
 ## List response envelope
 
@@ -60,37 +60,37 @@ active query parameters; `null` on the first/last page.
 
 | Field | Type |
 | --- | --- |
-| `slug` | string — stable identifier, e.g. `ao-no-hako` |
+| `slug` | string - stable identifier, e.g. `ao-no-hako` |
 | `title` | string |
-| `titleEnglish` | string \| null |
-| `titleJapanese` | string \| null |
-| `images` | `{ "cover": string, "alternatives": string[] }` — absolute image URLs |
-| `releaseYear` | integer \| null |
+| `titleEnglish` | string or null |
+| `titleJapanese` | string or null |
+| `images` | `{ "cover": string, "alternatives": string[] }` - absolute image URLs |
+| `releaseYear` | integer or null |
 | `studios` | string[] |
 | `type` | string, e.g. `TV`, `Movie` |
-| `demographic` | string \| null, e.g. `Shounen` |
+| `demographic` | string or null, e.g. `Shounen` |
 | `themes` | string[] |
 | `genres` | string[] |
 | `explicitGenres` | string[] |
-| `episodes` | integer \| null |
+| `episodes` | integer or null |
 | `synopsis` | string |
-| `trailerUrl` | string \| null |
+| `trailerUrl` | string or null |
 
 ## Errors
 
 Every error uses the same JSON shape: `{ "error": "<message>" }`.
 
-- `200` — success
-- `304` — Not Modified (your `If-None-Match` ETag is current; empty body)
-- `400` — invalid parameter: `limit` > 100, unknown `fields` name, or a facet value not present in the catalog (message points at `/api/v1/filters`)
-- `404` — unknown `slug`, or no anime matches the filters passed to `/animes/random`
-- `429` — rate limit exceeded (see below); back off and retry
+- `200` - success
+- `304` - Not Modified (your `If-None-Match` ETag is current; empty body)
+- `400` - invalid parameter: `limit` > 100, unknown `fields` name, or a facet value not present in the catalog (message points at `/api/v1/filters`)
+- `404` - unknown `slug`, or no anime matches the filters passed to `/animes/random`
+- `429` - rate limit exceeded (see below); back off and retry
 
 ## Caching, conditional requests and rate limit
 
 - Responses are edge-cached (`Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800`); data changes only on deploy. Exception: `/animes/random` is `no-store`.
 - Every 200 carries an `ETag` that changes only on deploy. Re-fetch with `If-None-Match` to get `304` with an empty body.
-- Rate limit: 100 requests per minute per IP → `429`. Cache on your side and use `fields` to trim payloads; typical usage never hits it.
+- Rate limit: 100 requests per minute per IP -> `429`. Cache on your side and use `fields` to trim payloads; typical usage never hits it.
 
 ## Examples
 
@@ -103,6 +103,6 @@ curl "https://animecovercatalog.vercel.app/api/v1/filters"
 
 ## Fair use & license
 
-- Please build something new — don't clone this catalog into the same kind of product. The API is open for other uses: apps, integrations, experiments.
-- Metadata is extracted from public sources (e.g. MyAnimeList) and curated by this project. Cover images belong to their respective rights holders — credit the original works.
+- Please build something new - don't clone this catalog into the same kind of product. The API is open for other uses: apps, integrations, experiments.
+- Metadata is extracted from public sources (e.g. MyAnimeList) and curated by this project. Cover images belong to their respective rights holders - credit the original works.
 - Educational, non-commercial use. Provided as-is, with no uptime guarantee.

@@ -9,6 +9,13 @@ verificó que los 385 covers ya tenían thumb homónimo; solo hubo que borrar 6
 thumbs huérfanos (versiones con extensión vieja, sin original ni referencia en
 el dataset) — no hizo falta regenerar.
 
+Lección post-deploy: el ETag se calculaba solo sobre `animes.json`, y este
+cambio alteró la forma de la respuesta **sin** tocar el dataset, así que los
+clientes con caché revalidaban con el ETag viejo, recibían `304` y seguían
+viendo el cuerpo sin thumbs indefinidamente. Fix: `RESPONSE_SHAPE_VERSION`
+dentro del hash (`api/_lib/data.ts`) — subirla cada vez que cambie la
+representación sin cambiar el dataset.
+
 Sigue el estándar de verificación de `PROPOSALS.md`: extender
 `api/_scripts/smoke-api.ts` con casos que fallan antes del cambio y pasan
 después, y confirmar en un preview deploy.

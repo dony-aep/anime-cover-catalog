@@ -5,10 +5,16 @@ import type { AnimeField, AnimeResponse } from './api-schema.js';
 
 const animes = rawAnimes as Anime[];
 
+// Bump when the response representation changes without a dataset change
+// (e.g. new derived fields like images.thumb), so cached clients revalidating
+// with If-None-Match get a 200 with the new shape instead of a 304 that pins
+// the stale body indefinitely.
+const RESPONSE_SHAPE_VERSION = '2';
+
 // The dataset is immutable between deploys, so one validator per deploy is
 // enough for every response derived from it (quoted, per the ETag grammar).
 export const datasetEtag = `"${createHash('sha1')
-  .update(JSON.stringify(animes))
+  .update(RESPONSE_SHAPE_VERSION + JSON.stringify(animes))
   .digest('hex')}"`;
 
 export interface ListParams {

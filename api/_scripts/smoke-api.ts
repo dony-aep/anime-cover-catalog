@@ -4,6 +4,7 @@
  * Expected values are derived from the canonical dataset so the test keeps
  * passing when the catalog grows or changes.
  */
+import { createHash } from 'node:crypto';
 import { readdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -361,6 +362,11 @@ async function main() {
   const tagged = await app.fetch(new Request(BASE + '/api/v1/animes?limit=1'));
   const etag = tagged.headers.get('etag');
   assert(!!etag && /^"[0-9a-f]{40}"$/.test(etag), `200 carries a quoted ETag (${etag})`);
+  // The validator must cover the response shape, not just the data: hashing
+  // the dataset alone lets a shape change (new derived fields) answer 304 and
+  // pin the stale body in client caches indefinitely.
+  const datasetOnlyEtag = `"${createHash('sha1').update(JSON.stringify(animes)).digest('hex')}"`;
+  assert(etag !== datasetOnlyEtag, 'ETag includes the response shape version, not just the dataset');
   const revalidated = await app.fetch(
     new Request(BASE + '/api/v1/animes?limit=1', { headers: { 'If-None-Match': etag! } }),
   );

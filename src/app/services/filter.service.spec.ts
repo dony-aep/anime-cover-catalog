@@ -56,10 +56,10 @@ describe('FilterService', () => {
     const filters = service.filters();
 
     expect(filters[0]).toEqual({ label: 'All', type: 'all', value: '' });
-    expect(filters).toContain({ label: 'Romance', type: 'genre', value: 'Romance' });
-    expect(filters).toContain({ label: 'School', type: 'theme', value: 'School' });
-    expect(filters).toContain({ label: 'Shounen', type: 'demographic', value: 'Shounen' });
-    expect(filters).toContain({ label: 'Movie', type: 'type', value: 'Movie' });
+    expect(filters).toContainEqual({ label: 'Romance', type: 'genre', value: 'Romance' });
+    expect(filters).toContainEqual({ label: 'School', type: 'theme', value: 'School' });
+    expect(filters).toContainEqual({ label: 'Shounen', type: 'demographic', value: 'Shounen' });
+    expect(filters).toContainEqual({ label: 'Movie', type: 'type', value: 'Movie' });
     // 'Romance' appears in two animes but only once in the list.
     expect(filters.filter(f => f.value === 'Romance').length).toBe(1);
     // Alphabetical after 'All'.
@@ -70,7 +70,7 @@ describe('FilterService', () => {
   it('appears automatically when a new facet value enters the catalog', () => {
     flushCatalog([makeAnime({ slug: 'a', title: 'A', themes: ['Villainess'] })]);
 
-    expect(service.filters()).toContain({ label: 'Villainess', type: 'theme', value: 'Villainess' });
+    expect(service.filters()).toContainEqual({ label: 'Villainess', type: 'theme', value: 'Villainess' });
   });
 
   it('resolves route params back to values (round-trip)', () => {

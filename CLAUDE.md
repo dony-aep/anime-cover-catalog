@@ -12,8 +12,9 @@ npm start         # terminal 2 — Angular app on http://localhost:4200
 ```
 
 - Build: `npm run build`
-- Frontend tests (Karma/Jasmine): `npx ng test --watch=false --browsers=ChromeHeadless`
-- Single spec: `npx ng test --include='**/anime.service.spec.ts' --watch=false --browsers=ChromeHeadless`
+- Frontend tests (Vitest + jsdom): `npx ng test --watch=false`
+- Single spec: `npx ng test --include='**/anime.service.spec.ts' --watch=false`
+- Test setup: `src/test-setup.ts` polyfills `window.matchMedia` for jsdom; Vitest's `toContain` needs `toContainEqual` for object deep-equality (unlike Jasmine)
 - API smoke test (exercises every route via `app.fetch()`, no server needed): `npm run api:smoke`
 
 CI (`.github/workflows/ci.yml`) runs: `api:smoke` → frontend tests → production build. All three must pass.

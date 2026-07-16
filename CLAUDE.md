@@ -12,8 +12,9 @@ npm start         # terminal 2 — Angular app on http://localhost:4200
 ```
 
 - Build: `npm run build`
-- Frontend tests (Karma/Jasmine): `npx ng test --watch=false --browsers=ChromeHeadless`
-- Single spec: `npx ng test --include='**/anime.service.spec.ts' --watch=false --browsers=ChromeHeadless`
+- Frontend tests (Vitest + jsdom): `npx ng test --watch=false`
+- Single spec: `npx ng test --include='**/anime.service.spec.ts' --watch=false`
+- Test setup: `src/test-setup.ts` polyfills `window.matchMedia` for jsdom; Vitest's `toContain` needs `toContainEqual` for object deep-equality (unlike Jasmine). jsdom also lacks `navigator.clipboard` — stub it in `test-setup.ts` before writing specs that exercise the copy buttons.
 - API smoke test (exercises every route via `app.fetch()`, no server needed): `npm run api:smoke`
 
 CI (`.github/workflows/ci.yml`) runs: `api:smoke` → frontend tests → production build. All three must pass.
@@ -22,9 +23,9 @@ CI (`.github/workflows/ci.yml`) runs: `api:smoke` → frontend tests → product
 
 ## Architecture
 
-Angular 21 SPA + Hono REST API deployed together on Vercel:
+Angular 22 SPA + Hono REST API deployed together on Vercel:
 
-- **Frontend** (`src/`): standalone components, signals for state, plain CSS with CSS variables for theming. Pages in `src/app/pages/`, shared components in `src/app/components/`, singleton services in `src/app/services/`.
+- **Frontend** (`src/`): standalone components, signals for state, **zoneless change detection** (no zone.js — state changes must flow through signals or the view won't update), plain CSS with CSS variables for theming. Pages in `src/app/pages/`, shared components in `src/app/components/`, singleton services in `src/app/services/`. The catalog loads via the v22 `resource()` API in `AnimeService`; on API failure `animes()` degrades to `[]` and `catalogError` carries the error.
 - **API** (`api/`): Hono + `@hono/zod-openapi`, deployed as a **single Vercel function** — `vercel.json` rewrites `/api/(.*)` to `api/index.ts`, which mounts the app under `basePath('/api')`. The `_` prefix on `api/_data`, `api/_lib`, `api/_scripts` keeps Vercel from treating them as functions.
 - **Data**: `api/_data/animes.json` is the **single canonical data source** for the whole project. The API serves it; the Angular app consumes it only through `/api/v1` (`AnimeService` fetches page 1, then loads remaining pages in parallel). Records must conform to `api/_lib/schema.ts` (unique slugs, typed fields).
 - **Caching**: responses are edge-cached with a deploy-scoped `ETag` (hash of the dataset) since data only changes on deploy. `/animes/random` is the exception (`no-store`).

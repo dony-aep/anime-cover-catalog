@@ -39,16 +39,20 @@ describe('FilterService', () => {
     httpMock.verify();
   });
 
-  function flushCatalog(animes: Anime[]) {
+  // El catálogo llega vía resource(): el loader arranca en un effect
+  // (TestBed.tick) y resuelve promesas tras el flush, de ahí el settle().
+  async function flushCatalog(animes: Anime[]) {
     const response: AnimeListResponse = {
       data: animes,
       meta: { page: 1, limit: 100, total: animes.length, totalPages: 1 },
     };
+    TestBed.tick();
     httpMock.expectOne('/api/v1/animes?limit=100&page=1').flush(response);
+    await new Promise(resolve => setTimeout(resolve));
   }
 
-  it('derives filters from the loaded catalog, sorted and deduplicated', () => {
-    flushCatalog([
+  it('derives filters from the loaded catalog, sorted and deduplicated', async () => {
+    await flushCatalog([
       makeAnime({ slug: 'a', title: 'A', genres: ['Romance'], themes: ['School'], demographic: 'Shounen' }),
       makeAnime({ slug: 'b', title: 'B', genres: ['Romance', 'Comedy'], type: 'Movie' }),
     ]);
@@ -56,10 +60,10 @@ describe('FilterService', () => {
     const filters = service.filters();
 
     expect(filters[0]).toEqual({ label: 'All', type: 'all', value: '' });
-    expect(filters).toContain({ label: 'Romance', type: 'genre', value: 'Romance' });
-    expect(filters).toContain({ label: 'School', type: 'theme', value: 'School' });
-    expect(filters).toContain({ label: 'Shounen', type: 'demographic', value: 'Shounen' });
-    expect(filters).toContain({ label: 'Movie', type: 'type', value: 'Movie' });
+    expect(filters).toContainEqual({ label: 'Romance', type: 'genre', value: 'Romance' });
+    expect(filters).toContainEqual({ label: 'School', type: 'theme', value: 'School' });
+    expect(filters).toContainEqual({ label: 'Shounen', type: 'demographic', value: 'Shounen' });
+    expect(filters).toContainEqual({ label: 'Movie', type: 'type', value: 'Movie' });
     // 'Romance' appears in two animes but only once in the list.
     expect(filters.filter(f => f.value === 'Romance').length).toBe(1);
     // Alphabetical after 'All'.
@@ -67,14 +71,14 @@ describe('FilterService', () => {
     expect(labels).toEqual([...labels].sort((a, b) => a.localeCompare(b)));
   });
 
-  it('appears automatically when a new facet value enters the catalog', () => {
-    flushCatalog([makeAnime({ slug: 'a', title: 'A', themes: ['Villainess'] })]);
+  it('appears automatically when a new facet value enters the catalog', async () => {
+    await flushCatalog([makeAnime({ slug: 'a', title: 'A', themes: ['Villainess'] })]);
 
-    expect(service.filters()).toContain({ label: 'Villainess', type: 'theme', value: 'Villainess' });
+    expect(service.filters()).toContainEqual({ label: 'Villainess', type: 'theme', value: 'Villainess' });
   });
 
-  it('resolves route params back to values (round-trip)', () => {
-    flushCatalog([
+  it('resolves route params back to values (round-trip)', async () => {
+    await flushCatalog([
       makeAnime({ slug: 'a', title: 'A', genres: ['Sci-Fi'], themes: ['Idols (Female)'] }),
     ]);
 

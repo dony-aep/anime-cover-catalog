@@ -1,7 +1,6 @@
-import { Injectable, computed, inject, signal } from '@angular/core';
+import { Injectable, computed, inject, resource, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { forkJoin, map, of, switchMap } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 import { Anime, AnimeListResponse, DateSortOrder, Filter, SortOrder } from '../models/anime.model';
 
 type SortKey = `${SortOrder}-${DateSortOrder}`;
@@ -16,22 +15,29 @@ export class AnimeService {
   private readonly PAGE_SIZE = 100; // API max per page
 
   // Fetch the whole catalog: page 1 tells us totalPages, the rest load in parallel.
-  private animes$ = this.http
-    .get<AnimeListResponse>(`${this.API_URL}?limit=${this.PAGE_SIZE}&page=1`)
-    .pipe(
-      switchMap(first => {
+  private catalogResource = resource({
+    defaultValue: [] as Anime[],
+    loader: async () => {
+      try {
+        const first = await firstValueFrom(this.getPage(1));
         const remaining = [];
         for (let page = 2; page <= first.meta.totalPages; page++) {
-          remaining.push(this.http.get<AnimeListResponse>(`${this.API_URL}?limit=${this.PAGE_SIZE}&page=${page}`));
+          remaining.push(firstValueFrom(this.getPage(page)));
         }
-        return remaining.length === 0
-          ? of([first])
-          : forkJoin(remaining).pipe(map(rest => [first, ...rest]));
-      }),
-      map(pages => pages.flatMap(page => page.data))
-    );
+        const rest = await Promise.all(remaining);
+        return [first, ...rest].flatMap(page => page.data);
+      } catch (err) {
+        console.error('Failed to load the anime catalog:', err);
+        throw err;
+      }
+    }
+  });
 
-  animes = toSignal(this.animes$, { initialValue: [] });
+  // In the error state resource.value() throws; degrade to an empty catalog
+  // and let catalogError drive any future error UI.
+  animes = computed(() => this.catalogResource.hasValue() ? this.catalogResource.value() : []);
+  catalogLoading = this.catalogResource.isLoading;
+  catalogError = this.catalogResource.error;
   searchTerm = signal<string>('');
   activeFilter = signal<Filter>({ type: 'all', value: '' });
   nameSort = signal<SortOrder>('asc');
@@ -141,6 +147,10 @@ export class AnimeService {
   });
 
   constructor() { }
+
+  private getPage(page: number) {
+    return this.http.get<AnimeListResponse>(`${this.API_URL}?limit=${this.PAGE_SIZE}&page=${page}`);
+  }
 
   changeSearchTerm(term: string) {
     this.searchTerm.set(term);

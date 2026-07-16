@@ -23,7 +23,7 @@ jobs:
         run: npm run api:smoke
 
       - name: Tests del frontend
-        run: npx ng test --watch=false --browsers=ChromeHeadless
+        run: npx ng test --watch=false
 
       - name: Build de producción
         run: npm run build

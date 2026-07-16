@@ -66,5 +66,11 @@
     "piscina": "5.2.0",
     "http-proxy-middleware": "3.0.7",
     "launch-editor": "2.14.1"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.6": true,
+    "esbuild@0.28.1": true,
+    "lmdb@3.5.1": true,
+    "msgpackr-extract@3.0.4": true
   }
 }

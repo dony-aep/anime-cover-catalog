@@ -11,6 +11,9 @@
     "api:dev": "tsx api/_scripts/dev-server.ts"
   },
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@angular/animations": "^22.0.6",
     "@angular/common": "^22.0.6",

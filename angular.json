@@ -51,7 +51,6 @@
               "sourceMap": true
             },
             "testing": {
-              "aot": false,
               "optimization": false,
               "extractLicenses": false
             }

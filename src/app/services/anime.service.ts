@@ -18,19 +18,26 @@ export class AnimeService {
   private catalogResource = resource({
     defaultValue: [] as Anime[],
     loader: async () => {
-      const first = await firstValueFrom(this.getPage(1));
-      const remaining = [];
-      for (let page = 2; page <= first.meta.totalPages; page++) {
-        remaining.push(firstValueFrom(this.getPage(page)));
+      try {
+        const first = await firstValueFrom(this.getPage(1));
+        const remaining = [];
+        for (let page = 2; page <= first.meta.totalPages; page++) {
+          remaining.push(firstValueFrom(this.getPage(page)));
+        }
+        const rest = await Promise.all(remaining);
+        return [first, ...rest].flatMap(page => page.data);
+      } catch (err) {
+        console.error('Failed to load the anime catalog:', err);
+        throw err;
       }
-      const rest = await Promise.all(remaining);
-      return [first, ...rest].flatMap(page => page.data);
     }
   });
 
-  animes = computed(() => this.catalogResource.value());
+  // In the error state resource.value() throws; degrade to an empty catalog
+  // and let catalogError drive any future error UI.
+  animes = computed(() => this.catalogResource.hasValue() ? this.catalogResource.value() : []);
   catalogLoading = this.catalogResource.isLoading;
-  catalogError = computed(() => this.catalogResource.error());
+  catalogError = this.catalogResource.error;
   searchTerm = signal<string>('');
   activeFilter = signal<Filter>({ type: 'all', value: '' });
   nameSort = signal<SortOrder>('asc');

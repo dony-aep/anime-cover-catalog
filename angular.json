@@ -16,9 +16,6 @@
             "outputPath": "dist/anime-cover-catalog-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/assets",
@@ -56,11 +53,7 @@
             "testing": {
               "aot": false,
               "optimization": false,
-              "extractLicenses": false,
-              "polyfills": [
-                "zone.js",
-                "zone.js/testing"
-              ]
+              "extractLicenses": false
             }
           },
           "defaultConfiguration": "production"

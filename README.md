@@ -20,8 +20,8 @@ A web application for browsing and discovering anime cover art. Built with Angul
 
 ## Technology Stack
 
-- **Framework**: Angular 21.2.0
-- **Language**: TypeScript 5.9.3
+- **Framework**: Angular 22.0
+- **Language**: TypeScript 6.0
 - **Styling**: CSS with CSS Variables for theming
 - **State Management**: Angular Signals
 - **Routing**: Angular Router with lazy loading

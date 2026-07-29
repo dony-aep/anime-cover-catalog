@@ -1,3 +1,36 @@
+# Angular 22 Major Update & Dependency Refresh v5.0.0 - 2026-07-28
+
+- **Angular Major Update (21 → 22)**:
+  - Updated Angular core and tooling packages from `21.2.x` to `22.0.8`.
+  - Upgraded TypeScript from `5.9.3` to `6.0.3` (required by Angular 22).
+  - Migrated build system to `@angular/build` (replacing `@angular-devkit/build-angular`).
+  - Switched to zoneless change detection (`provideZonelessChangeDetection()`).
+  - Adopted the stable Resource API for catalog data loading.
+  - Migrated test runner from Karma/Jasmine to Vitest.
+  - Removed unused `@angular/animations` and `platform-browser-dynamic` packages.
+  - Set Node.js engine to `24.x` for Vercel runtime.
+
+- **Catalog Expansion**:
+  - Added 46 new animes to the catalog in two batches (27 + 19), bringing the total to 300.
+  - Added cover images and thumbnails for all new entries.
+
+- **Dependency Updates (Major)**:
+  - Updated `zod` from `3.x` to `4.4.3` — migrated `errorMap` to the unified `error` callback in API schemas.
+  - Updated `@hono/zod-openapi` from `0.18.4` to `1.5.1` (built for Zod v4).
+  - Updated `@vercel/analytics` from `1.x` to `2.0.1`.
+  - Updated `jsdom` from `29.x` to `30.0.1`.
+
+- **Dependency Updates (Minor/Patch)**:
+  - Updated `@hono/node-server` to `2.0.12`.
+  - Updated `@hono/swagger-ui` from `0.5.3` to `0.6.1`.
+  - Updated `@types/node` from `22.x` to `24.x` (aligned with Node 24 runtime).
+  - Updated `tsx` to `4.23.1`.
+
+- **Security & Maintenance**:
+  - Deduplicated `@hono/node-server` to close the last npm audit alert.
+  - Updated security override pins (`tar`, `undici`, and transitive deps).
+  - `npm audit` reports **0 vulnerabilities**.
+
 # Security Patch Update v4.0.1 - 2026-04-12
 
 - **MCP Config Migration**:

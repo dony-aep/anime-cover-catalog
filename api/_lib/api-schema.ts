@@ -42,7 +42,7 @@ const FieldsSchema = z
     z
       .array(
         z.enum(ANIME_FIELDS, {
-          errorMap: (_issue, ctx) => ({ message: `Unknown field: ${ctx.data}` }),
+          error: (issue) => `Unknown field: ${issue.input}`,
         }),
       )
       .min(1, { message: 'fields must name at least one field' }),

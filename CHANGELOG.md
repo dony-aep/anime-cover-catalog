@@ -27,6 +27,8 @@
 
 - **CI**:
   - Updated `actions/checkout` and `actions/setup-node` to `v7`.
+  - Realigned the `allowScripts` policy to `lmdb@3.5.6` (pulled in by the Angular 22.1
+    tooling), restoring its native build cache.
 
 # Angular 22 Major Update & Dependency Refresh v5.0.0 - 2026-07-28
 

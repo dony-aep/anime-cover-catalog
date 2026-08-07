@@ -1,3 +1,33 @@
+# Angular 22.1 & Security Refresh v5.1.0 - 2026-08-06
+
+- **Angular Minor Update (22.0 → 22.1)**:
+  - Updated Angular runtime packages from `22.0.8` to `22.1.0`.
+  - Updated Angular tooling from `22.0.8` to `22.1.3` (`@angular/cli`, `@angular/build`).
+  - Updated `@angular/compiler-cli` to `22.1.0`.
+
+- **Security & Dependency Updates**:
+  - Updated `hono` from `4.12.32` to `4.13.0` — closes the ReDoS advisory in the CORS
+    middleware (`Access-Control-Request-Headers`), fixed in `4.12.34`.
+  - Bumped the transitive `fast-uri` from `3.1.4` to `3.1.5` — closes the host confusion
+    advisory via backslash authority introducer (pulled in by `@angular/cli` → `ajv`).
+  - Updated `@hono/node-server` to `2.1.0`.
+  - Updated `tsx` from `4.23.1` to `4.23.9`.
+  - `npm audit` reports **0 vulnerabilities**.
+
+- **Overrides**:
+  - Kept the `@hono/node-server` dedup pin: without it, `@angular/cli` →
+    `@modelcontextprotocol/sdk` resolves a nested `@hono/node-server@1.19.17`, vulnerable
+    to path traversal in `serve-static` on Windows via encoded backslash (`%5C`).
+
+- **Deliberate Holds**:
+  - `@types/node` stays on `24.x` (26.x available) to match the `24.x` Node engine and the
+    Vercel runtime.
+  - `typescript` stays on `~6.0.3` (7.0.2 available) — Angular 22 pins the peer range to
+    `>=6.0 <6.1`.
+
+- **CI**:
+  - Updated `actions/checkout` and `actions/setup-node` to `v7`.
+
 # Angular 22 Major Update & Dependency Refresh v5.0.0 - 2026-07-28
 
 - **Angular Major Update (21 → 22)**:

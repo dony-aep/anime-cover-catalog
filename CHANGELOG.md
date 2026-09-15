@@ -1,3 +1,40 @@
+# Security Patch Update v5.1.1 - 2026-09-15
+
+- **Security & Dependency Updates**:
+  - Updated Angular runtime packages from `22.1.0` to `22.1.6` — closes the
+    `HttpTransferCache` information leak via `withRequestsMadeViaParent`, fixed in `22.1.1`.
+  - Updated Angular tooling from `22.1.3` to `22.1.8` (`@angular/cli`, `@angular/build`).
+  - Updated `@angular/compiler-cli` to `22.1.6`.
+  - Updated `hono` from `4.13.0` to `4.13.8` — closes three advisories fixed in `4.13.5`:
+    the `toSSG()` path escape, unbounded dot-notation nesting in `parseBody()`, and the
+    query parser reading parameters past the URL fragment.
+  - Updated `vitest` from `4.1.10` to `4.1.11` — closes the arbitrary file read through the
+    `@vitest/mocker` redirect mock.
+  - Updated `@hono/zod-openapi` to `1.6.3`, `@hono/node-server` to `2.1.1`, `zod` to
+    `4.6.5`, `tsx` to `4.23.13` and `@types/node` to `24.13.5`.
+  - Refreshed the lockfile with patched transitive dependencies pulled in by the Angular
+    tooling: `browserslist` `4.28.4` → `4.29.0`, `fast-uri` `3.1.5` → `3.1.8`,
+    `baseline-browser-mapping` `2.10.38` → `2.11.24`, `nanoid` `3.3.16` → `3.3.19` and
+    `qs` `6.15.2` → `6.16.0`.
+  - `npm audit` now reports **0 vulnerabilities**, clearing the 12 open Dependabot alerts
+    (9 moderate, 3 high).
+
+- **Overrides**:
+  - Removed the `@hono/node-server` dedup pin. `@modelcontextprotocol/sdk@1.30.0` now
+    declares `^1.19.9 || ^2.0.5`, so the tree resolves a single `2.1.1` on its own and the
+    pin no longer changes anything.
+
+- **Deliberate Holds**:
+  - `typescript` stays on `~6.0.3` (7.0.2 available) — `@angular/compiler-cli` and
+    `@angular/build` pin the peer range to `>=6.0 <6.1`.
+  - `vitest` stays on `4.x` (5.0.1 available) — `@angular/build@22.1.8` declares the peer
+    range `^4.0.8`.
+  - `@types/node` stays on `24.x` to match the `24.x` Node engine and the Vercel runtime.
+
+- **Build**:
+  - Realigned the `allowScripts` policy to `esbuild@0.28.2` and `@parcel/watcher@2.6.0`,
+    the versions the Angular 22.1.8 tooling resolves.
+
 # Angular 22.1 & Security Refresh v5.1.0 - 2026-08-06
 
 - **Angular Minor Update (22.0 → 22.1)**:

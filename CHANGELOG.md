@@ -1,3 +1,44 @@
+# Angular 22.2 & Security Refresh v5.2.0 - 2026-10-21
+
+- **Angular Minor Update (22.1 → 22.2)**:
+  - Updated Angular runtime packages from `22.1.6` to `22.2.3`. This closes three
+    denial-of-service advisories in `@angular/router` under SSR, triggered by numeric URL
+    matrix parameters, unmatched empty-path outlet routes and `RouterLink` query parameter
+    retention.
+  - Updated Angular tooling from `22.1.8` to `22.2.3` (`@angular/cli`, `@angular/build`,
+    `@angular/compiler-cli`). The new tooling pulls in `piscina` `5.3.2`, which closes the
+    critical prototype-pollution RCE in `ThreadPool.options`, and `source-map-js` `1.2.2`,
+    which closes the event-loop DoS through indexed source-map offsets.
+  - `@angular/cli` now uses `@modelcontextprotocol/server` instead of
+    `@modelcontextprotocol/sdk`, so the five open SDK advisories no longer apply to the tree.
+
+- **Test Runner Major Update**:
+  - Updated `vitest` from `4.1.11` to `5.0.5`. `@angular/build@22.2.3` widened its peer
+    range to `^4.0.8 || ^5.0.0`. The specs use none of the APIs that changed in 5.0, so no
+    code changes were needed.
+
+- **Security & Dependency Updates**:
+  - Updated `hono` from `4.13.8` to `4.13.13`. This closes the `serveStatic` advisory where
+    a second decode of the request path let static paths skip middleware.
+  - Updated `@hono/node-server` to `2.1.5`, `zod` to `4.6.7`, `jsdom` to `30.1.3`, `tsx` to
+    `4.23.15` and `@types/node` to `24.19.2`.
+  - `npm audit` reports **0 vulnerabilities**. The new lockfile carries the patched version
+    for each of the 8 open Dependabot alerts (1 critical, 6 high, 1 moderate).
+
+- **Overrides**:
+  - Added a `vite` override to `^8.3.5`. `@angular/build@22.2.3` pins `vite` to exactly
+    `8.3.0`, which is affected by six advisories fixed in `8.3.3`: three in
+    `launch-editor` (one high), cross-origin script execution through custom middleware,
+    files outside `server.fs.allow` being served, and the `?vite-wasm-instance` leak. The
+    override can go once a stable `@angular/build` ships `vite` `8.3.3` or later
+    (`22.3.0-next.2` already uses `8.3.4`).
+
+- **Deliberate Holds**:
+  - `typescript` stays on `~6.0.3` (7.0.2 available) because `@angular/compiler-cli` and
+    `@angular/build` `22.2.3` still pin the peer range to `>=6.0 <6.1`.
+  - `@types/node` stays on `24.x` (26.x available) to match the `24.x` Node engine and the
+    Vercel runtime.
+
 # Security Patch Update v5.1.1 - 2026-09-15
 
 - **Security & Dependency Updates**:

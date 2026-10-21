@@ -20,7 +20,7 @@ A web application for browsing and discovering anime cover art. Built with Angul
 
 ## Technology Stack
 
-- **Framework**: Angular 22.0
+- **Framework**: Angular 22.2
 - **Language**: TypeScript 6.0
 - **Styling**: CSS with CSS Variables for theming
 - **State Management**: Angular Signals

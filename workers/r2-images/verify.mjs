@@ -1,5 +1,6 @@
-// Comprueba que cada portada que referencia api/_data/animes.json está en R2,
-// pidiéndola al Worker con HEAD. Si existe la copia local en
+// Comprueba que cada portada que referencia api/_data/animes.json está en R2.
+// Pide al Worker el listado del bucket (/manifest.json) en una sola petición
+// y lo compara con el dataset; si existe la copia local en
 // src/assets/AnimeImages, además compara el tamaño. Lo usa el CI, donde las
 // originales no están en el repo.
 //
@@ -14,38 +15,30 @@ const animes = JSON.parse(readFileSync(resolve('api/_data/animes.json'), 'utf8')
 const files = [...new Set(animes.flatMap((a) => [a.images.cover, ...a.images.alternatives]).map((p) => p.split('/').pop()))];
 
 // Sin límite, una conexión que no responde deja el CI esperando hasta el
-// timeout del job; cada intento corta a los 15 s y se reintenta.
-const TIMEOUT_MS = 15_000;
-const ATTEMPTS = 3;
-const CONCURRENCY = 10;
-
-const head = async (url) => {
-  let last;
-  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
-    try {
-      const res = await fetch(url, { method: 'HEAD', signal: AbortSignal.timeout(TIMEOUT_MS) });
-      if (res.status < 500) return res;
-      last = `HTTP ${res.status}`;
-    } catch (err) {
-      last = err.name === 'TimeoutError' ? `sin respuesta en ${TIMEOUT_MS / 1000} s` : err.message;
+// timeout del paso; cada intento corta a los 30 s y se reintenta.
+let bucket;
+for (let attempt = 1; !bucket; attempt++) {
+  try {
+    const res = await fetch(`${BASE}/manifest.json`, { signal: AbortSignal.timeout(30_000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    bucket = await res.json();
+  } catch (err) {
+    if (attempt === 3) {
+      console.error(`No se pudo leer ${BASE}/manifest.json: ${err.message}`);
+      process.exit(1);
     }
-    await new Promise((r) => setTimeout(r, 1000 * attempt));
+    await new Promise((r) => setTimeout(r, 2000 * attempt));
   }
-  return { status: last, headers: new Headers() };
-};
+}
 
 const bad = [];
-for (let i = 0; i < files.length; i += CONCURRENCY) {
-  await Promise.all(files.slice(i, i + CONCURRENCY).map(async (f) => {
-    const res = await head(`${BASE}/${encodeURI(`AnimeImages/${f}`)}`);
-    const size = Number(res.headers.get('content-length'));
-    const local = join(dir, f);
-    if (res.status !== 200) bad.push(`${res.status} ${f}`);
-    else if (existsSync(local) && size !== statSync(local).size) bad.push(`tamaño ${size} != ${statSync(local).size} ${f}`);
-  }));
-  const done = Math.min(i + CONCURRENCY, files.length);
-  if (done % 200 < CONCURRENCY || done === files.length) console.log(`${done}/${files.length} revisadas`);
+for (const f of files) {
+  const local = join(dir, f);
+  if (!(f in bucket)) bad.push(`falta en R2: ${f}`);
+  else if (existsSync(local) && bucket[f] !== statSync(local).size) {
+    bad.push(`tamaño ${bucket[f]} != ${statSync(local).size}: ${f}`);
+  }
 }
-console.log(`${files.length - bad.length}/${files.length} portadas del catálogo en R2`);
+console.log(`${files.length - bad.length}/${files.length} portadas del catálogo en R2 (el bucket tiene ${Object.keys(bucket).length})`);
 if (bad.length) console.log(bad.join('\n'));
 process.exitCode = bad.length ? 1 : 0;

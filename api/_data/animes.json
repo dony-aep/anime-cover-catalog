@@ -380,7 +380,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Dagashi_Kashi_1.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Dagashi_Kashi_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2016,
     "studios": [
@@ -435,7 +437,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Date_A_Live_1.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Date_A_Live_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2013,
     "studios": [
@@ -465,7 +469,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Dokyuu_Hentai_HxEros_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Dokyuu_Hentai_HxEros_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2020,
     "studios": [
@@ -637,7 +643,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Enen_no_Shouboutai_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Enen_no_Shouboutai_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2019,
     "studios": [
@@ -924,7 +932,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Hajimete_no_gal_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Hajimete_no_gal_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2017,
     "studios": [
@@ -1173,7 +1183,8 @@
     "images": {
       "cover": "assets/AnimeImages/Hyouka_1.jpeg",
       "alternatives": [
-        "assets/AnimeImages/Hyouka_1_alt1.jpg"
+        "assets/AnimeImages/Hyouka_1_alt1.jpg",
+        "assets/AnimeImages/Hyouka_1_alt2.jpg"
       ]
     },
     "releaseYear": 2012,
@@ -1773,7 +1784,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Kawaikereba_Hentai_demo_Suki_ni_Natte_Kuremasu_ka_1.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Kawaikereba_Hentai_demo_Suki_ni_Natte_Kuremasu_ka_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2019,
     "studios": [
@@ -1832,7 +1845,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Kimi_ni_Todoke_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Kimi_ni_Todoke_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2009,
     "studios": [
@@ -1949,7 +1964,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Kobayashi-san_Chi_no_Maid_Dragon_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Kobayashi-san_Chi_no_Maid_Dragon_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2017,
     "studios": [
@@ -2343,7 +2360,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Mieruko-chan_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Mieruko-chan_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2021,
     "studios": [
@@ -2370,7 +2389,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Musaigen_no_Phantom_World_1.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Musaigen_no_Phantom_World_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2016,
     "studios": [
@@ -2460,7 +2481,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Mushoku_Tensei_Isekai_Ittara_Honki_Dasu_1.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Mushoku_Tensei_Isekai_Ittara_Honki_Dasu_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2021,
     "studios": [
@@ -2544,7 +2567,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Onii-chan_Dakedo_Ai_Sae_Areba_Kankeinai_yo_ne_1.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Onii-chan_Dakedo_Ai_Sae_Areba_Kankeinai_yo_ne_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2012,
     "studios": [
@@ -2781,7 +2806,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Overlord_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Overlord_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2015,
     "studios": [
@@ -2866,7 +2893,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Plunderer_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Plunderer_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2020,
     "studios": [
@@ -3011,7 +3040,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Satsuriku_no_Tenshi_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Satsuriku_no_Tenshi_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2018,
     "studios": [
@@ -3414,7 +3445,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Uzaki-chan_wa_Asobitai!_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Uzaki-chan_wa_Asobitai!_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2020,
     "studios": [
@@ -3524,7 +3557,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Youkoso_Jitsuryoku_Shijou_Shugi_no_Kyoushitsu_e_(Classroom_of_the_Elite)_1.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Youkoso_Jitsuryoku_Shijou_Shugi_no_Kyoushitsu_e_(Classroom_of_the_Elite)_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2017,
     "studios": [
@@ -4834,7 +4869,8 @@
     "images": {
       "cover": "assets/AnimeImages/Toki_wo_Kakeru_Shoujo.jpeg",
       "alternatives": [
-        "assets/AnimeImages/Toki_wo_Kakeru_Shoujo_alt1.jpg"
+        "assets/AnimeImages/Toki_wo_Kakeru_Shoujo_alt1.jpg",
+        "assets/AnimeImages/Toki_wo_Kakeru_Shoujo_alt2.jpg"
       ]
     },
     "releaseYear": 2006,
@@ -4865,7 +4901,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Akira.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Akira_alt1.jpg"
+      ]
     },
     "releaseYear": 1988,
     "studios": [
@@ -5139,7 +5177,8 @@
     "images": {
       "cover": "assets/AnimeImages/Love_Live!_School_Idol_Project.jpeg",
       "alternatives": [
-        "assets/AnimeImages/Love_Live!_School_Idol_Project_alt1.jpeg"
+        "assets/AnimeImages/Love_Live!_School_Idol_Project_alt1.jpeg",
+        "assets/AnimeImages/Love_Live!_School_Idol_Project_alt2.jpg"
       ]
     },
     "releaseYear": 2013,
@@ -5461,7 +5500,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Code_Geass_Hangyaku_no_Lelouch.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Code_Geass_Hangyaku_no_Lelouch_alt1.jpg"
+      ]
     },
     "releaseYear": 2006,
     "studios": [
@@ -5642,7 +5683,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Mahou_Shoujo_Madoka_Magica.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Mahou_Shoujo_Madoka_Magica_alt1.jpg"
+      ]
     },
     "releaseYear": 2011,
     "studios": [
@@ -5735,7 +5778,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Steins;Gate.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Steins;Gate_alt1.jpg"
+      ]
     },
     "releaseYear": 2011,
     "studios": [
@@ -5876,7 +5921,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Naruto.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Naruto_alt1.jpg"
+      ]
     },
     "releaseYear": 2002,
     "studios": [
@@ -5930,7 +5977,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Yuu_Yuu_Hakusho.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Yuu_Yuu_Hakusho_alt1.jpg"
+      ]
     },
     "releaseYear": 1992,
     "studios": [
@@ -6017,7 +6066,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/One_Piece.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/One_Piece_alt1.jpg"
+      ]
     },
     "releaseYear": 1999,
     "studios": [
@@ -6043,7 +6094,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Tensai_Ouji_no_Akaji_Kokka_Saisei_Jutsu.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Tensai_Ouji_no_Akaji_Kokka_Saisei_Jutsu_alt1.jpg"
+      ]
     },
     "releaseYear": 2022,
     "studios": [
@@ -6068,7 +6121,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Ore_no_Kanojo_to_Osananajimi_ga_Shuraba_Sugiru.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Ore_no_Kanojo_to_Osananajimi_ga_Shuraba_Sugiru_alt1.jpg"
+      ]
     },
     "releaseYear": 2013,
     "studios": [
@@ -6123,7 +6178,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Toradora!.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Toradora!_alt1.jpg"
+      ]
     },
     "releaseYear": 2008,
     "studios": [
@@ -11151,7 +11208,9 @@
     "titleJapanese": "时光代理人",
     "images": {
       "cover": "assets/AnimeImages/Shiguang_Dailiren.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Shiguang_Dailiren_alt1.jpg"
+      ]
     },
     "releaseYear": 2021,
     "studios": [
@@ -12522,7 +12581,9 @@
     "titleJapanese": "青春ブタ野郎はバニーガール先輩の夢を見ない",
     "images": {
       "cover": "assets/AnimeImages/Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_wo_Minai.jpeg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Seishun_Buta_Yarou_wa_Bunny_Girl_Senpai_no_Yume_wo_Minai_alt1.jpg"
+      ]
     },
     "releaseYear": 2018,
     "studios": [

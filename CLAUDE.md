@@ -43,4 +43,4 @@ When the API surface changes, update **all three**:
 ## Conventions
 
 - Commit messages: conventional commits with the description in **Spanish** (e.g. `feat(api): exponer thumbnails optimizados`).
-- Images have optimized thumbnail counterparts in `/assets/AnimeImages_thumbs/` (`images.thumb`, `images.alternativesThumbs[]`) — prefer them for lists and grids.
+- Images have optimized WebP thumbnail counterparts in `/assets/AnimeImages_thumbs/` (`images.thumb`, `images.alternativesThumbs[]`) — prefer them for lists and grids; the frontend uses those API fields rather than rewriting URLs.

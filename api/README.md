@@ -50,7 +50,7 @@ params (`null` at the edges).
 Image fields (`images.cover`, `images.alternatives[]`) are returned as absolute
 URLs derived from the request host, pointing at the static assets on the CDN.
 Each one has an optimized thumbnail counterpart (`images.thumb`,
-`images.alternativesThumbs[]`, same order) served from
+`images.alternativesThumbs[]`, same order): a 400 px wide WebP served from
 `/assets/AnimeImages_thumbs/` — prefer those for lists and grids.
 
 ## Data

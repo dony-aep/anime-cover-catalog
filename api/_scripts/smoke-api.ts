@@ -86,8 +86,9 @@ async function main() {
     `thumb is absolute under /assets/AnimeImages_thumbs/ (got ${firstImages?.thumb})`,
   );
   assert(
-    firstImages.thumb?.split('/').pop() === firstImages.cover.split('/').pop(),
-    'thumb keeps the cover filename',
+    firstImages.thumb?.split('/').pop() ===
+      firstImages.cover.split('/').pop()!.replace(/\.[^.]+$/, '.webp'),
+    'thumb is the cover filename as .webp',
   );
   assert(
     Array.isArray(firstImages.alternativesThumbs) &&
@@ -95,15 +96,16 @@ async function main() {
     'alternativesThumbs parallels alternatives',
   );
 
-  // Thumbnail coverage: every image the dataset references has a same-named
+  // Thumbnail coverage: every image the dataset references has a <name>.webp
   // thumb, and the thumbs directory carries no orphans, so the derived thumb
   // URLs never 404.
+  const toWebp = (f: string) => f.replace(/\.[^.]+$/, '.webp');
   const assetsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../src/assets');
-  const coverFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages')));
+  const coverFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages')).map(toWebp));
   const thumbFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages_thumbs')));
   const referenced = animes
     .flatMap((a) => [a.images.cover, ...a.images.alternatives])
-    .map((p) => p.split('/').pop()!);
+    .map((p) => toWebp(p.split('/').pop()!));
   const missingThumbs = referenced.filter((f) => !thumbFiles.has(f));
   assert(
     missingThumbs.length === 0,
@@ -354,8 +356,8 @@ async function main() {
   );
   const fwdBody = await fwd.json();
   assert(
-    fwdBody.data[0].images.cover.startsWith('https://internal.host/'),
-    `image URLs honor x-forwarded-proto (got ${fwdBody?.data?.[0]?.images?.cover})`,
+    fwdBody.data[0].images.thumb.startsWith('https://internal.host/'),
+    `image URLs honor x-forwarded-proto (got ${fwdBody?.data?.[0]?.images?.thumb})`,
   );
 
   // ETag / If-None-Match: 200 exposes the validator, replaying it gives 304

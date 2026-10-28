@@ -86,10 +86,6 @@ export class AnimeGalleryComponent {
     return this.favoriteTitlesSet().has(anime.title);
   }
 
-  thumbUrl(anime: Anime): string {
-    return anime.images.cover.replace('/AnimeImages/', '/AnimeImages_thumbs/');
-  }
-
   async copyImageUrl(anime: Anime, event: MouseEvent) {
     try {
       await navigator.clipboard.writeText(anime.images.cover);

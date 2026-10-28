@@ -22,9 +22,30 @@ jobs:
       - name: Smoke test de la API
         run: npm run api:smoke
 
+      # Solo hace falta revisar R2 si cambió el catálogo o el Worker: así cada
+      # push no gasta ~1250 peticiones del plan gratuito de Cloudflare. El
+      # commit base se trae sin contenido de archivos (--filter=blob:none),
+      # porque comparar nombres solo necesita los árboles.
+      - name: ¿Cambió el catálogo?
+        id: catalogo
+        env:
+          BASE_SHA: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ] \
+            || ! git fetch --no-tags --depth=1 --filter=blob:none origin "$BASE_SHA"; then
+            echo "Sin commit base con el que comparar: se revisa R2."
+            echo "cambio=true" >> "$GITHUB_OUTPUT"
+          elif [ -n "$(git diff --no-renames --name-only "$BASE_SHA" HEAD -- api/_data/animes.json workers/r2-images)" ]; then
+            echo "cambio=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "El catálogo no cambió: se omite la revisión de R2."
+            echo "cambio=false" >> "$GITHUB_OUTPUT"
+          fi
+
       # Las portadas originales no están en el repo: viven en Cloudflare R2.
       # Falla si animes.json referencia alguna que no se haya subido.
       - name: Portadas del catálogo en R2
+        if: steps.catalogo.outputs.cambio == 'true'
         run: node workers/r2-images/verify.mjs
 
       - name: Tests del frontend

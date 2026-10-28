@@ -17,7 +17,7 @@ npm start         # terminal 2 — Angular app on http://localhost:4200
 - Test setup: `src/test-setup.ts` polyfills `window.matchMedia` for jsdom; Vitest's `toContain` needs `toContainEqual` for object deep-equality (unlike Jasmine). jsdom also lacks `navigator.clipboard` — stub it in `test-setup.ts` before writing specs that exercise the copy buttons.
 - API smoke test (exercises every route via `app.fetch()`, no server needed): `npm run api:smoke`
 
-CI (`.github/workflows/ci.yml`) runs: `api:smoke` → R2 cover check (`node workers/r2-images/verify.mjs`: every image in `animes.json` must exist in the bucket) → frontend tests → production build. All four must pass, so upload new originals to R2 before pushing a data change.
+CI (`.github/workflows/ci.yml`) runs: `api:smoke` → R2 cover check (`node workers/r2-images/verify.mjs`: every image in `animes.json` must exist in the bucket; only runs when `animes.json` or `workers/r2-images/` changed, to save Workers free-tier requests) → frontend tests → production build. All four must pass, so upload new originals to R2 before pushing a data change.
 
 `package.json` uses an `allowScripts` policy: if a new dependency has install scripts, `npm install` will warn and skip them — approve with `npm approve-scripts <pkg>`.
 

@@ -14,6 +14,9 @@ import type { Anime } from '../_lib/schema.js';
 
 const animes = rawAnimes as Anime[];
 const BASE = 'https://catalog.example.com';
+// Full-size images may come from an external bucket instead of this origin.
+const IMAGES_BASE = process.env.IMAGES_BASE_URL?.replace(/\/+$/, '');
+const FULL_IMAGES_PREFIX = IMAGES_BASE ? `${IMAGES_BASE}/AnimeImages/` : `${BASE}/assets/AnimeImages/`;
 
 const TOTAL = animes.length;
 const DEFAULT_LIMIT = 24;
@@ -74,7 +77,7 @@ async function main() {
   );
   assert(
     typeof list.body.data[0].images.cover === 'string' &&
-      list.body.data[0].images.cover.startsWith('https://catalog.example.com/assets/'),
+      list.body.data[0].images.cover.startsWith(FULL_IMAGES_PREFIX),
     `absolute image URL (got ${list.body?.data?.[0]?.images?.cover})`,
   );
 
@@ -98,14 +101,15 @@ async function main() {
 
   // Thumbnail coverage: every image the dataset references has a <name>.webp
   // thumb, and the thumbs directory carries no orphans, so the derived thumb
-  // URLs never 404.
+  // URLs never 404. The full-size originals live in R2, not in the repo, so
+  // the dataset is the reference instead of an AnimeImages directory.
   const toWebp = (f: string) => f.replace(/\.[^.]+$/, '.webp');
   const assetsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../../src/assets');
-  const coverFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages')).map(toWebp));
   const thumbFiles = new Set(readdirSync(resolve(assetsRoot, 'AnimeImages_thumbs')));
   const referenced = animes
     .flatMap((a) => [a.images.cover, ...a.images.alternatives])
     .map((p) => toWebp(p.split('/').pop()!));
+  const coverFiles = new Set(referenced);
   const missingThumbs = referenced.filter((f) => !thumbFiles.has(f));
   assert(
     missingThumbs.length === 0,

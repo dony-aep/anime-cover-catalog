@@ -9,3 +9,8 @@ dist
 # Local-only tooling and scratch (the API scripts live in api/_scripts).
 scripts
 .claude
+# Deployed to Cloudflare with wrangler, not to Vercel.
+workers
+# Full-size covers are served from R2 (IMAGES_BASE_URL); guards CLI deploys
+# from a local checkout that still has them.
+src/assets/AnimeImages

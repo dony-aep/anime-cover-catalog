@@ -35,15 +35,23 @@ export interface ListParams {
 const toThumbPath = (path: string) =>
   path.replace('assets/AnimeImages/', 'assets/AnimeImages_thumbs/').replace(/\.[^./]+$/, '.webp');
 
+// Full-size images can live in an external bucket (Cloudflare R2 behind a
+// Worker) keyed as AnimeImages/<file>; thumbs always stay on this deployment.
+const imagesBaseUrl = process.env.IMAGES_BASE_URL?.replace(/\/+$/, '');
+
 /** Converts a stored anime into its API representation with absolute image URLs. */
 export function toApiAnime(anime: Anime, origin: string): AnimeResponse {
   const toUrl = (path: string) => `${origin}/${encodeURI(path)}`;
+  const toFullUrl = (path: string) =>
+    imagesBaseUrl
+      ? `${imagesBaseUrl}/${encodeURI(path.replace(/^assets\//, ''))}`
+      : toUrl(path);
   return {
     ...anime,
     images: {
-      cover: toUrl(anime.images.cover),
+      cover: toFullUrl(anime.images.cover),
       thumb: toUrl(toThumbPath(anime.images.cover)),
-      alternatives: anime.images.alternatives.map(toUrl),
+      alternatives: anime.images.alternatives.map(toFullUrl),
       alternativesThumbs: anime.images.alternatives.map((p) => toUrl(toThumbPath(p))),
     },
   };

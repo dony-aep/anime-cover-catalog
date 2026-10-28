@@ -46,6 +46,7 @@ jobs:
       # Falla si animes.json referencia alguna que no se haya subido.
       - name: Portadas del catálogo en R2
         if: steps.catalogo.outputs.cambio == 'true'
+        timeout-minutes: 5
         run: node workers/r2-images/verify.mjs
 
       - name: Tests del frontend

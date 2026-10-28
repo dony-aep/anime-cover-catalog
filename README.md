@@ -26,6 +26,7 @@ A web application for browsing and discovering anime cover art. Built with Angul
 - **State Management**: Angular Signals
 - **Routing**: Angular Router with lazy loading
 - **Icons**: Google Material Symbols (Rounded)
+- **Hosting**: Vercel (app, API and thumbnails), Cloudflare R2 (full-size covers)
 - **Analytics**: Vercel Web Analytics
 
 ## Development

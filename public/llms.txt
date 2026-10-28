@@ -77,7 +77,7 @@ active query parameters; `null` on the first/last page.
 | `trailerUrl` | string or null |
 
 Image variants: `images.thumb` and `images.alternativesThumbs` are optimized
-thumbnails (400 px wide) of `images.cover` and `images.alternatives`, in the
+thumbnails (WebP, 400 px wide) of `images.cover` and `images.alternatives`, in the
 same order. Use the thumbs for lists, grids and autocomplete; use the
 full-quality originals for detail views.
 

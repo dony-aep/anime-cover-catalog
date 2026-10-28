@@ -5,8 +5,12 @@
                 <div class="card anime-card">
                     <img
                         class="card-image"
-                        [src]="thumbUrl(anime)"
-                        [alt]="anime.title">
+                        [src]="anime.images.thumb"
+                        [alt]="anime.title"
+                        width="400"
+                        height="600"
+                        loading="lazy"
+                        decoding="async">
 
                     <button 
                         class="favorite-button" 

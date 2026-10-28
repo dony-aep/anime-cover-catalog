@@ -21,9 +21,10 @@ export class CoversModalComponent {
     return [this.anime.images.cover, ...this.anime.images.alternatives];
   });
 
-  thumbUrl(cover: string): string {
-    return cover.replace('/AnimeImages/', '/AnimeImages_thumbs/');
-  }
+  allThumbs = computed(() => {
+    if (!this.anime) return [];
+    return [this.anime.images.thumb, ...this.anime.images.alternativesThumbs];
+  });
 
   selectCover(index: number) {
     this.selectedCoverIndex.set(index);

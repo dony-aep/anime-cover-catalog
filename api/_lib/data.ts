@@ -9,7 +9,7 @@ const animes = rawAnimes as Anime[];
 // (e.g. new derived fields like images.thumb), so cached clients revalidating
 // with If-None-Match get a 200 with the new shape instead of a 304 that pins
 // the stale body indefinitely.
-const RESPONSE_SHAPE_VERSION = '2';
+const RESPONSE_SHAPE_VERSION = '3';
 
 // The dataset is immutable between deploys, so one validator per deploy is
 // enough for every response derived from it (quoted, per the ETag grammar).
@@ -30,20 +30,28 @@ export interface ListParams {
   limit: number;
 }
 
-// Thumbs live in a sibling directory with identical filenames (see
-// scripts/process_images.py), so the path is derived instead of stored.
+// Thumbs live in a sibling directory as <name>.webp whatever the original's
+// format, so the path is derived instead of stored.
 const toThumbPath = (path: string) =>
-  path.replace('assets/AnimeImages/', 'assets/AnimeImages_thumbs/');
+  path.replace('assets/AnimeImages/', 'assets/AnimeImages_thumbs/').replace(/\.[^./]+$/, '.webp');
+
+// Full-size images can live in an external bucket (Cloudflare R2 behind a
+// Worker) keyed as AnimeImages/<file>; thumbs always stay on this deployment.
+const imagesBaseUrl = process.env.IMAGES_BASE_URL?.replace(/\/+$/, '');
 
 /** Converts a stored anime into its API representation with absolute image URLs. */
 export function toApiAnime(anime: Anime, origin: string): AnimeResponse {
   const toUrl = (path: string) => `${origin}/${encodeURI(path)}`;
+  const toFullUrl = (path: string) =>
+    imagesBaseUrl
+      ? `${imagesBaseUrl}/${encodeURI(path.replace(/^assets\//, ''))}`
+      : toUrl(path);
   return {
     ...anime,
     images: {
-      cover: toUrl(anime.images.cover),
+      cover: toFullUrl(anime.images.cover),
       thumb: toUrl(toThumbPath(anime.images.cover)),
-      alternatives: anime.images.alternatives.map(toUrl),
+      alternatives: anime.images.alternatives.map(toFullUrl),
       alternativesThumbs: anime.images.alternatives.map((p) => toUrl(toThumbPath(p))),
     },
   };

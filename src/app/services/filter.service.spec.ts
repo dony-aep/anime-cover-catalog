@@ -8,7 +8,12 @@ function makeAnime(overrides: Partial<Anime> & { slug: string; title: string }):
   return {
     titleEnglish: null,
     titleJapanese: null,
-    images: { cover: `https://example.com/assets/AnimeImages/${overrides.slug}.jpg`, alternatives: [] },
+    images: {
+      cover: `https://example.com/assets/AnimeImages/${overrides.slug}.jpg`,
+      thumb: `https://example.com/assets/AnimeImages_thumbs/${overrides.slug}.webp`,
+      alternatives: [],
+      alternativesThumbs: [],
+    },
     releaseYear: 2020,
     studios: [],
     type: 'TV',

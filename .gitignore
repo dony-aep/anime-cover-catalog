@@ -47,5 +47,12 @@ Thumbs.db
 # Vercel
 .vercel
 
+# Portadas originales: viven en Cloudflare R2 (workers/r2-images). El repo
+# solo versiona las miniaturas de src/assets/AnimeImages_thumbs.
+/src/assets/AnimeImages/
+
+# Estado local de wrangler (Cloudflare)
+.wrangler/
+
 # Claude Code (configuracion local de cada maquina)
 .claude/settings.local.json

@@ -6,7 +6,9 @@ export interface Anime {
     titleJapanese: string | null;
     images: {
         cover: string;
+        thumb: string;
         alternatives: string[];
+        alternativesThumbs: string[];
     };
     releaseYear: number | null;
     studios: string[];

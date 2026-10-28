@@ -22,6 +22,11 @@ jobs:
       - name: Smoke test de la API
         run: npm run api:smoke
 
+      # Las portadas originales no están en el repo: viven en Cloudflare R2.
+      # Falla si animes.json referencia alguna que no se haya subido.
+      - name: Portadas del catálogo en R2
+        run: node workers/r2-images/verify.mjs
+
       - name: Tests del frontend
         run: npx ng test --watch=false
 

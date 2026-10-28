@@ -56,3 +56,4 @@ Thumbs.db
 
 # Claude Code (configuracion local de cada maquina)
 .claude/settings.local.json
+.claude/launch.json

@@ -3,8 +3,8 @@
 - **Catalog Expansion**:
   - Added 164 new animes, bringing the total from 300 to 464, and 165 alternative covers
     for 57 animes already in the catalog.
-  - Converted the 156 PNG covers to JPEG at quality 95, which cuts the full-size set from
-    0.77 GB to 0.23 GB.
+  - Converted the 156 PNG covers to JPEG at quality 95, shrinking them from 0.77 GB to
+    0.23 GB.
 
 - **Faster Gallery**:
   - Thumbnails are now 400 px WebP files at less than half the previous size, and the

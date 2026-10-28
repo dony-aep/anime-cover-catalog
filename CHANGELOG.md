@@ -1,3 +1,32 @@
+# Catalog Expansion & Cloudflare R2 Covers v5.3.0 - 2026-10-28
+
+- **Catalog Expansion**:
+  - Added 164 new animes, bringing the total from 300 to 464, and 165 alternative covers
+    for 57 animes already in the catalog.
+  - Converted the 156 PNG covers to JPEG at quality 95, which cuts the full-size set from
+    0.77 GB to 0.23 GB.
+
+- **Faster Gallery**:
+  - Thumbnails are now 400 px WebP files at less than half the previous size, and the
+    gallery and the covers modal load them only as they scroll into view.
+  - The API returns the thumbnail URLs in `images.thumb` and `images.alternativesThumbs`,
+    so clients no longer have to rewrite the cover URL themselves.
+  - Bumped the response shape version to `3`, so clients holding a cached ETag refetch
+    instead of keeping the old `.jpg` thumbnail URLs.
+
+- **Full-Size Covers on Cloudflare R2**:
+  - Full-size covers are served from a Cloudflare R2 bucket through a read-only Worker
+    (`workers/r2-images`), keeping their transfer off the Vercel free-tier quota. The API
+    points `images.cover` and `images.alternatives` there when `IMAGES_BASE_URL` is set;
+    without it, they are served from the app as before.
+  - Full-size covers are no longer tracked in git, so the repository only grows with the
+    thumbnails.
+
+- **CI**:
+  - Added a check that fails when `animes.json` references a cover missing from the R2
+    bucket. It runs only when the catalog or the Worker changes, and reads the bucket
+    listing in a single request.
+
 # Angular 22.2 & Security Refresh v5.2.0 - 2026-10-21
 
 - **Angular Minor Update (22.1 → 22.2)**:

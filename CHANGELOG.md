@@ -1,3 +1,17 @@
+# Funimation Posters v5.4.0 - 2026-10-28
+
+- **Catalog Expansion**:
+  - Added 751 new animes from a pack of English Funimation posters, bringing the total from
+    464 to 1215. Many are first seasons of series the catalog only had later entries of,
+    such as Re:Zero, Dr. Stone and My Hero Academia.
+  - Added 32 English posters as alternative covers for animes already in the catalog.
+
+- **Filters**:
+  - Ecchi and Erotica now appear once in the filter list. Older records kept them in
+    `genres` and newer ones in `explicitGenres`, so each of the two filters showed only
+    part of the catalog. All records now use `explicitGenres`; API clients that looked for
+    these values in `genres` should read `explicitGenres` instead.
+
 # Catalog Expansion & Cloudflare R2 Covers v5.3.0 - 2026-10-28
 
 - **Catalog Expansion**:

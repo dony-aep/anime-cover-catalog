@@ -3392,7 +3392,7 @@
     "titleEnglish": null,
     "titleJapanese": null,
     "images": {
-      "cover": "assets/AnimeImages/Tate_no_Yuusha_no_Nariagari_1.webp",
+      "cover": "assets/AnimeImages/Tate_no_Yuusha_no_Nariagari_1.jpg",
       "alternatives": []
     },
     "releaseYear": 2019,
@@ -5216,8 +5216,7 @@
     "images": {
       "cover": "assets/AnimeImages/Love_Live!_School_Idol_Project.jpeg",
       "alternatives": [
-        "assets/AnimeImages/Love_Live!_School_Idol_Project_alt1.jpeg",
-        "assets/AnimeImages/Love_Live!_School_Idol_Project_alt2.jpg"
+        "assets/AnimeImages/Love_Live!_School_Idol_Project_alt1.jpeg"
       ]
     },
     "releaseYear": 2013,
@@ -11248,9 +11247,7 @@
     "titleJapanese": "时光代理人",
     "images": {
       "cover": "assets/AnimeImages/Shiguang_Dailiren.jpg",
-      "alternatives": [
-        "assets/AnimeImages/Shiguang_Dailiren_alt1.jpg"
-      ]
+      "alternatives": []
     },
     "releaseYear": 2021,
     "studios": [
@@ -34962,5 +34959,64 @@
     "episodes": 170,
     "synopsis": "Asta and Yuno were abandoned at the same church on the same day. Raised together as children, they came to know of the \"Wizard King\"—a title given to the strongest mage in the kingdom—and promised that they would compete against each other for the position of the next Wizard King. However, as they grew up, the stark difference between them became evident. While Yuno is able to wield magic with amazing power and control, Asta cannot use magic at all and desperately tries to awaken his powers by training physically.\n\r\nWhen they reach the age of 15, Yuno is bestowed a spectacular Grimoire with a four-leaf clover, while Asta receives nothing. However, soon after, Yuno is attacked by a person named Revchi, whose main purpose is to obtain Yuno's Grimoire. Asta tries to fight Revchi, but he is outmatched. Though without hope and on the brink of defeat, he finds the strength to continue when he hears Yuno's voice. Unleashing his inner emotions in a rage, Asta receives a five-leaf clover Grimoire, a \"Black Clover\" giving him enough power to defeat Revchi. A few days later, the two friends head out into the world, both seeking the same goal—to become the Wizard King!",
     "trailerUrl": "https://youtu.be/vUjAxk1qYzQ"
+  },
+  {
+    "slug": "shiguang-dailiren-ii",
+    "title": "Shiguang Dailiren II",
+    "titleEnglish": "Link Click Season 2",
+    "titleJapanese": "时光代理人II",
+    "images": {
+      "cover": "assets/AnimeImages/Shiguang_Dailiren_II.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2023,
+    "studios": [
+      "LAN Studio"
+    ],
+    "type": "ONA",
+    "demographic": null,
+    "themes": [
+      "Adult Cast",
+      "Super Power",
+      "Time Travel"
+    ],
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Suspense"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "The attempt to capture the mysterious perpetrator who possesses people ends tragically: Lu Guang is rushed to the hospital in a critical state, while Cheng Xiaoshi is arrested for the alleged crime. In light of recent events, the father of Liu Min unleashes his skilled, ruthless lawyer—Qian Jin—after Police Chief Li Xiao, who is spearheading the investigation related to the photo studio owned by Qiao Ling.\n\r\nIt appears that no one is safe from the unpredictable and fatal attacks of the adversary who painstakingly hides their identity. As he tries to learn from his past mistakes, Cheng Xiaoshi must act swiftly and decisively to put an end to this devastating trail of death.",
+    "trailerUrl": "https://youtu.be/vE0tnwk-jVE"
+  },
+  {
+    "slug": "love-live-school-idol-project-2nd-season",
+    "title": "Love Live! School Idol Project 2nd Season",
+    "titleEnglish": "Love Live! School Idol Project 2",
+    "titleJapanese": "ラブライブ! School idol project 2期",
+    "images": {
+      "cover": "assets/AnimeImages/Love_Live!_School_Idol_Project_2nd_Season.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2014,
+    "studios": [
+      "Sunrise"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Idols (Female)",
+      "Music",
+      "School"
+    ],
+    "genres": [
+      "Award Winning",
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Otonokizaka High School has been saved! Despite having to withdraw from the Love Live!, the efforts of μ's were able to garner enough interest in their school to prevent it from being shut down. What more, following the conclusion of the first, a second Love Live! is announced, this time on an even larger stage than before. Given a chance for redemption, the nine girls come together once more to sing their hearts out and claim victory.\n\r\nHowever, with the end of the school year approaching, the graduation of the third years draws near. As they attempt to reach the top of the Love Live!, they must also consider their future and choose what path the group will take. Though the question of whether to continue without the third years or disband weighs heavily on the minds of its members, μ's must quickly come to an answer with graduation right around the corner.\n\nLove Live! School Idol Project 2nd Season continues the story of the girls as they laugh, cry, sing, and dance in their journey to determine the future of their group and conquer the Love Live! in their last chance to win with all nine girls together.",
+    "trailerUrl": "https://youtu.be/0iV7LV8HCh4"
   }
 ]

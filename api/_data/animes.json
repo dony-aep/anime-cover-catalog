@@ -3722,7 +3722,6 @@
         "assets/AnimeImages/Dandadan_alt6.jpg",
         "assets/AnimeImages/Dandadan_alt7.jpeg",
         "assets/AnimeImages/Dandadan_alt8.jpg",
-        "assets/AnimeImages/Dandadan_alt9.jpg",
         "assets/AnimeImages/Dandadan_alt10.jpg"
       ]
     },
@@ -7096,9 +7095,7 @@
     "titleJapanese": "シャイ",
     "images": {
       "cover": "assets/AnimeImages/Shy.jpg",
-      "alternatives": [
-        "assets/AnimeImages/Shy_alt1.jpg"
-      ]
+      "alternatives": []
     },
     "releaseYear": 2023,
     "studios": [
@@ -7601,8 +7598,7 @@
       "cover": "assets/AnimeImages/Boku_no_Hero_Academia_the_Movie_4_You're_Next.jpg",
       "alternatives": [
         "assets/AnimeImages/Boku_no_Hero_Academia_the_Movie_4_You're_Next_alt1.jpg",
-        "assets/AnimeImages/Boku_no_Hero_Academia_the_Movie_4_You're_Next_alt2.jpg",
-        "assets/AnimeImages/Boku_no_Hero_Academia_the_Movie_4_You're_Next_alt3.jpg"
+        "assets/AnimeImages/Boku_no_Hero_Academia_the_Movie_4_You're_Next_alt2.jpg"
       ]
     },
     "releaseYear": 2024,
@@ -9679,7 +9675,8 @@
         "assets/AnimeImages/Dandadan_2nd_Season_alt2.jpg",
         "assets/AnimeImages/Dandadan_2nd_Season_alt3.jpg",
         "assets/AnimeImages/Dandadan_2nd_Season_alt4.jpg",
-        "assets/AnimeImages/Dandadan_2nd_Season_alt5.jpg"
+        "assets/AnimeImages/Dandadan_2nd_Season_alt5.jpg",
+        "assets/AnimeImages/Dandadan_2nd_Season_alt6.jpg"
       ]
     },
     "releaseYear": 2025,
@@ -12099,7 +12096,6 @@
     "images": {
       "cover": "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season.jpeg",
       "alternatives": [
-        "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt1.jpg",
         "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt2.jpg",
         "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt3.jpg",
         "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt4.jpg",

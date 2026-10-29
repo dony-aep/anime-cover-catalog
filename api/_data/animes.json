@@ -3721,8 +3721,7 @@
         "assets/AnimeImages/Dandadan_alt5.jpg",
         "assets/AnimeImages/Dandadan_alt6.jpg",
         "assets/AnimeImages/Dandadan_alt7.jpeg",
-        "assets/AnimeImages/Dandadan_alt8.jpg",
-        "assets/AnimeImages/Dandadan_alt10.jpg"
+        "assets/AnimeImages/Dandadan_alt8.jpg"
       ]
     },
     "releaseYear": 2024,
@@ -9673,7 +9672,8 @@
         "assets/AnimeImages/Dandadan_2nd_Season_alt3.jpg",
         "assets/AnimeImages/Dandadan_2nd_Season_alt4.jpg",
         "assets/AnimeImages/Dandadan_2nd_Season_alt5.jpg",
-        "assets/AnimeImages/Dandadan_2nd_Season_alt6.jpg"
+        "assets/AnimeImages/Dandadan_2nd_Season_alt6.jpg",
+        "assets/AnimeImages/Dandadan_2nd_Season_alt7.jpg"
       ]
     },
     "releaseYear": 2025,
@@ -25870,15 +25870,15 @@
     "trailerUrl": "https://youtu.be/STr_EnLKL5k"
   },
   {
-    "slug": "boku-no-hero-academia",
-    "title": "Boku no Hero Academia",
-    "titleEnglish": "My Hero Academia",
+    "slug": "boku-no-hero-academia-5th-season",
+    "title": "Boku no Hero Academia 5th Season",
+    "titleEnglish": "My Hero Academia Season 5",
     "titleJapanese": "僕のヒーローアカデミア",
     "images": {
-      "cover": "assets/AnimeImages/Boku_no_Hero_Academia.jpg",
+      "cover": "assets/AnimeImages/Boku_no_Hero_Academia_5th_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2016,
+    "releaseYear": 2021,
     "studios": [
       "Bones"
     ],
@@ -25892,9 +25892,9 @@
       "Action"
     ],
     "explicitGenres": [],
-    "episodes": 13,
-    "synopsis": "The appearance of \"quirks,\" newly discovered super powers, has been steadily increasing over the years, with 80 percent of humanity possessing various abilities from manipulation of elements to shapeshifting. This leaves the remainder of the world completely powerless, and Izuku Midoriya is one such individual.\n\r\nSince he was a child, the ambitious middle schooler has wanted nothing more than to be a hero. Izuku's unfair fate leaves him admiring heroes and taking notes on them whenever he can. But it seems that his persistence has borne some fruit: Izuku meets the number one hero and his personal idol, All Might. All Might's quirk is a unique ability that can be inherited, and he has chosen Izuku to be his successor!\n\r\nEnduring many months of grueling training, Izuku enrolls in UA High, a prestigious high school famous for its excellent hero training program, and this year's freshmen look especially promising. With his bizarre but talented classmates and the looming threat of a villainous organization, Izuku will soon learn what it really means to be a hero.",
-    "trailerUrl": "https://youtu.be/D5fYOnwYkj4"
+    "episodes": 25,
+    "synopsis": "UA Academy's Class 1-A has been the focus of a substantial amount of public attention due to the multiple villain attacks they have faced over the past school year. This attention has left Class 1-A's rivals, Class 1-B, feeling quite bitter. Desiring to prove their skills, they look forward to the opportunity that has been given to them: a set of mock battles between the students of each class.\n\r\nThe classes are split into squads of four, each of which is tasked with capturing the other group members. The winner is the group who first secures all of the opposing team. While this sounds simple, a curveball is thrown into the mix with the inclusion of General Course Student Hitoshi Shinsou, who wishes to transfer into the Hero Course. Despite using his training with Class 1-A's homeroom teacher Shouta \"Eraserhead\" Aizawa to prove that he's capable of being a real hero, he is still far behind the others due to his lack of experience. However, Shinsou is determined to overcome this challenge.\n\r\nThus begins the fiery competition between Class 1-A and 1-B as each tries to prove that they are superior to the other.",
+    "trailerUrl": "https://youtu.be/kkmW-tppFPM"
   },
   {
     "slug": "gosick",

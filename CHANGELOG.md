@@ -1,16 +1,17 @@
 # Funimation Posters v5.4.0 - 2026-10-28
 
 - **Catalog Expansion**:
-  - Added 753 new animes, bringing the total from 464 to 1217. Almost all come from a pack
+  - Added 754 new animes, bringing the total from 464 to 1218. Almost all come from a pack
     of English Funimation posters, and many are first seasons of series the catalog only
     had later entries of, such as Re:Zero, Dr. Stone and My Hero Academia.
-  - Added 30 English posters as alternative covers for animes already in the catalog.
+  - Added 29 English posters as alternative covers for animes already in the catalog.
 
 - **Filters**:
   - Ecchi and Erotica now appear once in the filter list. Older records kept them in
     `genres` and newer ones in `explicitGenres`, so each of the two filters showed only
     part of the catalog. All records now use `explicitGenres`; API clients that looked for
     these values in `genres` should read `explicitGenres` instead.
+  - The Ecchi and Erotica filters show how many animes they hold, like every other filter.
 
 - **Covers**:
   - Fixed covers that showed another season of the same series, checked against each
@@ -18,7 +19,8 @@
     Season, My Hero Academia: You're Next and Shy), three visuals moved to the season they
     belong to (Dandadan, The Apothecary Diaries and Mushoku Tensei), and the second-season
     visuals of Link Click and Love Live! School Idol Project now head those seasons' own
-    entries.
+    entries. The Puella Magi Madoka Magica poster, art from the third film (Rebellion),
+    now heads that film's entry.
   - The Rising of the Shield Hero's cover is now 2000×3000 instead of 768×1152.
 
 # Catalog Expansion & Cloudflare R2 Covers v5.3.0 - 2026-10-28

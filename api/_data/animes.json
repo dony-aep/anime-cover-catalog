@@ -21219,31 +21219,30 @@
     "trailerUrl": "https://youtu.be/e1cOAM0RiEg"
   },
   {
-    "slug": "ufo-princess-valkyrie",
-    "title": "UFO Princess Valkyrie",
-    "titleEnglish": "UFO Ultramaiden Valkyrie",
-    "titleJapanese": "円盤皇女ワるきゅーレ",
+    "slug": "ufo-princess-valkyrie-3-seiresetsu-no-hanayome",
+    "title": "UFO Princess Valkyrie 3: Seiresetsu no Hanayome",
+    "titleEnglish": "UFO Ultramaiden Valkyrie 3: Bride of Celestial Souls' Day",
+    "titleJapanese": "円盤皇女ワるきゅーレ 星霊節の花嫁",
     "images": {
-      "cover": "assets/AnimeImages/UFO_Princess_Valkyrie.jpg",
+      "cover": "assets/AnimeImages/UFO_Princess_Valkyrie_3_Seiresetsu_no_Hanayome.jpg",
       "alternatives": []
     },
-    "releaseYear": 2002,
+    "releaseYear": 2005,
     "studios": [
       "TNK"
     ],
-    "type": "TV",
+    "type": "OVA",
     "demographic": "Shounen",
     "themes": [],
     "genres": [
       "Comedy",
+      "Romance",
       "Sci-Fi"
     ],
-    "explicitGenres": [
-      "Ecchi"
-    ],
-    "episodes": 12,
-    "synopsis": "UFO Princess Warukyure, aka UFO Princess Walkyrie is about a princess from outer space who accidentally crashes on earth, where Kazuto desperately tries to maintain the public bath of his grandfather. Due to circumstances, Kazuto receives part of princess Walkyrie's soul which forces her to stay there with him. But that's not the only problem ... because her soul lost strength, the princess transforms both mentally and physically into a little kid!\n\r\n(Source: AniDB)",
-    "trailerUrl": "https://youtu.be/dB-jEophYd4"
+    "explicitGenres": [],
+    "episodes": 6,
+    "synopsis": "The third season doesn`t have a particular story behind everything (like \"Valkyrie Ghost\" in the second season). It just tells 6 stories about the life of Kazuto & Co. with some additions: Raine and Chorus get a house on earth, the last three Valhalla princesses each get an episode, and in the last episode Kazuto and Valkyrie, who in the same episode managed to stay adult, >try< to marry again. \n\r\n(Source: ANN)",
+    "trailerUrl": null
   },
   {
     "slug": "afro-samurai",

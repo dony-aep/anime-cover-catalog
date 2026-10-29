@@ -2505,9 +2505,7 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Mushoku_Tensei_Isekai_Ittara_Honki_Dasu_1.jpg",
-      "alternatives": [
-        "assets/AnimeImages/Mushoku_Tensei_Isekai_Ittara_Honki_Dasu_1_alt1.jpg"
-      ]
+      "alternatives": []
     },
     "releaseYear": 2021,
     "studios": [
@@ -2538,7 +2536,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Mushoku_Tensei_Isekai_Ittara_Honki_Dasu_Part_2.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Mushoku_Tensei_Isekai_Ittara_Honki_Dasu_Part_2_alt1.jpg"
+      ]
     },
     "releaseYear": 2021,
     "studios": [
@@ -3819,7 +3819,6 @@
       "alternatives": [
         "assets/AnimeImages/Kusuriya_no_Hitorigoto_alt1.jpeg",
         "assets/AnimeImages/Kusuriya_no_Hitorigoto_alt2.jpeg",
-        "assets/AnimeImages/Kusuriya_no_Hitorigoto_alt3.jpg",
         "assets/AnimeImages/Kusuriya_no_Hitorigoto_alt4.jpg"
       ]
     },
@@ -3854,7 +3853,8 @@
         "assets/AnimeImages/Kusuriya_no_Hitorigoto_2nd_Season_alt1.jpg",
         "assets/AnimeImages/Kusuriya_no_Hitorigoto_2nd_Season_alt2.jpg",
         "assets/AnimeImages/Kusuriya_no_Hitorigoto_2nd_Season_alt3.jpg",
-        "assets/AnimeImages/Kusuriya_no_Hitorigoto_2nd_Season_alt4.jpg"
+        "assets/AnimeImages/Kusuriya_no_Hitorigoto_2nd_Season_alt4.jpg",
+        "assets/AnimeImages/Kusuriya_no_Hitorigoto_2nd_Season_alt5.jpg"
       ]
     },
     "releaseYear": 2025,

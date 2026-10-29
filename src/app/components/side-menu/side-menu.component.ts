@@ -34,6 +34,7 @@ export class SideMenuComponent {
 
       anime.genres.forEach(g => counts[g] = (counts[g] || 0) + 1);
       anime.themes.forEach(t => counts[t] = (counts[t] || 0) + 1);
+      anime.explicitGenres.forEach(e => counts[e] = (counts[e] || 0) + 1);
       if (anime.type) counts[anime.type] = (counts[anime.type] || 0) + 1;
       if (anime.demographic) counts[anime.demographic] = (counts[anime.demographic] || 0) + 1;
     }

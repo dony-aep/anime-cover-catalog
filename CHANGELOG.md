@@ -12,6 +12,11 @@
     part of the catalog. All records now use `explicitGenres`; API clients that looked for
     these values in `genres` should read `explicitGenres` instead.
 
+- **Covers**:
+  - Removed four alternative covers that showed another season of the same series
+    ([Oshi no Ko] 3rd Season, My Hero Academia: You're Next, Shy and Dandadan). The
+    textless Dandadan visual now sits in its 2nd season.
+
 # Catalog Expansion & Cloudflare R2 Covers v5.3.0 - 2026-10-28
 
 - **Catalog Expansion**:

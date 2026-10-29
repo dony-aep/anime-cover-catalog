@@ -14529,19 +14529,19 @@
     "trailerUrl": null
   },
   {
-    "slug": "space-adventure-cobra",
-    "title": "Space Adventure Cobra",
-    "titleEnglish": "Space Adventure Cobra: The Movie",
-    "titleJapanese": "SPACE ADVENTURE コブラ",
+    "slug": "space-cobra",
+    "title": "Space Cobra",
+    "titleEnglish": "Space Adventure Cobra",
+    "titleJapanese": "スペースコブラ",
     "images": {
-      "cover": "assets/AnimeImages/Space_Adventure_Cobra.jpg",
+      "cover": "assets/AnimeImages/Space_Cobra.jpg",
       "alternatives": []
     },
     "releaseYear": 1982,
     "studios": [
-      "TMS Entertainment"
+      "Tokyo Movie Shinsha"
     ],
-    "type": "Movie",
+    "type": "TV",
     "demographic": "Shounen",
     "themes": [
       "Adult Cast",
@@ -14553,8 +14553,8 @@
       "Sci-Fi"
     ],
     "explicitGenres": [],
-    "episodes": 1,
-    "synopsis": "While enjoying a drink at a bar, a beautiful yet intimidating woman catches the eye of Cobra, an infamous outlaw with a powerful gun fused to his left arm. This woman, Jane Royal, has also caught the eye of the Pirate Guild, a dangerous organization led by the enigmatic Crystal Bowie. As Cobra helps Jane escape the Pirate Guild and find her missing sisters, he discovers that she might just hold the fate of the galaxy in her hands.",
+    "episodes": 31,
+    "synopsis": "Lonely salaryman Johnson laments his meager life, longing for a world of travel and excitement. But after engaging in a hallucinatory experience, he recalls vivid memories of a legendary space pirate named Cobra. WIth the Psychogun attached to his left arm, Cobra had travelled across space with his partner Lady Armaroid. The two formed an infamous team feared by authorities and loathed by the Pirate Guild—a conglomerate of the most powerful pirates in the galaxy,\n\r\nBack on Earth, an encounter at a casino changes Johnson’s life, as his winnings bring him face-to-face with the manager—Pirate Guild boss Vaiken, whom he’d seen defeated by Cobra in his dream. Recognizing Johnson as the disguised Cobra, Vaiken attempts to exact revenge—but instead activates the Psychogun hidden under Johnson’s left arm, triggering his repressed memories and alerting Lady Armaroid.\n\r\nNow after besting Vaiken once again and with his memories restored, Cobra leaves hiding and sets out to stop the Pirate Guild’s interstellar mafia. He and Lady Armaroid traverse space, continuing their life of high-stakes adventure while aiding those wronged by the Guild’s members.",
     "trailerUrl": null
   },
   {
@@ -15760,17 +15760,17 @@
     "trailerUrl": "https://youtu.be/p8D-TdDFwIE"
   },
   {
-    "slug": "xian-wang-de-richang-shenghuo",
-    "title": "Xian Wang de Richang Shenghuo",
-    "titleEnglish": "The Daily Life of the Immortal King",
-    "titleJapanese": "仙王的日常生活",
+    "slug": "xian-wang-de-richang-shenghuo-2",
+    "title": "Xian Wang de Richang Shenghuo 2",
+    "titleEnglish": "The Daily Life of the Immortal King 2",
+    "titleJapanese": "仙王的日常生活 第二季",
     "images": {
-      "cover": "assets/AnimeImages/Xian_Wang_de_Richang_Shenghuo.jpg",
+      "cover": "assets/AnimeImages/Xian_Wang_de_Richang_Shenghuo_2.jpg",
       "alternatives": []
     },
-    "releaseYear": 2020,
+    "releaseYear": 2021,
     "studios": [
-      "Haoliners Animation"
+      "Pb Animation"
     ],
     "type": "ONA",
     "demographic": null,
@@ -15783,9 +15783,9 @@
       "Fantasy"
     ],
     "explicitGenres": [],
-    "episodes": 15,
-    "synopsis": "Wang Ling is a high school student with a cool and carefree demeanor. Coming off as someone with a very low spiritual force, he actually possesses a power capable of destroying the world at a moment's notice. To mitigate the volatile force within him, his parents have resorted to using an amulet as a temporary solution. However, the amulet weakens over time and Wang Ling's emotions also accelerate its deterioration. Now with the amulet on the verge of breaking, Wang Ling and his father race against time in order to fix it.",
-    "trailerUrl": "https://youtu.be/7ANfp-ibOs0"
+    "episodes": 12,
+    "synopsis": "Wang Ling has been living a quiet life ever since resolving a particular incident, but thanks to his previous tampering with the laws of nature, the level of psionic powers in the world has dropped drastically. To stop the levels from plummeting further, his spirit sword Jingke comes to the rescue. But due to the excessive use of power, Jingke ends up ripping a crack in space. This crack allows demons to infiltrate the world and steal spiritual energy essential to powering human society. Now the only person who has the power to thwart their plans is none other than Wang Ling.\n\r\nIn an attempt to balance his high school life with his supernatural one, Wang Ling must confront challenges ranging from teacher home visits, crafting spiritual swords, grappling with his growing feelings for Sun Rong, and battling invading demons!",
+    "trailerUrl": "https://youtu.be/HhcH-1T-0_o"
   },
   {
     "slug": "inu-to-hasami-wa-tsukaiyou",
@@ -16272,15 +16272,15 @@
     "trailerUrl": "https://youtu.be/kgNkGohA20k"
   },
   {
-    "slug": "shingeki-no-kyojin-the-final-season",
-    "title": "Shingeki no Kyojin: The Final Season",
-    "titleEnglish": "Attack on Titan: Final Season",
-    "titleJapanese": "進撃の巨人 The Final Season",
+    "slug": "shingeki-no-kyojin-the-final-season-part-2",
+    "title": "Shingeki no Kyojin: The Final Season Part 2",
+    "titleEnglish": "Attack on Titan: Final Season Part 2",
+    "titleJapanese": "進撃の巨人 The Final Season Part 2",
     "images": {
-      "cover": "assets/AnimeImages/Shingeki_no_Kyojin_The_Final_Season.jpg",
+      "cover": "assets/AnimeImages/Shingeki_no_Kyojin_The_Final_Season_Part_2.jpg",
       "alternatives": []
     },
-    "releaseYear": 2021,
+    "releaseYear": 2022,
     "studios": [
       "MAPPA"
     ],
@@ -16297,9 +16297,9 @@
       "Suspense"
     ],
     "explicitGenres": [],
-    "episodes": 16,
-    "synopsis": "Gabi Braun and Falco Grice have been training their entire lives to inherit one of the seven Titans under Marley's control and aid their nation in eradicating the Eldians on Paradis. However, just as all seems well for the two cadets, their peace is suddenly shaken by the arrival of Eren Yeager and the remaining members of the Survey Corps.\n\r\nHaving finally reached the Yeager family basement and learned about the dark history surrounding the Titans, the Survey Corps has at long last found the answer they so desperately fought to uncover. With the truth now in their hands, the group set out for the world beyond the walls.\n\r\nIn Shingeki no Kyojin: The Final Season, two utterly different worlds collide as each party pursues its own agenda in the long-awaited conclusion to Paradis' fight for freedom.",
-    "trailerUrl": "https://youtu.be/SlNpRThS9t8"
+    "episodes": 12,
+    "synopsis": "Turning against his former allies and enemies alike, Eren Yeager sets a disastrous plan in motion. Under the guidance of the Beast Titan, Zeke, Eren takes extreme measures to end the ancient conflict between Marley and Eldia—but his true intentions remain a mystery. Delving deep into his family's past, Eren fights to control his own destiny.\n\r\nMeanwhile, the long-feuding nations of Marley and Eldia utilize both soldiers and Titans in a brutal race to eliminate the other. Reiner Braun uses his own powers in a desperate bid to hold off Eren's own militaristic force, and his fellow Eldians—children Falco Grice and Gabi Braun—struggle to survive in the unfolding chaos.\n\r\nElsewhere, Eren's childhood friends Mikasa Ackerman and Armin Arlert remain imprisoned alongside Eren's former Survey Corps companions, all disturbed by Eren's monstrous transformation. Under the blind belief that Eren still secretly harbors good intentions, Mikasa and the others enter the fray in an attempt to save their friend's very soul.",
+    "trailerUrl": "https://youtu.be/EIVVnLlhzr0"
   },
   {
     "slug": "death-parade",
@@ -17764,15 +17764,15 @@
     "trailerUrl": "https://youtu.be/icC2xhab2XE"
   },
   {
-    "slug": "akagami-no-shirayuki-hime",
-    "title": "Akagami no Shirayuki-hime",
-    "titleEnglish": "Snow White with the Red Hair",
+    "slug": "akagami-no-shirayuki-hime-2nd-season",
+    "title": "Akagami no Shirayuki-hime 2nd Season",
+    "titleEnglish": "Snow White with the Red Hair 2",
     "titleJapanese": "赤髪の白雪姫",
     "images": {
-      "cover": "assets/AnimeImages/Akagami_no_Shirayuki-hime.jpg",
+      "cover": "assets/AnimeImages/Akagami_no_Shirayuki-hime_2nd_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2015,
+    "releaseYear": 2016,
     "studios": [
       "Bones"
     ],
@@ -17787,8 +17787,8 @@
     ],
     "explicitGenres": [],
     "episodes": 12,
-    "synopsis": "Although her name means \"snow white,\" Shirayuki is a cheerful, red-haired girl living in the country of Tanbarun who works diligently as an apothecary at her herbal shop. Her life changes drastically when she is noticed by the silly prince of Tanbarun, Prince Raji, who then tries to force her to become his concubine. Unwilling to give up her freedom, Shirayuki cuts her long red hair and escapes into the forest, where she is rescued from Raji by Zen Wistalia, the second prince of a neighboring country, and his two aides. Hoping to repay her debt to the trio someday, Shirayuki sets her sights on pursuing a career as the court herbalist in Zen's country, Clarines.\n\nAkagami no Shirayuki-hime depicts Shirayuki's journey toward a new life at the royal palace of Clarines, as well as Zen's endeavor to become a prince worthy of his title. As loyal friendships are forged and deadly enemies formed, Shirayuki and Zen slowly learn to support each other as they walk their own paths.",
-    "trailerUrl": "https://youtu.be/XzXLibJm6GE"
+    "synopsis": "Shirayuki and Zen Wistalia have finally confirmed their romantic feelings for each other, and everyone has resumed their daily lives. Shirayuki remains an apprentice court herbalist at the royal palace of Clarines, and Zen continues his duties alongside his aides.\n\r\nHowever, their daily routines are disrupted when Crown Prince Izana, Zen’s older brother, receives an invitation from Raji Shenazard, the prince of Tanbarun. The herbalist finds herself ordered to go to Tanbarun for seven days, to build a new friendship with the formerly selfish and haughty ruler who once ordered Shirayuki to become his concubine. Along the way, Shirayuki is bound to run into trouble once again, as she is sought by a mysterious boy named Kazuki, someone she has never met.",
+    "trailerUrl": "https://youtu.be/yP9kzpaQF20"
   },
   {
     "slug": "tales-of-vesperia-the-first-strike",
@@ -18459,12 +18459,12 @@
     "trailerUrl": "https://youtu.be/S8j5iEklHyI"
   },
   {
-    "slug": "black-lagoon",
-    "title": "Black Lagoon",
-    "titleEnglish": "Black Lagoon",
-    "titleJapanese": "BLACK LAGOON",
+    "slug": "black-lagoon-the-second-barrage",
+    "title": "Black Lagoon: The Second Barrage",
+    "titleEnglish": "Black Lagoon: The Second Barrage",
+    "titleJapanese": "BLACK LAGOON The Second Barrage",
     "images": {
-      "cover": "assets/AnimeImages/Black_Lagoon.jpg",
+      "cover": "assets/AnimeImages/Black_Lagoon_The_Second_Barrage.jpg",
       "alternatives": []
     },
     "releaseYear": 2006,
@@ -18482,8 +18482,8 @@
     ],
     "explicitGenres": [],
     "episodes": 12,
-    "synopsis": "Salaryman Rokurou Okajima spends his days trying to climb his company's corporate ladder, until one day when a business negotiation in Thailand goes awry. During the botched deal, he falls hostage to the Lagoon Company—a band of ruthless pirate mercenaries. Left to the whims of his captors after his managers refuse to pay his ransom, Rokurou does the unthinkable: instead of begging for his life, he joins the very crew who kidnapped him.\n\r\nNow a member of the group, Rokurou must adjust to his new residence in the dissolute hellscape known as Roanapur, a city where corruption and crime run rampant, and even the smallest slipup could cost him his life. If not for one of the many crime syndicates on the island, Rokurou also constantly finds himself at odds with his brash, gunslinging colleague, Revy. \n\r\nAs Rokurou struggles to abandon his past—and with more than just the profits from the Lagoon Company's illegal trading on the line—he must quickly find the resolve to make tough decisions in high-stress situations while keeping his humanity intact.",
-    "trailerUrl": "https://youtu.be/d4EbGC7fKnQ"
+    "synopsis": "Rokurou \"Rock\" Okajima has joined the Lagoon Company, a pirate mercenary group which operates out of Roanapur, Thailand. Despite his initial protests, this filthy slum of depraved souls and merciless criminals now serves as the former salaryman's home. Stranded, with nothing left of his past life but the clothes on his back and his inner morality, Rock is forced to perform jobs alongside the other members of the Lagoon crew. Berated for his lack of spine as he wades through the underbelly of society, he must decide whether to continue on amidst the gunfire and ruthlessness or risk everything he has in an attempt to be free. Whether he chooses the comfort of a familiar land or the freedom of being an outlaw, his decision will have lasting consequences on the crew who gave him a home.",
+    "trailerUrl": "https://youtu.be/-KgtNdG_zfE"
   },
   {
     "slug": "makai-senki-disgaea",
@@ -19005,15 +19005,15 @@
     "trailerUrl": null
   },
   {
-    "slug": "ai-yori-aoshi",
-    "title": "Ai Yori Aoshi",
-    "titleEnglish": "Ai Yori Aoshi",
-    "titleJapanese": "藍より青し",
+    "slug": "ai-yori-aoshi-enishi",
+    "title": "Ai Yori Aoshi: Enishi",
+    "titleEnglish": "Ai Yori Aoshi: Enishi",
+    "titleJapanese": "藍より青し～縁～",
     "images": {
-      "cover": "assets/AnimeImages/Ai_Yori_Aoshi.jpg",
+      "cover": "assets/AnimeImages/Ai_Yori_Aoshi_Enishi.jpg",
       "alternatives": []
     },
-    "releaseYear": 2002,
+    "releaseYear": 2003,
     "studios": [
       "J.C.Staff"
     ],
@@ -19028,9 +19028,9 @@
       "Romance"
     ],
     "explicitGenres": [],
-    "episodes": 24,
-    "synopsis": "Kaoru Hanabishi, a college student who lives alone, met a beautiful but bewildered girl dressed in a kimono at a train station. He volunteered to guide her way to the address she was looking for, which happened to be in his neighborhood, but turned out to be an empty lot. Not knowing what to do next, Kaoru invited the devastated girl to his apartment and asked for any additional clues to her destination. She supplied him with a photo of two children whom Kaoru immediately identified as himself and Aoi Sakuraba, his childhood friend. It turned out that the girl in front of him is Aoi Sakuraba herself, his betrothed fiancee who came all the way to Tokyo to marry him. Her revelation was not only surprising but also reminded the deepest part of Kaoru's memory for why he left the Hanabishi family in the first place.",
-    "trailerUrl": "https://youtu.be/4wyQ6ZAojI8"
+    "episodes": 12,
+    "synopsis": "Two years after meeting Aoi, Kaoru and gang are still up to their normal habits. Kaoru now in grad school and the tenants being as rowdy as ever what will become of Aoi and Kaoru's love.\n\r\nTwo years has passed since Aoi and Kaoru were freed from the bonds of their families. They continue to live their normal lives with their usual friends in their house.",
+    "trailerUrl": null
   },
   {
     "slug": "fullmetal-alchemist-brotherhood",
@@ -20279,33 +20279,32 @@
     "trailerUrl": "https://youtu.be/-8JU3rvQ6y4"
   },
   {
-    "slug": "shakugan-no-shana",
-    "title": "Shakugan no Shana",
-    "titleEnglish": "Shakugan no Shana: Season I",
-    "titleJapanese": "灼眼のシャナ",
+    "slug": "shakugan-no-shana-movie",
+    "title": "Shakugan no Shana Movie",
+    "titleEnglish": "Shakugan no Shana: The Movie",
+    "titleJapanese": "劇場版 灼眼のシャナ",
     "images": {
-      "cover": "assets/AnimeImages/Shakugan_no_Shana.jpg",
+      "cover": "assets/AnimeImages/Shakugan_no_Shana_Movie.jpg",
       "alternatives": []
     },
-    "releaseYear": 2005,
+    "releaseYear": 2007,
     "studios": [
       "J.C.Staff"
     ],
-    "type": "TV",
+    "type": "Movie",
     "demographic": null,
     "themes": [
       "School"
     ],
     "genres": [
       "Action",
-      "Drama",
       "Romance",
       "Supernatural"
     ],
     "explicitGenres": [],
-    "episodes": 24,
-    "synopsis": "The world has become a slaughtering ground for the Crimson Denizens, mysterious beings from a parallel universe who thrive on the life energy of humans. These merciless murderers only leave behind scant remainders of souls called \"Torches,\" which are mere residues that will eventually be destroyed, along with the very fact of the victims' existence from the minds of the living. In an ambitious endeavor to put an end to this invisible, hungry massacre, warriors called Flame Hazes relentlessly fight these monsters.\n\r\nOne fateful day, Yuuji Sakai ceases to be a regular high schooler—he becomes trapped in a crevice of time and is suddenly attacked by a Denizen. Coming to his rescue just in the nick of time is a nameless hunter who seems no different from an ordinary young girl except for her blazing eyes and burning crimson hair. However, before Yuuji can learn anything more about his situation, he discovers that he has already been reduced to a Torch—merely a scrap of memory waiting to be extinguished.",
-    "trailerUrl": "https://youtu.be/9C2nhALMzrk"
+    "episodes": 1,
+    "synopsis": "Crimson Denizens and Rinne, beings from a parallel world, seek to devour humans' precious existences. To restore the delicate balance of the world, Flame Hazes hunt these entities down.\n\r\nYet such things are unknown to Yuuji Sakai, who starts his day like any other and heads to school. His day, however, takes a turn for the extraordinary when he witnesses everyone around him freeze in place and is left the only one able to move. Immediately, a Rinne begins devouring the souls of those around him, but as the creature sets its sights on Yuuji, a katana-wielding Flame Haze with blazing red hair saves him.\n\r\nAfter his protector fixes the damage done, she explains why Yuuji was able to move: he has become a Torch, a remnant of a dead human being that will eventually fade from memory. Furthermore, he is also a Mystes, a Torch that houses an unknown treasure. Before his flame burns out completely, a Crimson Denizen will try to seize the treasure he holds, so the fiery hunter decides to watch over him. As Yuuji comes to terms with being dead, he resolves to live his life the best he can with the time he has remaining.",
+    "trailerUrl": null
   },
   {
     "slug": "soul-eater",
@@ -21019,15 +21018,15 @@
     "trailerUrl": null
   },
   {
-    "slug": "tokyo-ghoul",
-    "title": "Tokyo Ghoul",
-    "titleEnglish": "Tokyo Ghoul",
-    "titleJapanese": "東京喰種-トーキョーグール-",
+    "slug": "tokyo-ghoul-a",
+    "title": "Tokyo Ghoul √A",
+    "titleEnglish": "Tokyo Ghoul √A",
+    "titleJapanese": "東京喰種√A",
     "images": {
-      "cover": "assets/AnimeImages/Tokyo_Ghoul.jpg",
+      "cover": "assets/AnimeImages/Tokyo_Ghoul_√A.jpg",
       "alternatives": []
     },
-    "releaseYear": 2014,
+    "releaseYear": 2015,
     "studios": [
       "Studio Pierrot"
     ],
@@ -21046,8 +21045,8 @@
     ],
     "explicitGenres": [],
     "episodes": 12,
-    "synopsis": "A sinister threat is invading Tokyo: flesh-eating \"ghouls\" who appear identical to humans and blend into their population. Reserved college student Ken Kaneki buries his nose in books and avoids the news of the growing crisis. However, the appearance of an attractive woman named Rize Kamishiro shatters his solitude when she forwardly asks him on a date.\n\r\nWhile walking Rize home, Kaneki discovers she isn't as kind as she first appeared, and she has led him on with sinister intent. After a tragic struggle, he later awakens in a hospital to learn his life was saved by transplanting the now deceased Rize's organs into his own body.\n\r\nKaneki's body begins to change in horrifying ways, and he transforms into a human-ghoul hybrid. As he embarks on his new dreadful journey, Kaneki clings to his humanity in the evolving bloody conflict between society's new monsters and the government agents who hunt them.",
-    "trailerUrl": "https://youtu.be/vGuQeQsoRgU"
+    "synopsis": "Ken Kaneki has finally come to accept the monstrous, flesh-craving part of himself that he has feared and despised for so long. After escaping captivity and torture, Kaneki joins Aogiri Tree—the very militant ghoul organization that had abducted him, leading his friends to question his true motive and loyalty.\n\r\nAs tension between the government and the ghouls continues to rise, the Commission of Counter Ghoul, the government's specialized anti-ghoul agency, has intensified their efforts to completely purge Tokyo of ghouls. This threatens the transient peace of Kaneki's friends and former comrades—the ghouls at the Anteiku coffee shop. Aware of the dangerous situation, Kaneki faces several battles that puts his precious fleeting humanity on the line.",
+    "trailerUrl": "https://youtu.be/M2DObpz2174"
   },
   {
     "slug": "kuragehime",
@@ -21521,12 +21520,12 @@
     "trailerUrl": null
   },
   {
-    "slug": "sasami-mahou-shoujo-club",
-    "title": "Sasami: Mahou Shoujo Club",
-    "titleEnglish": "Sasami Magical Girls Club",
-    "titleJapanese": "砂沙美 -魔法少女クラブ-",
+    "slug": "sasami-mahou-shoujo-club-2",
+    "title": "Sasami: Mahou Shoujo Club 2",
+    "titleEnglish": "Sasami Magical Girls Club 2",
+    "titleJapanese": "砂沙美☆魔法少女クラブ シーズン2",
     "images": {
-      "cover": "assets/AnimeImages/Sasami_Mahou_Shoujo_Club.jpg",
+      "cover": "assets/AnimeImages/Sasami_Mahou_Shoujo_Club_2.jpg",
       "alternatives": []
     },
     "releaseYear": 2006,
@@ -21542,7 +21541,7 @@
     "genres": [],
     "explicitGenres": [],
     "episodes": 13,
-    "synopsis": "In this world lives a group of people who call themselves \"Majo\" or \"Magical Girls.\" They hide their powers so as to assimilate into society. They have been living together in harmony with humans for many years, as had their predecessors long before them. Sasami has had magical powers since her birth. However, at the age of three, she was told by her parents never to use her innate powers, and from then on, she kept them secret. On the first day of a new school term, newly transferred teacher Wajuu arrives, and from then on, Sasami's life begins to change tremendously.\n\r\n(Source: ANN, edited)",
+    "synopsis": "In this world, there live a group of people who call themselves \"Majo\" or \"Magical Girls\". They hide their powers so as to assimilate into the environment. They have been living together in harmony with the humans for many years to come, and their predecessors continue to do so. Sasami was enthroned with magical powers since her birth. However, at the age of three, she was told by her parents never to use her innate powers and from then on, had kept it a secret from everyone. On the day of a new school term, a new transfer teacher by the name of Wajuu arrives and from then on, Sasami's life begins to change tremendously.\n\r\n(Source: ANN)",
     "trailerUrl": null
   },
   {
@@ -24041,15 +24040,15 @@
     "trailerUrl": "https://youtu.be/DBkXWtMZlUk"
   },
   {
-    "slug": "love-live-sunshine",
-    "title": "Love Live! Sunshine!!",
-    "titleEnglish": "Love Live! Sunshine!!",
-    "titleJapanese": "ラブライブ！サンシャイン!!",
+    "slug": "love-live-sunshine-2nd-season",
+    "title": "Love Live! Sunshine!! 2nd Season",
+    "titleEnglish": "Love Live! Sunshine!! Season 2",
+    "titleJapanese": "ラブライブ！サンシャイン!! 第2期",
     "images": {
-      "cover": "assets/AnimeImages/Love_Live!_Sunshine!!.jpg",
+      "cover": "assets/AnimeImages/Love_Live!_Sunshine!!_2nd_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2016,
+    "releaseYear": 2017,
     "studios": [
       "Sunrise"
     ],
@@ -24065,8 +24064,8 @@
     ],
     "explicitGenres": [],
     "episodes": 13,
-    "synopsis": "Chika Takami, a self-proclaimed normal girl, has never been involved in any clubs and lacked any notable talents. However, after a visit to Tokyo, she discovers a stage where even an ordinary girl like her could shine—the world of school idols. Inspired by the former superstar school idol group μ's, Chika is determined to start her own school idol club in her seaside hometown at Uranohoshi Girl's High School. But even before gathering any students to join the group, the aspiring school idol finds her greatest obstacle to be student council president Dia Kurosawa who stands firmly against the creation of the club.\n\r\nJust when it seems there is no hope, Chika meets Riko Sakurauchi, a transfer student from Otonokizaka High School, home of μ's. Somewhat shy but a talented piano player, Chika believes her to be a promising recruit, though convincing her to join is easier said than done. In spite of that, Chika chooses to charge forward and overcome the obstacles keeping her from forming a school idol group that shines as bright as the nine that came before her.",
-    "trailerUrl": "https://youtu.be/Sbz9EeyUOIs"
+    "synopsis": "Having decided to walk down a path separate from their inspirations as idols, the girls of Aqours are more determined than ever to shine brilliantly as school idols. With their previous performance marginally increasing the number of prospective students for their endangered school, they look to carry the momentum of their small step forward into the school's upcoming open house and the next Love Live competition. Hoping to use these events to bring more attention to their school, the nine girls look to give their best performances yet.\n\r\nUnfortunately, these small steps forward are not enough to convince Mari Ohara's father from changing his plans. Undeterred by Mari's pleas for reconsideration, the decision to close down the school is made official, putting an end to Uranohoshi Girls' High School's student recruitment, including the open house. Though all hope seems to be lost, the school idols refuse to give up. Faced with impossible odds, Aqours sings, dances, and shines in the hopes of bringing about a miracle.",
+    "trailerUrl": "https://youtu.be/gTl6HFQV6R0"
   },
   {
     "slug": "tales-of-zestiria-the-cross",
@@ -24310,12 +24309,12 @@
     "trailerUrl": "https://youtu.be/yMU738FH1AA"
   },
   {
-    "slug": "danganronpa-3-the-end-of-kibougamine-gakuen-zetsubou-hen",
-    "title": "Danganronpa 3: The End of Kibougamine Gakuen - Zetsubou-hen",
-    "titleEnglish": "Danganronpa 3: The End of Hope's Peak High School - Despair Arc",
-    "titleJapanese": "ダンガンロンパ3 -The End of 希望ヶ峰学園- 絶望編",
+    "slug": "danganronpa-3-the-end-of-kibougamine-gakuen-mirai-hen",
+    "title": "Danganronpa 3: The End of Kibougamine Gakuen - Mirai-hen",
+    "titleEnglish": "Danganronpa 3: The End of Hope's Peak High School - Future Arc",
+    "titleJapanese": "ダンガンロンパ3 -The End of 希望ヶ峰学園- 未来編",
     "images": {
-      "cover": "assets/AnimeImages/Danganronpa_3_The_End_of_Kibougamine_Gakuen_-_Zetsubou-hen.jpg",
+      "cover": "assets/AnimeImages/Danganronpa_3_The_End_of_Kibougamine_Gakuen_-_Mirai-hen.jpg",
       "alternatives": []
     },
     "releaseYear": 2016,
@@ -24327,7 +24326,6 @@
     "themes": [
       "High Stakes Game",
       "Psychological",
-      "School",
       "Survival"
     ],
     "genres": [
@@ -24337,8 +24335,8 @@
       "Suspense"
     ],
     "explicitGenres": [],
-    "episodes": 11,
-    "synopsis": "Hope's Peak Academy's unconventional class 77-B is about to have an even more eccentric addition: Chisa Yukizome, an alumna with the title of Super High School-Level Housekeeper—and their new homeroom teacher. Cheerful, passionate, and capable, Chisa immediately sets about correcting the students' problematic behavior and strengthening their relationships. It may not be easy dealing with diverse pupils ranging from princesses and nurses to yakuza and impossibly lucky students, but anything is possible with the power of hope.\n\r\nMeanwhile, Hajime Hinata, an unremarkable boy from the school's Reserve Course, longs for a talent. One day, he has an unexpected meeting with class 77-B's Super High School-Level Gamer Chiaki Nanami, who presents to him a new, hope-filled outlook on life. However, unbeknownst to him, the school's upper echelon is about to execute a sinister project centered around Hajime that will bring Hope's Peak—and the rest of the world—to its knees.\n\nZetsubou-hen chronicles the daily lives carried out at the talent-cultivating academy, and the darkness that lurks beneath. As despair slowly infects hope, plans are put into motion to start the Biggest, Most Awful, Most Tragic Event in Human History, and the end begins.",
+    "episodes": 12,
+    "synopsis": "After Makoto Naegi and his fellow survivors escaped Hope's Peak Academy to the world beyond, they soon join the Future Foundation, an organization dedicated to combating despair. Just when all seems to be looking up, Naegi is arrested and tried for betrayal due to defending a malicious group of Remnants of Despair. Standing before all of the Future Foundation executives, he finds himself, along with Kyouko Kirigiri and Aoi Asahina, facing an unknown fate.\n\r\nThe matter at hand only escalates when the organization's supposedly impenetrable security is hacked into by a familiar face: Monokuma. Much to Naegi's horror, the mechanical bear immediately announces the beginning of a new killing game, as moments later, the first victim appears as a signal for despair to resume its brutal conquest.\n\r\nNaegi, the Super High School-Level Lucky Student, must once again unravel the mystery as his colleagues and friends begin falling around him. However, there are no more class trials; among the 16 desperate participants, there is only one killer—and their death means the end of this infernal game.",
     "trailerUrl": "https://youtu.be/0AaOjY0cBzg"
   },
   {
@@ -27610,15 +27608,15 @@
     "trailerUrl": "https://youtu.be/UMNcx1Z2BPo"
   },
   {
-    "slug": "yowamushi-pedal",
-    "title": "Yowamushi Pedal",
-    "titleEnglish": "Yowamushi Pedal",
-    "titleJapanese": "弱虫ペダル",
+    "slug": "yowamushi-pedal-grande-road",
+    "title": "Yowamushi Pedal: Grande Road",
+    "titleEnglish": null,
+    "titleJapanese": "弱虫ペダル GRANDE ROAD",
     "images": {
-      "cover": "assets/AnimeImages/Yowamushi_Pedal.jpg",
+      "cover": "assets/AnimeImages/Yowamushi_Pedal_Grande_Road.jpg",
       "alternatives": []
     },
-    "releaseYear": 2013,
+    "releaseYear": 2014,
     "studios": [
       "TMS Entertainment"
     ],
@@ -27631,9 +27629,9 @@
       "Sports"
     ],
     "explicitGenres": [],
-    "episodes": 38,
-    "synopsis": "Sakamichi Onoda is a cheerful otaku looking to join his new school's anime club, eager to finally make some friends. Unfortunately, the club has been disbanded and he takes it upon himself to revive it by finding students who are willing to join. Without much luck, Onoda decides to make a round trip to Akihabara on his old, bulky city bicycle, a weekly 90-kilometer ride he has been completing since fourth grade.\n\r\nThis is when he meets fellow first year student, Shunsuke Imaizumi, a determined cyclist who is using the school's steep incline for practice. Surprised by Onoda's ability to climb the hill with his specific type of bicycle, Imaizumi challenges him to a race, with the proposition of joining the anime club should Onoda win. And thus begins the young boy's first foray into the world of high school bicycle racing!",
-    "trailerUrl": "https://youtu.be/tzkiTvJWKtg"
+    "episodes": 24,
+    "synopsis": "Second season of the Yowamushi Pedal series.",
+    "trailerUrl": "https://youtu.be/_PVuAbhIJa8"
   },
   {
     "slug": "hakata-tonkotsu-ramens",
@@ -29220,12 +29218,12 @@
     "trailerUrl": "https://youtu.be/-TBGQdFgXIg"
   },
   {
-    "slug": "bokutachi-wa-benkyou-ga-dekinai",
-    "title": "Bokutachi wa Benkyou ga Dekinai",
-    "titleEnglish": "We Never Learn: BOKUBEN",
-    "titleJapanese": "ぼくたちは勉強ができない",
+    "slug": "bokutachi-wa-benkyou-ga-dekinai-2nd-season",
+    "title": "Bokutachi wa Benkyou ga Dekinai!",
+    "titleEnglish": "We Never Learn: BOKUBEN Season 2",
+    "titleJapanese": "ぼくたちは勉強ができない！",
     "images": {
-      "cover": "assets/AnimeImages/Bokutachi_wa_Benkyou_ga_Dekinai.jpg",
+      "cover": "assets/AnimeImages/Bokutachi_wa_Benkyou_ga_Dekinai_2nd_Season.jpg",
       "alternatives": []
     },
     "releaseYear": 2019,
@@ -29245,8 +29243,8 @@
     ],
     "explicitGenres": [],
     "episodes": 13,
-    "synopsis": "Nariyuki Yuiga, an impoverished third-year high school student, works tirelessly to receive the VIP nomination, a scholarship that would cover all of his college tuition fees. In recognition of his hard work, the headmaster awards him the renowned scholarship.\n\r\nHowever, this scholarship is given under one condition: he must tutor the school's geniuses in their weakest subjects! Joining his new brigade of pupils are the math maestro Rizu Ogata, who wants to study humanities; the literature legend Fumino Furuhashi, who wants to study science; and Yuiga's sports-savvy childhood friend, Uruka Takemoto, who is hopeless at everything else.\n\nBokutachi wa Benkyou ga Dekinai follows Yuiga as he tries to teach his three eccentric tutees in a series of strange and comedic antics. But as Ogata's and Furuhashi's ambitions conflict with their talents, will Yuiga be able to help his students achieve their dreams?",
-    "trailerUrl": "https://youtu.be/CXQdqp6JFxI"
+    "synopsis": "Under Nariyuki Yuiga's devoted tutelage, his classmates Rizu Ogata, Fumino Furuhashi, and Uruka Takemoto are finally pulling average test scores on their worst subjects. But time is ticking, and there is still a long way to go before the three geniuses of Ichinose Academy are ready for their upcoming university exams. Meanwhile, the girls still struggle to balance the pursuit of their dreams with their growing affections for their unsuspecting tutor.\n\r\nJoining them are Mafuyu Kirisu, a teacher with strong views about education and talent because of her past as a rising figure skater, and Asumi Kominami, a graduate from their school aiming to attend a national medical university. With these two additions, the group of six is livelier than ever before. Completely caught up in hilarious antics with his new friends, Yuiga finds that his last year of high school now includes a lot more than just going to class and studying.",
+    "trailerUrl": "https://youtu.be/OBSkPcp3ffI"
   },
   {
     "slug": "isekai-quartet",
@@ -29392,15 +29390,15 @@
     "trailerUrl": "https://youtu.be/C8RK9-EVsBg"
   },
   {
-    "slug": "hangyakusei-million-arthur",
-    "title": "Hangyakusei Million Arthur",
-    "titleEnglish": "Operation Han-Gyaku-Sei Million Arthur",
-    "titleJapanese": "叛逆性ミリオンアーサー",
+    "slug": "hangyakusei-million-arthur-2nd-season",
+    "title": "Hangyakusei Million Arthur 2nd Season",
+    "titleEnglish": "Operation Han-Gyaku-Sei Million Arthur 2nd Season",
+    "titleJapanese": "叛逆性ミリオンアーサー 第2シーズン",
     "images": {
-      "cover": "assets/AnimeImages/Hangyakusei_Million_Arthur.jpg",
+      "cover": "assets/AnimeImages/Hangyakusei_Million_Arthur_2nd_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2018,
+    "releaseYear": 2019,
     "studios": [
       "J.C.Staff"
     ],
@@ -29413,9 +29411,9 @@
       "Fantasy"
     ],
     "explicitGenres": [],
-    "episodes": 10,
-    "synopsis": "Tales of old speak of the legends of Excalibur, a sacred sword. The sword is wielded by those who are worthy of its power, bestowing them extraordinary strength and granting them the title of Arthur. However, a divine miracle results in the creation of multiple Excaliburs, thus distorting the fabric of time.\n\r\nAiming to revert time to its original course, a group of six Arthurs composed of Danchou, Renkin, Kakka, Yamaneko, Tekken, and Rurou are sent back in time when the abnormal Excaliburs were spawned. They are assigned with one sole task: to destroy the Excaliburs of the past—all of which total up to one million.",
-    "trailerUrl": "https://youtu.be/NiJieCHJUBY"
+    "episodes": 13,
+    "synopsis": "Second season of Hangyakusei Million Arthur.",
+    "trailerUrl": null
   },
   {
     "slug": "sarazanmai",
@@ -30308,15 +30306,15 @@
     "trailerUrl": "https://youtu.be/-6mit6RYUaY"
   },
   {
-    "slug": "no-guns-life",
-    "title": "No Guns Life",
-    "titleEnglish": "No Guns Life",
+    "slug": "no-guns-life-2nd-season",
+    "title": "No Guns Life 2nd Season",
+    "titleEnglish": "No Guns Life Season 2",
     "titleJapanese": "ノー・ガンズ・ライフ",
     "images": {
-      "cover": "assets/AnimeImages/No_Guns_Life.jpg",
+      "cover": "assets/AnimeImages/No_Guns_Life_2nd_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2019,
+    "releaseYear": 2020,
     "studios": [
       "Madhouse"
     ],
@@ -30330,8 +30328,8 @@
     ],
     "explicitGenres": [],
     "episodes": 12,
-    "synopsis": "The technology to create powerful cyborg soldiers has been released for public use by the Berühren Corporation. Those outfitted with robotic parts are known as the Extended. Juuzou Inui, one such Extended, was created as a soldier and has no memories of his former life. But now, after the war, he runs a business that takes care of Extended-related incidents around the city. \n\r\nRumors of a renegade Extended that kidnapped a child reach his ears; lo and behold, as Juuzo returns to his office,  a giant robotic man with a boy on his back crashes in, asking for help. While Juuzou could just turn the guy in and be done with it, something about this situation is too fishy to ignore. It seems that everyone wants hold of this kid and, whether he likes it or not, Juuzou must find out why this Extended is on the run, how it connects to the Berühren Corporation, and just how far the treachery runs in this city.",
-    "trailerUrl": "https://youtu.be/MCBjBrM1AOE"
+    "synopsis": "Picking up where season one left off, Juzo Inui (Gun Slave Unit Device 13) has Rosa's data. Although it seems like everyone wants it, either to expose it or to destroy it, really no one is interested in it. Wachowski, the leader of the anti-Extended terrorist organization Spitzbergen, attempts to coerce Tetsurō to use Harmony to command Juzo to destroy Gun Slave Unit Device 7, who works for Berühren. Juzo does eventually fight Seven, but -- between corruption and double-crosses -- Berühren still pulls all the strings.\n\r\n(Source: ANN)",
+    "trailerUrl": "https://youtu.be/os9TQKHh0zM"
   },
   {
     "slug": "hoshiai-no-sora",
@@ -30421,32 +30419,32 @@
     "trailerUrl": "https://youtu.be/WUTFRxi5RXM"
   },
   {
-    "slug": "onegai-teacher",
-    "title": "Onegai☆Teacher",
-    "titleEnglish": "Please Teacher!",
-    "titleJapanese": "おねがい☆ティーチャー",
+    "slug": "onegai-teacher-himitsu-na-futari",
+    "title": "Onegai☆Teacher: Himitsu na Futari",
+    "titleEnglish": "Please Teacher!: Secret Couple",
+    "titleJapanese": "おねがい☆ティーチャー ヒミツなふたり",
     "images": {
-      "cover": "assets/AnimeImages/Onegai☆Teacher.jpg",
+      "cover": "assets/AnimeImages/Onegai☆Teacher_Himitsu_na_Futari.jpg",
       "alternatives": []
     },
     "releaseYear": 2002,
     "studios": [
       "Daume"
     ],
-    "type": "TV",
+    "type": "OVA",
     "demographic": null,
-    "themes": [
-      "School"
-    ],
+    "themes": [],
     "genres": [
-      "Drama",
+      "Comedy",
       "Romance",
       "Sci-Fi"
     ],
-    "explicitGenres": [],
-    "episodes": 12,
-    "synopsis": "One day, Kei Kusanagi notices a strange glowing woman by the lake. He discovers that the woman is actually an alien officer from the Galaxy Federation named Mizuho Kazami, and even more shocking—she's also his teacher! In spite of this setback, he and his teacher gradually get to know each other and a romance blossoms between them. However, soon enough, the principal of the school finds out about their relationship. The solution? Get married!\n\r\nTogether, the newlyweds must keep their marriage a secret, not only from Kei's high school friends, but also the Galaxy Federation. Onegai☆Teacher is the fragile but comedic love story of an alien and her student.",
-    "trailerUrl": "https://youtu.be/edAOr7fhjAI"
+    "explicitGenres": [
+      "Ecchi"
+    ],
+    "episodes": 1,
+    "synopsis": "Kei and Mizuho are having some marital difficulties, and Mizuho's family decides it's high time for a visit. \n\r\n(Source: ANN)",
+    "trailerUrl": null
   },
   {
     "slug": "sketchbook-full-color-s",
@@ -31561,15 +31559,15 @@
     "trailerUrl": "https://youtu.be/eZTRR7PWtOU"
   },
   {
-    "slug": "3-gatsu-no-lion",
-    "title": "3-gatsu no Lion",
-    "titleEnglish": "March Comes In Like a Lion",
-    "titleJapanese": "3月のライオン",
+    "slug": "3-gatsu-no-lion-2nd-season",
+    "title": "3-gatsu no Lion 2nd Season",
+    "titleEnglish": "March Comes In Like a Lion 2nd Season",
+    "titleJapanese": "3月のライオン 第2シリーズ",
     "images": {
-      "cover": "assets/AnimeImages/3-gatsu_no_Lion.jpg",
+      "cover": "assets/AnimeImages/3-gatsu_no_Lion_2nd_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2016,
+    "releaseYear": 2017,
     "studios": [
       "Shaft"
     ],
@@ -31583,8 +31581,8 @@
     ],
     "explicitGenres": [],
     "episodes": 22,
-    "synopsis": "Having reached professional status in middle school, Rei Kiriyama is one of the few elite in the world of shogi. Due to this, he faces an enormous amount of pressure, both from the shogi community and his adoptive family. Seeking independence from his tense home life, he moves into an apartment in Tokyo. As a 17-year-old living on his own, Rei tends to take poor care of himself, and his reclusive personality ostracizes him from his peers in school and at the shogi hall.\n\r\nHowever, not long after his arrival in Tokyo, Rei meets Akari, Hinata, and Momo Kawamoto, a trio of sisters living with their grandfather who owns a traditional wagashi shop. Akari, the oldest of the three girls, is determined to combat Rei's loneliness and poorly sustained lifestyle with motherly hospitality. The Kawamoto sisters, coping with past tragedies, also share with Rei a unique familial bond that he has lacked for most of his life. As he struggles to maintain himself physically and mentally through his shogi career, Rei must learn how to interact with others and understand his own complex emotions.",
-    "trailerUrl": "https://youtu.be/ZL5nnx4vd7k"
+    "synopsis": "Now in his second year of high school, Rei Kiriyama continues pushing through his struggles in the professional shogi world as well as his personal life. Surrounded by vibrant personalities at the shogi hall, the school club, and in the local community, his solitary shell slowly begins to crack. Among them are the three Kawamoto sisters—Akari, Hinata, and Momo—who forge an affectionate and familial bond with Rei. Through these ties, he realizes that everyone is burdened by their own emotional hardships and begins learning how to rely on others while supporting them in return. \n\r\nNonetheless, the life of a professional is not easy. Between tournaments, championships, and title matches, the pressure mounts as Rei advances through the ranks and encounters incredibly skilled opponents. As he manages his relationships with those who have grown close to him, the shogi player continues to search for the reason he plays the game that defines his career.",
+    "trailerUrl": "https://youtu.be/OfSaJb5OOPA"
   },
   {
     "slug": "charlotte",
@@ -32184,17 +32182,17 @@
     "trailerUrl": "https://youtu.be/PAvLwvItvts"
   },
   {
-    "slug": "mahouka-koukou-no-rettousei",
-    "title": "Mahouka Koukou no Rettousei",
-    "titleEnglish": "The Irregular at Magic High School",
-    "titleJapanese": "魔法科高校の劣等生",
+    "slug": "mahouka-koukou-no-rettousei-raihousha-hen",
+    "title": "Mahouka Koukou no Rettousei: Raihousha-hen",
+    "titleEnglish": "The Irregular at Magic High School: Visitor Arc",
+    "titleJapanese": "魔法科高校の劣等生 来訪者編",
     "images": {
-      "cover": "assets/AnimeImages/Mahouka_Koukou_no_Rettousei.jpg",
+      "cover": "assets/AnimeImages/Mahouka_Koukou_no_Rettousei_Raihousha-hen.jpg",
       "alternatives": []
     },
-    "releaseYear": 2014,
+    "releaseYear": 2020,
     "studios": [
-      "Madhouse"
+      "8bit"
     ],
     "type": "TV",
     "demographic": null,
@@ -32209,9 +32207,9 @@
       "Sci-Fi"
     ],
     "explicitGenres": [],
-    "episodes": 26,
-    "synopsis": "In the dawn of the 21st century, magic, long thought to be folklore and fairy tales, has become a systematized technology and is taught as a technical skill. In First High School, the institution for magicians, students are segregated into two groups based on their entrance exam scores: \"Blooms,\" those who receive high scores, are assigned to the First Course, while \"Weeds\" are reserve students assigned to the Second Course.\n\nMahouka Koukou no Rettousei follows the siblings, Tatsuya and Miyuki Shiba, who are enrolled in First High School. Upon taking the exam, the prodigious Miyuki is placed in the First Course, while Tatsuya is relegated to the Second Course. Though his practical test scores and status as a \"Weed\" show him to be magically inept, he possesses extraordinary technical knowledge, physical combat capabilities, and unique magic techniques—making Tatsuya the irregular at a magical high school.",
-    "trailerUrl": "https://youtu.be/v5AOTuxt2XY"
+    "episodes": 13,
+    "synopsis": "Following the events of \"Scorched Halloween,\" the world is introduced to a terrifyingly powerful Strategic class magician. In an effort to uncover the identity of this person, the United States of the North American Continent (USNA) dispatches the most powerful asset in its arsenal to Japan on a covert mission—the elite magician unit \"Stars\" and its commander, Angie Sirius.\n\r\nAt First High School, Tatsuya Shiba and his friends are having a farewell party for Shizuku Kitayama, who is leaving to study abroad in the USNA as part of an exchange program. In her place, the group welcomes the beautiful Angelina \"Lina\" Kudou Shields. Around the same time, Tatsuya is informed about the USNA's plan to uncover his true identity.\n\r\nElsewhere in Tokyo, numerous reports arise of seemingly random bodies found drained of blood. Dubbed as the works of a vampire, it does not take long for Tatsuya to connect the dots and realize that it is almost impossible for the timing of these events to be mere coincidence.",
+    "trailerUrl": "https://youtu.be/ZG7Z5ccAa4I"
   },
   {
     "slug": "cardcaptor-sakura",
@@ -32803,15 +32801,15 @@
     "trailerUrl": "https://youtu.be/UlduXMSBCl4"
   },
   {
-    "slug": "muhyo-to-rouji-no-mahouritsu-soudan-jimusho",
-    "title": "Muhyo to Rouji no Mahouritsu Soudan Jimusho",
-    "titleEnglish": "Muhyo & Roji's Bureau of Supernatural Investigation",
-    "titleJapanese": "ムヒョとロージーの魔法律相談事務所",
+    "slug": "muhyo-to-rouji-no-mahouritsu-soudan-jimusho-2nd-season",
+    "title": "Muhyo to Rouji no Mahouritsu Soudan Jimusho 2nd Season",
+    "titleEnglish": "Muhyo & Roji's Bureau of Supernatural Investigation 2nd Season",
+    "titleJapanese": "ムヒョとロージーの魔法律相談事務所 2期",
     "images": {
-      "cover": "assets/AnimeImages/Muhyo_to_Rouji_no_Mahouritsu_Soudan_Jimusho.jpg",
+      "cover": "assets/AnimeImages/Muhyo_to_Rouji_no_Mahouritsu_Soudan_Jimusho_2nd_Season.jpg",
       "alternatives": []
     },
-    "releaseYear": 2018,
+    "releaseYear": 2020,
     "studios": [
       "Studio Deen"
     ],
@@ -32826,8 +32824,8 @@
     ],
     "explicitGenres": [],
     "episodes": 12,
-    "synopsis": "Are you a victim of unwanted spirit possession? Is there a ghost you need sent up and away...or down to burn for all eternity? If the answer is yes, then you need Muhyo and Roji, experts in magic law. Serving justice to evil spirits is their specialty.\n\r\n(Source: VIZ Media)",
-    "trailerUrl": "https://youtu.be/snVL8xnuSko"
+    "synopsis": "Second season of Muhyo to Rouji no Mahouritsu Soudan Jimusho.",
+    "trailerUrl": "https://youtu.be/AE3GEaLjOqk"
   },
   {
     "slug": "hunter-x-hunter-2011",
@@ -32910,12 +32908,12 @@
     "trailerUrl": "https://youtu.be/tkICzNUA0jw"
   },
   {
-    "slug": "berserk-ougon-jidai-hen-i-haou-no-tamago",
-    "title": "Berserk: Ougon Jidai-hen I - Haou no Tamago",
-    "titleEnglish": "Berserk: The Golden Age Arc I - The Egg of the King",
-    "titleJapanese": "ベルセルク 黄金時代篇Ⅰ 覇王の卵",
+    "slug": "berserk-ougon-jidai-hen-ii-doldrey-kouryaku",
+    "title": "Berserk: Ougon Jidai-hen II - Doldrey Kouryaku",
+    "titleEnglish": "Berserk: The Golden Age Arc II - The Battle for Doldrey",
+    "titleJapanese": "ベルセルク 黄金時代篇Ⅱ ドルドレイ攻略",
     "images": {
-      "cover": "assets/AnimeImages/Berserk_Ougon_Jidai-hen_I_-_Haou_no_Tamago.jpg",
+      "cover": "assets/AnimeImages/Berserk_Ougon_Jidai-hen_II_-_Doldrey_Kouryaku.jpg",
       "alternatives": []
     },
     "releaseYear": 2012,
@@ -32938,8 +32936,8 @@
     ],
     "explicitGenres": [],
     "episodes": 1,
-    "synopsis": "In the Kingdom of Midland, a mercenary named Guts wanders the land, preferring a life of conflict over a life of peace. Despite the odds never being in his favor, he is an unstoppable force that overcomes every opponent, wielding a massive sword larger than himself.\n\r\nOne day, Griffith, the mysterious leader of the mercenary group Band of the Hawk, witnesses the warrior's battle prowess and invites the wandering swordsman to join his squadron. Rejecting the offer, Guts challenges Griffith to a duel—and, much to the former's surprise, is subsequently defeated and forced to join.\n\r\nNow, Guts must fight alongside Griffith and his crew to help Midland defeat the Empire of Chuder. However, Griffith seems to harbor ulterior motives, desiring something much larger than just settling the war...",
-    "trailerUrl": "https://youtu.be/FnbwFiZf9vg"
+    "synopsis": "The Band of the Hawk and their enigmatic leader Griffith continue winning battle after battle as their prestige throughout the kingdom of Midland grows. But their latest task is one that has seen failure from everyone who has attempted it: the subjugation of the impenetrable fortress of Doldrey. \n\r\nBut with members like Guts—the captain of the Hawks' raiders who can easily fell 100 men with his gigantic sword—such tasks prove to be trivial. However, in the aftermath of the battle, Guts decides to leave the Hawks in order to pursue his own dream and bids farewell to his companions, despite Griffith's attempts to make him stay. This single event causes Griffith to lose his composure, and leads him to make a decision that will alter his and the Hawks' fates forever.",
+    "trailerUrl": "https://youtu.be/0zEbyF6NuAw"
   },
   {
     "slug": "bishoujo-senshi-sailor-moon-r-the-movie",
@@ -33712,15 +33710,15 @@
     "trailerUrl": "https://youtu.be/7COlkK7Um1k"
   },
   {
-    "slug": "hanyou-no-yashahime-sengoku-otogizoushi",
-    "title": "Hanyou no Yashahime: Sengoku Otogizoushi",
-    "titleEnglish": "Yashahime: Princess Half-Demon",
-    "titleJapanese": "半妖の夜叉姫 -戦国御伽草子-",
+    "slug": "hanyou-no-yashahime-sengoku-otogizoushi-ni-no-shou",
+    "title": "Hanyou no Yashahime: Sengoku Otogizoushi - Ni no Shou",
+    "titleEnglish": "Yashahime: Princess Half-Demon: The Second Act",
+    "titleJapanese": "半妖の夜叉姫 -戦国御伽草子- 弐の章",
     "images": {
-      "cover": "assets/AnimeImages/Hanyou_no_Yashahime_Sengoku_Otogizoushi.jpg",
+      "cover": "assets/AnimeImages/Hanyou_no_Yashahime_Sengoku_Otogizoushi_-_Ni_no_Shou.jpg",
       "alternatives": []
     },
-    "releaseYear": 2020,
+    "releaseYear": 2021,
     "studios": [
       "Sunrise"
     ],
@@ -33738,8 +33736,8 @@
     ],
     "explicitGenres": [],
     "episodes": 24,
-    "synopsis": "Half-demon twins Towa and Setsuna were always together, living happily in Feudal Japan. But their joyous days come to an end when a forest fire separates them and Towa is thrown through a portal to modern-day Japan. There, she is found by Souta Higurashi, who raises her as his daughter after Towa finds herself unable to return to her time.\n\r\nTen years later, 14-year-old Towa is a relatively well-adjusted student, despite the fact that she often gets into fights. However, unexpected trouble arrives on her doorstep in the form of three visitors from Feudal Japan; Moroha, a bounty hunter; Setsuna, a demon slayer and Towa's long-lost twin sister; and Mistress Three-Eyes, a demon seeking a mystical object. Working together, the girls defeat their foe, but in the process, Towa discovers to her horror that Setsuna has no memory of her at all. Hanyou no Yashahime: Sengoku Otogizoushi follows the three girls as they endeavor to remedy Setsuna's memory loss, as well as discover the truth about their linked destinies.",
-    "trailerUrl": "https://youtu.be/O9c9AWheBdQ"
+    "synopsis": "Second season of Hanyou no Yashahime: Sengoku Otogizoushi.",
+    "trailerUrl": "https://youtu.be/Ympo28TwMdQ"
   },
   {
     "slug": "rail-romanesque",

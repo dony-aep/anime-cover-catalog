@@ -21,6 +21,10 @@
     visuals of Link Click and Love Live! School Idol Project now head those seasons' own
     entries. The Puella Magi Madoka Magica poster, art from the third film (Rebellion),
     now heads that film's entry.
+  - Every new poster was compared with the official images of its entry. Twenty-three were
+    art from another season or film of the same series (for example Black Lagoon: The
+    Second Barrage, Tokyo Ghoul √A and My Hero Academia Season 5) and now head that entry
+    instead.
   - The Rising of the Shield Hero's cover is now 2000×3000 instead of 768×1152.
 
 # Catalog Expansion & Cloudflare R2 Covers v5.3.0 - 2026-10-28

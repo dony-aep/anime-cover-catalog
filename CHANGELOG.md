@@ -7,6 +7,8 @@
     the colors one after another.
   - Icons are now inline SVGs from Lucide, and the page no longer downloads the Material
     Symbols font.
+  - The first batch of covers always ends on a full row, so a window with seven columns
+    shows 28 covers instead of 24.
 
 - **Anime Details**:
   - The details window shows the main cover and its alternatives in one strip, and

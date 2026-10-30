@@ -23,11 +23,13 @@ export class ThemeService {
 
     effect(() => {
         if (this.isBrowser) {
-            if (this.currentTheme() === 'dark') {
-                document.documentElement.classList.add('dark-mode');
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-            }
+            const root = document.documentElement;
+            // Las transiciones de hover también animan los colores; sin anularlas el cambio de
+            // tema se ve escalonado. El reflow aplica los colores nuevos antes de reactivarlas.
+            root.classList.add('theme-switching');
+            root.classList.toggle('dark-mode', this.currentTheme() === 'dark');
+            void root.offsetWidth;
+            requestAnimationFrame(() => root.classList.remove('theme-switching'));
             localStorage.setItem('theme', this.currentTheme());
         }
     });

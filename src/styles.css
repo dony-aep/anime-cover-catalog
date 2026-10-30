@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/styles/variables.css';
 
+/* Mientras ThemeService cambia de tema, ningún color se anima */
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+}
+
 /* === Global Scrollbar Styles === */
 
 /* For Firefox */

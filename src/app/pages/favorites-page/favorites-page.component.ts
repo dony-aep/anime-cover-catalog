@@ -1,9 +1,8 @@
 import { Component, ChangeDetectionStrategy, inject, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LucideHeart, LucideSearch } from '@lucide/angular';
 import { AnimeService } from '../../services/anime.service';
 import { FavoritesService } from '../../services/favorites.service';
-import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
-import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { TopControlsComponent } from '../../components/top-controls/top-controls.component';
 import { AnimeGalleryComponent } from '../../components/anime-gallery/anime-gallery.component';
 
@@ -11,10 +10,10 @@ import { AnimeGalleryComponent } from '../../components/anime-gallery/anime-gall
   selector: 'app-favorites-page',
   imports: [
     RouterLink,
-    FilterBarComponent,
-    SearchBarComponent,
     TopControlsComponent,
     AnimeGalleryComponent,
+    LucideHeart,
+    LucideSearch,
   ],
   templateUrl: './favorites-page.component.html',
   styleUrls: ['./favorites-page.component.css'],

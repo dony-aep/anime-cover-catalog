@@ -1,276 +1,292 @@
 <div class="main-content-wrapper">
-  <main class="main-content">
+  <main class="main-content" #panel (scroll)="onScroll(panel)" (scrollend)="onScrollEnd(panel)">
     <div class="docs" id="api-docs">
-  <!-- Screen-reader announcement for copy actions -->
-  <div class="visually-hidden" aria-live="polite">{{ copiedId() ? 'Copied to clipboard' : '' }}</div>
+      <!-- Screen-reader announcement for copy actions -->
+      <div class="visually-hidden" aria-live="polite">{{ copiedId() ? 'Copied to clipboard' : '' }}</div>
 
-  <!-- Intro -->
-  <header class="docs-hero">
-    <p class="eyebrow">API Reference</p>
-    <h1>Anime Cover Catalog API</h1>
-    <p class="lede">
-      A public, read-only REST API to browse the curated anime cover catalog — titles, metadata
-      and cover images. No API key required.
-    </p>
+      <header class="docs-hero">
+        <div class="hero-text">
+          <p class="eyebrow">API reference · v1</p>
+          <h1>Anime Cover Catalog API</h1>
+          <p class="lede">
+            A public, read-only REST API to browse the curated anime cover catalog: titles, metadata
+            and cover images. No API key required.
+          </p>
+          <p class="facts">Public &amp; free · No authentication · JSON responses · Edge-cached</p>
 
-    <ul class="facts" aria-label="API at a glance">
-      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">public</span> Public &amp; free</li>
-      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">lock_open</span> No authentication</li>
-      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">data_object</span> JSON responses</li>
-      <li><span class="material-symbols-outlined" translate="no" aria-hidden="true">bolt</span> Edge-cached</li>
-    </ul>
+          <p class="notice">
+            <strong>Please build something new.</strong>
+            Don't use this API to clone this catalog into the same kind of product. It is
+            intentionally open for <em>other</em> uses: web and mobile apps, integrations,
+            experiments, or anywhere an anime catalog is genuinely useful.
+          </p>
+        </div>
 
-    <div class="base-url">
-      <span class="base-url-label">Base URL</span>
-      <code>{{ baseUrl }}</code>
-      <button
-        type="button"
-        class="copy-btn"
-        [class.copied]="copiedId() === 'base'"
-        (click)="copy('base', baseUrl)"
-        [attr.aria-label]="copiedId() === 'base' ? 'Copied' : 'Copy base URL'">
-        <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === 'base' ? 'check' : 'content_copy' }}</span>
-      </button>
-    </div>
+        <div class="hero-card">
+          <div class="base-url">
+            <div class="base-url-text">
+              <span class="base-url-label">Base URL</span>
+              <code>{{ baseUrl }}</code>
+            </div>
+            <button
+              type="button"
+              class="copy-btn with-label"
+              [class.copied]="copiedId() === 'base'"
+              (click)="copy('base', baseUrl)"
+              [attr.aria-label]="copiedId() === 'base' ? 'Copied' : 'Copy base URL'">
+              @if (copiedId() === 'base') { <svg lucideCheck></svg> Copied } @else { <svg lucideCopy></svg> Copy }
+            </button>
+          </div>
+          <a class="resource" href="/api/v1/docs" target="_blank" rel="noopener">
+            <span class="resource-text">
+              <span class="resource-name">Interactive docs</span>
+              <span class="resource-desc">Swagger UI, try every route in the browser</span>
+            </span>
+            <svg lucideArrowUpRight></svg>
+          </a>
+          <a class="resource" href="/api/v1/openapi.json" target="_blank" rel="noopener">
+            <span class="resource-text">
+              <span class="resource-name">OpenAPI spec</span>
+              <span class="resource-desc">openapi.json, for client generators</span>
+            </span>
+            <svg lucideArrowUpRight></svg>
+          </a>
+          <a class="resource" href="/llms.txt">
+            <span class="resource-text">
+              <span class="resource-name">llms.txt</span>
+              <span class="resource-desc">The complete reference in one markdown file for LLMs and AI agents</span>
+            </span>
+            <svg lucideArrowUpRight></svg>
+          </a>
+        </div>
+      </header>
 
-    <div class="cta-row">
-      <a class="btn btn-primary" href="/api/v1/docs" target="_blank" rel="noopener">
-        <span class="material-symbols-outlined" translate="no" aria-hidden="true">api</span>
-        Open interactive docs (Swagger)
-      </a>
-      <a class="btn btn-secondary" href="/api/v1/openapi.json" target="_blank" rel="noopener">
-        <span class="material-symbols-outlined" translate="no" aria-hidden="true">description</span>
-        OpenAPI spec
-      </a>
-    </div>
+      <!-- Endpoint: list -->
+      <section class="pair" id="ep-list" aria-labelledby="ep-list-title">
+        <div class="prose">
+          <h2 id="ep-list-title"><span class="method">GET</span> <code>/animes</code></h2>
+          <p>Returns a paginated, filterable and sortable list of animes.</p>
+          <p>
+            Different parameters combine with <strong>AND</strong>; commas inside one parameter
+            combine with <strong>OR</strong>. <code>?genre=Romance,Comedy&amp;theme=School</code>
+            means (Romance OR Comedy) AND School.
+          </p>
 
-    <p class="llms-note">
-      <span class="material-symbols-outlined" translate="no" aria-hidden="true">smart_toy</span>
-      <span class="llms-note-text">Using an LLM or AI agent?
-        <a href="/llms.txt">/llms.txt</a> has the complete API reference in a single
-        markdown file — no need to scrape these pages.</span>
-    </p>
-  </header>
+          <h3>Query parameters</h3>
+          <dl class="params">
+            <div class="param"><dt><code class="param-name">q</code><span class="param-type">string</span></dt><dd>Search across title, English and Japanese titles. Case- and accent-insensitive (<code>roze</code> finds <em>Rozé</em>). Max 100 characters.</dd></div>
+            <div class="param"><dt><code class="param-name">genre</code><span class="param-type">string</span></dt><dd>One genre or a comma-separated list (OR), e.g. <code>Romance,Comedy</code>. Case-insensitive; unknown values return <code>400</code>.</dd></div>
+            <div class="param"><dt><code class="param-name">theme</code><span class="param-type">string</span></dt><dd>One theme or a comma-separated list (OR), e.g. <code>School</code>. Case-insensitive; unknown values return <code>400</code>.</dd></div>
+            <div class="param"><dt><code class="param-name">demographic</code><span class="param-type">string</span></dt><dd>One demographic or a comma-separated list (OR), e.g. <code>Shounen</code>. Case-insensitive; unknown values return <code>400</code>.</dd></div>
+            <div class="param"><dt><code class="param-name">type</code><span class="param-type">string</span></dt><dd>One type or a comma-separated list (OR), e.g. <code>TV,Movie</code>. Case-insensitive; unknown values return <code>400</code>.</dd></div>
+            <div class="param"><dt><code class="param-name">year</code><span class="param-type">integer</span></dt><dd>Release year, e.g. <code>2024</code>.</dd></div>
+            <div class="param"><dt><code class="param-name">fields</code><span class="param-type">string</span><span class="param-default">Default: all fields</span></dt><dd>Comma-separated subset of fields to return, e.g. <code>slug,title,genres</code>. Unknown names return <code>400</code>.</dd></div>
+            <div class="param"><dt><code class="param-name">sort</code><span class="param-type">title | year</span><span class="param-default">Default: title</span></dt><dd>Field to sort by.</dd></div>
+            <div class="param"><dt><code class="param-name">order</code><span class="param-type">asc | desc</span><span class="param-default">Default: asc</span></dt><dd>Sort direction.</dd></div>
+            <div class="param"><dt><code class="param-name">page</code><span class="param-type">integer ≥ 1</span><span class="param-default">Default: 1</span></dt><dd>Page number.</dd></div>
+            <div class="param"><dt><code class="param-name">limit</code><span class="param-type">integer 1–100</span><span class="param-default">Default: 24</span></dt><dd>Items per page (max 100).</dd></div>
+          </dl>
 
-  <!-- Important notice -->
-  <aside class="callout" aria-label="Important notice">
-    <span class="material-symbols-outlined" translate="no" aria-hidden="true">info</span>
-    <div>
-      <strong>Please build something new.</strong>
-      Don't use this API to clone this catalog into the same kind of product. It is
-      intentionally open for <em>other</em> uses — web and mobile apps, integrations,
-      experiments, or anywhere an anime catalog is genuinely useful. Build on it, don't
-      duplicate it.
-    </div>
-  </aside>
+          <p>
+            <code>links.next</code> and <code>links.prev</code> are ready-to-follow absolute URLs
+            that keep your active filters (<code>null</code> on the first/last page).
+          </p>
+        </div>
 
-  <!-- Endpoint: list -->
-  <section class="endpoint" aria-labelledby="ep-list">
-    <h2 id="ep-list"><span class="method get">GET</span> <code>/animes</code></h2>
-    <p>Returns a paginated, filterable and sortable list of animes.</p>
+        <div class="code-panel">
+          <div class="code-head">
+            <div class="code-tabs" role="tablist" aria-label="Example language">
+              @for (tab of listTabs; track tab.id) {
+                <button
+                  type="button"
+                  class="code-tab"
+                  role="tab"
+                  [class.active]="listTab() === tab.id"
+                  [attr.aria-selected]="listTab() === tab.id"
+                  (click)="listTab.set(tab.id)">{{ tab.label }}</button>
+              }
+            </div>
+            <button
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedId() === 'list'"
+              (click)="copy('list', listRequest[listTab()])"
+              [attr.aria-label]="copiedId() === 'list' ? 'Copied' : 'Copy example'">
+              @if (copiedId() === 'list') { <svg lucideCheck></svg> } @else { <svg lucideCopy></svg> }
+            </button>
+          </div>
+          <pre><code>{{ listRequest[listTab()] }}</code></pre>
+          <div class="code-label">Response <strong>200 OK</strong></div>
+          <pre><code>{{ listResponse }}</code></pre>
+        </div>
+      </section>
 
-    <h3>Query parameters</h3>
-    <div class="table-scroll">
-      <table class="params-table">
-        <caption class="visually-hidden">Query parameters for GET /animes</caption>
-        <thead>
-          <tr>
-            <th scope="col">Parameter</th>
-            <th scope="col">Type</th>
-            <th scope="col">Default</th>
-            <th scope="col">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><code>q</code></td><td>string</td><td>—</td><td>Search across title, English and Japanese titles. Case- and accent-insensitive (<code>roze</code> finds <em>Rozé</em>). Max 100 characters.</td></tr>
-          <tr><td><code>genre</code></td><td>string</td><td>—</td><td>One genre or a comma-separated list (OR), e.g. <code>Romance,Comedy</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
-          <tr><td><code>theme</code></td><td>string</td><td>—</td><td>One theme or a comma-separated list (OR), e.g. <code>School</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
-          <tr><td><code>demographic</code></td><td>string</td><td>—</td><td>One demographic or a comma-separated list (OR), e.g. <code>Shounen</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
-          <tr><td><code>type</code></td><td>string</td><td>—</td><td>One type or a comma-separated list (OR), e.g. <code>TV,Movie</code>. Case-insensitive; unknown values → <code>400</code>.</td></tr>
-          <tr><td><code>year</code></td><td>integer</td><td>—</td><td>Release year, e.g. <code>2024</code>.</td></tr>
-          <tr><td><code>fields</code></td><td>string</td><td>all fields</td><td>Comma-separated subset of fields to return, e.g. <code>slug,title,genres</code>. Unknown names → <code>400</code>.</td></tr>
-          <tr><td><code>sort</code></td><td><code>title</code> | <code>year</code></td><td><code>title</code></td><td>Field to sort by.</td></tr>
-          <tr><td><code>order</code></td><td><code>asc</code> | <code>desc</code></td><td><code>asc</code></td><td>Sort direction.</td></tr>
-          <tr><td><code>page</code></td><td>integer ≥ 1</td><td><code>1</code></td><td>Page number.</td></tr>
-          <tr><td><code>limit</code></td><td>integer 1–100</td><td><code>24</code></td><td>Items per page (max 100).</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <!-- Endpoint: detail -->
+      <section class="pair" id="ep-detail" aria-labelledby="ep-detail-title">
+        <div class="prose">
+          <h2 id="ep-detail-title"><span class="method">GET</span> <code>/animes/{{ '{' }}slug{{ '}' }}</code></h2>
+          <p>
+            Returns a single anime by its stable <code>slug</code>. Responds <code>404</code> if not
+            found. Also accepts <code>fields</code> to trim the response.
+          </p>
+          <h3>Path parameter</h3>
+          <dl class="params">
+            <div class="param"><dt><code class="param-name">slug</code><span class="param-type">string</span></dt><dd>The <code>slug</code> of any list item, e.g. <code>ame-to-kimi-to</code>.</dd></div>
+          </dl>
+        </div>
 
-    <p class="notes">
-      Different parameters combine with <strong>AND</strong>; commas inside one parameter
-      combine with <strong>OR</strong> — <code>?genre=Romance,Comedy&amp;theme=School</code>
-      means (Romance OR Comedy) AND School.
-    </p>
+        <div class="code-panel">
+          <div class="code-head">
+            <span class="code-lang">cURL</span>
+            <button
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedId() === 'detail'"
+              (click)="copy('detail', detailRequest)"
+              [attr.aria-label]="copiedId() === 'detail' ? 'Copied' : 'Copy cURL example'">
+              @if (copiedId() === 'detail') { <svg lucideCheck></svg> } @else { <svg lucideCopy></svg> }
+            </button>
+          </div>
+          <pre><code>{{ detailRequest }}</code></pre>
+          <div class="code-label">Response <strong>200 OK</strong></div>
+          <pre><code>{{ detailResponse }}</code></pre>
+        </div>
+      </section>
 
-    <h3>Example request</h3>
-    @let listCurl = example('list-curl');
-    <div class="code-block">
-      <div class="code-head">
-        <span class="code-lang">{{ listCurl.label }}</span>
-        <button type="button" class="copy-btn" [class.copied]="copiedId() === listCurl.id"
-          (click)="copy(listCurl.id, listCurl.code)"
-          [attr.aria-label]="copiedId() === listCurl.id ? 'Copied' : 'Copy cURL example'">
-          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === listCurl.id ? 'check' : 'content_copy' }}</span>
-        </button>
-      </div>
-      <pre><code>{{ listCurl.code }}</code></pre>
-    </div>
+      <!-- Endpoint: random -->
+      <section class="pair" id="ep-random" aria-labelledby="ep-random-title">
+        <div class="prose">
+          <h2 id="ep-random-title"><span class="method">GET</span> <code>/animes/random</code></h2>
+          <p>
+            Returns one random anime, ideal for "surprise me" or daily-pick features. Honors the
+            list filters (<code>q</code>, <code>genre</code>, <code>theme</code>,
+            <code>demographic</code>, <code>type</code>, <code>year</code>) and <code>fields</code>;
+            responds <code>404</code> when no anime matches.
+          </p>
+          <p>Never cached (<code>Cache-Control: no-store</code>), so every request gets a fresh pick.</p>
+        </div>
 
-    @let listJs = example('list-js');
-    <div class="code-block">
-      <div class="code-head">
-        <span class="code-lang">{{ listJs.label }}</span>
-        <button type="button" class="copy-btn" [class.copied]="copiedId() === listJs.id"
-          (click)="copy(listJs.id, listJs.code)"
-          [attr.aria-label]="copiedId() === listJs.id ? 'Copied' : 'Copy JavaScript example'">
-          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === listJs.id ? 'check' : 'content_copy' }}</span>
-        </button>
-      </div>
-      <pre><code>{{ listJs.code }}</code></pre>
-    </div>
+        <div class="code-panel">
+          <div class="code-head">
+            <span class="code-lang">cURL</span>
+            <button
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedId() === 'random'"
+              (click)="copy('random', randomRequest)"
+              [attr.aria-label]="copiedId() === 'random' ? 'Copied' : 'Copy cURL example'">
+              @if (copiedId() === 'random') { <svg lucideCheck></svg> } @else { <svg lucideCopy></svg> }
+            </button>
+          </div>
+          <pre><code>{{ randomRequest }}</code></pre>
+          <div class="code-label">Response <strong>200 OK</strong></div>
+          <pre><code>{{ randomResponse }}</code></pre>
+        </div>
+      </section>
 
-    <h3>Example response</h3>
-    <div class="code-block">
-      <div class="code-head"><span class="code-lang">200 · JSON</span></div>
-      <pre><code>{{ '{' }}
-  "data": [
-    {{ '{' }}
-      "slug": "ao-no-hako",
-      "title": "Ao no Hako",
-      "images": {{ '{' }} "cover": "{{ origin }}/assets/AnimeImages/Ao_no_hako.jpeg", "thumb": "{{ origin }}/assets/AnimeImages_thumbs/Ao_no_hako.webp", "alternatives": [ … ], "alternativesThumbs": [ … ] {{ '}' }},
-      "releaseYear": 2024,
-      "genres": ["Romance", "Sports"],
-      "episodes": 25,
-      "type": "TV"
-    {{ '}' }}
-  ],
-  "meta": {{ '{' }} "page": 1, "limit": 24, "total": 254, "totalPages": 11 {{ '}' }},
-  "links": {{ '{' }} "next": "{{ baseUrl }}/animes?page=2", "prev": null {{ '}' }}
-{{ '}' }}</code></pre>
-    </div>
-    <p class="notes">
-      <code>links.next</code> / <code>links.prev</code> are ready-to-follow absolute URLs that
-      keep your active filters (<code>null</code> on the first/last page).
-    </p>
-  </section>
+      <!-- Endpoint: filters -->
+      <section class="pair" id="ep-filters" aria-labelledby="ep-filters-title">
+        <div class="prose">
+          <h2 id="ep-filters-title"><span class="method">GET</span> <code>/filters</code></h2>
+          <p>
+            Returns the distinct genres, themes, demographics, types and years available in the
+            catalog, useful to build filter UIs. Filter values sent to <code>/animes</code> must
+            come from this list.
+          </p>
+        </div>
 
-  <!-- Endpoint: detail -->
-  <section class="endpoint" aria-labelledby="ep-detail">
-    <h2 id="ep-detail"><span class="method get">GET</span> <code>/animes/{{ '{' }}slug{{ '}' }}</code></h2>
-    <p>
-      Returns a single anime by its stable <code>slug</code>. Responds <code>404</code> if not
-      found. Also accepts <code>fields</code> to trim the response, e.g.
-      <code>?fields=title,synopsis,studios</code>.
-    </p>
+        <div class="code-panel">
+          <div class="code-head">
+            <span class="code-lang">cURL</span>
+            <button
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedId() === 'filters'"
+              (click)="copy('filters', filtersRequest)"
+              [attr.aria-label]="copiedId() === 'filters' ? 'Copied' : 'Copy cURL example'">
+              @if (copiedId() === 'filters') { <svg lucideCheck></svg> } @else { <svg lucideCopy></svg> }
+            </button>
+          </div>
+          <pre><code>{{ filtersRequest }}</code></pre>
+          <div class="code-label">Response <strong>200 OK</strong></div>
+          <pre><code>{{ filtersResponse }}</code></pre>
+        </div>
+      </section>
 
-    @let detailCurl = example('detail-curl');
-    <div class="code-block">
-      <div class="code-head">
-        <span class="code-lang">{{ detailCurl.label }}</span>
-        <button type="button" class="copy-btn" [class.copied]="copiedId() === detailCurl.id"
-          (click)="copy(detailCurl.id, detailCurl.code)"
-          [attr.aria-label]="copiedId() === detailCurl.id ? 'Copied' : 'Copy cURL example'">
-          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === detailCurl.id ? 'check' : 'content_copy' }}</span>
-        </button>
-      </div>
-      <pre><code>{{ detailCurl.code }}</code></pre>
-    </div>
-  </section>
+      <!-- Limits -->
+      <section class="pair" id="ep-limits" aria-labelledby="ep-limits-title">
+        <div class="prose">
+          <h2 id="ep-limits-title">Limits &amp; fair use</h2>
+          <dl class="notes">
+            <div class="note"><dt>Pagination</dt><dd><code>limit</code> is capped at <strong>100</strong> items per page (default 24). Use <code>page</code> to iterate.</dd></div>
+            <div class="note"><dt>Caching</dt><dd>Responses are cached on Vercel's edge network (server-side, not your browser) via <code class="code-wrap">Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>: fresh for 24&nbsp;h, then served stale for up to 7&nbsp;days while it revalidates. The cache is invalidated on each deploy, so most requests never reach the function. <code>/animes/random</code> is the exception: never cached.</dd></div>
+            <div class="note"><dt>Conditional requests</dt><dd>Every 200 response carries an <code>ETag</code> that changes only on deploy. Re-fetch with <code>If-None-Match</code> and you'll get <code>304 Not Modified</code> with an empty body when nothing changed.</dd></div>
+            <div class="note"><dt>Rate limit</dt><dd>Traffic is rate-limited per IP (100 requests per minute). Above that you may receive <code>429</code> responses; cache on your side and you'll never notice it.</dd></div>
+            <div class="note"><dt>CORS</dt><dd>Open to any origin, safe to call from the browser.</dd></div>
+          </dl>
+        </div>
 
-  <!-- Endpoint: random -->
-  <section class="endpoint" aria-labelledby="ep-random">
-    <h2 id="ep-random"><span class="method get">GET</span> <code>/animes/random</code></h2>
-    <p>
-      Returns one random anime — ideal for "surprise me" or daily-pick features. Honors the
-      list filters (<code>q</code>, <code>genre</code>, <code>theme</code>,
-      <code>demographic</code>, <code>type</code>, <code>year</code>) and <code>fields</code>;
-      responds <code>404</code> when no anime matches. Never cached
-      (<code>Cache-Control: no-store</code>), so every request gets a fresh pick.
-    </p>
+        <div class="code-panel">
+          <div class="code-head">
+            <span class="code-lang">Conditional request</span>
+            <button
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedId() === 'etag'"
+              (click)="copy('etag', etagRequest)"
+              [attr.aria-label]="copiedId() === 'etag' ? 'Copied' : 'Copy conditional request'">
+              @if (copiedId() === 'etag') { <svg lucideCheck></svg> } @else { <svg lucideCopy></svg> }
+            </button>
+          </div>
+          <pre><code>{{ etagRequest }}</code></pre>
+          <div class="code-label">Response <strong>304 Not Modified</strong></div>
+          <pre><code>{{ etagResponse }}</code></pre>
+        </div>
+      </section>
 
-    @let randomCurl = example('random-curl');
-    <div class="code-block">
-      <div class="code-head">
-        <span class="code-lang">{{ randomCurl.label }}</span>
-        <button type="button" class="copy-btn" [class.copied]="copiedId() === randomCurl.id"
-          (click)="copy(randomCurl.id, randomCurl.code)"
-          [attr.aria-label]="copiedId() === randomCurl.id ? 'Copied' : 'Copy cURL example'">
-          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === randomCurl.id ? 'check' : 'content_copy' }}</span>
-        </button>
-      </div>
-      <pre><code>{{ randomCurl.code }}</code></pre>
-    </div>
-  </section>
+      <!-- Errors -->
+      <section class="pair" id="ep-errors" aria-labelledby="ep-errors-title">
+        <div class="prose">
+          <h2 id="ep-errors-title">Errors</h2>
+          <p>All errors use standard HTTP status codes and share the same JSON shape, so you can handle them uniformly.</p>
+          <dl class="notes">
+            <div class="note"><dt><code class="param-name">200</code></dt><dd>Success.</dd></div>
+            <div class="note"><dt><code class="param-name">304</code></dt><dd>Not modified: your <code>If-None-Match</code> ETag is still current; the body is empty.</dd></div>
+            <div class="note"><dt><code class="param-name">400</code></dt><dd>Invalid query parameter, e.g. <code>limit</code> above 100, an unknown <code>fields</code> name, or a <code>genre</code>/<code>theme</code>/<code>demographic</code>/<code>type</code> value that doesn't exist in the catalog (the message points you at <code>/filters</code>).</dd></div>
+            <div class="note"><dt><code class="param-name">404</code></dt><dd>No anime matches the requested <code>slug</code>, or no anime satisfies the filters passed to <code>/animes/random</code>.</dd></div>
+            <div class="note"><dt><code class="param-name">429</code></dt><dd>Rate limit exceeded (100 requests per minute per IP). Back off and retry.</dd></div>
+          </dl>
+        </div>
 
-  <!-- Endpoint: filters -->
-  <section class="endpoint" aria-labelledby="ep-filters">
-    <h2 id="ep-filters"><span class="method get">GET</span> <code>/filters</code></h2>
-    <p>Returns the distinct genres, themes, demographics, types and years available in the catalog — useful to build filter UIs.</p>
+        <div class="code-panel">
+          <div class="code-head">
+            <span class="code-lang">cURL</span>
+            <button
+              type="button"
+              class="copy-btn"
+              [class.copied]="copiedId() === 'error'"
+              (click)="copy('error', errorRequest)"
+              [attr.aria-label]="copiedId() === 'error' ? 'Copied' : 'Copy cURL example'">
+              @if (copiedId() === 'error') { <svg lucideCheck></svg> } @else { <svg lucideCopy></svg> }
+            </button>
+          </div>
+          <pre><code>{{ errorRequest }}</code></pre>
+          <div class="code-label">Response <strong>404 Not Found</strong></div>
+          <pre><code>{{ errorResponse }}</code></pre>
+        </div>
+      </section>
 
-    @let filtersCurl = example('filters-curl');
-    <div class="code-block">
-      <div class="code-head">
-        <span class="code-lang">{{ filtersCurl.label }}</span>
-        <button type="button" class="copy-btn" [class.copied]="copiedId() === filtersCurl.id"
-          (click)="copy(filtersCurl.id, filtersCurl.code)"
-          [attr.aria-label]="copiedId() === filtersCurl.id ? 'Copied' : 'Copy cURL example'">
-          <span class="material-symbols-outlined" translate="no" aria-hidden="true">{{ copiedId() === filtersCurl.id ? 'check' : 'content_copy' }}</span>
-        </button>
-      </div>
-      <pre><code>{{ filtersCurl.code }}</code></pre>
-    </div>
-  </section>
-
-  <!-- Limits -->
-  <section class="endpoint" aria-labelledby="ep-limits">
-    <h2 id="ep-limits">Limits &amp; fair use</h2>
-    <ul class="notes">
-      <li><strong>Pagination:</strong> <code>limit</code> is capped at <strong>100</strong> items per page (default 24). Use <code>page</code> to iterate.</li>
-      <li><strong>Caching:</strong> responses are cached on Vercel's edge network (server-side — not your browser) via <code>Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800</code>: fresh for 24&nbsp;h, then served stale for up to 7&nbsp;days while it revalidates. The cache is invalidated on each deploy, so most requests never reach the function. <code>/animes/random</code> is the exception: never cached.</li>
-      <li><strong>Conditional requests:</strong> every 200 response carries an <code>ETag</code> that changes only on deploy. Re-fetch with <code>If-None-Match</code> and you'll get <code>304 Not Modified</code> with an empty body when nothing changed — free bandwidth for repeat clients.</li>
-      <li><strong>Rate limit:</strong> traffic is rate-limited per IP (100 requests per minute). Above that you may receive <code>429</code> responses — cache on your side and use the edge-friendly patterns above and you'll never notice it.</li>
-      <li><strong>CORS:</strong> open to any origin — safe to call from the browser.</li>
-    </ul>
-  </section>
-
-  <!-- Errors -->
-  <section class="endpoint" aria-labelledby="ep-errors">
-    <h2 id="ep-errors">Errors</h2>
-    <p>All errors use standard HTTP status codes and share the same JSON shape, so you can handle them uniformly:</p>
-    <div class="code-block">
-      <div class="code-head"><span class="code-lang">JSON</span></div>
-      <pre><code>{{ '{' }} "error": "Anime not found: does-not-exist" {{ '}' }}</code></pre>
-    </div>
-    <div class="table-scroll">
-      <table>
-        <caption class="visually-hidden">Error status codes</caption>
-        <thead>
-          <tr><th scope="col">Status</th><th scope="col">When</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>200</code></td><td>Success.</td></tr>
-          <tr><td><code>304</code></td><td>Not modified — your <code>If-None-Match</code> ETag is still current; the body is empty.</td></tr>
-          <tr><td><code>400</code></td><td>Invalid query parameter — e.g. <code>limit</code> above 100, an unknown <code>fields</code> name, or a <code>genre</code>/<code>theme</code>/<code>demographic</code>/<code>type</code> value that doesn't exist in the catalog (the message points you at <code>/filters</code>).</td></tr>
-          <tr><td><code>404</code></td><td>No anime matches the requested <code>slug</code>, or no anime satisfies the filters passed to <code>/animes/random</code>.</td></tr>
-          <tr><td><code>429</code></td><td>Rate limit exceeded (100 requests per minute per IP) — back off and retry.</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- License -->
-  <section class="endpoint" aria-labelledby="ep-license">
-    <h2 id="ep-license">License &amp; attribution</h2>
-    <ul class="notes">
-      <li><strong>Metadata</strong> (titles, genres, studios, synopsis…) is extracted from public sources such as <a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a>, but it is curated, stored and served by this project.</li>
-      <li><strong>Cover images</strong> come from various providers and are hosted by this project. They belong to their respective rights holders — credit the original works if you use them.</li>
-      <li>Intended for educational, non-commercial use. The API is provided as-is, with no uptime guarantee.</li>
-    </ul>
-  </section>
-
+      <!-- License -->
+      <section class="pair pair-solo" id="ep-license" aria-labelledby="ep-license-title">
+        <div class="prose">
+          <h2 id="ep-license-title">License &amp; attribution</h2>
+          <ul class="license">
+            <li><strong>Metadata</strong> (titles, genres, studios, synopsis…) is extracted from public sources such as <a href="https://myanimelist.net" target="_blank" rel="noopener">MyAnimeList</a>, but it is curated, stored and served by this project.</li>
+            <li><strong>Cover images</strong> come from various providers and are hosted by this project. They belong to their respective rights holders; credit the original works if you use them.</li>
+            <li>Intended for educational, non-commercial use. The API is provided as-is, with no uptime guarantee.</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </main>
 </div>
-
-<app-filter-bar></app-filter-bar>

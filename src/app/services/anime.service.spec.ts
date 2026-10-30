@@ -122,4 +122,60 @@ describe('AnimeService', () => {
     // Default sort is newest first: null (treated as 0) goes last.
     expect(service.sortedAnimes().map(a => a.slug)).toEqual(['nueva', 'vieja', 'sin-anio']);
   });
+
+  // El modo por nombre ignora el año: antes «Sort A-Z» solo desempataba dentro del mismo año.
+  it('sorts by title alone when sorting by name', async () => {
+    const animes = [
+      makeAnime({ slug: 'b', title: 'Beta', releaseYear: 2024 }),
+      makeAnime({ slug: 'c', title: 'Gamma', releaseYear: 1999 }),
+      makeAnime({ slug: 'a', title: 'Alpha', releaseYear: 2010 }),
+    ];
+    await flushFirstPage(pageResponse(animes, 1, 3));
+
+    service.setSortBy('name');
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'b', 'c']);
+
+    service.toggleNameSort();
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['c', 'b', 'a']);
+
+    service.setSortBy('date');
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['b', 'a', 'c']);
+
+    // Volver al modo por nombre empieza otra vez en A-Z.
+    service.setSortBy('name');
+    expect(service.nameSort()).toBe('asc');
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'b', 'c']);
+  });
+
+  // A 1920 px la galería tiene 7 columnas: con 24 fijas la última fila quedaba con 3 portadas.
+  it('rounds the first batch up to whole rows of the gallery, never below 24', async () => {
+    const animes = Array.from({ length: 60 }, (_, i) => makeAnime({ slug: `a${i}`, title: `A ${i}` }));
+    await flushFirstPage(pageResponse(animes, 1, 60));
+
+    const firstBatch = (columns: number) => {
+      service.setGalleryColumns(columns);
+      return service.visibleAnimes().length;
+    };
+    expect(firstBatch(7)).toBe(28);
+    expect(firstBatch(5)).toBe(25);
+    expect(firstBatch(6)).toBe(24);
+    expect(firstBatch(2)).toBe(24);
+
+    service.loadAllAnimes();
+    expect(service.visibleAnimes().length).toBe(60);
+  });
+
+  it('breaks ties within a year A-Z regardless of the last name order', async () => {
+    const animes = [
+      makeAnime({ slug: 'z', title: 'Zeta', releaseYear: 2024 }),
+      makeAnime({ slug: 'a', title: 'Alpha', releaseYear: 2024 }),
+    ];
+    await flushFirstPage(pageResponse(animes, 1, 2));
+
+    service.setSortBy('name');
+    service.toggleNameSort();
+    service.setSortBy('date');
+
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'z']);
+  });
 });

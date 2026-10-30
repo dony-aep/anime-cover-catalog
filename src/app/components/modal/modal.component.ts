@@ -1,25 +1,19 @@
-import { Component, ChangeDetectionStrategy, ViewChild, ViewContainerRef, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { NgComponentOutlet } from '@angular/common';
 import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-modal',
+  imports: [NgComponentOutlet],
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '(document:keydown.escape)': 'onEscape()'
+  }
 })
 export class ModalComponent {
   modalService = inject(ModalService);
-  
-  @ViewChild('modalContent', { read: ViewContainerRef }) set modalContent(vcr: ViewContainerRef | undefined) {
-    if (vcr) {
-      vcr.clear();
-      const modalData = this.modalService.modalData();
-      if (modalData) {
-        const componentRef = vcr.createComponent(modalData.component);
-        Object.assign(componentRef.instance, modalData.context);
-      }
-    }
-  }
 
   closeModal() {
     this.modalService.close();
@@ -30,4 +24,10 @@ export class ModalComponent {
       this.closeModal();
     }
   }
-} 
+
+  onEscape() {
+    if (this.modalService.isOpen()) {
+      this.closeModal();
+    }
+  }
+}

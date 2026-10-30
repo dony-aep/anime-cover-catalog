@@ -1,0 +1,15 @@
+<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+    @for (cell of cells; track $index) {
+        <path #fill fill="currentColor" fill-rule="evenodd"
+            [attr.d]="cell.fill"
+            [attr.visibility]="cell.fill ? 'visible' : 'hidden'" />
+        <rect #outline fill="none" stroke="currentColor"
+            [attr.x]="cell.outline?.x"
+            [attr.y]="cell.outline?.y"
+            [attr.width]="cell.outline?.width"
+            [attr.height]="cell.outline?.height"
+            [attr.rx]="cell.outline?.rx"
+            [attr.stroke-width]="cell.outline?.strokeWidth"
+            [attr.visibility]="cell.outline ? 'visible' : 'hidden'" />
+    }
+</svg>

@@ -1,6 +1,6 @@
 {
   "name": "anime-cover-catalog-angular",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -24,6 +24,7 @@
     "@hono/node-server": "^2.1.5",
     "@hono/swagger-ui": "^0.6.1",
     "@hono/zod-openapi": "^1.6.3",
+    "@lucide/angular": "^1.64.0",
     "@vercel/analytics": "^2.0.1",
     "hono": "^4.13.13",
     "rxjs": "~7.8.0",

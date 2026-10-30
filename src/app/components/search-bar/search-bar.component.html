@@ -1,18 +1,25 @@
 <div class="search-wrapper">
-    <div class="search-container" [class.has-text]="animeService.searchTerm()">
-        <span class="material-symbols-outlined search-icon" translate="no">search</span>
-        <input 
-            type="text" 
-            id="searchInput" 
+    <label class="search-container" [class.has-text]="animeService.searchTerm()">
+        <svg lucideSearch class="search-icon"></svg>
+        <input
+            #searchInput
+            type="search"
+            id="searchInput"
+            aria-label="Search titles"
             [placeholder]="placeholderText()"
             [value]="animeService.searchTerm()"
             (input)="onSearch($event)">
-        <button 
-            class="clear-search" 
-            title="Clear search"
-            [class.visible]="animeService.searchTerm()"
-            (click)="clearSearch()">
-            <span class="material-symbols-outlined" translate="no">close</span>
-        </button>
-    </div>
+        @if (animeService.searchTerm()) {
+            <button
+                class="clear-search"
+                type="button"
+                title="Clear search"
+                aria-label="Clear search"
+                (click)="clearSearch()">
+                <svg lucideX></svg>
+            </button>
+        } @else {
+            <kbd class="shortcut-hint" title="Press / to search">/</kbd>
+        }
+    </label>
 </div>

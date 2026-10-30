@@ -1,12 +1,14 @@
-import { Component, ChangeDetectionStrategy, computed, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, inject, input, signal } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { FilterService, FilterOption } from '../../services/filter.service';
+import { FilterService, FilterOption, FacetType } from '../../services/filter.service';
+import { DocsNavService } from '../../services/docs-nav.service';
 import { NavigationTabsComponent } from '../navigation-tabs/navigation-tabs.component';
+import { LucideChevronDown, LucideChevronUp } from '@lucide/angular';
 
 @Component({
   selector: 'app-filter-bar',
-  imports: [RouterLink, RouterLinkActive, NavigationTabsComponent],
+  imports: [RouterLink, RouterLinkActive, NavigationTabsComponent, LucideChevronDown, LucideChevronUp],
   templateUrl: './filter-bar.component.html',
   styleUrl: './filter-bar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,8 +16,29 @@ import { NavigationTabsComponent } from '../navigation-tabs/navigation-tabs.comp
 export class FilterBarComponent {
   private animeService = inject(AnimeService);
   private filterService = inject(FilterService);
+  docsNav = inject(DocsNavService);
 
-  filters = this.filterService.filters;
+  /** En la página de API la columna muestra el índice de la página en lugar de los filtros. */
+  docsIndex = input(false);
+
+  private showAllGroups = signal<ReadonlySet<FacetType>>(new Set());
+  groups = computed(() => this.filterService.visibleGroups(this.showAllGroups()));
+
+  toggleCollapsed(type: FacetType) {
+    this.filterService.toggleCollapsed(type);
+  }
+
+  toggleShowAll(type: FacetType) {
+    this.showAllGroups.update(current => {
+      const next = new Set(current);
+      if (next.has(type)) {
+        next.delete(type);
+      } else {
+        next.add(type);
+      }
+      return next;
+    });
+  }
 
   filterCounts = computed(() => {
     const counts: { [key: string]: number } = {};

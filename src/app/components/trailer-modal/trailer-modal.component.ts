@@ -1,10 +1,12 @@
 import { Component, ChangeDetectionStrategy, OnInit, inject, signal, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ModalService } from '../../services/modal.service';
+import { LucideCheck, LucideCirclePlay, LucideLink, LucideVideoOff, LucideX } from '@lucide/angular';
 import { Anime } from '../../models/anime.model';
 
 @Component({
   selector: 'app-trailer-modal',
+  imports: [LucideCheck, LucideCirclePlay, LucideLink, LucideVideoOff, LucideX],
   templateUrl: './trailer-modal.component.html',
   styleUrls: ['./trailer-modal.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

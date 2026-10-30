@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, computed, inject, signal, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ElementRef, computed, effect, inject, signal, input, viewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimeService } from '../../services/anime.service';
 import { FavoritesService } from '../../services/favorites.service';
@@ -6,11 +6,37 @@ import { Anime } from '../../models/anime.model';
 import { ModalService } from '../../services/modal.service';
 import { AnimeInfoModalComponent } from '../anime-info-modal/anime-info-modal.component';
 import { TrailerModalComponent } from '../trailer-modal/trailer-modal.component';
-import { CoversModalComponent } from '../covers-modal/covers-modal.component';
+import {
+  LucideArrowDown,
+  LucideCheck,
+  LucideCirclePlay,
+  LucideCopy,
+  LucideDownload,
+  LucideFolderX,
+  LucideFunnelX,
+  LucideHeart,
+  LucideInfo,
+  LucideLink,
+  LucideRotateCcw,
+  LucideSearchX,
+} from '@lucide/angular';
 
 @Component({
   selector: 'app-anime-gallery',
-  imports: [],
+  imports: [
+    LucideArrowDown,
+    LucideCheck,
+    LucideCirclePlay,
+    LucideCopy,
+    LucideDownload,
+    LucideFolderX,
+    LucideFunnelX,
+    LucideHeart,
+    LucideInfo,
+    LucideLink,
+    LucideRotateCcw,
+    LucideSearchX,
+  ],
   templateUrl: './anime-gallery.component.html',
   styleUrl: './anime-gallery.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -24,6 +50,23 @@ export class AnimeGalleryComponent {
   showOnlyFavorites = input(false);
   
   copiedStatus = signal<Record<string, 'title' | 'url' | 'none'>>({});
+
+  private gallery = viewChild<ElementRef<HTMLElement>>('gallery');
+
+  constructor() {
+    // Las columnas las decide el CSS (auto-fill); se leen del grid ya pintado para que el
+    // servicio complete la última fila de la primera tanda.
+    effect(onCleanup => {
+      const grid = this.gallery()?.nativeElement;
+      if (!grid || typeof ResizeObserver === 'undefined') return;
+      const observer = new ResizeObserver(() => {
+        const columns = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+        this.animeService.setGalleryColumns(columns);
+      });
+      observer.observe(grid);
+      onCleanup(() => observer.disconnect());
+    });
+  }
 
   // Cache the favorites set for efficient lookups
   private favoriteTitlesSet = computed(() => this.favoritesService.favorites());
@@ -52,6 +95,8 @@ export class AnimeGalleryComponent {
     return filteredCount - visibleCount;
   });
 
+  remainingCountText = computed(() => this.remainingCount().toLocaleString('en-US'));
+
   showLoadMoreButton = computed(() => {
     if (this.showOnlyFavorites()) {
       return false;
@@ -71,10 +116,6 @@ export class AnimeGalleryComponent {
 
   showTrailer(anime: Anime) {
     this.modalService.open(TrailerModalComponent, { anime: anime });
-  }
-
-  showCovers(anime: Anime) {
-    this.modalService.open(CoversModalComponent, { anime: anime });
   }
 
   toggleFavorite(anime: Anime, event: MouseEvent) {

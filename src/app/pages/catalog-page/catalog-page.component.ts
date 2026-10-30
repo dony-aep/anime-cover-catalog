@@ -2,8 +2,6 @@ import { Component, ChangeDetectionStrategy, inject, computed, effect } from '@a
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { AnimeService } from '../../services/anime.service';
-import { FilterBarComponent } from '../../components/filter-bar/filter-bar.component';
-import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
 import { TopControlsComponent } from '../../components/top-controls/top-controls.component';
 import { AnimeGalleryComponent } from '../../components/anime-gallery/anime-gallery.component';
 import { FilterType } from '../../models/anime.model';
@@ -12,8 +10,6 @@ import { FilterService } from '../../services/filter.service';
 @Component({
   selector: 'app-catalog-page',
   imports: [
-    FilterBarComponent,
-    SearchBarComponent,
     TopControlsComponent,
     AnimeGalleryComponent,
   ],

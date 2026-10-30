@@ -1,16 +1,14 @@
-<app-search-bar></app-search-bar>
-
 <div class="main-content-wrapper">
   <main class="main-content">
     <app-top-controls [isFavoritesPage]="true"></app-top-controls>
     
     @if (!hasFavorites()) {
       <div class="empty-favorites">
-        <span class="material-symbols-outlined empty-icon" translate="no">favorite</span>
+        <svg lucideHeart class="empty-icon"></svg>
         <h2>No favorites yet</h2>
         <p>Start adding anime to your favorites by clicking the heart icon on any anime card.</p>
         <a routerLink="/" class="home-link">
-          <span class="material-symbols-outlined" translate="no">search</span>
+          <svg lucideSearch></svg>
           Browse Catalog
         </a>
       </div>
@@ -21,5 +19,3 @@
     }
   </main>
 </div>
-
-<app-filter-bar></app-filter-bar>

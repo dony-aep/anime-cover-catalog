@@ -1,6 +1,12 @@
 
 <app-header></app-header>
 
+@if (!isDocs()) {
+  <app-search-bar></app-search-bar>
+}
+
 <router-outlet></router-outlet>
+
+<app-filter-bar [docsIndex]="isDocs()"></app-filter-bar>
 
 <app-modal></app-modal>

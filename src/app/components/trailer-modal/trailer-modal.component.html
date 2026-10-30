@@ -2,19 +2,17 @@
     <div class="trailer-modal-content">
         <div class="trailer-header">
             <div class="trailer-title">
-                <span class="material-symbols-outlined youtube-icon" translate="no">smart_display</span>
+                <svg lucideCirclePlay class="youtube-icon"></svg>
                 <span class="title-text">{{ anime.title }}</span>
             </div>
             <div class="trailer-header-buttons">
                 @if (videoId) {
                     <button class="header-btn" title="Copy Trailer URL" (click)="copyTrailerUrl()">
-                        <span class="material-symbols-outlined" translate="no">
-                            {{ copyState() === 'copied' ? 'check' : 'link' }}
-                        </span>
+                        @if (copyState() === 'copied') { <svg lucideCheck></svg> } @else { <svg lucideLink></svg> }
                     </button>
                 }
                 <button class="header-btn" title="Close" (click)="close()">
-                    <span class="material-symbols-outlined" translate="no">close</span>
+                    <svg lucideX></svg>
                 </button>
             </div>
         </div>
@@ -23,7 +21,7 @@
                 <iframe [src]="sanitizedTrailerUrl" frameborder="0" allowfullscreen></iframe>
             } @else {
                 <div class="no-trailer-message">
-                    <span class="material-symbols-outlined" translate="no">videocam_off</span>
+                    <svg lucideVideoOff></svg>
                     <p>Trailer Not Available</p>
                 </div>
             }

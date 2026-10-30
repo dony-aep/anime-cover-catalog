@@ -1,9 +1,9 @@
 import { Injectable, computed, inject, resource, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
-import { Anime, AnimeListResponse, DateSortOrder, Filter, SortOrder } from '../models/anime.model';
+import { Anime, AnimeListResponse, DateSortOrder, Filter, SortField, SortOrder } from '../models/anime.model';
 
-type SortKey = `${SortOrder}-${DateSortOrder}`;
+type SortKey = `date-${DateSortOrder}` | `name-${SortOrder}`;
 
 @Injectable({
   providedIn: 'root'
@@ -40,9 +40,18 @@ export class AnimeService {
   catalogError = this.catalogResource.error;
   searchTerm = signal<string>('');
   activeFilter = signal<Filter>({ type: 'all', value: '' });
+  sortBy = signal<SortField>('date');
   nameSort = signal<SortOrder>('asc');
   dateSort = signal<DateSortOrder>('newest');
   allAnimesLoaded = signal(false);
+
+  // Columnas que pinta ahora la galería. La primera tanda se redondea hacia arriba a filas
+  // completas para que la última no quede a medias (24 en 7 columnas dejaba 3 sueltas).
+  private galleryColumns = signal(1);
+  private initialLoadCount = computed(() => {
+    const columns = this.galleryColumns();
+    return Math.ceil(this.INITIAL_LOAD_COUNT / columns) * columns;
+  });
 
   animesByFilter = computed(() => {
     const animes = this.animes();
@@ -86,13 +95,13 @@ export class AnimeService {
     });
   });
 
-  // Pre-compute all 4 sort combinations and cache them
+  // Pre-compute the 4 sort combinations and cache them
   private sortedAnimesCache = computed(() => {
     const animes = this.filteredAnimes();
     const cache = new Map<SortKey, Anime[]>();
-    
-    // Helper function to sort once
-    const sortAnimes = (nameOrder: SortOrder, dateOrder: DateSortOrder): Anime[] => {
+
+    // By release year; titles of the same year always go A-Z
+    const sortByDate = (dateOrder: DateSortOrder): Anime[] => {
       return [...animes].sort((a, b) => {
         const yearA = a.releaseYear ?? 0;
         const yearB = b.releaseYear ?? 0;
@@ -102,18 +111,24 @@ export class AnimeService {
 
         const titleA = a.title.toLowerCase();
         const titleB = b.title.toLowerCase();
-        if (titleA < titleB) return nameOrder === 'asc' ? -1 : 1;
-        if (titleA > titleB) return nameOrder === 'asc' ? 1 : -1;
-        
+        if (titleA < titleB) return -1;
+        if (titleA > titleB) return 1;
+
         return 0;
       });
     };
 
-    // Pre-compute all 4 combinations
-    cache.set('asc-newest', sortAnimes('asc', 'newest'));
-    cache.set('asc-oldest', sortAnimes('asc', 'oldest'));
-    cache.set('desc-newest', sortAnimes('desc', 'newest'));
-    cache.set('desc-oldest', sortAnimes('desc', 'oldest'));
+    const sortByName = (nameOrder: SortOrder): Anime[] => {
+      return [...animes].sort((a, b) => {
+        const order = a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+        return nameOrder === 'asc' ? order : -order;
+      });
+    };
+
+    cache.set('date-newest', sortByDate('newest'));
+    cache.set('date-oldest', sortByDate('oldest'));
+    cache.set('name-asc', sortByName('asc'));
+    cache.set('name-desc', sortByName('desc'));
 
     return cache;
   });
@@ -121,7 +136,9 @@ export class AnimeService {
   // Simply retrieve from cache - O(1) lookup
   sortedAnimes = computed(() => {
     const cache = this.sortedAnimesCache();
-    const key: SortKey = `${this.nameSort()}-${this.dateSort()}`;
+    const key: SortKey = this.sortBy() === 'name'
+      ? `name-${this.nameSort()}`
+      : `date-${this.dateSort()}`;
     return cache.get(key) ?? [];
   });
 
@@ -143,7 +160,7 @@ export class AnimeService {
     if (this.allAnimesLoaded()) {
       return animes;
     }
-    return animes.slice(0, this.INITIAL_LOAD_COUNT);
+    return animes.slice(0, this.initialLoadCount());
   });
 
   constructor() { }
@@ -162,6 +179,16 @@ export class AnimeService {
     this.allAnimesLoaded.set(false);
   }
 
+  // Cada criterio empieza en su sentido habitual, así el segmento inactivo nunca arrastra un Z-A u Oldest de antes.
+  setSortBy(field: SortField) {
+    this.sortBy.set(field);
+    if (field === 'name') {
+      this.nameSort.set('asc');
+    } else {
+      this.dateSort.set('newest');
+    }
+  }
+
   toggleNameSort() {
     this.nameSort.update(current => (current === 'asc' ? 'desc' : 'asc'));
   }
@@ -172,6 +199,10 @@ export class AnimeService {
 
   loadAllAnimes() {
     this.allAnimesLoaded.set(true);
+  }
+
+  setGalleryColumns(columns: number) {
+    if (columns > 0) this.galleryColumns.set(columns);
   }
 
   clearSearchAndFilters() {

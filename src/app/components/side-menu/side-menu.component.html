@@ -1,70 +1,102 @@
 <div class="side-menu-overlay" [class.open]="isOpen()" (click)="onOverlayClick($event)"></div>
-<aside class="side-menu" [class.open]="isOpen()">
+<aside class="side-menu" [class.open]="isOpen()" aria-label="Menu">
     <div class="side-menu-header">
-        <img src="assets/icons/catalog_icon.png" alt="Anime Cover Catalog" class="logo-icon">
-        <button class="close-button" (click)="closeMenu()" title="Close menu">
-            <span class="material-symbols-outlined" translate="no">close</span>
+        <span class="brand">
+            <app-kira-logo class="logo-icon"></app-kira-logo>
+            <span class="wordmark">Anime Cover Catalog</span>
+        </span>
+        <button class="close-button" type="button" (click)="closeMenu()" title="Close menu" aria-label="Close menu">
+            <svg lucideX></svg>
         </button>
     </div>
-    
-    <div class="side-menu-content">
-        <!-- Navigation Tabs Section -->
-        <div class="menu-section">
-            <div class="section-title">Navigation</div>
-            <nav class="navigation-tabs">
-                <a 
-                    class="nav-tab"
-                    routerLink="/"
-                    routerLinkActive="active"
-                    [routerLinkActiveOptions]="{ exact: true }"
-                    (click)="onFilterClick()">
-                    <span class="material-symbols-outlined" translate="no">home</span>
-                    Home
-                </a>
-                <a
-                    class="nav-tab"
-                    routerLink="/favorites"
-                    routerLinkActive="active"
-                    (click)="onFilterClick()">
-                    <span class="material-symbols-outlined" translate="no">favorite</span>
-                    Favorites
-                    @if (favoritesCount() > 0) {
-                        <span class="nav-badge">
-                            {{ favoritesCount() }}
-                        </span>
-                    }
-                </a>
-                <a
-                    class="nav-tab"
-                    routerLink="/docs"
-                    routerLinkActive="active"
-                    (click)="onFilterClick()">
-                    <span class="material-symbols-outlined" translate="no">api</span>
-                    API
-                </a>
-            </nav>
-        </div>
 
-        <!-- Filters Section -->
-        <div class="menu-section">
-            <div class="section-title">Filters</div>
-            <div class="filters-list">
-                @for (filter of filters(); track filter.type + '-' + filter.value) {
-                    <a 
-                        class="filter-button"
-                        [routerLink]="getRouterLinkForFilter(filter)"
-                        routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: filter.type === 'all' }"
-                        (click)="onFilterClick()">
-                        {{ filter.label }}
-                        @if ((filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0)) > 0) {
-                            <span class="filter-badge">
-                                {{ filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0) }}
-                            </span>
-                        }
-                    </a>
+    <div class="side-menu-content">
+        <nav class="navigation-tabs" aria-label="Sections">
+            <a
+                class="nav-tab"
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="onFilterClick()">
+                <svg lucideLayoutGrid></svg>
+                Home
+            </a>
+            <a
+                class="nav-tab"
+                routerLink="/favorites"
+                routerLinkActive="active"
+                (click)="onFilterClick()">
+                <svg lucideHeart></svg>
+                Favorites
+                @if (favoritesCount() > 0) {
+                    <span class="row-count">
+                        {{ favoritesCount() }}
+                    </span>
                 }
-            </div>
-        </div>
+            </a>
+            <a
+                class="nav-tab"
+                routerLink="/docs"
+                routerLinkActive="active"
+                (click)="onFilterClick()">
+                <svg lucideCode></svg>
+                API
+            </a>
+        </nav>
+
+        <div class="menu-divider"></div>
+
+        <nav class="filters-list" aria-label="Filters">
+            <a
+                class="filter-button"
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                (click)="onFilterClick()">
+                All covers
+                <span class="row-count">{{ totalCount().toLocaleString('en-US') }}</span>
+            </a>
+
+            @for (group of groups(); track group.type) {
+                <section class="filter-group" [class.collapsed]="group.collapsed">
+                    <h2 class="group-heading">
+                        <button
+                            type="button"
+                            class="group-header"
+                            [attr.aria-expanded]="!group.collapsed"
+                            [attr.aria-controls]="'menu-filter-group-' + group.type"
+                            (click)="toggleCollapsed(group.type)">
+                            {{ group.label }}
+                            <svg lucideChevronDown class="group-chevron"></svg>
+                        </button>
+                    </h2>
+                    <div class="group-options" [id]="'menu-filter-group-' + group.type">
+                        @for (filter of group.options; track filter.value) {
+                            @let count = filterCounts()[filter.value] || 0;
+                            <a
+                                class="filter-button"
+                                [routerLink]="getRouterLinkForFilter(filter)"
+                                routerLinkActive="active"
+                                (click)="onFilterClick()">
+                                {{ filter.label }}
+                                @if (count > 0) {
+                                    <span class="row-count">{{ count.toLocaleString('en-US') }}</span>
+                                }
+                            </a>
+                        }
+                        @if (group.truncatable) {
+                            <button
+                                type="button"
+                                class="group-toggle"
+                                [attr.aria-expanded]="group.showingAll"
+                                (click)="toggleShowAll(group.type)">
+                                {{ group.showingAll ? 'Show less' : 'Show all ' + group.label.toLowerCase() }}
+                                @if (group.showingAll) { <svg lucideChevronUp></svg> } @else { <svg lucideChevronDown></svg> }
+                            </button>
+                        }
+                    </div>
+                </section>
+            }
+        </nav>
     </div>
 </aside>

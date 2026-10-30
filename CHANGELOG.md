@@ -1,3 +1,38 @@
+# Grafito Redesign & Kira Logo v5.5.0 - 2026-10-30
+
+- **New Look**:
+  - Redesigned the whole site around a neutral graphite palette with no hue, so the covers
+    are the only color on the page. The light and dark themes share the same layout.
+  - Switching themes repaints every color at once. Before, the hover transitions animated
+    the colors one after another.
+  - Icons are now inline SVGs from Lucide, and the page no longer downloads the Material
+    Symbols font.
+
+- **Anime Details**:
+  - The details window shows the main cover and its alternatives in one strip, and
+    downloads or copies whichever one is selected. The separate covers window is gone.
+  - The window can also copy a link to the anime, opens long synopses with "Read more",
+    and links each genre, theme and demographic to its filtered catalog.
+
+- **Filters and Sorting**:
+  - Filters are grouped into Type, Demographic, Genres, Themes and Explicit, each ordered
+    by how many animes use it. A group folds from its header and stays folded between
+    visits, and Genres and Themes show their eight most used values until "Show all".
+  - Sorting uses one criterion at a time, date or name, and each starts in its usual
+    direction: newest first, A to Z. Before, the name and date orders applied together.
+
+- **Navigation**:
+  - Changing views or filters keeps the search bar, the filter column and the gallery in
+    place instead of rebuilding them, which made the interface flicker.
+  - The API page puts the prose on the left and the request and response examples next to
+    it. On that page the side column is an "On this page" index that follows the scroll.
+
+- **Logo**:
+  - New Kira logo, a grid of four covers with the featured one filled and marked with a
+    sparkle. In the header it plays while the catalog loads and when hovered or focused,
+    and stays still for visitors who prefer reduced motion.
+  - New favicon that follows the system theme, Apple touch icon and link preview image.
+
 # Funimation Posters v5.4.0 - 2026-10-28
 
 - **Catalog Expansion**:

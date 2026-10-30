@@ -2,69 +2,69 @@
     /* ===== Layout ===== */
     --header-height: 4rem;
 
-    /* ===== Neutral Scale — Light Mode ===== */
+    /* ===== Neutral Scale — Light Mode (pure gray, no hue, so covers keep their own color) ===== */
     --gray-50: #fafafa;
-    --gray-100: #f4f4f5;
-    --gray-200: #e4e4e7;
-    --gray-300: #d4d4d8;
-    --gray-400: #a1a1aa;
-    --gray-500: #71717a;
-    --gray-600: #52525b;
-    --gray-700: #3f3f46;
-    --gray-800: #27272a;
-    --gray-900: #18181b;
-    --gray-950: #09090b;
+    --gray-100: #f3f3f3;
+    --gray-200: #ebebeb;
+    --gray-300: #dddddd;
+    --gray-400: #a3a3a7;
+    --gray-500: #69696d;
+    --gray-600: #4f4f53;
+    --gray-700: #3c3c3f;
+    --gray-800: #252527;
+    --gray-900: #18181a;
+    --gray-950: #111112;
 
     /* ===== Semantic Colors — Light Mode ===== */
     /* Background */
     --background-rgb: 255, 255, 255;
     --background-color: #ffffff;
-    --background-secondary: #f4f4f5;
-    --background-tertiary: #e4e4e7;
-    --body-background: #f0f0f2;
+    --background-secondary: #ebebeb;
+    --background-tertiary: #e2e2e2;
+    --body-background: #f3f3f3;
 
     /* Surface */
     --surface-color: #ffffff;
-    --surface-hover: #f4f4f5;
-    --surface-active: #e4e4e7;
-    --card-background: #ffffff;
+    --surface-hover: #ebebeb;
+    --surface-active: #e2e2e2;
+    --card-background: #ebebeb;
 
-    /* Text */
-    --text-color: #09090b;
-    --text-secondary: #3f3f46;
-    --text-tertiary: #71717a;
-    --text-muted: #a1a1aa;
-    --subtitle-color: #71717a;
+    /* Text — every muted step stays at 4.5:1 or more on panels and hover rows */
+    --text-color: #111112;
+    --text-secondary: #3c3c3f;
+    --text-tertiary: #69696d;
+    --text-muted: #69696d;
+    --subtitle-color: #69696d;
 
     /* Borders */
-    --border-color: #e4e4e7;
-    --border-light: #f0f0f2;
-    --border-dark: #d4d4d8;
+    --border-color: #dddddd;
+    --border-light: #e6e6e6;
+    --border-dark: #cfcfcf;
 
     /* Icons */
-    --icon-color: #52525b;
-    --icon-hover-color: #09090b;
-    --icon-muted: #a1a1aa;
+    --icon-color: #69696d;
+    --icon-hover-color: #111112;
+    --icon-muted: #a3a3a7;
 
     /* Interactive */
-    --button-bg: #f4f4f5;
-    --button-hover-bg: #18181b;
+    --button-bg: #ebebeb;
+    --button-hover-bg: #111112;
     --button-hover-text: #ffffff;
-    --button-active-bg: #09090b;
+    --button-active-bg: #111112;
 
     /* Input */
     --input-bg: #ffffff;
-    --input-border: #e4e4e7;
-    --input-focus-border: #18181b;
-    --input-placeholder: #a1a1aa;
+    --input-border: #dddddd;
+    --input-focus-border: #111112;
+    --input-placeholder: #69696d;
 
     /* Toggle */
-    --toggle-bg: #f4f4f5;
-    --toggle-hover-bg: #e4e4e7;
-    --toggle-active-bg: #18181b;
+    --toggle-bg: #ebebeb;
+    --toggle-hover-bg: #e2e2e2;
+    --toggle-active-bg: #111112;
     --toggle-active-text: #ffffff;
 
-    /* Shadows — Clean, refined */
+    /* Shadows — only for real elevation (menus, dialogs) */
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.07);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -73,9 +73,14 @@
     /* Overlay */
     --overlay-bg: rgba(0, 0, 0, 0.45);
 
+    /* Cover overlay — dark in both themes because it sits on the artwork */
+    --cover-scrim-rgb: 11, 11, 12;
+    --cover-action-primary-bg: #ededee;
+    --cover-action-primary-text: #0b0b0c;
+
     /* ===== Legacy / Container Variables ===== */
     --main-container-bg: #ffffff;
-    --main-container-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+    --main-container-shadow: none;
     --download-button-bg: var(--button-bg);
     --download-button-hover-bg: var(--button-hover-bg);
     --resolution-color: var(--text-tertiary);
@@ -103,66 +108,66 @@
 }
 
 html.dark-mode {
-    /* ===== Neutral Scale — Zinc-tinted Dark ===== */
-    --gray-50: #09090b;
-    --gray-100: #0f0f11;
-    --gray-200: #18181b;
-    --gray-300: #27272a;
-    --gray-400: #3f3f46;
-    --gray-500: #52525b;
-    --gray-600: #71717a;
-    --gray-700: #a1a1aa;
-    --gray-800: #d4d4d8;
-    --gray-900: #e4e4e7;
-    --gray-950: #fafafa;
+    /* ===== Neutral Scale — Graphite Dark ===== */
+    --gray-50: #0b0b0c;
+    --gray-100: #121213;
+    --gray-200: #1b1b1d;
+    --gray-300: #252527;
+    --gray-400: #34343a;
+    --gray-500: #5c5c62;
+    --gray-600: #85858b;
+    --gray-700: #b4b4b9;
+    --gray-800: #d4d4d7;
+    --gray-900: #e4e4e6;
+    --gray-950: #ededee;
 
     /* Background — layered depth */
-    --background-rgb: 9, 9, 11;
-    --background-color: #09090b;
-    --background-secondary: #18181b;
-    --background-tertiary: #1e1e22;
-    --body-background: #09090b;
+    --background-rgb: 11, 11, 12;
+    --background-color: #0b0b0c;
+    --background-secondary: #1b1b1d;
+    --background-tertiary: #222225;
+    --body-background: #0b0b0c;
 
     /* Surface */
-    --surface-color: #131316;
-    --surface-hover: #1c1c20;
-    --surface-active: #27272a;
-    --card-background: #131316;
+    --surface-color: #121213;
+    --surface-hover: #1b1b1d;
+    --surface-active: #252527;
+    --card-background: #1b1b1d;
 
-    /* Text — high contrast with soft secondary */
-    --text-color: #fafafa;
-    --text-secondary: #a1a1aa;
-    --text-tertiary: #71717a;
-    --text-muted: #52525b;
-    --subtitle-color: #71717a;
+    /* Text — every muted step stays at 4.5:1 or more on panels and hover rows */
+    --text-color: #ededee;
+    --text-secondary: #b4b4b9;
+    --text-tertiary: #85858b;
+    --text-muted: #85858b;
+    --subtitle-color: #85858b;
 
     /* Borders — visible structure */
-    --border-color: #27272a;
-    --border-light: #1c1c20;
-    --border-dark: #3f3f46;
+    --border-color: #252527;
+    --border-light: #1e1e20;
+    --border-dark: #34343a;
 
     /* Icons */
-    --icon-color: #71717a;
-    --icon-hover-color: #fafafa;
-    --icon-muted: #3f3f46;
+    --icon-color: #85858b;
+    --icon-hover-color: #ededee;
+    --icon-muted: #5c5c62;
 
     /* Interactive */
-    --button-bg: #1c1c20;
-    --button-hover-bg: #fafafa;
-    --button-hover-text: #09090b;
+    --button-bg: #1b1b1d;
+    --button-hover-bg: #ededee;
+    --button-hover-text: #0b0b0c;
     --button-active-bg: #ffffff;
 
     /* Input */
-    --input-bg: #131316;
-    --input-border: #27272a;
-    --input-focus-border: #52525b;
-    --input-placeholder: #52525b;
+    --input-bg: #121213;
+    --input-border: #252527;
+    --input-focus-border: #85858b;
+    --input-placeholder: #85858b;
 
     /* Toggle */
-    --toggle-bg: #1c1c20;
-    --toggle-hover-bg: #27272a;
-    --toggle-active-bg: #fafafa;
-    --toggle-active-text: #09090b;
+    --toggle-bg: #1b1b1d;
+    --toggle-hover-bg: #252527;
+    --toggle-active-bg: #ededee;
+    --toggle-active-text: #0b0b0c;
 
     /* Shadows — deeper, more dramatic */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -174,15 +179,15 @@ html.dark-mode {
     --overlay-bg: rgba(0, 0, 0, 0.7);
 
     /* Legacy / Container */
-    --main-container-bg: #111113;
-    --main-container-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+    --main-container-bg: #121213;
+    --main-container-shadow: none;
     --download-button-bg: var(--button-bg);
     --download-button-hover-bg: var(--button-hover-bg);
     --resolution-color: var(--text-tertiary);
     --search-border-color: var(--input-border);
     --search-focus-border-color: var(--input-focus-border);
     --sort-border-color: var(--border-color);
-    --floating-search-bg: #fafafa;
+    --floating-search-bg: #ededee;
     --floating-search-text: var(--gray-50);
     --floating-search-icon: var(--gray-700);
     --floating-search-border: var(--gray-300);

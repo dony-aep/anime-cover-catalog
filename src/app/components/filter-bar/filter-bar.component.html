@@ -1,20 +1,84 @@
-<app-navigation-tabs></app-navigation-tabs>
+<div class="sidebar-panel">
+    <app-navigation-tabs></app-navigation-tabs>
 
-<div class="side-controls-wrapper">
-    <div class="side-controls">
-        @for (filter of filters(); track filter.type + '-' + filter.value) {
-            <a 
+    <div class="sidebar-divider"></div>
+
+    @if (docsIndex()) {
+        <nav class="side-controls" aria-label="On this page">
+            <h2 class="index-title">On this page</h2>
+            @for (group of docsNav.groups; track group.name) {
+                <section class="index-group">
+                    <h3 class="index-group-name">{{ group.name }}</h3>
+                    @for (item of group.items; track item.id) {
+                        @let active = docsNav.activeId() === item.id;
+                        <button
+                            type="button"
+                            class="filter-button index-item"
+                            [class.active]="active"
+                            [attr.aria-current]="active ? 'location' : null"
+                            (click)="docsNav.scrollTo(item.id)">
+                            @if (item.method) {
+                                <span class="index-method">{{ item.method }}</span>
+                                <span class="index-path">{{ item.label }}</span>
+                            } @else {
+                                {{ item.label }}
+                            }
+                        </button>
+                    }
+                </section>
+            }
+        </nav>
+    } @else {
+        <nav class="side-controls" aria-label="Filters">
+            <a
                 class="filter-button"
-                [routerLink]="getRouterLinkForFilter(filter)"
+                routerLink="/"
                 routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: filter.type === 'all' }">
-                {{ filter.label }}
-                @if ((filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0)) > 0) {
-                    <span class="filter-badge">
-                        {{ filter.type === 'all' ? totalCount() : (filterCounts()[filter.value] || 0) }}
-                    </span>
-                }
+                [routerLinkActiveOptions]="{ exact: true }">
+                All covers
+                <span class="filter-count">{{ totalCount().toLocaleString('en-US') }}</span>
             </a>
-        }
-    </div>
-</div> 
+
+            @for (group of groups(); track group.type) {
+                <section class="filter-group" [class.collapsed]="group.collapsed">
+                    <h2 class="group-heading">
+                        <button
+                            type="button"
+                            class="group-header"
+                            [attr.aria-expanded]="!group.collapsed"
+                            [attr.aria-controls]="'filter-group-' + group.type"
+                            [title]="group.collapsed ? 'Show ' + group.label.toLowerCase() : 'Hide ' + group.label.toLowerCase()"
+                            (click)="toggleCollapsed(group.type)">
+                            {{ group.label }}
+                            <svg lucideChevronDown class="group-chevron"></svg>
+                        </button>
+                    </h2>
+                    <div class="group-options" [id]="'filter-group-' + group.type">
+                        @for (filter of group.options; track filter.value) {
+                            @let count = filterCounts()[filter.value] || 0;
+                            <a
+                                class="filter-button"
+                                [routerLink]="getRouterLinkForFilter(filter)"
+                                routerLinkActive="active">
+                                {{ filter.label }}
+                                @if (count > 0) {
+                                    <span class="filter-count">{{ count.toLocaleString('en-US') }}</span>
+                                }
+                            </a>
+                        }
+                        @if (group.truncatable) {
+                            <button
+                                type="button"
+                                class="group-toggle"
+                                [attr.aria-expanded]="group.showingAll"
+                                (click)="toggleShowAll(group.type)">
+                                {{ group.showingAll ? 'Show less' : 'Show all ' + group.label.toLowerCase() }}
+                                @if (group.showingAll) { <svg lucideChevronUp></svg> } @else { <svg lucideChevronDown></svg> }
+                            </button>
+                        }
+                    </div>
+                </section>
+            }
+        </nav>
+    }
+</div>

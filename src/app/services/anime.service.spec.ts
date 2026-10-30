@@ -122,4 +122,42 @@ describe('AnimeService', () => {
     // Default sort is newest first: null (treated as 0) goes last.
     expect(service.sortedAnimes().map(a => a.slug)).toEqual(['nueva', 'vieja', 'sin-anio']);
   });
+
+  // El modo por nombre ignora el año: antes «Sort A-Z» solo desempataba dentro del mismo año.
+  it('sorts by title alone when sorting by name', async () => {
+    const animes = [
+      makeAnime({ slug: 'b', title: 'Beta', releaseYear: 2024 }),
+      makeAnime({ slug: 'c', title: 'Gamma', releaseYear: 1999 }),
+      makeAnime({ slug: 'a', title: 'Alpha', releaseYear: 2010 }),
+    ];
+    await flushFirstPage(pageResponse(animes, 1, 3));
+
+    service.setSortBy('name');
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'b', 'c']);
+
+    service.toggleNameSort();
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['c', 'b', 'a']);
+
+    service.setSortBy('date');
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['b', 'a', 'c']);
+
+    // Volver al modo por nombre empieza otra vez en A-Z.
+    service.setSortBy('name');
+    expect(service.nameSort()).toBe('asc');
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'b', 'c']);
+  });
+
+  it('breaks ties within a year A-Z regardless of the last name order', async () => {
+    const animes = [
+      makeAnime({ slug: 'z', title: 'Zeta', releaseYear: 2024 }),
+      makeAnime({ slug: 'a', title: 'Alpha', releaseYear: 2024 }),
+    ];
+    await flushFirstPage(pageResponse(animes, 1, 2));
+
+    service.setSortBy('name');
+    service.toggleNameSort();
+    service.setSortBy('date');
+
+    expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'z']);
+  });
 });

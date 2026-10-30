@@ -6,11 +6,37 @@ import { Anime } from '../../models/anime.model';
 import { ModalService } from '../../services/modal.service';
 import { AnimeInfoModalComponent } from '../anime-info-modal/anime-info-modal.component';
 import { TrailerModalComponent } from '../trailer-modal/trailer-modal.component';
-import { CoversModalComponent } from '../covers-modal/covers-modal.component';
+import {
+  LucideArrowDown,
+  LucideCheck,
+  LucideCirclePlay,
+  LucideCopy,
+  LucideDownload,
+  LucideFolderX,
+  LucideFunnelX,
+  LucideHeart,
+  LucideInfo,
+  LucideLink,
+  LucideRotateCcw,
+  LucideSearchX,
+} from '@lucide/angular';
 
 @Component({
   selector: 'app-anime-gallery',
-  imports: [],
+  imports: [
+    LucideArrowDown,
+    LucideCheck,
+    LucideCirclePlay,
+    LucideCopy,
+    LucideDownload,
+    LucideFolderX,
+    LucideFunnelX,
+    LucideHeart,
+    LucideInfo,
+    LucideLink,
+    LucideRotateCcw,
+    LucideSearchX,
+  ],
   templateUrl: './anime-gallery.component.html',
   styleUrl: './anime-gallery.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -52,6 +78,8 @@ export class AnimeGalleryComponent {
     return filteredCount - visibleCount;
   });
 
+  remainingCountText = computed(() => this.remainingCount().toLocaleString('en-US'));
+
   showLoadMoreButton = computed(() => {
     if (this.showOnlyFavorites()) {
       return false;
@@ -71,10 +99,6 @@ export class AnimeGalleryComponent {
 
   showTrailer(anime: Anime) {
     this.modalService.open(TrailerModalComponent, { anime: anime });
-  }
-
-  showCovers(anime: Anime) {
-    this.modalService.open(CoversModalComponent, { anime: anime });
   }
 
   toggleFavorite(anime: Anime, event: MouseEvent) {

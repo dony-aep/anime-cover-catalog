@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy, computed, inject, input } from '@angular/core';
 import { AnimeService } from '../../services/anime.service';
 import { FavoritesService } from '../../services/favorites.service';
+import { LucideArrowDown, LucideArrowUp, LucideTrash } from '@lucide/angular';
 
 @Component({
   selector: 'app-top-controls',
-  imports: [],
+  imports: [LucideArrowDown, LucideArrowUp, LucideTrash],
   templateUrl: './top-controls.component.html',
   styleUrls: ['./top-controls.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -16,28 +17,33 @@ export class TopControlsComponent {
   isFavoritesPage = input(false);
 
   animeCount = computed(() => this.animeService.filteredAnimes().length);
+  animeCountText = computed(() => this.animeCount().toLocaleString('en-US'));
   favoritesCount = this.favoritesService.favoritesCount;
 
-  nameSortButtonText = computed(() => 
-    this.animeService.nameSort() === 'asc' ? 'Sort A-Z' : 'Sort Z-A'
+  sortBy = this.animeService.sortBy;
+
+  dateSortLabel = computed(() =>
+    this.animeService.dateSort() === 'newest' ? 'Newest' : 'Oldest'
   );
-  nameSortButtonIcon = computed(() => 
-    this.animeService.nameSort() === 'asc' ? 'arrow_upward' : 'arrow_downward'
+  nameSortLabel = computed(() =>
+    this.animeService.nameSort() === 'asc' ? 'A–Z' : 'Z–A'
   );
 
-  dateSortButtonText = computed(() => 
-    this.animeService.dateSort() === 'newest' ? 'Sort Newest' : 'Sort Oldest'
-  );
-  dateSortButtonIcon = computed(() => 
-    this.animeService.dateSort() === 'newest' ? 'arrow_downward' : 'arrow_upward'
-  );
-
-  toggleNameSort() {
-    this.animeService.toggleNameSort();
+  // Pulsar la opción activa invierte su sentido; pulsar la otra solo cambia el criterio.
+  selectDateSort() {
+    if (this.sortBy() === 'date') {
+      this.animeService.toggleDateSort();
+    } else {
+      this.animeService.setSortBy('date');
+    }
   }
 
-  toggleDateSort() {
-    this.animeService.toggleDateSort();
+  selectNameSort() {
+    if (this.sortBy() === 'name') {
+      this.animeService.toggleNameSort();
+    } else {
+      this.animeService.setSortBy('name');
+    }
   }
 
   clearAllFavorites() {
@@ -45,4 +51,4 @@ export class TopControlsComponent {
       this.favoritesService.clearAllFavorites();
     }
   }
-} 
+}

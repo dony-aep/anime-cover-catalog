@@ -1,5 +1,5 @@
-@if (modalService.isOpen()) {
+@if (modalService.modalData(); as data) {
   <div class="modal-backdrop" (click)="onBackdropClick($event)">
-    <ng-container #modalContent></ng-container>
+    <ng-container *ngComponentOutlet="data.component; inputs: data.context" />
   </div>
 }

@@ -1,20 +1,20 @@
-<div class="navigation-tabs">
-    <a 
+<nav class="navigation-tabs" aria-label="Sections">
+    <a
         class="nav-tab"
         routerLink="/"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }">
-        <span class="material-symbols-outlined" translate="no">home</span>
+        <svg lucideLayoutGrid></svg>
         Home
     </a>
-    <a 
+    <a
         class="nav-tab"
         routerLink="/favorites"
         routerLinkActive="active">
-        <span class="material-symbols-outlined" translate="no">favorite</span>
+        <svg lucideHeart></svg>
         Favorites
         @if (favoritesCount() > 0) {
-            <span class="favorites-badge">
+            <span class="favorites-count">
                 {{ favoritesCount() }}
             </span>
         }
@@ -23,7 +23,7 @@
         class="nav-tab"
         routerLink="/docs"
         routerLinkActive="active">
-        <span class="material-symbols-outlined" translate="no">api</span>
+        <svg lucideCode></svg>
         API
     </a>
-</div>
+</nav>

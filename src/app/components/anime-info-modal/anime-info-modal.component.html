@@ -1,96 +1,160 @@
-<div class="anime-info-modal-wrapper" (click)="$event.stopPropagation()">
-    <div class="anime-info-modal-content">
-        <!-- Header with title and actions -->
-        <div class="modal-header-section">
-            <div class="title-block">
-                <div class="anime-info-modal-title">{{ anime.title }}</div>
-                @if (anime.titleEnglish || anime.titleJapanese) {
-                    <div class="alt-titles">
-                        @if (anime.titleEnglish) {
-                            <span class="alt-title">{{ anime.titleEnglish }}</span>
-                        }
-                        @if (anime.titleJapanese) {
-                            <span class="alt-title japanese">{{ anime.titleJapanese }}</span>
+@let item = anime();
+<section
+    class="anime-info-modal-wrapper"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="anime-info-title"
+    (click)="$event.stopPropagation()">
+    <div class="sheet-handle" aria-hidden="true"></div>
+
+    <div class="ficha">
+        <div class="media">
+            <a
+                class="cover-link"
+                [href]="selectedCover().full"
+                target="_blank"
+                rel="noopener"
+                title="Open the full-size image">
+                <img
+                    class="cover-image"
+                    [src]="selectedCover().thumb"
+                    [alt]="item.title + ' cover'"
+                    width="400"
+                    height="600"
+                    decoding="async">
+            </a>
+
+            @if (covers().length > 1) {
+                <div class="cover-strip-block">
+                    <p class="cover-position">{{ positionText() }}</p>
+                    <div class="cover-strip" role="group" aria-label="Covers">
+                        @for (cover of covers(); track cover.full; let i = $index) {
+                            <button
+                                type="button"
+                                class="cover-thumb"
+                                [class.active]="selectedIndex() === i"
+                                [attr.aria-pressed]="selectedIndex() === i"
+                                [attr.aria-label]="i === 0 ? 'Main cover' : 'Alternative cover ' + i"
+                                (click)="selectCover(i)">
+                                <img [src]="cover.thumb" alt="" width="400" height="600" loading="lazy" decoding="async">
+                            </button>
                         }
                     </div>
-                }
-            </div>
-            <div class="header-actions">
-                <button class="action-btn" title="Copy Information" (click)="copyInfo()">
-                    <span class="material-symbols-outlined" translate="no">
-                        {{ copyState() === 'copied' ? 'check' : 'content_copy' }}
-                    </span>
-                </button>
-                <button class="action-btn" title="Close" (click)="close()">
-                    <span class="material-symbols-outlined" translate="no">close</span>
-                </button>
-            </div>
+                </div>
+            }
         </div>
 
-        <!-- Detail list — all info with labels -->
-        <div class="detail-list">
-            @if (anime.releaseYear) {
-                <div class="detail-row">
-                    <span class="material-symbols-outlined detail-icon" translate="no">calendar_month</span>
-                    <span class="detail-label">Release Year</span>
-                    <span class="detail-value">{{ anime.releaseYear }}</span>
+        <div class="body">
+            <header class="head">
+                <div class="titles">
+                    <h2 id="anime-info-title" class="title" translate="no">{{ item.title }}</h2>
+                    @if (item.titleEnglish && item.titleEnglish !== item.title) {
+                        <p class="title-english" translate="no">{{ item.titleEnglish }}</p>
+                    }
+                    @if (item.titleJapanese) {
+                        <p class="title-japanese" lang="ja" translate="no">{{ item.titleJapanese }}</p>
+                    }
+                    <p class="meta">{{ metaText() }}</p>
                 </div>
-            }
-            <div class="detail-row">
-                <span class="material-symbols-outlined detail-icon" translate="no">apartment</span>
-                <span class="detail-label">Studio</span>
-                <span class="detail-value">{{ studiosText() }}</span>
-            </div>
-            @if (anime.type) {
-                <div class="detail-row">
-                    <span class="material-symbols-outlined detail-icon" translate="no">movie</span>
-                    <span class="detail-label">Type</span>
-                    <span class="detail-value">{{ anime.type }}</span>
+                <div class="head-actions">
+                    <button class="icon-btn desktop-only" type="button" (click)="copyInfo()"
+                        [title]="copyState() === 'copied' ? 'Details copied' : 'Copy details'"
+                        [attr.aria-label]="copyState() === 'copied' ? 'Details copied' : 'Copy details'">
+                        @if (copyState() === 'copied') {
+                            <svg lucideCheck></svg>
+                        } @else {
+                            <svg lucideCopy></svg>
+                        }
+                    </button>
+                    <button class="icon-btn close-btn" type="button" title="Close" aria-label="Close" (click)="close()">
+                        <svg lucideX></svg>
+                    </button>
                 </div>
-            }
-            @if (anime.episodes) {
-                <div class="detail-row">
-                    <span class="material-symbols-outlined detail-icon" translate="no">playlist_play</span>
-                    <span class="detail-label">Episodes</span>
-                    <span class="detail-value">{{ anime.episodes }}</span>
-                </div>
-            }
-            @if (anime.demographic) {
-                <div class="detail-row">
-                    <span class="material-symbols-outlined detail-icon" translate="no">group</span>
-                    <span class="detail-label">Demographic</span>
-                    <span class="detail-value">{{ anime.demographic }}</span>
-                </div>
-            }
-            @if (anime.themes.length) {
-                <div class="detail-row">
-                    <span class="material-symbols-outlined detail-icon" translate="no">category</span>
-                    <span class="detail-label">Theme</span>
-                    <span class="detail-value">{{ themesText() }}</span>
-                </div>
-            }
-        </div>
-        
-        <!-- Genres -->
-        <div class="info-section">
-            <div class="section-label">Genres</div>
-            <div class="genres-container">
-                @for (genre of anime.genres; track genre) {
-                    <span class="genre-tag">{{ genre }}</span>
-                }
-                @empty {
-                    <span class="detail-value">Unknown</span>
-                }
-            </div>
-        </div>
-        
-        <!-- Synopsis -->
-        @if (anime.synopsis) {
-            <div class="info-section">
-                <div class="section-label">Synopsis</div>
-                <p class="synopsis-text">{{ anime.synopsis }}</p>
-            </div>
-        }
+            </header>
 
+            <div class="actions">
+                <button class="btn btn-primary download-btn" type="button" (click)="downloadCover()">
+                    <svg lucideDownload></svg>
+                    Download cover
+                    @if (coverFormat()) {
+                        <span class="format">· {{ coverFormat() }}</span>
+                    }
+                </button>
+                <button class="btn btn-secondary" type="button" (click)="copyCoverUrl()">
+                    @if (linkState() === 'copied') {
+                        <svg lucideCheck></svg>
+                        <span class="btn-label">Copied</span>
+                    } @else {
+                        <svg lucideLink></svg>
+                        <span class="btn-label">Copy link</span>
+                    }
+                </button>
+                @if (item.trailerUrl) {
+                    <button class="btn btn-secondary" type="button" (click)="showTrailer()">
+                        <svg lucideCirclePlay></svg>
+                        <span class="btn-label">Trailer</span>
+                    </button>
+                }
+                <button
+                    class="btn btn-secondary favorite-btn"
+                    type="button"
+                    [class.is-favorite]="isFavorite()"
+                    [attr.aria-pressed]="isFavorite()"
+                    [attr.aria-label]="isFavorite() ? 'Remove from favorites' : 'Add to favorites'"
+                    [title]="isFavorite() ? 'Remove from favorites' : 'Add to favorites'"
+                    (click)="toggleFavorite()">
+                    <svg lucideHeart></svg>
+                    <span class="btn-label mobile-only">{{ isFavorite() ? 'Saved' : 'Save' }}</span>
+                </button>
+                <button class="btn btn-secondary mobile-only" type="button" (click)="copyInfo()">
+                    @if (copyState() === 'copied') {
+                        <svg lucideCheck></svg>
+                        <span class="btn-label">Copied</span>
+                    } @else {
+                        <svg lucideCopy></svg>
+                        <span class="btn-label">Copy details</span>
+                    }
+                </button>
+            </div>
+
+            <dl class="details">
+                @if (studiosText()) {
+                    <dt>{{ item.studios.length === 1 ? 'Studio' : 'Studios' }}</dt>
+                    <dd>{{ studiosText() }}</dd>
+                }
+                @if (demographicLink(); as demographic) {
+                    <dt>Demographic</dt>
+                    <dd><a class="facet-link" [routerLink]="demographic.link" (click)="close()">{{ demographic.label }}</a></dd>
+                }
+                @if (genreLinks().length) {
+                    <dt>Genres</dt>
+                    <dd>
+                        @for (genre of genreLinks(); track genre.label; let last = $last) {
+                            <a class="facet-link" [routerLink]="genre.link" (click)="close()">{{ genre.label }}</a>@if (!last) {<span>, </span>}
+                        }
+                    </dd>
+                }
+                @if (themeLinks().length) {
+                    <dt>Themes</dt>
+                    <dd>
+                        @for (theme of themeLinks(); track theme.label; let last = $last) {
+                            <a class="facet-link" [routerLink]="theme.link" (click)="close()">{{ theme.label }}</a>@if (!last) {<span>, </span>}
+                        }
+                    </dd>
+                }
+            </dl>
+
+            @if (item.synopsis) {
+                <div class="synopsis">
+                    <h3 class="section-label">Synopsis</h3>
+                    <p class="synopsis-text" [class.clamped]="synopsisIsLong() && !synopsisExpanded()">{{ item.synopsis }}</p>
+                    @if (synopsisIsLong()) {
+                        <button class="text-btn" type="button" [attr.aria-expanded]="synopsisExpanded()" (click)="toggleSynopsis()">
+                            {{ synopsisExpanded() ? 'Show less' : 'Read more' }}
+                        </button>
+                    }
+                </div>
+            }
+        </div>
     </div>
-</div>
+</section>

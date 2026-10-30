@@ -2,10 +2,11 @@ import { Component, ChangeDetectionStrategy, inject, signal } from '@angular/cor
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 import { SideMenuComponent } from '../side-menu/side-menu.component';
+import { LucideGlobe, LucideMenu, LucideMoon, LucideSun } from '@lucide/angular';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, SideMenuComponent],
+  imports: [RouterLink, SideMenuComponent, LucideGlobe, LucideMenu, LucideMoon, LucideSun],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -41,4 +41,5 @@ export interface Filter {
 }
 
 export type SortOrder = 'asc' | 'desc';
+export type SortField = 'date' | 'name';
 export type DateSortOrder = 'newest' | 'oldest';

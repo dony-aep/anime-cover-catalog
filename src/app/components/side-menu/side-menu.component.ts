@@ -1,15 +1,16 @@
 import { Component, ChangeDetectionStrategy, computed, inject, input, output, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AnimeService } from '../../services/anime.service';
-import { FilterService, FilterOption } from '../../services/filter.service';
+import { FilterService, FilterOption, FacetType } from '../../services/filter.service';
 import { FavoritesService } from '../../services/favorites.service';
+import { LucideChevronDown, LucideChevronUp, LucideCode, LucideHeart, LucideLayoutGrid, LucideX } from '@lucide/angular';
 
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
   styleUrl: './side-menu.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive]
+  imports: [RouterLink, RouterLinkActive, LucideChevronDown, LucideChevronUp, LucideCode, LucideHeart, LucideLayoutGrid, LucideX]
 })
 export class SideMenuComponent {
   private animeService = inject(AnimeService);
@@ -20,7 +21,25 @@ export class SideMenuComponent {
   menuClosed = output<void>();
 
   favoritesCount = this.favoritesService.favoritesCount;
-  filters = this.filterService.filters;
+
+  private showAllGroups = signal<ReadonlySet<FacetType>>(new Set());
+  groups = computed(() => this.filterService.visibleGroups(this.showAllGroups()));
+
+  toggleCollapsed(type: FacetType) {
+    this.filterService.toggleCollapsed(type);
+  }
+
+  toggleShowAll(type: FacetType) {
+    this.showAllGroups.update(current => {
+      const next = new Set(current);
+      if (next.has(type)) {
+        next.delete(type);
+      } else {
+        next.add(type);
+      }
+      return next;
+    });
+  }
 
   filterCounts = computed(() => {
     const counts: { [key: string]: number } = {};

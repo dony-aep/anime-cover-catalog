@@ -45,6 +45,14 @@ export class AnimeService {
   dateSort = signal<DateSortOrder>('newest');
   allAnimesLoaded = signal(false);
 
+  // Columnas que pinta ahora la galería. La primera tanda se redondea hacia arriba a filas
+  // completas para que la última no quede a medias (24 en 7 columnas dejaba 3 sueltas).
+  private galleryColumns = signal(1);
+  private initialLoadCount = computed(() => {
+    const columns = this.galleryColumns();
+    return Math.ceil(this.INITIAL_LOAD_COUNT / columns) * columns;
+  });
+
   animesByFilter = computed(() => {
     const animes = this.animes();
     const filter = this.activeFilter();
@@ -152,7 +160,7 @@ export class AnimeService {
     if (this.allAnimesLoaded()) {
       return animes;
     }
-    return animes.slice(0, this.INITIAL_LOAD_COUNT);
+    return animes.slice(0, this.initialLoadCount());
   });
 
   constructor() { }
@@ -191,6 +199,10 @@ export class AnimeService {
 
   loadAllAnimes() {
     this.allAnimesLoaded.set(true);
+  }
+
+  setGalleryColumns(columns: number) {
+    if (columns > 0) this.galleryColumns.set(columns);
   }
 
   clearSearchAndFilters() {

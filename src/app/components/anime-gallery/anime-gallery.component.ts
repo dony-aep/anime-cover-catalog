@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, computed, inject, signal, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ElementRef, computed, effect, inject, signal, input, viewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimeService } from '../../services/anime.service';
 import { FavoritesService } from '../../services/favorites.service';
@@ -50,6 +50,23 @@ export class AnimeGalleryComponent {
   showOnlyFavorites = input(false);
   
   copiedStatus = signal<Record<string, 'title' | 'url' | 'none'>>({});
+
+  private gallery = viewChild<ElementRef<HTMLElement>>('gallery');
+
+  constructor() {
+    // Las columnas las decide el CSS (auto-fill); se leen del grid ya pintado para que el
+    // servicio complete la última fila de la primera tanda.
+    effect(onCleanup => {
+      const grid = this.gallery()?.nativeElement;
+      if (!grid || typeof ResizeObserver === 'undefined') return;
+      const observer = new ResizeObserver(() => {
+        const columns = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+        this.animeService.setGalleryColumns(columns);
+      });
+      observer.observe(grid);
+      onCleanup(() => observer.disconnect());
+    });
+  }
 
   // Cache the favorites set for efficient lookups
   private favoriteTitlesSet = computed(() => this.favoritesService.favorites());

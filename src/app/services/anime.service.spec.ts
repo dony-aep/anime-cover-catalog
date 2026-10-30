@@ -147,6 +147,24 @@ describe('AnimeService', () => {
     expect(service.sortedAnimes().map(a => a.slug)).toEqual(['a', 'b', 'c']);
   });
 
+  // A 1920 px la galería tiene 7 columnas: con 24 fijas la última fila quedaba con 3 portadas.
+  it('rounds the first batch up to whole rows of the gallery, never below 24', async () => {
+    const animes = Array.from({ length: 60 }, (_, i) => makeAnime({ slug: `a${i}`, title: `A ${i}` }));
+    await flushFirstPage(pageResponse(animes, 1, 60));
+
+    const firstBatch = (columns: number) => {
+      service.setGalleryColumns(columns);
+      return service.visibleAnimes().length;
+    };
+    expect(firstBatch(7)).toBe(28);
+    expect(firstBatch(5)).toBe(25);
+    expect(firstBatch(6)).toBe(24);
+    expect(firstBatch(2)).toBe(24);
+
+    service.loadAllAnimes();
+    expect(service.visibleAnimes().length).toBe(60);
+  });
+
   it('breaks ties within a year A-Z regardless of the last name order', async () => {
     const animes = [
       makeAnime({ slug: 'z', title: 'Zeta', releaseYear: 2024 }),

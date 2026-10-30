@@ -1,6 +1,6 @@
 @if (!noResults()) {
     <div class="gallery-wrapper">
-        <div id="animeGallery" class="gallery-container">
+        <div id="animeGallery" class="gallery-container" #gallery>
             @for (anime of displayedAnimes(); track anime.slug) {
                 <div class="card anime-card">
                     <img

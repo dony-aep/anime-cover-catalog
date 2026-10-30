@@ -60,17 +60,6 @@
     opacity: 0.8;
 }
 
-.logo-icon {
-    height: 1.75rem;
-    width: auto;
-    object-fit: contain;
-}
-
-/* Invertir el logo en modo claro (cuando NO hay clase dark-mode) */
-:host-context(html:not(.dark-mode)) .logo-icon {
-    filter: invert(1);
-}
-
 .wordmark {
     font-size: 0.95rem;
     font-weight: 600;

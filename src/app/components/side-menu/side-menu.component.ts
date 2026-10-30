@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AnimeService } from '../../services/anime.service';
 import { FilterService, FilterOption, FacetType } from '../../services/filter.service';
 import { FavoritesService } from '../../services/favorites.service';
+import { KiraLogoComponent } from '../kira-logo/kira-logo.component';
 import { LucideChevronDown, LucideChevronUp, LucideCode, LucideHeart, LucideLayoutGrid, LucideX } from '@lucide/angular';
 
 @Component({
@@ -10,7 +11,7 @@ import { LucideChevronDown, LucideChevronUp, LucideCode, LucideHeart, LucideLayo
   templateUrl: './side-menu.component.html',
   styleUrl: './side-menu.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive, LucideChevronDown, LucideChevronUp, LucideCode, LucideHeart, LucideLayoutGrid, LucideX]
+  imports: [RouterLink, RouterLinkActive, KiraLogoComponent, LucideChevronDown, LucideChevronUp, LucideCode, LucideHeart, LucideLayoutGrid, LucideX]
 })
 export class SideMenuComponent {
   private animeService = inject(AnimeService);

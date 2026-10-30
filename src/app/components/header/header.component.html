@@ -4,8 +4,8 @@
             <button class="menu-button" (click)="openSideMenu()" title="Open menu" aria-label="Open menu">
                 <svg lucideMenu></svg>
             </button>
-            <a routerLink="/" class="logo-link">
-                <img src="assets/icons/catalog_icon.png" alt="" class="logo-icon">
+            <a routerLink="/" class="logo-link" (mouseenter)="logo.spin()" (focus)="logo.spin()">
+                <app-kira-logo #logo [spinning]="catalogLoading()"></app-kira-logo>
                 <span class="wordmark">Anime Cover Catalog</span>
             </a>
         </div>

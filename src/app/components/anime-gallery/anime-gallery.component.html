@@ -91,6 +91,13 @@
                     <svg lucideRotateCcw></svg>
                     Clear search and filters
                 </button>
+                @if (requestAnimeUrl(); as url) {
+                    <a class="request-anime-link" [href]="url" target="_blank" rel="noopener">
+                        <svg lucideMessageSquarePlus></svg>
+                        Request this anime
+                    </a>
+                    <p class="request-note">Opens a prefilled issue on GitHub. You need a GitHub account to send it.</p>
+                }
             }
         </div>
     </div>

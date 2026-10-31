@@ -1,3 +1,9 @@
+# Anime Requests v5.6.0 - 2026-10-30
+
+- **Anime Requests**:
+  - When a search finds no cover, a "Request this anime" link opens a request form on
+    GitHub with the searched title already filled in. Sending it needs a GitHub account.
+
 # Grafito Redesign & Kira Logo v5.5.0 - 2026-10-30
 
 - **New Look**:

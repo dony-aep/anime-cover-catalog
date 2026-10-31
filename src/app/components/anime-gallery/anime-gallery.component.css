@@ -319,6 +319,40 @@
     margin-top: 1.5rem;
 }
 
+.request-anime-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--text-tertiary);
+    transition: text-decoration-color 0.15s ease;
+}
+
+.request-anime-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+.request-anime-link:hover {
+    text-decoration-color: currentColor;
+}
+
+.request-anime-link:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.no-results .request-note {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .card-info-overlay,
     .card-info-content,

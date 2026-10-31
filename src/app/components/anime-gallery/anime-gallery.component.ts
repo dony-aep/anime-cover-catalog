@@ -17,6 +17,7 @@ import {
   LucideHeart,
   LucideInfo,
   LucideLink,
+  LucideMessageSquarePlus,
   LucideRotateCcw,
   LucideSearchX,
 } from '@lucide/angular';
@@ -34,6 +35,7 @@ import {
     LucideHeart,
     LucideInfo,
     LucideLink,
+    LucideMessageSquarePlus,
     LucideRotateCcw,
     LucideSearchX,
   ],
@@ -88,6 +90,20 @@ export class AnimeGalleryComponent {
 
   // Check if the filter itself has no animes (vs search not finding anything)
   isFilterEmpty = computed(() => this.animeService.filterHasNoAnimes());
+
+  // Abre el formulario .github/ISSUE_TEMPLATE/anime-request.yml con el campo `anime-title`
+  // ya rellenado. La etiqueta la pone el formulario: el parámetro `labels` de la URL exige
+  // permisos de triage que quien pide no tiene.
+  requestAnimeUrl = computed(() => {
+    const term = this.animeService.searchTerm().trim();
+    if (!term) return null;
+    const params = new URLSearchParams({
+      template: 'anime-request.yml',
+      title: `Request: ${term}`,
+      'anime-title': term,
+    });
+    return `https://github.com/dony-aep/anime-cover-catalog/issues/new?${params}`;
+  });
 
   remainingCount = computed(() => {
     const filteredCount = this.animeService.filteredAnimes().length;

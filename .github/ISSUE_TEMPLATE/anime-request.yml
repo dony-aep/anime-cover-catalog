@@ -1,0 +1,27 @@
+name: Anime request
+description: Ask for an anime that is missing from the catalog.
+title: "Request: "
+labels: ["anime request"]
+body:
+  - type: markdown
+    attributes:
+      value: An anime is added once there is a high-quality cover for it, so a link to the right entry helps.
+  - type: input
+    id: anime-title
+    attributes:
+      label: Anime title
+      description: The English or Japanese title, as you would search for it.
+      placeholder: "Frieren: Beyond Journey's End"
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: MyAnimeList or AniList link
+      description: Optional. Points to the exact season, movie or OVA.
+      placeholder: https://myanimelist.net/anime/52991
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Optional. A specific cover or anything else worth knowing.

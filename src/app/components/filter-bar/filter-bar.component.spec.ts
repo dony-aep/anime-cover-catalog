@@ -59,6 +59,29 @@ describe('FilterBarComponent', () => {
     expect(component.filterCounts()['Comedy']).toBe(1);
   });
 
+  it('shows a Year group with counts, «Show all years» and upcoming years marked', async () => {
+    const next = new Date().getFullYear() + 1;
+    const years = Array.from({ length: 10 }, (_, i) => next - i);
+    const fixture = TestBed.createComponent(FilterBarComponent);
+    await flushCatalog([
+      ...years.map(y => makeAnime({ slug: `s${y}`, title: `T${y}`, releaseYear: y })),
+      makeAnime({ slug: 'extra', title: 'Extra', releaseYear: next - 1 }),
+      makeAnime({ slug: 'sin-anio', title: 'Sin año', releaseYear: null }),
+    ]);
+    await fixture.whenStable();
+
+    expect(fixture.componentInstance.filterCounts()[String(next - 1)]).toBe(2);
+    const host: HTMLElement = fixture.nativeElement;
+    const group = Array.from(host.querySelectorAll('.filter-group'))
+      .find(g => g.querySelector('.group-header')?.textContent?.trim() === 'Year')!;
+    const rows = Array.from(group.querySelectorAll<HTMLAnchorElement>('.filter-button'));
+    expect(rows).toHaveLength(8);
+    expect(rows[0].getAttribute('href')).toBe(`/catalog/year/${next}`);
+    expect(rows[0].querySelector('.upcoming')?.textContent?.trim()).toBe('upcoming');
+    expect(rows[1].querySelector('.upcoming')).toBeNull();
+    expect(group.querySelector('.group-toggle')?.textContent?.trim()).toBe('Show all years');
+  });
+
   it('shows the API page index instead of the filters and marks the clicked section', async () => {
     const fixture = TestBed.createComponent(FilterBarComponent);
     fixture.componentRef.setInput('docsIndex', true);

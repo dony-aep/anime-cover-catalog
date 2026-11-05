@@ -184,6 +184,19 @@
     font-weight: 500;
 }
 
+/* Año que aún no llega (p. ej. una ficha anunciada para el próximo año) */
+.upcoming {
+    margin-left: 0.5rem;
+    padding: 1px 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: 'Google Sans Mono', monospace;
+    font-size: 0.66rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text-tertiary);
+}
+
 /* Filter groups */
 .filter-group {
     padding-top: 0.5rem;

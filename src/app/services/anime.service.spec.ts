@@ -98,6 +98,20 @@ describe('AnimeService', () => {
     expect(service.animesByFilter()[0].slug).toBe('romance');
   });
 
+  it('filters by release year and leaves out the animes without one', async () => {
+    const animes = [
+      makeAnime({ slug: 'a', title: 'A', releaseYear: 2025 }),
+      makeAnime({ slug: 'b', title: 'B', releaseYear: 2024 }),
+      makeAnime({ slug: 'c', title: 'C', releaseYear: null }),
+      makeAnime({ slug: 'd', title: 'D', releaseYear: 2025 }),
+    ];
+    await flushFirstPage(pageResponse(animes, 1, 4));
+
+    service.changeFilter({ type: 'year', value: '2025' });
+
+    expect(service.animesByFilter().map(a => a.slug)).toEqual(['a', 'd']);
+  });
+
   it('searches across title, titleEnglish and titleJapanese', async () => {
     const animes = [
       makeAnime({ slug: 'a', title: 'Ao no Hako', titleEnglish: 'Blue Box' }),

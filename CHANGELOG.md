@@ -1,3 +1,13 @@
+# Year Filter v5.8.0 - 2026-11-04
+
+- **Filters**:
+  - New Year group after Type, so the catalog can be narrowed to the animes released in a
+    given year, with a link of its own such as `/catalog/year/2025`. Years go from the
+    newest to the oldest, show the latest eight until "Show all years", and fold like
+    the other groups.
+  - Years still to come are marked "upcoming". Animes with no release year yet stay out
+    of the group and keep showing under "All covers".
+
 # 2025 and 2026 Covers v5.7.0 - 2026-11-04
 
 - **Catalog Expansion**:

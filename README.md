@@ -7,7 +7,7 @@ A web application for browsing and discovering anime cover art. Built with Angul
 ## Features
 
 - **Browse Anime Covers**: View a gallery of high-quality anime cover images organized by various categories
-- **Advanced Filtering**: Filter anime by genre, demographic, theme, and type (TV, Movie, OVA, Special, etc.)
+- **Advanced Filtering**: Filter anime by genre, demographic, theme, type (TV, Movie, OVA, Special, etc.) and release year
 - **Search Functionality**: Quickly find specific anime titles with real-time search
 - **Anime Requests**: Ask for a missing anime from an empty search through a prefilled GitHub issue
 - **Sorting Options**: Sort by name (A-Z, Z-A) or release date (newest, oldest)

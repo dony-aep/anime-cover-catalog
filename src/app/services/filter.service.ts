@@ -13,6 +13,8 @@ export type FacetType = Exclude<FilterType, 'all'>;
 export interface FilterGroup {
   type: FacetType;
   label: string;
+  /** Plural for «Show all …»: the label is singular in Type, Year and Demographic. */
+  noun: string;
   options: FilterOption[];
 }
 
@@ -25,16 +27,17 @@ export interface VisibleFilterGroup extends FilterGroup {
   hiddenCount: number;
 }
 
-const FACETS: { type: FacetType; label: string }[] = [
-  { type: 'type', label: 'Type' },
-  { type: 'demographic', label: 'Demographic' },
-  { type: 'genre', label: 'Genres' },
-  { type: 'theme', label: 'Themes' },
-  { type: 'explicitGenre', label: 'Explicit' },
+const FACETS: { type: FacetType; label: string; noun: string }[] = [
+  { type: 'type', label: 'Type', noun: 'types' },
+  { type: 'year', label: 'Year', noun: 'years' },
+  { type: 'demographic', label: 'Demographic', noun: 'demographics' },
+  { type: 'genre', label: 'Genres', noun: 'genres' },
+  { type: 'theme', label: 'Themes', noun: 'themes' },
+  { type: 'explicitGenre', label: 'Explicit', noun: 'explicit genres' },
 ];
 
-// Géneros y temas superan los 15 valores; se muestran solo los más usados hasta que se pide «Show all».
-const TRUNCATABLE: ReadonlySet<FacetType> = new Set(['genre', 'theme']);
+// Géneros, temas y años superan los 15 valores; se muestran solo los primeros hasta que se pide «Show all».
+const TRUNCATABLE: ReadonlySet<FacetType> = new Set(['genre', 'theme', 'year']);
 const TRUNCATED_LIMIT = 8;
 
 const COLLAPSED_STORAGE_KEY = 'filter_groups_collapsed';
@@ -82,6 +85,7 @@ export class FilterService {
       anime.explicitGenres.forEach(e => add('explicitGenre', e));
       add('type', anime.type);
       if (anime.demographic) add('demographic', anime.demographic);
+      if (anime.releaseYear !== null) add('year', String(anime.releaseYear));
     }
 
     options.sort((a, b) => a.label.localeCompare(b.label));
@@ -90,7 +94,8 @@ export class FilterService {
 
   /**
    * Filters grouped by facet, each group sorted by how many animes use the
-   * value (catalog-wide, so the order doesn't jump while searching).
+   * value (catalog-wide, so the order doesn't jump while searching). Years go
+   * newest first instead: ordered by usage, the list would jump between decades.
    */
   filterGroups = computed<FilterGroup[]>(() => {
     const usage = new Map<string, number>();
@@ -115,7 +120,9 @@ export class FilterService {
         ...facet,
         options: this.filters()
           .filter(f => f.type === facet.type)
-          .sort((a, b) => uses(b) - uses(a) || a.label.localeCompare(b.label)),
+          .sort(facet.type === 'year'
+            ? (a, b) => Number(b.value) - Number(a.value)
+            : (a, b) => uses(b) - uses(a) || a.label.localeCompare(b.label)),
       }))
       .filter(group => group.options.length > 0);
   });

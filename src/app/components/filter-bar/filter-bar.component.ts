@@ -40,6 +40,9 @@ export class FilterBarComponent {
     });
   }
 
+  /** Años posteriores al actual: se marcan como «upcoming» en el grupo Year. */
+  readonly currentYear = new Date().getFullYear();
+
   filterCounts = computed(() => {
     const counts: { [key: string]: number } = {};
     const animes = this.animeService.animes();
@@ -55,6 +58,10 @@ export class FilterBarComponent {
         anime.explicitGenres.forEach(e => counts[e] = (counts[e] || 0) + 1);
         if (anime.type) counts[anime.type] = (counts[anime.type] || 0) + 1;
         if (anime.demographic) counts[anime.demographic] = (counts[anime.demographic] || 0) + 1;
+        if (anime.releaseYear !== null) {
+          const year = String(anime.releaseYear);
+          counts[year] = (counts[year] || 0) + 1;
+        }
     }
     return counts;
   });

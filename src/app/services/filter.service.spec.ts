@@ -94,10 +94,43 @@ describe('FilterService', () => {
 
     const groups = service.filterGroups();
 
-    expect(groups.map(g => g.type)).toEqual(['type', 'demographic', 'genre', 'explicitGenre']);
+    expect(groups.map(g => g.type)).toEqual(['type', 'year', 'demographic', 'genre', 'explicitGenre']);
     expect(groups.find(g => g.type === 'type')!.options.map(o => o.value)).toEqual(['TV', 'Movie']);
     // Romance (3) primero; Action y Comedy empatan a 1 y van por orden alfabético.
     expect(groups.find(g => g.type === 'genre')!.options.map(o => o.value)).toEqual(['Romance', 'Action', 'Comedy']);
+  });
+
+  it('lists release years after Type, newest first whatever their usage', async () => {
+    await flushCatalog([
+      makeAnime({ slug: 'a', title: 'A', releaseYear: 2019 }),
+      makeAnime({ slug: 'b', title: 'B', releaseYear: 2019 }),
+      makeAnime({ slug: 'c', title: 'C', releaseYear: 2025 }),
+      makeAnime({ slug: 'd', title: 'D', releaseYear: null }),
+    ]);
+
+    expect(service.filters()).toContainEqual({ label: '2025', type: 'year', value: '2025' });
+    const year = service.filterGroups().find(g => g.type === 'year')!;
+    // 2019 tiene más animes, pero los años van del más reciente al más antiguo; el anime sin año no añade opción.
+    expect(year.options.map(o => o.value)).toEqual(['2025', '2019']);
+    expect(year.noun).toBe('years');
+  });
+
+  it('trims the years to the eight most recent until «Show all years»', async () => {
+    const years = Array.from({ length: 10 }, (_, i) => 2016 + i);
+    await flushCatalog(years.map(y => makeAnime({ slug: `s${y}`, title: `T${y}`, releaseYear: y })));
+    const animeService = TestBed.inject(AnimeService);
+
+    const trimmed = service.visibleGroups(new Set()).find(g => g.type === 'year')!;
+    expect(trimmed.options.map(o => o.value)).toEqual(['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018']);
+    expect(trimmed.truncatable).toBe(true);
+    expect(trimmed.hiddenCount).toBe(2);
+
+    animeService.changeFilter({ type: 'year', value: '2016' });
+    const withActive = service.visibleGroups(new Set()).find(g => g.type === 'year')!;
+    expect(withActive.options.at(-1)!.value).toBe('2016');
+
+    const expanded = service.visibleGroups(new Set(['year'])).find(g => g.type === 'year')!;
+    expect(expanded.options.length).toBe(10);
   });
 
   it('collapses long groups but keeps the active filter visible', async () => {
@@ -167,5 +200,8 @@ describe('FilterService', () => {
     expect(service.getRouteParamFromValue('Idols (Female)')).toBe('idols-female');
     expect(service.getValueFromRouteParam('idols-female')).toBe('Idols (Female)');
     expect(service.getValueFromRouteParam('no-existe')).toBeUndefined();
+    // Los años usan el número tal cual en la URL: /catalog/year/2020 (releaseYear por defecto de makeAnime).
+    expect(service.getRouteParamFromValue('2020')).toBe('2020');
+    expect(service.getValueFromRouteParam('2020')).toBe('2020');
   });
 });

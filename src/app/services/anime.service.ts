@@ -73,6 +73,8 @@ export class AnimeService {
           return anime.demographic === filter.value;
         case 'explicitGenre':
           return anime.explicitGenres.includes(filter.value);
+        case 'year':
+          return anime.releaseYear !== null && String(anime.releaseYear) === filter.value;
         default:
           return true;
       }

@@ -33,7 +33,7 @@ export interface AnimeListResponse {
     };
 }
 
-export type FilterType = 'all' | 'genre' | 'theme' | 'demographic' | 'type' | 'explicitGenre';
+export type FilterType = 'all' | 'genre' | 'theme' | 'demographic' | 'type' | 'explicitGenre' | 'year';
 
 export interface Filter {
     type: FilterType;

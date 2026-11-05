@@ -79,6 +79,9 @@
                                 routerLinkActive="active"
                                 (click)="onFilterClick()">
                                 {{ filter.label }}
+                                @if (group.type === 'year' && +filter.value > currentYear) {
+                                    <span class="upcoming">upcoming</span>
+                                }
                                 @if (count > 0) {
                                     <span class="row-count">{{ count.toLocaleString('en-US') }}</span>
                                 }
@@ -90,7 +93,7 @@
                                 class="group-toggle"
                                 [attr.aria-expanded]="group.showingAll"
                                 (click)="toggleShowAll(group.type)">
-                                {{ group.showingAll ? 'Show less' : 'Show all ' + group.label.toLowerCase() }}
+                                {{ group.showingAll ? 'Show less' : 'Show all ' + group.noun }}
                                 @if (group.showingAll) { <svg lucideChevronUp></svg> } @else { <svg lucideChevronDown></svg> }
                             </button>
                         }

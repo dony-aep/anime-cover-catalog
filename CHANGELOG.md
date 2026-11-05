@@ -1,3 +1,17 @@
+# 2025 and 2026 Covers v5.7.0 - 2026-11-04
+
+- **Catalog Expansion**:
+  - Added 100 new animes, bringing the total from 1218 to 1318. Most are from 2025 and
+    2026, such as Frieren Season 2, Re:Zero Season 4, Jujutsu Kaisen: The Culling Game
+    and Chainsaw Man: Assassins Arc. A few are older series the catalog was missing, like
+    Laid-Back Camp and Liar Liar.
+  - Added 14 alternative covers to 10 animes already in the catalog, among them Oshi no Ko
+    Season 3, Kanojo, Okarishimasu Season 4 and Takopi's Original Sin.
+
+- **Filters**:
+  - Animes whose format is not announced yet, such as Chainsaw Man: Assassins Arc, appear
+    under a new Unknown type.
+
 # Anime Requests v5.6.0 - 2026-10-30
 
 - **Anime Requests**:

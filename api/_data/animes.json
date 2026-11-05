@@ -3277,7 +3277,9 @@
     "titleJapanese": null,
     "images": {
       "cover": "assets/AnimeImages/Spy_x_Family_1.webp",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Spy_x_Family_1_alt1.jpg"
+      ]
     },
     "releaseYear": 2022,
     "studios": [
@@ -8272,7 +8274,8 @@
       "cover": "assets/AnimeImages/Yamato_yo,_Towa_ni_Rebel_3199.jpg",
       "alternatives": [
         "assets/AnimeImages/Yamato_yo,_Towa_ni_Rebel_3199_alt1.jpg",
-        "assets/AnimeImages/Yamato_yo,_Towa_ni_Rebel_3199_alt2.jpg"
+        "assets/AnimeImages/Yamato_yo,_Towa_ni_Rebel_3199_alt2.jpg",
+        "assets/AnimeImages/Yamato_yo,_Towa_ni_Rebel_3199_alt3.jpg"
       ]
     },
     "releaseYear": 2024,
@@ -10877,7 +10880,8 @@
         "assets/AnimeImages/Kanojo,_Okarishimasu_4th_Season_alt5.jpeg",
         "assets/AnimeImages/Kanojo,_Okarishimasu_4th_Season_alt6.jpeg",
         "assets/AnimeImages/Kanojo,_Okarishimasu_4th_Season_alt7.jpeg",
-        "assets/AnimeImages/Kanojo,_Okarishimasu_4th_Season_alt8.jpeg"
+        "assets/AnimeImages/Kanojo,_Okarishimasu_4th_Season_alt8.jpeg",
+        "assets/AnimeImages/Kanojo,_Okarishimasu_4th_Season_alt9.jpg"
       ]
     },
     "releaseYear": 2025,
@@ -10969,7 +10973,8 @@
         "assets/AnimeImages/Karaoke_Iko!_alt1.jpg",
         "assets/AnimeImages/Karaoke_Iko!_alt2.jpeg",
         "assets/AnimeImages/Karaoke_Iko!_alt3.jpeg",
-        "assets/AnimeImages/Karaoke_Iko!_alt4.jpeg"
+        "assets/AnimeImages/Karaoke_Iko!_alt4.jpeg",
+        "assets/AnimeImages/Karaoke_Iko!_alt5.jpg"
       ]
     },
     "releaseYear": 2025,
@@ -11032,7 +11037,8 @@
       "alternatives": [
         "assets/AnimeImages/Kimetsu_no_Yaiba_Movie_1_Mugenjou-hen_-_Akaza_Sairai_alt1.jpg",
         "assets/AnimeImages/Kimetsu_no_Yaiba_Movie_1_Mugenjou-hen_-_Akaza_Sairai_alt2.jpg",
-        "assets/AnimeImages/Kimetsu_no_Yaiba_Movie_1_Mugenjou-hen_-_Akaza_Sairai_alt3.jpg"
+        "assets/AnimeImages/Kimetsu_no_Yaiba_Movie_1_Mugenjou-hen_-_Akaza_Sairai_alt3.jpg",
+        "assets/AnimeImages/Kimetsu_no_Yaiba_Movie_1_Mugenjou-hen_-_Akaza_Sairai_alt4.jpeg"
       ]
     },
     "releaseYear": 2025,
@@ -12095,7 +12101,9 @@
         "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt3.jpg",
         "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt4.jpg",
         "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt5.jpeg",
-        "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt6.jpg"
+        "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt6.jpg",
+        "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt7.jpg",
+        "assets/AnimeImages/[Oshi_no_Ko]_3rd_Season_alt8.jpg"
       ]
     },
     "releaseYear": 2026,
@@ -12653,7 +12661,9 @@
         "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt5.jpeg",
         "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt6.jpeg",
         "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt7.jpg",
-        "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt8.jpg"
+        "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt8.jpg",
+        "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt9.jpeg",
+        "assets/AnimeImages/Seishun_Buta_Yarou_wa_Santa_Claus_no_Yume_wo_Minai_alt10.jpeg"
       ]
     },
     "releaseYear": 2025,
@@ -13027,7 +13037,8 @@
       "cover": "assets/AnimeImages/Takopii_no_Genzai.jpg",
       "alternatives": [
         "assets/AnimeImages/Takopii_no_Genzai_alt1.jpg",
-        "assets/AnimeImages/Takopii_no_Genzai_alt2.jpg"
+        "assets/AnimeImages/Takopii_no_Genzai_alt2.jpg",
+        "assets/AnimeImages/Takopii_no_Genzai_alt3.jpg"
       ]
     },
     "releaseYear": 2025,
@@ -13540,7 +13551,10 @@
       "alternatives": [
         "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt1.jpg",
         "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt2.jpg",
-        "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt3.jpg"
+        "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt3.jpg",
+        "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt4.jpg",
+        "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt5.jpg",
+        "assets/AnimeImages/Watashi_ga_Koibito_ni_Nareru_Wake_Nai_jan,_Muri_Muri!_(※Muri_ja_Nakatta!)_alt6.jpeg"
       ]
     },
     "releaseYear": 2025,
@@ -17077,7 +17091,9 @@
     "titleJapanese": "下ネタという概念が存在しない退屈な世界",
     "images": {
       "cover": "assets/AnimeImages/Shimoneta_to_Iu_Gainen_ga_Sonzai_Shinai_Taikutsu_na_Sekai.jpg",
-      "alternatives": []
+      "alternatives": [
+        "assets/AnimeImages/Shimoneta_to_Iu_Gainen_ga_Sonzai_Shinai_Taikutsu_na_Sekai_alt1.jpg"
+      ]
     },
     "releaseYear": 2015,
     "studios": [
@@ -35042,5 +35058,2798 @@
     "episodes": 1,
     "synopsis": "The young girls of Mitakihara happily live their lives, occasionally fighting off evil, but otherwise going about their peaceful, everyday routines. However, Homura Akemi feels that something is wrong with this unusually pleasant atmosphere—though the others remain oblivious, she can't help but suspect that there is more to what is going on than meets the eye: someone who should not exist is currently present to join in on their activities.\n\nMahou Shoujo Madoka☆Magica Movie 3: Hangyaku no Monogatari follows Homura in her struggle to uncover the painful truth behind the mysterious circumstances, as she selfishly and desperately fights for the sake of her undying love in this despair-ridden conclusion to the story of five magical girls.",
     "trailerUrl": "https://youtu.be/aic9EjX2A8Y"
+  },
+  {
+    "slug": "re-zero-kara-hajimeru-isekai-seikatsu-4th-season",
+    "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+    "titleEnglish": "Re:ZERO -Starting Life in Another World- Season 4",
+    "titleJapanese": "Re:ゼロから始める異世界生活 4th season",
+    "images": {
+      "cover": "assets/AnimeImages/ReZero_kara_Hajimeru_Isekai_Seikatsu_4th_Season.jpg",
+      "alternatives": [
+        "assets/AnimeImages/ReZero_kara_Hajimeru_Isekai_Seikatsu_4th_Season_alt1.jpg",
+        "assets/AnimeImages/ReZero_kara_Hajimeru_Isekai_Seikatsu_4th_Season_alt2.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "White Fox"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai",
+      "Psychological",
+      "Time Travel"
+    ],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Suspense"
+    ],
+    "explicitGenres": [],
+    "episodes": 19,
+    "synopsis": "In the deadly battle at the Watergate City of Priestella, Subaru and his allies barely emerged victorious—but their triumph came at a great cost. Through the \"Authority of Gluttony,\" Rem was put into suspended animation, while Crusch's memories and even Julius’s name were devoured. As he searches for a way to save them, Subaru learns of the \"Sage\" Shaula—an all-seeing being said to possess every form of knowledge. His next destination is the Pleiades Watchtower, home to the Sage, the farthest tower standing in the vast, uncharted desert known as the Auguria Dunes—a place so perilous that even the mightiest \"Sword Saint,\" Reinhard, failed to conquer it. The fury of nature, unknown magical beasts, and unimaginable dangers lie ahead. Together with his friends, Subaru embarks on a life-risking journey to reclaim what was lost.\n\r\n(Source: Kadokawa, edited)",
+    "trailerUrl": "https://youtu.be/jVl4bY81iIs"
+  },
+  {
+    "slug": "enen-no-shouboutai-san-no-shou-part-2",
+    "title": "Enen no Shouboutai: San no Shou Part 2",
+    "titleEnglish": "Fire Force Season 3 Part 2",
+    "titleJapanese": "炎炎ノ消防隊 参ノ章 第2クール",
+    "images": {
+      "cover": "assets/AnimeImages/Enen_no_Shouboutai_San_no_Shou_Part_2.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Enen_no_Shouboutai_San_no_Shou_Part_2_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "David Production"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Second part of Enen no Shouboutai: San no Shou.",
+    "trailerUrl": "https://youtu.be/voLZJvdwUEE"
+  },
+  {
+    "slug": "sousou-no-frieren-2nd-season",
+    "title": "Sousou no Frieren 2nd Season",
+    "titleEnglish": "Frieren: Beyond Journey's End Season 2",
+    "titleJapanese": "葬送のフリーレン 第2期",
+    "images": {
+      "cover": "assets/AnimeImages/Sousou_no_Frieren_2nd_Season.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Sousou_no_Frieren_2nd_Season_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Madhouse"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 10,
+    "synopsis": "Following the First-Class Mage Exam, the trio—elven mage Frieren, warrior Stark, and first-class mage Fern—gains access to the dangerous Northern Plateau. As the party presses onward toward Aureole, formidable adversaries force Stark to confront his insecurities, solidifying his resolve and his role as the party's frontliner. Meanwhile, Fern continues to cherish the gifts she has been blessed with throughout her life, each a reminder of those she holds dear.\n\r\nFrieren—still honoring her vow to understand humanity—revisits memories of her journey with the Hero's party and her fleeting encounter with a legendary figure. As she reflects on the passage of time, the elven mage quietly questions whether she has truly changed, yet in the small, almost subtle choices that she makes, there are signs that she might have become more human than she realizes.",
+    "trailerUrl": "https://youtu.be/RH-FcW94z00"
+  },
+  {
+    "slug": "jujutsu-kaisen-shimetsu-kaiyuu-zenpen",
+    "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
+    "titleEnglish": "Jujutsu Kaisen: The Culling Game Part 1",
+    "titleJapanese": "呪術廻戦 「死滅回游 前編」",
+    "images": {
+      "cover": "assets/AnimeImages/Jujutsu_Kaisen_Shimetsu_Kaiyuu_-_Zenpen.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Jujutsu_Kaisen_Shimetsu_Kaiyuu_-_Zenpen_alt1.jpg",
+        "assets/AnimeImages/Jujutsu_Kaisen_Shimetsu_Kaiyuu_-_Zenpen_alt2.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "MAPPA"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Kenjaku, the one known as Noritoshi Kamo and most recently as Suguru Getou, has initiated the next step in his destructive, thousand-year plan of ordinary humans' evolution and eventual eradication. The jujutsu world higher-ups reinstate 15-year-old Yuuji Itadori's execution, as Satoru Gojou is incapacitated as a result of Kenjaku's master plan in Shibuya. While Yuuji is unaware of this, he patrols the abandoned Tokyo streets with Chousou, exterminating any and all cursed spirits in his way.\n\r\nMeanwhile, the bigoted and arrogant Naoya Zenin's pride takes a hit when Megumi Fushiguro is selected as the Zenin Clan's next head. To draw out Megumi and eliminate him, he goes after Yuuji—but Yuuta Okkotsu is set on being Yuuji's executioner. Kenjaku's \"Culling Game\"—a rigorous battle royale spanning throughout Japan and forcing the jujutsu competitors to kill each other—is set in motion, and the young jujutsu sorcerers join the fray to settle old scores, free Gojou, and liberate the jujutsu world from the threat that is Kenjaku.",
+    "trailerUrl": "https://youtu.be/ruX3rIj3--w"
+  },
+  {
+    "slug": "jujutsu-kaisen-shimetsu-kaiyuu-kouhen",
+    "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Kouhen",
+    "titleEnglish": "Jujutsu Kaisen: The Culling Game Part 2",
+    "titleJapanese": "呪術廻戦 「死滅回游 後編」",
+    "images": {
+      "cover": "assets/AnimeImages/Jujutsu_Kaisen_Shimetsu_Kaiyuu_-_Kouhen.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Jujutsu_Kaisen_Shimetsu_Kaiyuu_-_Kouhen_alt1.jpg"
+      ]
+    },
+    "releaseYear": null,
+    "studios": [
+      "MAPPA"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": null,
+    "synopsis": "Part two of Jujutsu Kaisen: Shimetsu Kaiyuu.",
+    "trailerUrl": "https://youtu.be/HGCsAcFzaFw"
+  },
+  {
+    "slug": "fate-strange-fake",
+    "title": "Fate/strange Fake",
+    "titleEnglish": "Fate/strange Fake",
+    "titleJapanese": "Fate/strange Fake",
+    "images": {
+      "cover": "assets/AnimeImages/Fatestrange_Fake.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Fatestrange_Fake_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "A-1 Pictures"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "A new Holy Grail War is emerging in Snowfield, Nevada, where mages from around the world summon Servants, heroic spirits drawn from myth and history, to fight on their behalf. However, this war seems to differ from previous ones. The organization behind it appears to have used data from the Fuyuki Grail War for their ritual, resulting in strange happenings. \n\r\nUnbeknownst to most participants, this budding conflict is actually a fake Grail War. There exists another set of seven true Servants who are summoned to fight in the genuine Holy Grail War. One of these Servants is a powerful Saber-class who saves the life of Ayaka Sajou, his apparent master, after being summoned. \n\r\nWith hidden agendas and unpredictable forces at play, the line between the fake and true Grail War becomes unclear, turning Snowfield into a dangerous battlefield.",
+    "trailerUrl": "https://youtu.be/EzbZP62K1-Q"
+  },
+  {
+    "slug": "undead-unluck-winter-hen",
+    "title": "Undead Unluck: Winter-hen",
+    "titleEnglish": "Undead Unluck: Winter Arc",
+    "titleJapanese": "アンデッドアンラック ウィンター編",
+    "images": {
+      "cover": "assets/AnimeImages/Undead_Unluck_Winter-hen.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "E&H Production"
+    ],
+    "type": "TV Special",
+    "demographic": "Shounen",
+    "themes": [
+      "Super Power"
+    ],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "Amidst a blizzard caused by UMA Winter, Billy receives a report on the Autumn battle and learns Undead and Unluck are evolving. Juiz appears, revealing to him that the artifacts are weapons meant to defeat God and that the Ark can only perform one more loop. She urges Billy to join forces once more and stake everything on Unluck to achieve their shared goal: \"defeat God.\" However, Billy declares that they cannot work together. Juiz realizes Billy's true intention—to obtain Ark and Apocalypse—but before she can act, Billy drags them into a brutal clash involving UMAs on both sides. Resolute in their own \"justice,\" Juiz presses forward with her blade, while Billy counters by utilizing other Negators' abilities and his pistol. What is Billy's true objective? Meanwhile, Andy and Fuko, having captured Autumn's core, are en route by air to take down Summer. But Billy anticipates that Juiz entrusted Apocalypse to Andy, and sends assassins to strike the pair from the skies!\n\r\n(Source: TMS, edited)",
+    "trailerUrl": "https://youtu.be/_1XiSfrS2F0"
+  },
+  {
+    "slug": "mato-seihei-no-slave-2",
+    "title": "Mato Seihei no Slave 2",
+    "titleEnglish": "Chained Soldier Season 2",
+    "titleJapanese": "魔都精兵のスレイブ2",
+    "images": {
+      "cover": "assets/AnimeImages/Mato_Seihei_no_Slave_2.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Passione",
+      "Hayabusa Film"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Harem"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [
+      "Ecchi"
+    ],
+    "episodes": 12,
+    "synopsis": "Second season of Mato Seihei no Slave.",
+    "trailerUrl": "https://youtu.be/IDgkCjcNxtU"
+  },
+  {
+    "slug": "goumon-baito-kun-no-nichijou",
+    "title": "Goumon Baito-kun no Nichijou",
+    "titleEnglish": "The Daily Life of a Part-time Torturer",
+    "titleJapanese": "拷問バイトくんの日常",
+    "images": {
+      "cover": "assets/AnimeImages/Goumon_Baito-kun_no_Nichijou.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Goumon_Baito-kun_no_Nichijou_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Diomedéa"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Adult Cast",
+      "Workplace"
+    ],
+    "genres": [
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "This is a world where killing and torture are legalized. Sero, a part-time worker at a torture company, enjoys torturing people every day with his senior colleague, Siu. With the addition of new part-timers Mike and Hugh, fun torture life continues!\n\r\nThe gap between the at-home, easy-going workplace and the gruesome torture is bound to attract a lot of addicts! \n\r\n(Source: Hakusensha, translated)",
+    "trailerUrl": "https://youtu.be/EIJOU7qjq6s"
+  },
+  {
+    "slug": "uruwashi-no-yoi-no-tsuki",
+    "title": "Uruwashi no Yoi no Tsuki",
+    "titleEnglish": "In the Clear Moonlit Dusk",
+    "titleJapanese": "うるわしの宵の月",
+    "images": {
+      "cover": "assets/AnimeImages/Uruwashi_no_Yoi_no_Tsuki.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Uruwashi_no_Yoi_no_Tsuki_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "East Fish Studio",
+      "Atelier Peuplier"
+    ],
+    "type": "TV",
+    "demographic": "Shoujo",
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Every time Yoi Takiguchi so much as lets out a sigh, her female classmates squeal in admiration and awe. She has been dubbed the school's \"prince\" by virtue of her boyishly attractive appearance and casual disposition. However, she chooses to be indifferent toward the attention she receives and spends her days normally—that is, until the school's other prince, Kohaku Ichimura, waltzes into her life and calls her beautiful.\n\r\nKohaku is nothing like a prince—he acts thoughtlessly and does as he pleases. But when he compliments her, Yoi feels flustered, and the way he looks at her gets her all nervous. He is the first boy to acknowledge her as a girl, and her attempts to distance herself prove futile as he seems to have set his sights on her. While Yoi keeps telling herself that it is nothing serious, even she cannot completely ignore the stir Kohaku causes in her heart.",
+    "trailerUrl": "https://youtu.be/VzJSWjCCn8M"
+  },
+  {
+    "slug": "29-sai-dokushin-chuuken-boukensha-no-nichijou",
+    "title": "29-sai Dokushin Chuuken Boukensha no Nichijou",
+    "titleEnglish": "An Adventurer's Daily Grind at Age 29",
+    "titleJapanese": "29歳独身中堅冒険者の日常",
+    "images": {
+      "cover": "assets/AnimeImages/29-sai_Dokushin_Chuuken_Boukensha_no_Nichijou.jpg",
+      "alternatives": [
+        "assets/AnimeImages/29-sai_Dokushin_Chuuken_Boukensha_no_Nichijou_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "HORNETS"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Hajime Shinonome is a 29-year-old seasoned adventurer who has long stepped away from the glory of youthful ambition, instead content with his steady life in Komai Village. During a dungeon expedition, he rescues a young girl named Rirui, who was abandoned and nearly consumed by a slime. Driven by memories of a similarly unforgiving past, Hajime takes her under his care. But as Rirui begins to reveal unexpected abilities while adapting to the rhythm of village life, Hajime finds that their shared existence may prove to be more consequential than any other quest he has ever attempted.",
+    "trailerUrl": "https://youtu.be/3QnsBDevjk0"
+  },
+  {
+    "slug": "kizoku-tensei-megumareta-umare-kara-saikyou-no-chikara-wo-eru",
+    "title": "Kizoku Tensei: Megumareta Umare kara Saikyou no Chikara wo Eru",
+    "titleEnglish": "Noble Reincarnation: Born Blessed, So I'll Obtain Ultimate Power",
+    "titleJapanese": "貴族転生 ～恵まれた生まれから最強の力を得る～",
+    "images": {
+      "cover": "assets/AnimeImages/Kizoku_Tensei_Megumareta_Umare_kara_Saikyou_no_Chikara_wo_Eru.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Kizoku_Tensei_Megumareta_Umare_kara_Saikyou_no_Chikara_wo_Eru_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "CompTown"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Reincarnation"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Noah Ararat is born into privilege as the 13th prince of an imperial dynasty and granted an existence most can only envy. After all, apart from the access to the empire's finest education and resources, Noah is a reincarnator with the memories of his previous life intact, blessed with an infinite level cap and an elite ability that allows him to utilize his subordinates' skills.\n\r\nWithin the imperial court, however, status alone offers no guarantee of safety. While Noah's overwhelming potential sets him apart from his siblings from the moment he begins his training, it also draws the attention of nobles whose interests extend far beyond governance. Inevitably, Noah must learn to navigate the expectations of royalty and the mechanics of his unusual power, as he realizes that privilege invites control as readily as it grants it.",
+    "trailerUrl": "https://youtu.be/RIj0yJCVNuU"
+  },
+  {
+    "slug": "yuusha-party-wo-oidasareta-kiyoubinbou",
+    "title": "Yuusha Party wo Oidasareta Kiyoubinbou",
+    "titleEnglish": "Jack-of-All-Trades, Party of None",
+    "titleJapanese": "勇者パーティを追い出された器用貧乏",
+    "images": {
+      "cover": "assets/AnimeImages/Yuusha_Party_wo_Oidasareta_Kiyoubinbou.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Yuusha_Party_wo_Oidasareta_Kiyoubinbou_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "animation studio42"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "\"Orhun Dura, today will be your last day in the party.\"\n\r\nOrhun, once a skilled Swordsman, had adapted to the role of Enchanter to fill a crucial gap in the Hero Party. However, one day, the party leader abruptly dismisses him, claiming his skills are lacking. Branded a \"weakling\" and a \"jack of all trades, master of none,\" by his former comrades, Orhun is cast out without a second thought.\n\r\nDetermined to start anew, he returns to adventuring—this time as a Swordsman, the role he originally excelled in. But his time as an Enchanter was far from wasted. The experience, knowledge, and countless original spells he developed in the Hero Party have forged him into a warrior unlike any other. Now, armed with an unconventional set of skills, Orhun is ready to carve his own path—one that will prove his true strength to the world.\n\r\n(Source: MAL News)",
+    "trailerUrl": "https://youtu.be/dLDimMasKBM"
+  },
+  {
+    "slug": "kaya-chan-wa-kowakunai",
+    "title": "Kaya-chan wa Kowakunai",
+    "titleEnglish": "Kaya-chan Isn't Scary",
+    "titleJapanese": "カヤちゃんはコワくない",
+    "images": {
+      "cover": "assets/AnimeImages/Kaya-chan_wa_Kowakunai.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Kaya-chan_wa_Kowakunai_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "East Fish Studio"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Horror",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "In a certain kindergarten, Satou Kaya is a notorious troublemaker—so much so that several of her teachers have already quit from the stress that comes with managing her. She constantly prevents other children from playing, reading their favorite books, or even going to the restroom—at least, that is what it looks like from the outside. When a new kindergarten teacher, Chie Hasumi, is assigned to Kaya, she discovers that Kaya actually protects other kids from evil spirits!\n\r\nWith this newfound knowledge, Chie places her trust in Kaya to keep the class safe. However, Chie soon realizes that, while Kaya protects her friends, there may be something at home Kaya herself needs protection from.",
+    "trailerUrl": "https://youtu.be/un9g38-wbHw"
+  },
+  {
+    "slug": "kusuriya-no-hitorigoto-3rd-season",
+    "title": "Kusuriya no Hitorigoto 3rd Season",
+    "titleEnglish": "The Apothecary Diaries Season 3",
+    "titleJapanese": "薬屋のひとりごと 第3期",
+    "images": {
+      "cover": "assets/AnimeImages/Kusuriya_no_Hitorigoto_3rd_Season.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "OLM"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Historical",
+      "Medical"
+    ],
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "In the aftermath of the Shi Clan's rebellion, things have finally settled down, and Maomao has returned to her old life as a pharmacist in the pleasure district. One day, triggered by a breakfast served at the Verdigris House, Maomao senses an anomaly and begins investigating its true nature. Meanwhile, Jinshi, who has revealed his true identity as the Imperial brother and begun to face his heavy responsibilities, is deeply troubled by the final message left by Loulan: a warning of an impending \"disaster that will strike the nation.\" To make matters worse, rumors of a mysterious shrine maiden who deceives the people begin to spread, casting a dark shadow over the country of Li once again. From the depths of the inner court to the city streets, and across foreign borders—the world grows wider, and the stakes even higher for Maomao and Jinshi.\n\r\n(Source: Crunchyroll)",
+    "trailerUrl": "https://youtu.be/YvNvvUeCztE"
+  },
+  {
+    "slug": "mayonaka-heart-tune",
+    "title": "Mayonaka Heart Tune",
+    "titleEnglish": "Tune In to the Midnight Heart",
+    "titleJapanese": "真夜中ハートチューン",
+    "images": {
+      "cover": "assets/AnimeImages/Mayonaka_Heart_Tune.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Mayonaka_Heart_Tune_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Gekkou"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Harem",
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Back in middle school, Arisu Yamabuki's only solace in life was a radio show hosted by a girl named Apollo. He used to faithfully tune into the program every night until she abruptly stopped broadcasting entirely. Despite having very few clues about Apollo's identity, Yamabuki has thoroughly investigated her, which eventually led him to enroll in the newly co-ed Furin High School, hoping to find her there.\n\r\nJust as Yamabuki suspected, the broadcasting club's first announcement is made by the familiar voice he admires! Upon entering the club room, however, Yamabuki realizes that his search will not be that easy. The four members—Rikka Inohana, Shinobu Uzuki, Nene Himekawa, and Iko Kirino—all sound like Apollo in different ways.\n\r\nYamabuki joins the club primarily to find Apollo, but he soon discovers that each girl aspires to pursue her own career with her voice. Seeing that there is a lot of room for improvement, Yamabuki takes it upon himself to help the girls reach their individual goals—but he never stops looking for his favorite Apollo.",
+    "trailerUrl": "https://youtu.be/poUibdNvxPQ"
+  },
+  {
+    "slug": "kanan-sama-wa-akumade-choroi",
+    "title": "Kanan-sama wa Akumade Choroi",
+    "titleEnglish": "Mistress Kanan is Devilishly Easy",
+    "titleJapanese": "カナン様はあくまでチョロい",
+    "images": {
+      "cover": "assets/AnimeImages/Kanan-sama_wa_Akumade_Choroi.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Kanan-sama_wa_Akumade_Choroi_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio KAI"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Supernatural"
+    ],
+    "explicitGenres": [
+      "Ecchi"
+    ],
+    "episodes": 12,
+    "synopsis": "Kanan is a demon who descends upon the human world with one goal: to feast on the sweetest delicacy of all—young human souls. Disguised as a high schooler, she sets her sights on her first target, an unassuming boy named Youji Kyougi. But just as she prepares to claim her meal, things take a very unexpected turn.\n\r\nInstead of devouring him, Kanan ends up forming a \"romantic contract\" with Youji. For someone who's lived for millennia without experiencing love, navigating high school romance proves more terrifying than any hunt. Between awkward dates, hand-holding mishaps, and feelings she can't quite name, the once-proud demon finds herself flustered at every turn.\n\r\nA supernatural romcom about a lovestruck demon and the boy who was supposed to be her prey—sweet, chaotic, and full of firsts.\n\r\n(Source: MAL News)",
+    "trailerUrl": "https://youtu.be/y6whkkkv6kU"
+  },
+  {
+    "slug": "kirei-ni-shitemoraemasu-ka",
+    "title": "Kirei ni Shitemoraemasu ka.",
+    "titleEnglish": "Wash It All Away",
+    "titleJapanese": "綺麗にしてもらえますか。",
+    "images": {
+      "cover": "assets/AnimeImages/Kirei_ni_Shitemoraemasu_ka.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Kirei_ni_Shitemoraemasu_ka_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Okuruto Noboru"
+    ],
+    "type": "TV",
+    "demographic": "Seinen",
+    "themes": [],
+    "genres": [
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "In the quaint seaside resort town of Atami lies Kinme Cleaning, a laundry service run by Wakana Kinme. Despite having no memory of her life before moving there, Wakana has spent the past two years quietly building a new life among the locals. She tends to garments entrusted to her with gentle hands and meticulous care, each carrying memories far more fragile than the fabric itself.\n\r\nWakana becomes a familiar presence in the town as she shares small yet precious moments with everyone. The clothing she cleans tells stories of their owners' everyday lives, allowing her to safeguard their memories even as her own remain out of reach. As she continues to wash away stains both physical and psychological, her life becomes a gentle testament to the comfort found in ordinary moments—and to the idea that even without a past, she can still belong.",
+    "trailerUrl": "https://youtu.be/URcT4mR6KSU"
+  },
+  {
+    "slug": "honzuki-no-gekokujou-shisho-ni-naru-tame-ni-wa-shudan-wo-erandeiraremasen-ryoushu-no-youjo",
+    "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen - Ryoushu no Youjo",
+    "titleEnglish": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+    "titleJapanese": "本好きの下剋上 ～司書になるためには手段を選んでいられません～ 領主の養女",
+    "images": {
+      "cover": "assets/AnimeImages/Honzuki_no_Gekokujou_Shisho_ni_Naru_Tame_ni_wa_Shudan_wo_Erandeiraremasen_-_Ryoushu_no_Youjo.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Wit Studio"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai",
+      "Reincarnation"
+    ],
+    "genres": [
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "Anime adaptation of part three of the Honzuki no Gekokujou light novel.",
+    "trailerUrl": "https://youtu.be/rtPF6rjrdSU"
+  },
+  {
+    "slug": "medalist-2nd-season",
+    "title": "Medalist 2nd Season",
+    "titleEnglish": "Medalist Season 2",
+    "titleJapanese": "メダリスト 第2期",
+    "images": {
+      "cover": "assets/AnimeImages/Medalist_2nd_Season.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "ENGI"
+    ],
+    "type": "TV",
+    "demographic": "Seinen",
+    "themes": [
+      "Performing Arts"
+    ],
+    "genres": [
+      "Drama",
+      "Sports"
+    ],
+    "explicitGenres": [],
+    "episodes": 9,
+    "synopsis": "Ever since the novice coach Tsukasa Akeuraji took Inori Yuitsuka under his mentorship, she has improved her figure skating at a fast pace. After passing a qualifying badge test, she earns a spot to compete in the upcoming Chubu Block Tournament, where only five of the 15 competitors can move forward to the next stage—the prestigious All-Japan Novice Tournament. However, earning a slot will not be easy for Inori: most of her rivals have already experienced trying their luck in the competition.\n\r\nThe stakes are high as the competition begins, and one by one, each of the competitors strive to perform their very best in front of the big crowd. Moreover, the current figure skating generation's prodigy, Hikaru Kamisaki, is not competing in this block, which raises everyone's determination to qualify. That includes Inori, who must beat the odds if she wants to keep her promise to reach Hikaru and represent Japan in the Olympics with Tsukasa.",
+    "trailerUrl": "https://youtu.be/_GjCb92xnfQ"
+  },
+  {
+    "slug": "yomi-no-tsugai",
+    "title": "Yomi no Tsugai",
+    "titleEnglish": "Daemons of the Shadow Realm",
+    "titleJapanese": "黄泉のツガイ",
+    "images": {
+      "cover": "assets/AnimeImages/Yomi_no_Tsugai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Bones Film"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "Sixteen years ago, twins Asa and Yuru were born in the secluded Higashi Village. While Yuru spends his days hunting animals and gathering provisions, Asa is forced to stay inside a cage, and only a select few are allowed to visit her. Although their parents abandoned them long ago, Yuru swears to stay and protect Asa as long as he lives.\n\r\nOne day, the primitive village is suddenly approached by helicopters and armed soldiers, who begin mercilessly executing the villagers. During the chaos, however, Yuru awakens the village's two protectors, Left and Right, who are his Daemons—supernatural beings made to serve their master. Furthermore, Yuru witnesses Asa being attacked by someone who resembles her. It turns out that the attacker is actually the real Asa, who fled the village with their parents.\n\r\nAs the conflict comes to a close, Yuru escapes the village alongside Left, Right, and Ryuu \"Dera\" Tadera, a Daemon retainer who is willing to help Yuru blend into the modern world he does not know. Realizing that his whole life so far has been a lie, Yuru sets out to find the real Asa once more with the help of his Daemons and Dera in order to reunite with his parents.",
+    "trailerUrl": "https://youtu.be/ufD2IvYem0k"
+  },
+  {
+    "slug": "youchien-wars",
+    "title": "Youchien Wars",
+    "titleEnglish": null,
+    "titleJapanese": "幼稚園WARS",
+    "images": {
+      "cover": "assets/AnimeImages/Youchien_Wars.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2027,
+    "studios": [
+      "Sunrise",
+      "Felix Film"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": null,
+    "synopsis": "Kindergarten Noir is widely known as the world's safest kindergarten. Attended by the children of wealthy and notable figures, its defenses are seemingly impenetrable, even though assassination attempts are a big part of the daily routine. However, the teachers of the kindergarten are far from ordinary—they are all convicted criminals trying to reduce their sentences.\n\r\nThe recently joined legendary assassin named Rita is no different. According to her contract, she must work as a teacher for a full year to be released. Rita quickly proves her worth with unmatched combat skills, but even the notorious assassin has a weakness: she longs for a handsome boyfriend, which leaves her vulnerable in combat when faced with a particularly attractive opponent. Rita and her colleagues continue to ensure the children's safety to gain freedom, but Rita never stops looking for the man of her dreams.",
+    "trailerUrl": "https://youtu.be/jee6QLmJ2mU"
+  },
+  {
+    "slug": "hokuto-no-ken-fist-of-the-north-star",
+    "title": "Hokuto no Ken: Fist of the North Star",
+    "titleEnglish": null,
+    "titleJapanese": "北斗の拳 -FIST OF THE NORTH STAR-",
+    "images": {
+      "cover": "assets/AnimeImages/Hokuto_no_Ken_Fist_of_the_North_Star.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "TMS Entertainment"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Gore",
+      "Martial Arts"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 14,
+    "synopsis": "In 199x, the world was engulfed in the blaze of nuclear war.\n\r\nWith the Ocean drying up and Earth torn asunder, all life seems to be lost but humans survived stubbornly. However, what dominated the post-apocalyptic world was sheer violence. The remaining humanity was split into two groups: those who kill and take whatever they can and those who are exploited.\n\r\nWhen all hope seems lost for the weak, a man in ragged cloth appears. He is Kenshiro, the rightful successor of the Hokuto Shinken martial arts with seven studs-like scars in the shape of the Big Dipper. His journey to becoming a legendary savior begins! \n\r\n(Source: Warner Bros. Japan, edited)",
+    "trailerUrl": "https://youtu.be/Gux_dYHDMK4"
+  },
+  {
+    "slug": "super-no-ura-de-yani-suu-futari",
+    "title": "Super no Ura de Yani Suu Futari",
+    "titleEnglish": "Smoking Behind the Supermarket with You",
+    "titleJapanese": "スーパーの裏でヤニ吸うふたり",
+    "images": {
+      "cover": "assets/AnimeImages/Super_no_Ura_de_Yani_Suu_Futari.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Asahi Production"
+    ],
+    "type": "TV",
+    "demographic": "Seinen",
+    "themes": [
+      "Adult Cast",
+      "Love Status Quo"
+    ],
+    "genres": [
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "The sole thing that gets the middle-aged Sasaki through his soul-sucking job is a cheerful smile from Yamada—the young woman who works at a nearby 24-hour supermarket he frequents. After every tiring day of getting berated by his boss, Sasaki stops by the store to have his spirit healed by his favorite cashier.\n\r\nAfter a particularly grueling day, Sasaki shows up at the supermarket, only to find that Yamada's shift has already ended. Disappointed, he searches for a place to smoke when a woman from behind the store calls him over to join her. The bold and dangerously playful Tayama is quick to call out Sasaki's peculiar habit of always seeking out her coworker—even going as far as telling Yamada about Sasaki's vested interest in her.\n\r\nNow, in addition to seeing his adored cashier Yamada, Sasaki also visits the store to see if his new smoking partner Tayama is around. But there is more to Tayama's mischievousness than she initially lets on. With every cigarette, an unlikely friendship begins to blossom.",
+    "trailerUrl": "https://youtu.be/aOOwNK6Ul6E"
+  },
+  {
+    "slug": "keroro-gunsou-movie-6-fukkatsu-shite-sokkou-chikyuu-metsubou-no-kiki-de-arimasu",
+    "title": "Keroro Gunsou Movie 6: Fukkatsu shite Sokkou Chikyuu Metsubou no Kiki de Arimasu!",
+    "titleEnglish": null,
+    "titleJapanese": "新劇場版☆ケロロ軍曹 復活して速攻地球滅亡の危機であります！",
+    "images": {
+      "cover": "assets/AnimeImages/Keroro_Gunsou_Movie_6_Fukkatsu_shite_Sokkou_Chikyuu_Metsubou_no_Kiki_de_Arimasu!.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Bandai Namco Pictures"
+    ],
+    "type": "Movie",
+    "demographic": "Shounen",
+    "themes": [
+      "Parody"
+    ],
+    "genres": [
+      "Comedy",
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "New Keroro Gunsou project to celebrate its 20th anniversary.",
+    "trailerUrl": "https://youtu.be/vNAa1_wrPWw"
+  },
+  {
+    "slug": "marriagetoxin",
+    "title": "Marriagetoxin",
+    "titleEnglish": "Marriagetoxin",
+    "titleJapanese": "マリッジトキシン",
+    "images": {
+      "cover": "assets/AnimeImages/Marriagetoxin.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Bones Film"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Adult Cast"
+    ],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "For centuries, the Poison Masters have perfected the art of assassination. Among them, the Gero family stands as one of the five most powerful families of Masters, wielding unmatched skill and influence. Hikaru Gero, heir to this infamous bloodline, has lived his life deep in the shadows of the underworld, far removed from love or marriage.\n\r\nHowever, to ensure the Poison Master bloodline does not die out, the head of the Gero family declares that Hikaru's sister will be forced to bear an heir. Soon after, Hikaru crosses paths with Mei Kinosaki, a brilliant marriage swindler who also happens to be his current assassination target. Determined to protect his sister and solve the succession problem himself, Hikaru makes an unexpected request on the spot—asking Mei to help him get married.\n\r\n\"...That's the first time anyone's ever proposed like that.\"\n\r\nAnd so, with the cunning marriage swindler Mei as his advisor, the elite assassin Hikaru sets out on the toughest mission for love. His goal? The ultimate marriage. The most unlikely duo—an assassin and a marriage swindler—take on the world's toughest mission for love!\n\r\n(Source: Official site)",
+    "trailerUrl": "https://youtu.be/71eDinaX9-c"
+  },
+  {
+    "slug": "mao",
+    "title": "Mao",
+    "titleEnglish": null,
+    "titleJapanese": "MAO",
+    "images": {
+      "cover": "assets/AnimeImages/Mao.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Sunrise"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Historical",
+      "Mythology",
+      "Time Travel"
+    ],
+    "genres": [
+      "Mystery",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 26,
+    "synopsis": "Nanoka passes through a portal into the Taisho era, where exorcist Mao reluctantly rescues her from the jaws of a grotesque yokai. When Nanoka gets back to the present, she discovers she has some new, incredible abilities. She returns to the past looking for answers, only to get caught up in Mao's investigation of a series of gruesome murders. As her questions about herself multiply, Nanoka learns that Mao is cursed by a cat demon named Byoki—and so is his sword. If anyone but Mao attempts to wield it, they are doomed. But when Mao's life is in jeopardy, Nanoka picks up his blade and swings!\n\r\n(Source: VIZ Media)",
+    "trailerUrl": "https://youtu.be/eVfpoS0rjw0"
+  },
+  {
+    "slug": "mahouka-koukou-no-rettousei-movie-yotsuba-keishou-hen",
+    "title": "Mahouka Koukou no Rettousei Movie: Yotsuba Keishou-hen",
+    "titleEnglish": "The Irregular at Magic High School The Movie: Yotsuba Succession Arc",
+    "titleJapanese": "魔法科高校の劣等生 四葉継承編",
+    "images": {
+      "cover": "assets/AnimeImages/Mahouka_Koukou_no_Rettousei_Movie_Yotsuba_Keishou-hen.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "8bit"
+    ],
+    "type": "Movie",
+    "demographic": null,
+    "themes": [
+      "School",
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Romance",
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "An anime movie adapting the Yotsuba Succession Arc.",
+    "trailerUrl": "https://youtu.be/oEi9Vn-JOHU"
+  },
+  {
+    "slug": "saishuu-gakushou-hibike-euphonium-zenpen",
+    "title": "Saishuu Gakushou Hibike! Euphonium: Zenpen",
+    "titleEnglish": "Sound! Euphonium: The Final Movie Part 1",
+    "titleJapanese": "最終楽章 響け！ユーフォニアム 前編",
+    "images": {
+      "cover": "assets/AnimeImages/Saishuu_Gakushou_Hibike!_Euphonium_Zenpen.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Kyoto Animation"
+    ],
+    "type": "Movie",
+    "demographic": null,
+    "themes": [
+      "Music",
+      "Performing Arts",
+      "School"
+    ],
+    "genres": [
+      "Drama"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "No synopsis information has been added to this title. Help improve our database by adding a synopsis here.",
+    "trailerUrl": "https://youtu.be/DYHQxWo-8YI"
+  },
+  {
+    "slug": "toumei-na-yoru-ni-kakeru-kimi-to-me-ni-mienai-koi-wo-shita",
+    "title": "Toumei na Yoru ni Kakeru Kimi to, Me ni Mienai Koi wo Shita.",
+    "titleEnglish": "Love Unseen Beneath the Clear Night Sky",
+    "titleJapanese": "透明な夜に駆ける君と、目に見えない恋をした。",
+    "images": {
+      "cover": "assets/AnimeImages/Toumei_na_Yoru_ni_Kakeru_Kimi_to,_Me_ni_Mienai_Koi_wo_Shita.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Makaria"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Adult Cast"
+    ],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Koharu Fuyutsuki is a university student who refuses to let her blindness define her life. Her infectious optimism soon draws the attention of the withdrawn Kakeru Sorano, whose guarded outlook on the world slowly begins to change after meeting her.\n\r\nAs their bond deepens, the two navigate the everyday challenges that accompany Koharu's condition, discovering that genuine understanding comes not from seeing with one's eyes, but from learning to see another person's heart.",
+    "trailerUrl": "https://youtu.be/OPZ7TOGxWqI"
+  },
+  {
+    "slug": "tsue-to-tsurugi-no-wistoria-season-2",
+    "title": "Tsue to Tsurugi no Wistoria Season 2",
+    "titleEnglish": "Wistoria: Wand and Sword Season 2",
+    "titleJapanese": "杖と剣のウィストリア Season 2",
+    "images": {
+      "cover": "assets/AnimeImages/Tsue_to_Tsurugi_no_Wistoria_Season_2.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Actas",
+      "Bandai Namco Pictures"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "As the year nears its end, the time for final exams arrives at Rigarden Magical Academy. Despite being the only student without any magic aptitude, Will Serfort aims to score perfect grades in every subject, which would allow him to ascend to the Wizard's Tower and reunite with his childhood friend, Elfaria Albis Serfort. However, Will's hard work comes tumbling down when he fails the very last, biased exam, disqualifying him from entering the Wizard's Tower.\n\r\nMeanwhile, Elfaria and the other Magia Vander—the five most powerful mages—perform the annual ritual that protects their world from the dangerous Celestial Hosts. As the ritual temporarily leaves the Magia Vander drained of magic, a large army of monsters suddenly appears and begins attacking mages and civilians alike. To make matters worse, the mages are unable to hold off the invasion due to the monsters' special weaponry that nullifies their magic. Refusing to let the world end in despair, Will and his masterful swordsmanship quickly become a cornerstone in stopping the attack.",
+    "trailerUrl": "https://youtu.be/57OL0uTIBVg"
+  },
+  {
+    "slug": "tensei-shitara-slime-datta-ken-4th-season",
+    "title": "Tensei shitara Slime Datta Ken 4th Season",
+    "titleEnglish": "That Time I Got Reincarnated as a Slime Season 4",
+    "titleJapanese": "転生したらスライムだった件 第4期",
+    "images": {
+      "cover": "assets/AnimeImages/Tensei_shitara_Slime_Datta_Ken_4th_Season.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Tensei_shitara_Slime_Datta_Ken_4th_Season_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "8bit"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Isekai",
+      "Reincarnation"
+    ],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized. As Tempest continues to prosper, Granville Rozzo and his granddaughter, Maribel Rozzo, clash with Demon Lord Rimuru over their plan to protect mankind by ruling over them. Meanwhile, in El Dorado, Demon Lord Leon works toward goals of his own. The awakening of a new Hero draws near!\n\r\n(Source: Crunchyroll)",
+    "trailerUrl": "https://youtu.be/7SBfpSGiJQI"
+  },
+  {
+    "slug": "aishiteru-game-wo-owarasetai",
+    "title": "Aishiteru Game wo Owarasetai",
+    "titleEnglish": "I Want to End This Love Game",
+    "titleJapanese": "愛してるゲームを終わらせたい",
+    "images": {
+      "cover": "assets/AnimeImages/Aishiteru_Game_wo_Owarasetai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Felix Film"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "For four years, childhood friends Yukiya Asagi and Miku Sakura have been playing something they call the \"love game.\" The rules are simple: they declare love to one another, and the first one to blush loses. Yukiya is set on winning against Miku, going as far as to read her favorite manga and change his appearance, but no matter what he does, Miku always seems to be one step ahead.\n\r\nNow in high school, Yukiya and Miku have slightly changed the rules of the game. They can do just about anything to fluster the other party and force them to admit defeat—but it usually ends in a tie. Their true feelings could not be more apparent—yet the stubborn pair refuses to stop the game, even if they can barely control their growing affection.",
+    "trailerUrl": "https://youtu.be/oGJrnyjDbsA"
+  },
+  {
+    "slug": "saikyou-no-shokugyou-wa-yuusha-demo-kenja-demo-naku-kanteishi-kari-rashii-desu-yo",
+    "title": "Saikyou no Shokugyou wa Yuusha demo Kenja demo Naku Kanteishi (Kari) Rashii desu yo?",
+    "titleEnglish": "The Strongest Job Is Apparently Not a Hero or a Sage, but an Appraiser (Provisional)!",
+    "titleJapanese": "最強の職業は勇者でも賢者でもなく鑑定士（仮）らしいですよ？",
+    "images": {
+      "cover": "assets/AnimeImages/Saikyou_no_Shokugyou_wa_Yuusha_demo_Kenja_demo_Naku_Kanteishi_(Kari)_Rashii_desu_yo.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio Flad"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai"
+    ],
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "After suddenly being transported to another world, high school student Hibiki Manabe finds himself forced to survive in unfamiliar surroundings with the rare support-oriented job class Appraiser. Though not suited for direct combat, the class allows him to perceive information others cannot, even if its true value may not be immediately apparent.\n\r\nInitially lost, Hibiki meets Emalia Steinbart, an elf who helps him take his first steps as an adventurer. However, after spending several days traveling together, she parts ways with him to answer an urgent summons from her homeland. Left on his own, Hibiki continues learning how to make use of his abilities as he encounters new companions along the way.",
+    "trailerUrl": "https://youtu.be/f3QbevP2CG0"
+  },
+  {
+    "slug": "kijin-gentoushou",
+    "title": "Kijin Gentoushou",
+    "titleEnglish": "Sword of the Demon Hunter: Kijin Gentosho",
+    "titleJapanese": "鬼人幻燈抄",
+    "images": {
+      "cover": "assets/AnimeImages/Kijin_Gentoushou.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Yokohama Animation Lab"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Historical"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "After Jinta and Suzune ran away from their home as children, they were taken in by Motoharu—the virtuous sentinel of Kadono Village—and his daughter, Shirayuki. The settlement was ruled by its shrine maiden, Itsukihime, whom only a select few were allowed to interact with. When Itsukihime passed away, Shirayuki was appointed in her place. Wishing to stay in contact with her, Jinta worked diligently for years and was finally selected as the next sentinel.\n\r\nAs the protector of the village, Jinta's duty is to eliminate any threats. One day, he encounters a demon in a nearby forest. At the end of the battle, the demon makes a proclamation about the destined ruler of all demonkind. He attaches his severed arm to Jinta, turning him into an unaging demon man. By the time Jinta comes to, Kadono is on fire. Suzune has transformed into the demon from the divination, and due to a series of misunderstandings, she murders Shirayuki and flees.\n\r\nDevastated, Jinta cannot forgive Suzune for her actions; he departs on a journey to find her. As Jinta travels around Japan across the eras, he endeavors to protect as many people as possible from aggressive demons. In his quiet moments, he contemplates what he should do when he once again faces his childhood friend.",
+    "trailerUrl": "https://youtu.be/4cOlvgk4UTs"
+  },
+  {
+    "slug": "shunkashuutou-daikousha-haru-no-mai",
+    "title": "Shunkashuutou Daikousha: Haru no Mai",
+    "titleEnglish": "Agents of the Four Seasons: Dance of Spring",
+    "titleJapanese": "春夏秋冬代行者 春の舞",
+    "images": {
+      "cover": "assets/AnimeImages/Shunkashuutou_Daikousha_Haru_no_Mai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Wit Studio"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 14,
+    "synopsis": "For centuries, the task of bringing the seasons has been carried out by the Agents of the Four Seasons, individuals whose god-like powers make them an easy target for covetous groups. One such group, the Rebels, orchestrates an attack on the Agents. To save the others, the Agent of Spring, Hinagiku Kayou, allows herself to be captured and disappears from the face of the Earth. Despite the lack of help, even from her own village, Hinagiku's guard, Sakura Himedaka, believes she is still alive somewhere and refuses to give up the search.\n\r\nAgainst all odds, Hinagiku is found 10 years later. However, the traumatic event caused a massive shift in her personality. Thanks to Sakura's encouragement, Hinagiku gets the courage to summon the season that was once lost. In order to move forward, the duo must face a past that haunts them and demons willing to destroy everything to achieve their goals.",
+    "trailerUrl": "https://youtu.be/xveG681mDnI"
+  },
+  {
+    "slug": "kidou-senshi-gundam-senkou-no-hathaway-circe-no-majo",
+    "title": "Kidou Senshi Gundam: Senkou no Hathaway - Circe no Majo",
+    "titleEnglish": "Mobile Suit Gundam: Hathaway - The Sorcery of Nymph Circe",
+    "titleJapanese": "機動戦士ガンダム 閃光のハサウェイ キルケーの魔女",
+    "images": {
+      "cover": "assets/AnimeImages/Kidou_Senshi_Gundam_Senkou_no_Hathaway_-_Circe_no_Majo.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Sunrise"
+    ],
+    "type": "Movie",
+    "demographic": null,
+    "themes": [
+      "Mecha",
+      "Military",
+      "Space"
+    ],
+    "genres": [
+      "Drama",
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "The year is U.C.0105, twelve years after Char's Rebellion. \"MAFTY\" has begun resisting the Federation government's tyrannical rule by assassinating its high-ranking officials. Its leader is actually Hathaway Noa, the son of Bright Noa, who fought in the One Year War alongside Amuro Ray. A girl named Gigi Andalusia, who displays uncanny powers, has reminded Hathaway of a past trauma. Though he is bewildered by her words, he prepares to carry out an air raid on the Adelaide conference, determined to fulfill MAFTY's goals and lay his own past to rest. Haunted by past trauma, Hathaway is drawn to the mysterious girl Gigi Andalucia, whose strange powers stir memories within him. While swayed by her cryptic words, he continues preparing for MAFTY's mission — the attack on the Adelaide Conference. Meanwhile, Kenneth Sleg of the Federation Forces prepares a defense operation for the Adelaide Conference and a plan to eliminate MAFTY, when he is approached by Handley Yoxon of the Criminal Police Organization with a secret proposal. As Hathaway and Kenneth pursue their respective goals, Gigi also sets off for Hong Kong to fulfill her own role.\n\r\n(Source: Press Release)",
+    "trailerUrl": "https://youtu.be/_mZod4M6nDQ"
+  },
+  {
+    "slug": "mushoku-tensei-iii-isekai-ittara-honki-dasu",
+    "title": "Mushoku Tensei III: Isekai Ittara Honki Dasu",
+    "titleEnglish": "Mushoku Tensei: Jobless Reincarnation Season 3",
+    "titleJapanese": "無職転生 III ～異世界行ったら本気だす～",
+    "images": {
+      "cover": "assets/AnimeImages/Mushoku_Tensei_III_Isekai_Ittara_Honki_Dasu.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio Bind"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai",
+      "Reincarnation",
+      "School"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 14,
+    "synopsis": "Third season of Mushoku Tensei: Isekai Ittara Honki Dasu.",
+    "trailerUrl": "https://youtu.be/ODxfIvSgWuo"
+  },
+  {
+    "slug": "hitoribocchi-no-isekai-kouryaku-2nd-season",
+    "title": "Hitoribocchi no Isekai Kouryaku 2nd Season",
+    "titleEnglish": "Loner Life in Another World Season 2",
+    "titleJapanese": "ひとりぼっちの異世界攻略 第2期",
+    "images": {
+      "cover": "assets/AnimeImages/Hitoribocchi_no_Isekai_Kouryaku_2nd_Season.jpg",
+      "alternatives": []
+    },
+    "releaseYear": null,
+    "studios": [],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": null,
+    "synopsis": "Second season of Hitoribocchi no Isekai Kouryaku.",
+    "trailerUrl": null
+  },
+  {
+    "slug": "kimi-no-koto-ga-daidaidaidaidaisuki-na-100-nin-no-kanojo-3rd-season",
+    "title": "Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo 3rd Season",
+    "titleEnglish": "The 100 Girlfriends Who Really, Really, Really, Really, Really Love You Season 3",
+    "titleJapanese": "君のことが大大大大大好きな100人の彼女 3期",
+    "images": {
+      "cover": "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt1.jpg",
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt2.jpg",
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt3.jpg",
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt4.jpg",
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt5.jpg",
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt6.jpg",
+        "assets/AnimeImages/Kimi_no_Koto_ga_Daidaidaidaidaisuki_na_100-nin_no_Kanojo_3rd_Season_alt7.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Bibury Animation Studios"
+    ],
+    "type": "TV",
+    "demographic": "Seinen",
+    "themes": [
+      "Harem",
+      "Parody",
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Third season of Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo.",
+    "trailerUrl": "https://youtu.be/kvbOPdDfPio"
+  },
+  {
+    "slug": "rinkai",
+    "title": "Rinkai!",
+    "titleEnglish": null,
+    "titleJapanese": "リンカイ!",
+    "images": {
+      "cover": "assets/AnimeImages/Rinkai!.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2024,
+    "studios": [
+      "TMS Entertainment"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Adult Cast",
+      "Racing"
+    ],
+    "genres": [
+      "Sports"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Women's competitive cycling had been defunct for decades until the newly formed Rinkai League revived the sport, making headlines with its first few races. It has inspired many women across Japan, who flock to the league in hopes of realizing their dreams of becoming professional athletes.\n\r\nCycling enthusiast Izumi Itou is reluctant to stake her future on a racing competition, despite her friends' encouragement. That changes when she discovers that her grandmother is a former champion in women's cycling. She offers to train Izumi, hoping to help her recognize her own talent. Although Izumi lacks experience, the appearance of a fierce Swiss contestant who aims to dominate the competition motivates her to give it all on the track and, ultimately, win.",
+    "trailerUrl": "https://youtu.be/0OQnmTbqiZI"
+  },
+  {
+    "slug": "meitantei-precure",
+    "title": "Meitantei Precure!",
+    "titleEnglish": "Star Detective Precure!",
+    "titleJapanese": "名探偵プリキュア！",
+    "images": {
+      "cover": "assets/AnimeImages/Meitantei_Precure!.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Toei Animation"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Detective",
+      "Mahou Shoujo",
+      "Time Travel"
+    ],
+    "genres": [
+      "Action",
+      "Mystery"
+    ],
+    "explicitGenres": [],
+    "episodes": null,
+    "synopsis": "On her 14th birthday, Anna Akechi, a second-year junior high student from the town of Makoto Mirai, encounters a fairy named Pochitan, who suddenly sends her back from 2027 to the same town nearly three decades earlier. Stranded in 1999, Anna crosses paths with Mikuru Kobayashi, a girl her age who dreams of becoming a renowned detective.\n\r\nAlmost immediately, a bride becomes the victim of a mysterious theft when her tiara vanishes. Refusing to stand by, Anna and Mikuru awaken the ability to transform into magical girls known as Pretty Cure, taking it upon themselves to uncover the truth behind the incident. Their investigation leads them to an elusive group calling themselves the Phantom Thieves, whom they confront as the group continues their thievery.\n\r\nAs further incidents loom, Anna and Mikuru resolve to stand against the Phantom Thieves and prevent future crimes. They soon learn that the stolen items contain Makoto Jewels—sources of power the Phantom Thieves seek for their own ends. However, that same power is also vital to Pochitan, who needs it to return Anna to her original time. Hoping to prevent this power from falling into the wrong hands, the two press forward, balancing their duty to protect others with Anna's desire to find her way home.",
+    "trailerUrl": "https://youtu.be/qjozo1fh7OI"
+  },
+  {
+    "slug": "fangkai-nage-nuwu",
+    "title": "Fangkai Nage Nuwu",
+    "titleEnglish": "Release that Witch",
+    "titleJapanese": "放开那个女巫",
+    "images": {
+      "cover": "assets/AnimeImages/Fangkai_Nage_Nuwu.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Thundray"
+    ],
+    "type": "ONA",
+    "demographic": null,
+    "themes": [
+      "Isekai"
+    ],
+    "genres": [
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 8,
+    "synopsis": "Modern man Cheng Yan unexpectedly dies and his soul travels to a medieval European-style otherworldly continent, becoming Roland, the fourth prince of the Kingdom of Graycastle. This playboy prince saves the witch Anna at an execution scene and is shocked to discover that magic really exists in this medieval-style otherworld.\n\r\nWhen Anna, as a witch, displays her magical skills, Roland realizes that magic can replace some modern technology, so he formulates a \"great development of magical industry\" plan. Thus, in an era where everyone hates witches, the independent Roland begins to recruit witches, using their magic to transform Border Town and improve the lives of himself and the locals.\n\r\nIn addition to using magic to develop industry, Roland also introduces modern business ideas to Border Town. Under Roland's leadership, people manufacture firearms, and Roland gains public support. As the number of witches in Roland's camp increases, the magical industry continues to improve. At the same time, Roland will face battles with great families and other princes and princesses.\n\r\nAs his territory expands, Roland successfully creates a harmonious coexistence between witches and ordinary people, gradually bringing the western territory of Graycastle and even the entire kingdom under his rule, and slowly uncovering the secrets of the devil race and the Witch Empire.\n\r\n(Source: Crunchyroll)",
+    "trailerUrl": "https://youtu.be/S4P2Mr_Cwys"
+  },
+  {
+    "slug": "xian-wang-de-richang-shenghuo-5",
+    "title": "Xian Wang de Richang Shenghuo 5",
+    "titleEnglish": "The Daily Life of the Immortal King 5",
+    "titleJapanese": "仙王的日常生活 第五季",
+    "images": {
+      "cover": "assets/AnimeImages/Xian_Wang_de_Richang_Shenghuo_5.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Liyu Culture"
+    ],
+    "type": "ONA",
+    "demographic": null,
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Wang Ling's family life is turned upside down with the arrival of a little sister, Wang Nuan. Immortal King Wang Ling vows to teach Wang Nuan to control her strength. In doing so, her strength catches the attention of Ye Kui, a sinister organization, and Bai Zhe, a high-level prisoner of the Mysterious Prison. Wang Ling decides to bring Wang Nuan along and teach these villains a lesson!\n\r\n(Source: Amazon Prime Video)",
+    "trailerUrl": "https://youtu.be/57xWvQUPhzc"
+  },
+  {
+    "slug": "odayaka-kizoku-no-kyuuka-no-susume",
+    "title": "Odayaka Kizoku no Kyuuka no Susume.",
+    "titleEnglish": "A Gentle Noble's Vacation Recommendation",
+    "titleJapanese": "穏やか貴族の休暇のすすめ。",
+    "images": {
+      "cover": "assets/AnimeImages/Odayaka_Kizoku_no_Kyuuka_no_Susume.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "SynergySP"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai"
+    ],
+    "genres": [
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "When Lizel mysteriously finds himself in a city that bears odd similarities to his own but clearly isn't, he quickly comes to terms with the unlikely truth: this is an entirely different world. Even so, laid-back Lizel isn't the type to panic. He immediately sets out to learn more about this strange place, and to help him do so, hires a seasoned adventurer named Gil as his tour guide and protector.\n\r\nUntil he's able to find a way home, Lizel figures this is a perfect opportunity to explore a new way of life adventuring as part of a guild. After all, he's sure he'll go home eventually... might as well enjoy the otherworldly vacation for now!\n\r\n(Source: Tokyopop)",
+    "trailerUrl": "https://youtu.be/LKlXRCtlOVY"
+  },
+  {
+    "slug": "jingai-kyoushitsu-no-ningengirai-kyoushi",
+    "title": "Jingai Kyoushitsu no Ningengirai Kyoushi",
+    "titleEnglish": "A Misanthrope Teaches a Class for Demi-Humans",
+    "titleJapanese": "人外教室の人間嫌い教師",
+    "images": {
+      "cover": "assets/AnimeImages/Jingai_Kyoushitsu_no_Ningengirai_Kyoushi.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Jingai_Kyoushitsu_no_Ningengirai_Kyoushi_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "asread."
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Anthropomorphic",
+      "School",
+      "Workplace"
+    ],
+    "genres": [
+      "Drama",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Shaped by experiences that left him weary of human relationships, Rei Hitoma openly dislikes people. Seeking a quiet, uneventful life, he accepts a teaching position at a secluded school in the mountains, only to discover that his classroom is anything but ordinary. The students under his care are demi-humans who have gathered there with a singular goal: to learn what it means to become human.\n\r\nDespite his disillusionment, Rei finds himself responsible for explaining human behavior and social norms to mermaids, bunnies, werewolves, and the like. As his students earnestly struggle to understand humanity, their questions and aspirations gradually expose the contradictions in Rei's own beliefs.",
+    "trailerUrl": "https://youtu.be/bkNbjN6nwlg"
+  },
+  {
+    "slug": "champignon-no-majo",
+    "title": "Champignon no Majo",
+    "titleEnglish": "Champignon Witch",
+    "titleJapanese": "シャンピニオンの魔女",
+    "images": {
+      "cover": "assets/AnimeImages/Champignon_no_Majo.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Typhoon Graphics",
+      "Qzil.la"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "For as long as the locals can remember, the Champignon Witch, Luna, has lived hidden in her cottage on the outskirts of the kingdom, deep within the Black Forest. Despite her occasional trips into town to deliver medicine, no one dares to come close to her as poisonous mushrooms grow everywhere she goes. Furthermore, as a black witch, Luna must lay low to avoid execution, as the kingdom only acknowledges and accepts white witches.\n\r\nLuna's lonely life turns around when she saves a dying boy named Lize. Upon learning that Lize is destined to become The End of All Things, Luna offers to become his teacher and stray him away from the path of evil. She must overcome her inexperience and create a great magician out of Lize to avoid his execution.",
+    "trailerUrl": "https://youtu.be/VLYge7UnjFY"
+  },
+  {
+    "slug": "dark-moon-tsuki-no-saidan",
+    "title": "Dark Moon: Tsuki no Saidan",
+    "titleEnglish": "Dark Moon: The Blood Altar",
+    "titleJapanese": "DARK MOON　-黒の月: 月の祭壇-",
+    "images": {
+      "cover": "assets/AnimeImages/Dark_Moon_Tsuki_no_Saidan.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "TROYCA"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "School",
+      "Vampire"
+    ],
+    "genres": [
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Ever since she was a young girl, Sooha was told to hide her superhuman abilities to avoid getting mistaken for a vampire. Having been accused of being one and blamed for her childhood friend's death, Sooha enrolls in Decelis Academy—a night school where supernatural beings, such as vampires and werewolves, allegedly cannot enter.\n\r\nAt the academy, Sooha soon encounters Heli, a student who offers friendship despite discovering her secret. Heli introduces Sooha to his close friends—Jaan, Jino, Shion, Jakah, Noa, and Solon—who all have different powers as well. But their connection seems to run deeper than just that; they are curiously drawn to her, feeling as if they would do anything she wishes.\n\r\nIn light of a recent murder that is said to be the work of a vampire, Heli and his friends' unsettling history slowly unravels. While the seven boys try to shield Sooha from the world of the supernatural, she inevitably gets entangled in the centuries-old rivalry between vampires and werewolves. As tensions intensify, Sooha realizes that she may be closer than ever to the creatures she hates the most.",
+    "trailerUrl": "https://youtu.be/8Onc4UBE_MA"
+  },
+  {
+    "slug": "dead-account",
+    "title": "Dead Account",
+    "titleEnglish": "Dead Account",
+    "titleJapanese": "デッドアカウント",
+    "images": {
+      "cover": "assets/AnimeImages/Dead_Account.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "SynergySP"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Always ready for a fight! Destruction for destruction's sake! The online streamer Aoringo is a troll, making the worst of the worst of boundary-pushing flamebait content and raking in the revenue from the hate-watchers. You may think he's nothing more than a bottom feeder and a drain on society, but in reality, he's high school dropout Souji Enishiro, a caring older brother with a sweet tooth who loves nothing more than his little sister. His viral videos? Just a way to pay his sister's medical bills. And even if all of humanity hates him, he doesn't care, so long as his little sister gets better. But then, something very strange begins to happen... Don't miss the debut of this modern-day occult exorcism battle manga!\n\r\n(Source: Kodansha)",
+    "trailerUrl": "https://youtu.be/orVDfox9Ggc"
+  },
+  {
+    "slug": "okiraku-ryoushu-no-tanoshii-ryouchi-bouei-seisankei-majutsu-de-na-mo-naki-mura-wo-saikyou-no-jousai-toshi-ni",
+    "title": "Okiraku Ryoushu no Tanoshii Ryouchi Bouei: Seisankei Majutsu de Na mo Naki Mura wo Saikyou no Jousai Toshi ni",
+    "titleEnglish": "Easygoing Territory Defense by the Optimistic Lord: Production Magic Turns a Nameless Village into the Strongest Fortified City",
+    "titleJapanese": "お気楽領主の楽しい領地防衛～生産系魔術で名もなき村を最強の城塞都市に～",
+    "images": {
+      "cover": "assets/AnimeImages/Okiraku_Ryoushu_no_Tanoshii_Ryouchi_Bouei_Seisankei_Majutsu_de_Na_mo_Naki_Mura_wo_Saikyou_no_Jousai_Toshi_ni.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "NAZ"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai",
+      "Reincarnation"
+    ],
+    "genres": [
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Van, the fourth son of a powerful noble, is only two years old when he remembers his past life as a salaryman in Japan. With his adult brain in a young body, he's considered a child prodigy...until he displays the \"Production Magic\" skill when he turns eight. In a family that favors offensive magic, this crafting skill is considered useless in battle, and Van is banished to oversee a tiny country town in disgrace. With only his personal maid, the memories of his past life, and his \"worthless\" magic, can Van improve the fortunes of this little village—and himself?\n\r\n(Source: Seven Seas Entertainment)",
+    "trailerUrl": "https://youtu.be/xMe2-1qySqI"
+  },
+  {
+    "slug": "hanazakari-no-kimitachi-e",
+    "title": "Hanazakari no Kimitachi e",
+    "titleEnglish": "Hana-Kimi",
+    "titleJapanese": "花ざかりの君たちへ",
+    "images": {
+      "cover": "assets/AnimeImages/Hanazakari_no_Kimitachi_e.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Signal.MD"
+    ],
+    "type": "TV",
+    "demographic": "Shoujo",
+    "themes": [
+      "Crossdressing",
+      "Love Polygon",
+      "School"
+    ],
+    "genres": [
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "To most people around Mizuki Ashiya, her sudden choice to move to Japan from the United States comes as a shock. Her sole reason for the transfer is to attend the same high school as her idol Izumi Sano, who stole her heart after she saw him compete in a high jump competition. However, there is one problem—Sano attends an all-boys school! That does not stop Mizuki, though, as she is committed to getting close to Sano by changing her appearance and demeanor.\n\r\nMizuki luckily ends up in the same class and dormitory room as Sano, but her ideal plan is shattered when she finds out that he has quit high jump. Nevertheless, Mizuki is determined to learn more about him and rekindle his love for the sport, all while navigating her new life in high school and keeping her true gender hidden.",
+    "trailerUrl": "https://youtu.be/CemNP0vIiJI"
+  },
+  {
+    "slug": "jigokuraku-2nd-season",
+    "title": "Jigokuraku 2nd Season",
+    "titleEnglish": "Hell's Paradise Season 2",
+    "titleJapanese": "地獄楽第二期",
+    "images": {
+      "cover": "assets/AnimeImages/Jigokuraku_2nd_Season.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "MAPPA"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Gore",
+      "Historical",
+      "Samurai"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Seeking the key to the elixir of immortality, the group arrives at the fortress of the island's monstrous ruler, the \"Tensen.\" To survive and escape the island, cooperation becomes essential—regardless of whether one is a condemned criminal or an executioner.\n\r\nMeanwhile, the shogunate orders additional landings on the island of the Immortal Realm, led by Shugen Yamada Asayemon. Among them are the Ishigakure clan, who share a past with Gabimaru.\n\r\nDesperate to find the elixir and escape the island, Gabimaru and his companions face the Tensen in a battle that escalates into an all-out confrontation between humans and immortals!\n\r\n(Source: Twin Engine, edited)",
+    "trailerUrl": "https://youtu.be/kBnmkMngfak"
+  },
+  {
+    "slug": "isekai-no-sata-wa-shachiku-shidai",
+    "title": "Isekai no Sata wa Shachiku Shidai",
+    "titleEnglish": "Isekai Office Worker: The Other World's Books Depend on the Bean Counter",
+    "titleJapanese": "異世界の沙汰は社畜次第",
+    "images": {
+      "cover": "assets/AnimeImages/Isekai_no_Sata_wa_Shachiku_Shidai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio Deen"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Adult Cast",
+      "Isekai"
+    ],
+    "genres": [
+      "Boys Love",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Overworked office employee Seiichirou Kondou would be fine spending the rest of his days in the same exhausting routine, but an unexpected act of heroism causes him to be sucked into a parallel world. His abductors, residents of the magic-filled Romany Kingdom, promise him a life of comfort as an apology for his accidental summoning. Unfazed, Kondou demands something that he thinks would suit him better: a job.\n\r\nAfter witnessing the incompetence of his new colleagues in the Royal Accounting Department, Kondou's workaholic instincts kick in, and he takes it upon himself to save the kingdom from complete bankruptcy. But this new world proves detrimental to Kondou. When the young and dashing captain of the Third Royal Order, Sir Aresh Indolark, saves Kondou's life, the two become something more than acquaintances. Though Kondou and Aresh initially struggle to convey their clashing values to each other, they slowly realize that this meeting will not only change their own lives but also the kingdom as a whole.",
+    "trailerUrl": "https://youtu.be/4JenstiukSo"
+  },
+  {
+    "slug": "ikoku-nikki",
+    "title": "Ikoku Nikki",
+    "titleEnglish": "Journal with Witch",
+    "titleJapanese": "違国日記",
+    "images": {
+      "cover": "assets/AnimeImages/Ikoku_Nikki.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Shuka"
+    ],
+    "type": "TV",
+    "demographic": "Josei",
+    "themes": [],
+    "genres": [
+      "Drama"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Makio Koudai has always lived life on her own terms. While she maintains a small circle of friends and a steady career as a novelist, she is very introverted and indifferent to social norms. Her relationship with her older sister Minori suffered as a result—her sister's constant criticism during their childhood shaped a lasting estrangement.\n\r\nAt thirty-five, Makio's life is disrupted when Minori and her husband die suddenly in an accident. In the wake of their deaths, Makio meets Asa Takumi for the first time, her fifteen-year-old niece who feels uncertain of her future. With no relatives willing to care for Asa, Makio takes her in despite her hesitance about building a bond with a stranger. Asa struggles to process the loss of her parents and the loneliness that follows, while reminders of her mother quietly shape aunt and niece's routines and interactions.\n\r\nThrough writing and the slow unraveling of their assumptions about family, Makio and Asa learn to understand one another and themselves on their own terms.",
+    "trailerUrl": "https://youtu.be/DX6mmkoByyc"
+  },
+  {
+    "slug": "majutsushi-kunon-wa-mieteiru",
+    "title": "Majutsushi Kunon wa Mieteiru",
+    "titleEnglish": "Kunon the Sorcerer Can See",
+    "titleJapanese": "魔術師クノンは見えている",
+    "images": {
+      "cover": "assets/AnimeImages/Majutsushi_Kunon_wa_Mieteiru.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Platinum Vision"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Kunon Gurion is born without sight. Refusing to accept blindness as an unchangeable fate, he devotes himself to water magic. His series of personal experiments quickly reveals his talents, as Kunon's grasp of magic grows at a pace that surpasses even those tasked with teaching him.\n\r\nThrough constant trial and invention, he develops methods of perceiving the world that do not rely on ordinary vision, reshaping water into constructs that allow him to navigate his surroundings. His ingenuity and rapid progress soon draw attention beyond his lessons, setting him on a path of discovery that tests the very limits of possibility—as well as of his own body.",
+    "trailerUrl": "https://youtu.be/g1ARNmhNO68"
+  },
+  {
+    "slug": "yuusha-kei-ni-shosu-choubatsu-yuusha-9004-tai-keimu-kiroku",
+    "title": "Yuusha-kei ni Shosu: Choubatsu Yuusha 9004-tai Keimu Kiroku",
+    "titleEnglish": "Sentenced to Be a Hero",
+    "titleJapanese": "勇者刑に処す 懲罰勇者9004隊刑務記録",
+    "images": {
+      "cover": "assets/AnimeImages/Yuusha-kei_ni_Shosu_Choubatsu_Yuusha_9004-tai_Keimu_Kiroku.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio KAI"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "In a world where the title of Hero is treated as a punishment rather than an honor, the worst criminals are sentenced to the front lines of an endless war against the Demon Lords. Branded as Heroes, they are forced into military service without even the mercy of death, condemned to be revived and sent back into battle forever.\n\r\nAmong them is Xylo Forbartz, once a respected commander of the Holy Knights. Now the leader of Penal Hero Unit 9004, he commands a squad of convicts considered expendable by the very nation they serve. During one chaotic mission, he encounters Teoritta, a living weapon known as a Goddess, whose presence threatens to shift the balance of both the war and his own fate.\n\r\nAs the unit is sent on increasingly dangerous operations, Xylo must balance leading his unit, surviving the battles he finds himself in, and uncovering the truth behind his own sentencing.",
+    "trailerUrl": "https://youtu.be/GcRs1JC7xeg"
+  },
+  {
+    "slug": "shibou-yuugi-de-meshi-wo-kuu",
+    "title": "Shibou Yuugi de Meshi wo Kuu.",
+    "titleEnglish": "Shiboyugi: Playing Death Games to Put Food on the Table",
+    "titleJapanese": "死亡遊戯で飯を食う。",
+    "images": {
+      "cover": "assets/AnimeImages/Shibou_Yuugi_de_Meshi_wo_Kuu.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio Deen"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "High Stakes Game"
+    ],
+    "genres": [
+      "Action",
+      "Suspense"
+    ],
+    "explicitGenres": [],
+    "episodes": 11,
+    "synopsis": "Yuuki wakes up to find herself in an unfamiliar manor, wearing a maid uniform and lying on a luxurious bed. Soon, she discovers five more girls, all dressed the same as her. This is the Ghost House, and the only way they can survive is to make it through the traps that lie in wait—deadly games full of blowguns, buzz saws, locked rooms, and weapons. It's a hopeless, terrifying situation for everyone there...well, everyone except Yuuki. After all, this is her career at seventeen. Do you think that's odd? She would agree. But that's how some people are—they earn their living playing death games.\n\r\n(Source: Yen Press)",
+    "trailerUrl": "https://youtu.be/wq8O-IvF35I"
+  },
+  {
+    "slug": "tamon-kun-ima-docchi",
+    "title": "Tamon-kun Ima Docchi!?",
+    "titleEnglish": "Tamon's B-Side",
+    "titleJapanese": "多聞くん今どっち!?",
+    "images": {
+      "cover": "assets/AnimeImages/Tamon-kun_Ima_Docchi!.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "J.C.Staff"
+    ],
+    "type": "TV",
+    "demographic": "Shoujo",
+    "themes": [
+      "Idols (Male)"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Seventeen-year-old Utage Kinoshita lives and breathes for her favorite idol group, F/ACE—but the group's center, Tamon Fukuhara, occupies a special place in her heart. Every waking moment Utage dedicates to the thoughts of the wild and sexy Tamon, even taking on a part-time housecleaning job just to afford her fangirl lifestyle.\n\r\nWhat was supposed to be an ordinary job turns out to be anything but when Utage realizes she is cleaning the apartment of the very idol she so fervently admires! But adding to the surprise, Tamon is nothing like his on-stage persona; he suffers from severe anxiety and painfully low self-esteem. Keenly aware of the gap between their worlds, Utage cannot bear to see Tamon so depressed and decides to support him the best she can as his housekeeper.\n\r\nAs time passes, Utage becomes more and more privy to the aspects of Tamon's life he reveals to nobody else. And the bond that forms between them soon leaves Utage wondering if she has accidentally crossed the sacred line between fan and idol.",
+    "trailerUrl": "https://youtu.be/GIOzUu_oRec"
+  },
+  {
+    "slug": "arne-no-jikenbo",
+    "title": "Arne no Jikenbo",
+    "titleEnglish": "The Case Book of Arne",
+    "titleJapanese": "アルネの事件簿",
+    "images": {
+      "cover": "assets/AnimeImages/Arne_no_Jikenbo.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "SILVER LINK."
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Vampire"
+    ],
+    "genres": [
+      "Fantasy",
+      "Mystery"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "In the shadowy streets of Lügenberg—a city where humans and demihumans coexist in uneasy peace—an unusual detective agency operates far beyond the reach of common law. There, vampire investigator Arne Neuntöte pursues the uncanny, blurring the lines between violence and truth.\n\r\nEverything begins to shift when Lynn Reinweiß, a noblewoman whose fascination with vampires outweighs her grasp of their danger, crosses paths with Arne. The two form an alliance in pursuit of bloody mysteries that emerge from Lügenberg's darkest corners as death and deception surface beneath the city's gothic veneer. Through each case they solve, Arne and Lynn discover time and again that truth is more elusive than what any surface can reveal.",
+    "trailerUrl": "https://youtu.be/--qhzn2dQnk"
+  },
+  {
+    "slug": "maou-no-musume-wa-yasashisugiru",
+    "title": "Maou no Musume wa Yasashisugiru!!",
+    "titleEnglish": "The Demon King's Daughter Is Too Kind!!",
+    "titleJapanese": "魔王の娘は優しすぎる!!",
+    "images": {
+      "cover": "assets/AnimeImages/Maou_no_Musume_wa_Yasashisugiru!!.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "EMT Squared"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Childcare"
+    ],
+    "genres": [
+      "Comedy",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "The Demon King Ahriman once led his armies across the world with unquestioned authority; yet his campaigns come to an abrupt halt for an unexpected reason: his daughter, Doux, is far too kind. While she was born in the demon realm, she seems otherwise incapable of being cruel, as she regularly befriends enemies, comforts monsters, and treats even humans with warmth, leaving her father uncertain how a child like her could ever inherit the throne.\n\r\nIn a vain attempt to find a solution to this insurmountable flaw, Ahriman entrusts his loyal aide Jahi with the task of reforming Doux's disposition. Through a series of lessons and trials meant to cultivate ruthlessness, Jahi attempts to guide the young princess toward becoming a proper demon. Each effort, however, produces the opposite result, as Doux's sincerity disarms hostility and spreads unexpected goodwill wherever she goes, proving that changing the princess may be far more difficult than conquering any continent.",
+    "trailerUrl": "https://youtu.be/TYc1GegToJ0"
+  },
+  {
+    "slug": "eris-no-seihai",
+    "title": "Eris no Seihai",
+    "titleEnglish": "The Holy Grail of Eris",
+    "titleJapanese": "エリスの聖杯",
+    "images": {
+      "cover": "assets/AnimeImages/Eris_no_Seihai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Ashi Productions"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Villainess"
+    ],
+    "genres": [
+      "Mystery",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Constance Grail is the only child of the renowned Grail family, whose motto is \"Be you sincere,\" and at 16, she is the living embodiment of this motto. Constance becomes engaged to help her father pay off his debts, although she had always hoped to marry for love. Nevertheless, she resolves to go through with the marriage for the good of the family.\n\r\nDuring a ball hosted by a fellow noble, Constance meets a mysterious, alluring woman hovering at the edges of the room. She encourages the woman to enter the ball before losing sight of her. Not long after, her fiancé's lover confronts her with accusations of theft. Facing the ruin of her reputation, Constance pleads for help. In response, she is possessed by the woman she met earlier, who turns out to be the ghost of Scarlett Castiel, a famed villainess. With Scarlett's quick wit and intimidation, Constance is saved, and her engagement is annulled.\n\r\nIn return for her aid, Scarlett enlists Constance's help in investigating the circumstances leading to her execution 10 years prior. Although she was charged with attempted poisoning of the crown princess, Scarlett claims she never did such a thing. Constance agrees to uncover the answers, although her efforts will be scrutinized by the figures who once knew Scarlett and might prefer the truth remain buried.",
+    "trailerUrl": "https://youtu.be/hhu5ORrgd48"
+  },
+  {
+    "slug": "toumei-otoko-to-ningen-onna-sonouchi-fuufu-ni-naru-futari",
+    "title": "Toumei Otoko to Ningen Onna: Sonouchi Fuufu ni Naru Futari",
+    "titleEnglish": "The Invisible Man and His Soon-to-Be Wife",
+    "titleJapanese": "透明男と人間女～そのうち夫婦になるふたり～",
+    "images": {
+      "cover": "assets/AnimeImages/Toumei_Otoko_to_Ningen_Onna_Sonouchi_Fuufu_ni_Naru_Futari.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Project No.9"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Adult Cast",
+      "Urban Fantasy",
+      "Workplace"
+    ],
+    "genres": [
+      "Fantasy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Yakou, a gentle human woman, works at a detective agency. Tounome is a smart and gentle invisible man. The invisible man's ability is perfect for detective work. However, the blind Yakou can still figure out where Tounome is, even if he disappears. Before they know it, the two become attracted to each other...?\n\r\n(Source: Seven Seas Entertainment)",
+    "trailerUrl": "https://youtu.be/W1kp6GQhiOk"
+  },
+  {
+    "slug": "yi-ren-zhi-xia-6",
+    "title": "Yi Ren Zhi Xia 6",
+    "titleEnglish": "The Outcast Season 6",
+    "titleJapanese": "一人之下6",
+    "images": {
+      "cover": "assets/AnimeImages/Yi_Ren_Zhi_Xia_6.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Qiyuan Yinghua",
+      "Equator"
+    ],
+    "type": "ONA",
+    "demographic": null,
+    "themes": [
+      "Super Power"
+    ],
+    "genres": [
+      "Action",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 26,
+    "synopsis": "Following the incident in Bi You Village, Zhang Chulan continues his investigation into Feng Baobao's origins, leading him to visit Lu Jin. From Lu Jin, Zhang Chulan obtains the list of the Thirty-Six Thieves and unexpectedly learns the reason for Jin Feng's abduction. To prevent Wu Gengsheng's collection from falling into the hands of thieves, the group begins their journey deeper into the Qinling Mountains.\n\r\n(Source: Tencent, translated)",
+    "trailerUrl": "https://youtu.be/XNJpvJcz4wg"
+  },
+  {
+    "slug": "yuusha-party-ni-kawaii-ko-ga-ita-node-kokuhaku-shitemita",
+    "title": "Yuusha Party ni Kawaii Ko ga Ita node, Kokuhaku shitemita.",
+    "titleEnglish": "There was a Cute Girl in the Hero's Party, so I Tried Confessing to Her",
+    "titleJapanese": "勇者パーティーにかわいい子がいたので、告白してみた。",
+    "images": {
+      "cover": "assets/AnimeImages/Yuusha_Party_ni_Kawaii_Ko_ga_Ita_node,_Kokuhaku_shitemita.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Gekkou"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai",
+      "Reincarnation"
+    ],
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Youki died in a traffic accident and was reborn in a fantasy world! However, instead of being the hero of legends, he ended up reincarnating into an overpowered demon. Having no desires to become the Demon Lord, he sits around in the Demon Lord's castle as a random low rank guardian. One day, the Hero's party comes to attack and on a whim he knocks out the entire hero party. Healing up the Hero party and then preparing to send them back to town, he notices the female priest and falls in love at first sight!\n\r\n(Source: MU)",
+    "trailerUrl": "https://youtu.be/EIlO6O5W2Ag"
+  },
+  {
+    "slug": "himesama-goumon-no-jikan-desu",
+    "title": "Himesama \"Goumon\" no Jikan desu",
+    "titleEnglish": "'Tis Time for \"Torture,\" Princess",
+    "titleJapanese": "姫様“拷問”の時間です",
+    "images": {
+      "cover": "assets/AnimeImages/Himesama_Goumon_no_Jikan_desu.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2024,
+    "studios": [
+      "PINE JAM"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [],
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Gourmet"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "As the commander of the Imperial Army's Third Legion, the Royal Empire's princess has led humanity to countless victories against the demonic Hellhorde. However, she has now been captured by the enemy and confined to the dungeons, with her sentient sword, Ex, as her only company.\n\r\nDue to her royal status, the princess knows invaluable secrets that would help the Hellhorde achieve dominance. To have her reveal all the information they need, the demons do not hesitate to subject the princess to the most vile forms of torture—that is, tempting her with delicious food, lasting friendships, adorable animals, and the most enjoyable experiences imaginable.",
+    "trailerUrl": "https://youtu.be/0yQFJhl0zyk"
+  },
+  {
+    "slug": "yoroi-shin-den-samurai-troopers",
+    "title": "Yoroi Shin Den Samurai Troopers",
+    "titleEnglish": "Yoroi-Shinden Samurai Troopers",
+    "titleJapanese": "鎧真伝サムライトルーパー",
+    "images": {
+      "cover": "assets/AnimeImages/Yoroi_Shin_Den_Samurai_Troopers.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Sunrise"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Samurai",
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Sequel to Yoroiden Samurai Troopers.",
+    "trailerUrl": "https://youtu.be/eP-bP5dET_k"
+  },
+  {
+    "slug": "osananajimi-to-wa-love-comedy-ni-naranai",
+    "title": "Osananajimi to wa Love Comedy ni Naranai",
+    "titleEnglish": "You Can't Be In a Rom-Com with Your Childhood Friends!",
+    "titleJapanese": "幼馴染とはラブコメにならない",
+    "images": {
+      "cover": "assets/AnimeImages/Osananajimi_to_wa_Love_Comedy_ni_Naranai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Tezuka Productions"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Harem",
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "As a romantic comedy enthusiast, Yonosuke \"Eiyuu\" Sakai enjoys the stories about childhood friends the most. But he solemnly believes that the flawless, loving childhood friends from his stories exist only in fiction. Though he has two childhood friends of his own—Shio Minamo and Akari Hiodoshi—Eiyuu has never seen either one of them as anything more.\n\r\nHowever, now that they are all in high school together, the beauty of the two girls begins to catch Eiyuu's eye. As his interest subtly grows, the girls start to make advances toward him regardless of time or place—but only time will tell if Eiyuu will ever overcome his denial and finally see the girls in another light.",
+    "trailerUrl": "https://youtu.be/iSRJs8e5aRo"
+  },
+  {
+    "slug": "yuusha-no-kuzu",
+    "title": "Yuusha no Kuzu",
+    "titleEnglish": "Scum of the Brave",
+    "titleJapanese": "勇者のクズ",
+    "images": {
+      "cover": "assets/AnimeImages/Yuusha_no_Kuzu.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "OLM"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Organized Crime",
+      "Super Power"
+    ],
+    "genres": [
+      "Action"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "Tokyo's criminal underworld has been using medical procedures known as ether augmentation to increase their own powers and influence. To counteract this threat, bounty hunters called Braves have emerged, using their own ether powers to eliminate the powerful mafiosos known as Dark Lords. Although he is a self-proclaimed first-rate Brave, Yashiro struggles to make ends meet.\n\r\nOne day, Yashiro helps out a young student of Shibuya's Brave Academy named Aki Jougamine. Impressed by his skill, Aki begs him to help save her friend and fellow student, Saera Kashiwagi Pendragon, from the clutches of a Dark Lord, which he reluctantly agrees to.\n\r\nAfter assisting them, Aki, Saera, and their friend Yukine Indou insist on apprenticing with Yashiro. Despite his attempts to dissuade them from the dangers of bounty hunting, the trio believes that Yashiro is their key to becoming full-fledged Braves, leaving him to reluctantly give in. With each new threat they encounter, Yashiro will try to convince them that the three students are not cut out for bounty hunting, but they may just prove him wrong.",
+    "trailerUrl": "https://youtu.be/3d0VoaRCpm0"
+  },
+  {
+    "slug": "hikuidori-ushuu-boro-tobi-gumi",
+    "title": "Hikuidori: Ushuu Boro Tobi-gumi",
+    "titleEnglish": "Oedo Fire Slayer: The Legend of Phoenix",
+    "titleJapanese": "火喰鳥 羽州ぼろ鳶組",
+    "images": {
+      "cover": "assets/AnimeImages/Hikuidori_Ushuu_Boro_Tobi-gumi.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Hikuidori_Ushuu_Boro_Tobi-gumi_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "SynergySP"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Historical"
+    ],
+    "genres": [],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "The fire extinguishing samurai who stopped the great fire was called \"The fire-eating bird\". Matsunaga Gengo, once known as the \"Fire-eating Bird\", was the best fire-fighting samurai in Edo. He had resigned from the fire brigade for a reason but suddenly received an invitation to serve in the Shinjo clan. The Shinjo clan's fire-fighting team had no money and no personnel and was looked down upon by those around them. With the encouragement of his wife, Miyuki, Gengo decides to rebuild the collapsed fire-fighting clan as its chairman. Gengo and his friends, all of whom have their own peculiarities, struggle to \"save any life\", despite being ridiculed as \"ragged steeplejacks\"(= the 'Boro-Tobi-Gumi'.), In Edo, a mysterious series of suspicious fires called \"foxfires\" continue.\n\r\n(Source: ANN)",
+    "trailerUrl": "https://youtu.be/cv93xas2xQ4"
+  },
+  {
+    "slug": "akuyaku-reijou-wa-ringoku-no-outaishi-ni-dekiai-sareru",
+    "title": "Akuyaku Reijou wa Ringoku no Outaishi ni Dekiai sareru",
+    "titleEnglish": "The Villainess Is Adored by the Prince of the Neighbor Kingdom",
+    "titleJapanese": "悪役令嬢は隣国の王太子に溺愛される",
+    "images": {
+      "cover": "assets/AnimeImages/Akuyaku_Reijou_wa_Ringoku_no_Outaishi_ni_Dekiai_sareru.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio Deen"
+    ],
+    "type": "TV",
+    "demographic": "Shoujo",
+    "themes": [
+      "Isekai",
+      "Villainess"
+    ],
+    "genres": [
+      "Fantasy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Lady Tiararose Lapis Clementille and Crown Prince Hartknights Lapis-Lazuli Lacmouth have been engaged since childhood. However, a day before their graduation from the kingdom's academy, Tiararose spots her fiancé embracing another woman, and, overcome with hurt, she recalls her past life as an avid player of an otome game called The Ring of Lapis Lazuli. In the game, Tiararose was no heroine—she was the wicked villainess who stood in the way of the prince and his true love, Akari.\n\r\nTiararose is destined to face condemnation at the graduation party, and she prepares to accept her fate. Hartknights accuses Tiararose of mistreating Akari, calls off their engagement, and banishes Tiararose from the kingdom. However, having witnessed Hartknights' contemptible behavior, Aquasteed Marineforest, the prince of a neighboring kingdom, steps in and proposes to Tiararose!\n\r\nBut Akari is not done meddling in Tiararose's affairs. Within her, Akari holds the power of Holy Prayer, a highly coveted magical ability that could undo the so-called villainess' happy ending.",
+    "trailerUrl": "https://youtu.be/xzvQZMuH74w"
+  },
+  {
+    "slug": "seihantai-na-kimi-to-boku",
+    "title": "Seihantai na Kimi to Boku",
+    "titleEnglish": "You and I Are Polar Opposites",
+    "titleJapanese": "正反対な君と僕",
+    "images": {
+      "cover": "assets/AnimeImages/Seihantai_na_Kimi_to_Boku.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Lapin Track"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Miyu Suzuki is a high school girl whose cheerful outlook on life is tempered by her need to fit in. Coincidentally, beside her in the classroom sits Yuusuke Tani, a boy unconcerned with others' expectations. Their exchanges rarely extend beyond brief discourse, yet the polarity of their demeanors unexpectedly draws them to one another.\n\r\nAs their mutual interest grows, the newfound feelings are no longer easy to ignore. Eventually, Suzuki voices what is inside her heart, forcing both of them to confront the unspoken affection between them. With each passing moment, their relationship evolves, and they gradually come to better understand themselves and the person who is their polar opposite.",
+    "trailerUrl": "https://youtu.be/jZVJLee_2Bw"
+  },
+  {
+    "slug": "douse-koishite-shimaunda",
+    "title": "Douse, Koishite Shimaunda.",
+    "titleEnglish": "Anyway, I'm Falling in Love with You.",
+    "titleJapanese": "どうせ、恋してしまうんだ。",
+    "images": {
+      "cover": "assets/AnimeImages/Douse,_Koishite_Shimaunda.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Typhoon Graphics"
+    ],
+    "type": "TV",
+    "demographic": "Shoujo",
+    "themes": [
+      "Reverse Harem",
+      "School"
+    ],
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Aspiring manga artist Mizuho Nishino has grown alongside her four childhood friends: Kizuki Hazawa, Shuugo Hoshikawa, Shin Kashiwagi, and Airu Izumi. But on Mizuho's 17th birthday, Kizuki suddenly asks to be her boyfriend. Having no previous experience with romance, Mizuho brushes it off easily, but Kizuki is genuine and intends to win her heart.\n\r\nKizuki no longer hides his affections, and Mizuho hesitates, worried about the consequences their potential relationship could have on their whole friend group. As Mizuho works through the confusion of youth, it seems that the other three boys have fallen for her as well—and she must find a way to sort her feelings out without shattering the close-knit group she holds dear.",
+    "trailerUrl": "https://youtu.be/_lZ6iS-5Eig"
+  },
+  {
+    "slug": "omae-gotoki-ga-maou-ni-kateru-to-omouna-to-yuusha-party-wo-tsuihou-sareta-node-outo-de-kimama-ni-kurashitai",
+    "title": "\"Omae Gotoki ga Maou ni Kateru to Omouna\" to Yuusha Party wo Tsuihou sareta node, Outo de Kimama ni Kurashitai",
+    "titleEnglish": "Roll Over and Die",
+    "titleJapanese": "「お前ごときが魔王に勝てると思うな」と勇者パーティを追放されたので、王都で気ままに暮らしたい",
+    "images": {
+      "cover": "assets/AnimeImages/Omae_Gotoki_ga_Maou_ni_Kateru_to_Omouna_to_Yuusha_Party_wo_Tsuihou_sareta_node,_Outo_de_Kimama_ni_Kurashitai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "A.C.G.T."
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Girls Love"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Chosen by the Church's god, Origin, a young country girl named Flum Apricot is enlisted in the hero's party and expected to fight demons. However, her one innate skill, Reversal, has no practical use, and the party's sage, Jean Inteige, treats her as a burden, eventually selling her off to a slave dealer.\n\r\nIn the slave dealer's dark dungeon, all hope seems lost. But in a moment of desperation, Flum discovers that her skill actually turns the negative energy of cursed weapons into power, which helps her slay the slave owner and escape with another captured girl, Milkit. Now equipped with the means to fight and survive, Flum embraces the career of an adventurer and aims to lead a happy life with Milkit, away from the grim machinations of the Church.",
+    "trailerUrl": "https://youtu.be/LdHck8lxAj8"
+  },
+  {
+    "slug": "tsuihou-sareta-cheat-fuyo-majutsushi-wa-kimama-na-second-life-wo-ouka-suru",
+    "title": "Tsuihou sareta Cheat Fuyo Majutsushi wa Kimama na Second Life wo Ouka suru. Ore wa Buki dake ja Naku, Arayuru Mono ni \"Kyouka Point\" wo Fuyo Dekiru shi, Ore no Ishi de Itsudemo Kouka wo Kaijo Dekiru kedo, Nokotta Hitotachi Daijoubu?",
+    "titleEnglish": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life",
+    "titleJapanese": "追放されたチート付与魔術師は気ままなセカンドライフを謳歌する。 ～俺は武器だけじゃなく、あらゆるものに『強化ポイント』を付与できるし、俺の意思でいつでも効果を解除できるけど、残った人たち大丈夫？～",
+    "images": {
+      "cover": "assets/AnimeImages/Tsuihou_sareta_Cheat_Fuyo_Majutsushi_wa_Kimama_na_Second_Life_wo_Ouka_suru.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "P.A. Works"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": null,
+    "synopsis": "Rein, an enchanter who strengthens equipment with his magic, is suddenly expelled from his guild, simply because every piece of gear in the guild has already been enhanced enough. Outraged by the absurd treatment, Rein decides to take back the enormous amount of mana he had poured into their equipment. When he casually channels it into a random copper sword, it transforms into a cheat-level weapon with 10,000 enhancement points!\n\r\nWith zero combat experience but armed with magic that can turn anything into overpowered gear, this enchanter sets off to enjoy a new, carefree life as an adventurer!\n\r\n(Source: Shochiku)",
+    "trailerUrl": "https://youtu.be/BJXBr_aFF8s"
+  },
+  {
+    "slug": "jigoku-sensei-nube-2025-part-2",
+    "title": "Jigoku Sensei Nube (2025) Part 2",
+    "titleEnglish": "Hell Teacher: Jigoku Sensei Nube Part 2",
+    "titleJapanese": "地獄先生ぬ～べ～",
+    "images": {
+      "cover": "assets/AnimeImages/Jigoku_Sensei_Nube_(2025)_Part_2.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2026,
+    "studios": [
+      "Studio KAI"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Mythology",
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Horror",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Meisuke \"Nube\" Nueno, a teacher at Doumori Elementary School and expert in the occult, finds it increasingly difficult to protect his students against dark forces. After one of his students is sent to a parallel world, Nube encounters an unusual spirit that sends him back in time to change one regretful event.\n\r\nAlthough Nube manages to fix the situation, this succession of unlikely events suggests that a more serious menace may be threatening the peace of Doumori. To protect everyone he holds dear, Nube will have to overcome the demons of his past and uncover the nature of the looming supernatural danger.",
+    "trailerUrl": "https://youtu.be/8zCQHP4AFKw"
+  },
+  {
+    "slug": "chainsaw-man-shikaku-hen",
+    "title": "Chainsaw Man: Shikaku-hen",
+    "titleEnglish": "Chainsaw Man: Assassins Arc",
+    "titleJapanese": "チェンソーマン刺客篇",
+    "images": {
+      "cover": "assets/AnimeImages/Chainsaw_Man_Shikaku-hen.jpg",
+      "alternatives": []
+    },
+    "releaseYear": null,
+    "studios": [
+      "MAPPA"
+    ],
+    "type": "Unknown",
+    "demographic": "Shounen",
+    "themes": [
+      "Gore",
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": null,
+    "synopsis": "Sequel to Chainsaw Man Movie: Reze-hen.",
+    "trailerUrl": "https://youtu.be/s8cP1Vt5US8"
+  },
+  {
+    "slug": "enen-no-shouboutai-san-no-shou",
+    "title": "Enen no Shouboutai: San no Shou",
+    "titleEnglish": "Fire Force Season 3",
+    "titleJapanese": "炎炎ノ消防隊 参ノ章",
+    "images": {
+      "cover": "assets/AnimeImages/Enen_no_Shouboutai_San_no_Shou.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Enen_no_Shouboutai_San_no_Shou_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "David Production"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy",
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "After undergoing Benimaru Shinmon's hellish training, Shinra Kusakabe and Arthur Boyle return to Special Fire Force Company 8. However, there is no time to rest: Captain Akitaru Oubi is arrested by the military police under the influence of the White-Clad cult. Moreover, the White-Clad member Haumea—one of the eight pillars who possess Adolla Burst—has successfully brainwashed the leadership of the Tokyo Empire and infiltrated the heart of the firefighting organization. As a result, Shinra and the rest of the Company 8 squad are branded as rebels after they launch a rescue mission to save their captain and ultimately liberate Tokyo.",
+    "trailerUrl": "https://youtu.be/nz-VCl7yUAw"
+  },
+  {
+    "slug": "gnosia",
+    "title": "Gnosia",
+    "titleEnglish": "Gnosia",
+    "titleJapanese": "グノーシア",
+    "images": {
+      "cover": "assets/AnimeImages/Gnosia.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Gnosia_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "domerica"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Space",
+      "Survival",
+      "Time Travel"
+    ],
+    "genres": [
+      "Sci-Fi",
+      "Suspense"
+    ],
+    "explicitGenres": [],
+    "episodes": 21,
+    "synopsis": "Saddled with amnesia, Yuuri awakens on an interstellar cruiser drifting through space. Unfortunately, a lack of memories is the least of Yuuri's problems. Among the four other crew members is a Gnosia: a Gnos infectee whose goal is the eradication of humanity. The Gnosia appears human in all other respects, so the uninfected have little choice but to vote on whom they suspect to be the enemy, hoping to neutralize the Gnosia by putting them into cold sleep. If the Gnosia survives the vote, they will eliminate one crew member during the cruiser's following warp, when only the Gnosia remains conscious.\n\r\nVoting quickly proves to be an unreliable strategy, and Yuuri is left one-on-one with the Gnosia. Just when all hope seems lost, time seemingly loops back to when Yuuri first awakened. With each time loop, however, conditions aboard the ship change—neither the size of the crew nor the members' identities remain constant. Trapped in both time and space, Yuuri must figure out how to escape the loops and save humanity from the Gnosia.",
+    "trailerUrl": "https://youtu.be/B91-RJiSD2A"
+  },
+  {
+    "slug": "tu-bian-yingxiong-x",
+    "title": "Tu Bian Yingxiong X",
+    "titleEnglish": "To Be Hero X",
+    "titleJapanese": "凸变英雄X",
+    "images": {
+      "cover": "assets/AnimeImages/Tu_Bian_Yingxiong_X.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Pb Animation",
+      "LAN Studio",
+      "Paper Plane Animation Studio",
+      "B.COOL STUDIO"
+    ],
+    "type": "ONA",
+    "demographic": null,
+    "themes": [
+      "Super Power"
+    ],
+    "genres": [
+      "Action"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "This is a world where heroes are created by people's trust, and the hero who has received the most trust is known as \"X.\" In this world, people's trust can be calculated by data, and these values will be reflected on everyone's wrist. As long as enough trust points are obtained, ordinary people can also have superpowers and become superheroes that save the world. However, the ever-changing trust value makes the hero's path full of unknowns...\n\r\n(Source: Bilibili, translated)",
+    "trailerUrl": "https://youtu.be/4-e9BXNbDlc"
+  },
+  {
+    "slug": "wind-breaker-season-2",
+    "title": "Wind Breaker Season 2",
+    "titleEnglish": "Wind Breaker Season 2",
+    "titleJapanese": "WIND BREAKER Season 2",
+    "images": {
+      "cover": "assets/AnimeImages/Wind_Breaker_Season_2.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "CloverWorks"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Delinquents",
+      "School"
+    ],
+    "genres": [
+      "Action"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Ever since Haruka Sakura joined Furin High School, where its students call themselves Bofurin and protect the town of Makochi, he has gained new friends despite his initial skepticism. Now starting to learn how to fight alongside his classmates and slowly growing out of his solitary past, Sakura has become the grade captain of the first-years.\n\r\nSakura's skills are put to the test when he and his classmates are faced with KEEL—a delinquent group known for its ruthless violence and coercion. While KEEL seems to be another rowdy group at first glance, their sudden appearance and strength in numbers might just be hiding a greater evil behind it. With all the odds against the Bofurin members, Sakura must accept that recognizing his shortcomings and receiving help from his upperclassmen will be necessary to preserve the peace in Makochi.",
+    "trailerUrl": "https://youtu.be/qaR2_4tYhq8"
+  },
+  {
+    "slug": "lycoris-recoil-friends-are-thieves-of-time",
+    "title": "Lycoris Recoil: Friends Are Thieves of Time.",
+    "titleEnglish": "Lycoris Recoil: Friends are thieves of time.",
+    "titleJapanese": "『リコリス・リコイル』Friends are thieves of time.",
+    "images": {
+      "cover": "assets/AnimeImages/Lycoris_Recoil_Friends_Are_Thieves_of_Time.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "A-1 Pictures"
+    ],
+    "type": "ONA",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": 6,
+    "synopsis": "Six short movies featuring the daily lives of Chisato, Takina, and their friends. Each movie will have a different director and storyboard.",
+    "trailerUrl": "https://youtu.be/kal-KjsPStU"
+  },
+  {
+    "slug": "lazarus",
+    "title": "Lazarus",
+    "titleEnglish": null,
+    "titleJapanese": "ラザロ",
+    "images": {
+      "cover": "assets/AnimeImages/Lazarus.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "MAPPA"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Action",
+      "Suspense"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "In the year 2048, Dr. Deniz Skinner, a scientific genius dubbed second only to Einstein, developed the revolutionary painkiller Hapna. Being cheap with no reported side effects, the drug gained widespread acceptance, even though Skinner himself silently vanished one year after launching the drug. Everyone revelled in the heaven of relief and ecstasy provided by Hapna, but they would suddenly come crashing down to Earth. It is now 2052, and Skinner reappears, giving the shocking announcement that Hapna was designed to mutate into a lethal toxin, killing anyone who had consumed it. While he claims to have a cure, he will only hand it over if he is physically found within 30 days. \n\r\nAxel Gilberto, a maverick youngster serving a sentence of 888 years in a high-security prison, is unwillingly recruited by a group calling themselves Lazarus. Composed of eccentric misfits, the group has only one task—to find Skinner. With no means to escape and their lives on the line, Lazarus begins the hunt to find Skinner before the countdown to the end of humanity ends.",
+    "trailerUrl": "https://youtu.be/7d2ot3PQBMs"
+  },
+  {
+    "slug": "hibi-wa-sugiredo-meshi-umashi",
+    "title": "Hibi wa Sugiredo Meshi Umashi",
+    "titleEnglish": "Food for the Soul",
+    "titleJapanese": "日々は過ぎれど飯うまし",
+    "images": {
+      "cover": "assets/AnimeImages/Hibi_wa_Sugiredo_Meshi_Umashi.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "P.A. Works"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Adult Cast",
+      "CGDCT"
+    ],
+    "genres": [
+      "Gourmet",
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Introverted university student Mako Kawai has a hobby of watching food videos and cooking what she learns from them. She is now a far cry from her energetic self back in elementary school—due to her growing social anxiety, she fears trying new things, such as going to restaurants alone or even making friends.\n\r\nEnter Shinon Ogawa, one of Mako's childhood friends with whom she reunites in college. Still as extroverted as ever, Shinon quickly adopts Mako into her friend group, which includes the easygoing Tsutsuji Higa and the level-headed Kurea Furutachi. Together, they are planning to start a Food Culture Research Club and invite Mako to join as their fourth member. Though she initially declines, Mako soon realizes that this is her chance to finally brighten up her days, enjoy life surrounded by friends, and eat delicious food with everyone!",
+    "trailerUrl": "https://youtu.be/FtAmzXI4q_Y"
+  },
+  {
+    "slug": "kao-ni-denai-kashiwada-san-to-kao-ni-deru-oota-kun",
+    "title": "Kao ni Denai Kashiwada-san to Kao ni Deru Oota-kun",
+    "titleEnglish": "Inexpressive Kashiwada and Expressive Oota",
+    "titleJapanese": "顔に出ない柏田さんと顔に出る太田君",
+    "images": {
+      "cover": "assets/AnimeImages/Kao_ni_Denai_Kashiwada-san_to_Kao_ni_Deru_Oota-kun.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Kao_ni_Denai_Kashiwada-san_to_Kao_ni_Deru_Oota-kun_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Studio Polon"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Oota-kun wears his heart on his sleeve; his face reveals his every thought and emotion. In contrast, Kashiwada-san remains unreadable, as her expression never changes, no matter what happens. Bothered by Kashiwada-san's perpetual expressionlessness, Oota-kun makes it his mission to break through her calm exterior, pulling every prank and trick he can think of—from fake spiders to absurd text messages and everything in between—just to get a reaction.\n\r\nAs Oota-kun's relentless attempts fail to crack Kashiwada-san's perpetual poker face, their exchanges become the daily norm. Unbeknownst to him, however, his antics occasionally succeed in drawing out a subtle smile—not noticing that he has already cracked her defense since the beginning.",
+    "trailerUrl": "https://youtu.be/ZfWsw9daBy8"
+  },
+  {
+    "slug": "love-live-nijigasaki-gakuen-school-idol-doukoukai-kanketsu-hen-part-2",
+    "title": "Love Live! Nijigasaki Gakuen School Idol Doukoukai: Kanketsu-hen Part 2",
+    "titleEnglish": null,
+    "titleJapanese": "ラブライブ! 虹ヶ咲学園スクールアイドル同好会 完結編 第2章",
+    "images": {
+      "cover": "assets/AnimeImages/Love_Live!_Nijigasaki_Gakuen_School_Idol_Doukoukai_Kanketsu-hen_Part_2.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Sunrise"
+    ],
+    "type": "Movie",
+    "demographic": null,
+    "themes": [
+      "Idols (Female)",
+      "Music",
+      "School"
+    ],
+    "genres": [
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "Second part of Love Live! Nijigasaki Gakuen School Idol Doukoukai Kanketsu-hen.",
+    "trailerUrl": "https://youtu.be/kedh-Fq2Weg"
+  },
+  {
+    "slug": "sentai-daishikkaku",
+    "title": "Sentai Daishikkaku",
+    "titleEnglish": "Go! Go! Loser Ranger!",
+    "titleJapanese": "戦隊大失格",
+    "images": {
+      "cover": "assets/AnimeImages/Sentai_Daishikkaku.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2024,
+    "studios": [
+      "Yostar Pictures"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "Urban Fantasy"
+    ],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "For the past 13 years, the Nefarious Monster Army have appeared beneath their floating fortress every Sunday to advance their goal of conquering Earth. Luckily, the Dragon Keepers are here to save the day! Having defeated the majority of the monsters during their initial invasion, the heroes now routinely show up to clear away any remnants of resistance. Unbeknownst to the public, however, every fight beyond the first has been a deliberate show put on by both sides: the Dragon Keepers reap the fame and prestige from fighting imaginary enemies, while the surviving weakest monsters, altogether called Dusters, are allowed to live for another day.\n\r\nSentouin D, a Duster tired of living this life of shame, leaves the fortress in an attempt to overturn his fate. With the unexpected help of the mysterious ranger Yumeko Suzukiri, he discovers the key to defeating the Dragon Keepers lies in their Divine Artifacts—ultimate weapons crucial to the rangers' transformation and unique powers. Teaming up with Suzukiri to infiltrate the garrison of Red Keeper Sousei Akabane, Sentouin D must defy all expectations to save his species from the cruel hands of humans.",
+    "trailerUrl": "https://youtu.be/WA9Q4MBxD3s"
+  },
+  {
+    "slug": "watashi-wo-tabetai-hitodenashi",
+    "title": "Watashi wo Tabetai, Hitodenashi",
+    "titleEnglish": "This Monster Wants to Eat Me",
+    "titleJapanese": "私を喰べたい、ひとでなし",
+    "images": {
+      "cover": "assets/AnimeImages/Watashi_wo_Tabetai,_Hitodenashi.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Studio Lings"
+    ],
+    "type": "TV",
+    "demographic": "Seinen",
+    "themes": [
+      "Mythology"
+    ],
+    "genres": [
+      "Drama",
+      "Girls Love",
+      "Supernatural"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "After an accident sent her family to their deaths in the ocean, Hinako Yaotose keeps returning to the thought of sinking forever into the sea herself. With Miko Yashiro as her only friend, Hinako manages to keep up a semi-happy facade, but whenever Miko leaves her side, she slips into despair. Everything changes one summer when she meets a mysterious girl with eyes as deep and clear as the sea, drawing Hinako in like nothing else has in a long time.\n\r\nDuring her absent-minded search for the girl, Hinako is suddenly pulled underwater by a beastly deep-sea creature, only to awaken to the presence of the girl—Shiori Oumi—who takes on a monstrous form and kills Hinako's attacker. Despite this heroic act, Shiori's intentions are no different from any other monster's: she wants to eat Hinako.\n\r\nThe following morning, Shiori walks into Hinako's class as a transfer student, and Hinako cannot help but smile—at last, someone who could fulfill her quiet wish for death has appeared before her.",
+    "trailerUrl": "https://youtu.be/sGCfgvjn4CU"
+  },
+  {
+    "slug": "toujima-tanzaburou-wa-kamen-rider-ni-naritai",
+    "title": "Toujima Tanzaburou wa Kamen Rider ni Naritai",
+    "titleEnglish": "Tojima Wants to Be a Kamen Rider",
+    "titleJapanese": "東島丹三郎は仮面ライダーになりたい",
+    "images": {
+      "cover": "assets/AnimeImages/Toujima_Tanzaburou_wa_Kamen_Rider_ni_Naritai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "LIDENFILMS"
+    ],
+    "type": "TV",
+    "demographic": "Seinen",
+    "themes": [
+      "Adult Cast",
+      "Super Power"
+    ],
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": 24,
+    "synopsis": "Tanzaburou Toujima has spent his entire life chasing a dream: to become Kamen Rider. Now, at 40, reality has nearly caught up with him, and he's on the verge of letting go of his childhood fantasy.\n\r\nThat is, until he gets caught up in a crime wave led by the \"Fake Shocker\" gang—turning his long-time dream into something far more dangerous.\n\r\nWhat starts as a pretend hero's journey quickly becomes something real. The ultimate Kamen Rider fantasy is about to begin!\n\r\n(Source: MAL News)",
+    "trailerUrl": "https://youtu.be/76c3cCV1BcU"
+  },
+  {
+    "slug": "tomodachi-no-imouto-ga-ore-ni-dake-uzai",
+    "title": "Tomodachi no Imouto ga Ore ni dake Uzai",
+    "titleEnglish": "My Friend's Little Sister Has It In for Me!",
+    "titleJapanese": "友達の妹が俺にだけウザい",
+    "images": {
+      "cover": "assets/AnimeImages/Tomodachi_no_Imouto_ga_Ore_ni_dake_Uzai.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Blade"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Akiteru Ooboshi lives by one principle—efficiency above all. As the producer of the 05th Floor Alliance, a small game development circle composed of his fellow apartment tenants, he oversees the release of their latest title, The Night the Black Goat Screamed, which unexpectedly surpasses a million downloads. Thus, to secure the circle's future and steer their next projects toward even greater success, Akiteru turns to Honeyplace Works, a major company run by his uncle, Makoto Tsukinomori.\n\r\nHowever, his uncle presents an unusual condition before accepting their partnership: Akiteru must pose as the boyfriend of his cousin, Mashiro. Seeing no reason to refuse—after all, it is the most efficient solution—Akiteru agrees for the sake of his team.\n\r\nUnfortunately, adding to his troubles is Iroha Kohinata, the younger sister of his fellow developer and best friend, Ozuma. A relentless tease, Iroha takes special pleasure in breaking Akiteru's composure. Yet as the lines between work, school, and personal life begin to blur, Akiteru finds himself entangled between two girls who might just as well decide his entire future.",
+    "trailerUrl": "https://youtu.be/s8ihe-Mb1Po"
+  },
+  {
+    "slug": "chitose-kun-wa-ramune-bin-no-naka",
+    "title": "Chitose-kun wa Ramune Bin no Naka",
+    "titleEnglish": "Chitose Is in the Ramune Bottle",
+    "titleJapanese": "千歳くんはラムネ瓶のなか",
+    "images": {
+      "cover": "assets/AnimeImages/Chitose-kun_wa_Ramune_Bin_no_Naka.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "feel."
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Harem",
+      "School"
+    ],
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "explicitGenres": [],
+    "episodes": 13,
+    "synopsis": "Saku Chitose appears to lead an enviable high school life. Extraordinarily charismatic, tremendously confident, and effortlessly friendly, he is the kind of person others naturally look up to. But his popularity carries its own burdens; not everyone views him kindly, and whispers of cynicism follow wherever he shines too brightly. To Saku, living an ugly life is worse than death—a belief that drives his need to maintain his perfect reputation.\n\r\nAt the start of his second year, Saku's homeroom teacher asks him to help bring back a classmate who has stopped attending school. Initially hoping to resolve the matter quickly, Saku finds out that the shut-in Kenta Yamazaki harbors open contempt for him and everything he represents. A simple favor instead exposes the distance between those who live within the social light and those who were never given a chance to shine.\n\r\nSurrounded by the expectant gazes of those who both admire and despise him, Saku treads the delicate line between sincerity and performance—searching for what it truly means to live beautifully in a world that sees only the surface.",
+    "trailerUrl": "https://youtu.be/wC7FYPFHLeQ"
+  },
+  {
+    "slug": "ansatsusha-de-aru-ore-no-status-ga-yuusha-yori-mo-akiraka-ni-tsuyoi-no-da-ga",
+    "title": "Ansatsusha de Aru Ore no Status ga Yuusha yori mo Akiraka ni Tsuyoi no da ga",
+    "titleEnglish": "My Status as an Assassin Obviously Exceeds the Hero's",
+    "titleJapanese": "暗殺者である俺のステータスが勇者よりも明らかに強いのだが",
+    "images": {
+      "cover": "assets/AnimeImages/Ansatsusha_de_Aru_Ore_no_Status_ga_Yuusha_yori_mo_Akiraka_ni_Tsuyoi_no_da_ga.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Sunrise"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Isekai"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "After being transported with his classmates to another world, composed and hard-working Akira Oda quickly makes a series of unsettling discoveries. When the Japanese students are blessed with magical powers, Akira notices that although he has received the assassin class, Tsukasa Satou—who was given the strongest hero class—is no match for him.\n\r\nDoubting the words of King Edmond Rose Retice, who urges the new heroes to slay the demon king, Akira decides to conceal his powers and discover the truth of this world. While his classmates fall one after another under the hypnosis of Queen Maria Rose Retice, Akira allies with the Retice Knight Commander Saran Mithray to hone his skills.\n\r\nAlas, in a shocking turn of events, Akira is framed for the murder of a high-profile individual of the castle and forced into exile. After hiding in a dungeon where he can level up unnoticed, Akira sets out on a journey to become strong enough to thwart the evil plans of King Retice and ultimately return to his world—where the survival of his loving family rests upon his shoulders.",
+    "trailerUrl": "https://youtu.be/y6JhkExwfrs"
+  },
+  {
+    "slug": "boku-no-hero-academia-final-season",
+    "title": "Boku no Hero Academia: Final Season",
+    "titleEnglish": "My Hero Academia Final Season",
+    "titleJapanese": "僕のヒーローアカデミア FINAL SEASON",
+    "images": {
+      "cover": "assets/AnimeImages/Boku_no_Hero_Academia_Final_Season.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Bones Film"
+    ],
+    "type": "TV",
+    "demographic": "Shounen",
+    "themes": [
+      "School",
+      "Super Power"
+    ],
+    "genres": [
+      "Action"
+    ],
+    "explicitGenres": [],
+    "episodes": 11,
+    "synopsis": "The final stages of an all-out war between heroes and villains unfold as the world watches its symbols of peace and destruction collide. When All Might is critically injured, global fear takes hold as the fate of society hangs in the balance, and the threat of All For One and Tomura Shigaraki makes it clear that the conflict is far from over.\n\r\nAs hope begins to fade, Izuku \"Deku\" Midoriya stands at the forefront, refusing to let the war end in despair. Pushed beyond his limits and supported by Katsuki Bakugou and other heroes fighting beside him, Deku becomes the central force opposing collapse. The conflict becomes a defining turning point for society—one where the future will be entrusted to the victorious side.",
+    "trailerUrl": "https://youtu.be/wQgQij8Ry4g"
+  },
+  {
+    "slug": "shirobuta-kizoku-desu-ga-zense-no-kioku-ga-haeta-node-hiyoko-na-otouto-sodatemasu",
+    "title": "Shirobuta Kizoku desu ga Zense no Kioku ga Haeta node Hiyoko na Otouto Sodatemasu",
+    "titleEnglish": "Shirohiyo - Reincarnated as a Neglected Noble: Raising My Baby Brother With Memories From My Past Life",
+    "titleJapanese": "白豚貴族ですが前世の記憶が生えたのでひよこな弟育てます",
+    "images": {
+      "cover": "assets/AnimeImages/Shirobuta_Kizoku_desu_ga_Zense_no_Kioku_ga_Haeta_node_Hiyoko_na_Otouto_Sodatemasu.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Shirobuta_Kizoku_desu_ga_Zense_no_Kioku_ga_Haeta_node_Hiyoko_na_Otouto_Sodatemasu_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Studio Comet"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Childcare",
+      "Isekai",
+      "Reincarnation"
+    ],
+    "genres": [
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "In a world where Western and Asian cultures mix together, the only son of Count Kikunoi from the Kiryuu Empire, is Ageha. His life was already over at the age of 5. He, who was born in a corner of the country, has zero allies or useful skills in addition to being overweight. What's more, it seems that his brother Regulus, who suddenly appeared on his life and was presented for the Count as his brother, will kill him in the future for his right to succeed...\n\r\nHis only weapons, are the abilities of \"cooking and sewing,\" that he suddenly acquired along with the memories of his previous Japanese life. In the midst of all this, Ageha ends up raising his younger brother, but... \"My brother is super cute?\" And before he knows it, he becomes a full-blown doting older brother?!\n\r\nMaking handmade educational toys for his cute little brother and delicious chawanmushi (steamed egg custard)... With the help of his previous life's skills and my power as a housekeeper, he's able to improve the rough life of the people living in his territory. A fantasy of two young brothers managing their territory, where a single step gets even the gods involved in changing their country!\n\r\n(Source: Shousetsuka ni Narou, translated)",
+    "trailerUrl": "https://youtu.be/DUYlsKX6sto"
+  },
+  {
+    "slug": "meitantei-conan-movie-28-sekigan-no-flashback",
+    "title": "Meitantei Conan Movie 28: Sekigan no Flashback",
+    "titleEnglish": "Detective Conan Movie 28: One-Eyed Flashback",
+    "titleJapanese": "名探偵コナン 隻眼の残像",
+    "images": {
+      "cover": "assets/AnimeImages/Meitantei_Conan_Movie_28_Sekigan_no_Flashback.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "TMS Entertainment"
+    ],
+    "type": "Movie",
+    "demographic": "Shounen",
+    "themes": [
+      "Detective"
+    ],
+    "genres": [
+      "Mystery"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "The twenty-eighth Meitantei Conan movie.\n\r\nAn old friend of Mouri Kogoro reopens an investigation of the incident that caused the scars on Inspector Yamato's face. This time not only Nagano's police involved, but Tokyo MPD, CSICE and PSB are involved not forgetting of course Edogawa Conan, the detective boys and the sleeping detective, in a plot full of assassination attempts.\n\r\nIn the cold winter of Nagano, Conan has the job of finding the truth behind the incident 10 months ago, that lead to Yamato's face injury, as well as the murder and murders attempts that followed. For that he will count with the precious help of the Nagano police team, Mouri's shooting skills and the PSB knowledge.",
+    "trailerUrl": "https://youtu.be/D22Ezh_UiVM"
+  },
+  {
+    "slug": "mono",
+    "title": "Mono",
+    "titleEnglish": "mono",
+    "titleJapanese": "mono",
+    "images": {
+      "cover": "assets/AnimeImages/Mono.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "Soigne"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "CGDCT",
+      "Visual Arts"
+    ],
+    "genres": [
+      "Comedy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Enraptured by her upperclassman Makinohara's passion, Satsuki Amamiya joins the Photography Club along with her friend, An Kiriyama. Enthusiastic, Satsuki makes Makinohara the primary subject of her photography, taking several pictures of her daily. However, once Makinohara graduates and leaves the club in her hands, Satsuki decides to start fresh and purchases a 360-degree camera from an online auction.\n\r\nAlthough Satsuki and An's mutual passion blossoms with each new experiment, their club is in danger of dissolution due to a lack of members. They convince Sakurako Shikishima, the president of the Cinema Club, to join the newly formed Cinephoto Club. Accompanied by Sakurako and with the encouragement of their friend and manga artist, Haruno Akiyama, Satsuki and An continue to explore new places and capture precious memories they will never forget.",
+    "trailerUrl": "https://youtu.be/jxdHEsXEW4Y"
+  },
+  {
+    "slug": "kanchigai-no-atelier-meister-eiyuu-party-no-moto-zatsuyougakari-ga-jitsu-wa-sentou-igai-ga-sss-rank-datta-to-iu-yoku-aru-hanashi",
+    "title": "Kanchigai no Atelier Meister: Eiyuu Party no Moto Zatsuyougakari ga, Jitsu wa Sentou Igai ga SSS Rank Datta to Iu Yoku Aru Hanashi",
+    "titleEnglish": "The Unaware Atelier Meister",
+    "titleJapanese": "勘違いの工房主～英雄パーティの元雑用係が、実は戦闘以外がSSSランクだったというよくある話",
+    "images": {
+      "cover": "assets/AnimeImages/Kanchigai_no_Atelier_Meister_Eiyuu_Party_no_Moto_Zatsuyougakari_ga,_Jitsu_wa_Sentou_Igai_ga_SSS_Rank_Datta_to_Iu_Yoku_Aru_Hanashi.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "EMT Squared"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [],
+    "genres": [
+      "Action",
+      "Fantasy"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Despite having no real combat talent, kind 15-year-old Kurt Rockhans belongs to the famous party Flaming Dragon Fang. He is perfectly satisfied as the party's helper—until the other members kick him out and replace him with a stronger ally. Left without a way to provide for himself, Kurt begins searching for a job.\n\r\nWith his job prospects limited by his lack of combat ability, Kurt gladly accepts any work that comes his way. During one such job, he meets Yulishia, an adventurer formerly employed by the royal family. Surprised by Kurt's impressive work, Yulishia discovers that he is no ordinary boy: Kurt possesses an astonishingly high aptitude in a variety of non-combat fields. Due to these talents, a court official tells Yulishia to offer Kurt a high status in the kingdom that would allow him to live in peace for the rest of his life.\n\r\nWhen Yulishia informs Kurt about his potential rank, he brushes off the offer, refusing to think of himself as above other people. Still unaware of his real power, Kurt continues taking as many odd jobs as possible, which might just make him a pivotal part of the kingdom before he even notices it.",
+    "trailerUrl": "https://youtu.be/mBb-M6HFGp8"
+  },
+  {
+    "slug": "aldnoah-zero-re",
+    "title": "Aldnoah.Zero (Re+)",
+    "titleEnglish": null,
+    "titleJapanese": "アルドノア・ゼロ（Re+）",
+    "images": {
+      "cover": "assets/AnimeImages/Aldnoah.Zero_(Re+).jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2025,
+    "studios": [
+      "TROYCA"
+    ],
+    "type": "Movie",
+    "demographic": null,
+    "themes": [
+      "Mecha",
+      "Military"
+    ],
+    "genres": [
+      "Sci-Fi"
+    ],
+    "explicitGenres": [],
+    "episodes": 1,
+    "synopsis": "Compilation movie for Aldnoah.Zero.",
+    "trailerUrl": "https://youtu.be/BNvGLORRpgA"
+  },
+  {
+    "slug": "yuru-camp",
+    "title": "Yuru Camp△",
+    "titleEnglish": "Laid-Back Camp",
+    "titleJapanese": "ゆるキャン△",
+    "images": {
+      "cover": "assets/AnimeImages/Yuru_Camp△.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Yuru_Camp△_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2018,
+    "studios": [
+      "C-Station"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "CGDCT",
+      "Iyashikei"
+    ],
+    "genres": [
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "While the perfect getaway for most girls her age might be a fancy vacation with their loved ones, Rin Shima's ideal way of spending her days off is camping alone at the base of Mount Fuji. From pitching her tent to gathering firewood, she has always done everything by herself, and has no plans of leaving her little solitary world.\n\r\nHowever, what starts off as one of Rin's usual camping sessions somehow ends up as a surprise get-together for two when the lost Nadeshiko Kagamihara is forced to take refuge at her campsite. Originally intending to see the picturesque view of Mount Fuji for herself, Nadeshiko's plans are disrupted when she ends up falling asleep partway to her destination. Alone and with no other choice, she seeks help from the only other person nearby. Despite their hasty introductions, the two girls nevertheless enjoy the chilly night together, eating ramen and conversing while the campfire keeps them warm. And even after Nadeshiko's sister finally picks her up later that night, both girls silently ponder the possibility of another camping trip together.",
+    "trailerUrl": "https://youtu.be/vpH42sJ8t9c"
+  },
+  {
+    "slug": "liar-liar",
+    "title": "Liar Liar",
+    "titleEnglish": null,
+    "titleJapanese": "ライアー・ライアー",
+    "images": {
+      "cover": "assets/AnimeImages/Liar_Liar.jpg",
+      "alternatives": [
+        "assets/AnimeImages/Liar_Liar_alt1.jpg"
+      ]
+    },
+    "releaseYear": 2023,
+    "studios": [
+      "Geek Toys"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Psychological",
+      "School",
+      "Strategy Game"
+    ],
+    "genres": [
+      "Suspense"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "Hiroto Shinohara is a new transfer student to Academy Island, where games determine student rankings. The more games won, the more stars a student has, with the highest ranking being that of a Seven Star. On Hiroto's first day, he accidentally antagonizes Sarasa Saionji, the so-called Empress of Academy Island and granddaughter of the island's head director. Forced into a game fueled by misunderstandings that he somehow ends up winning, he is thrust into a major bluff where he must lie about his ranking or risk expulsion from the school and island.\n\r\nFortunately, with the help of the mysterious Company headed by Shirayuki Himeji, Hiroto is not alone in his bluff. The Company will do everything in its power to help him cheat his way through the game challenges sent his way by students wanting to beat him. Though he is a One Star student, he must fight as though he is actually a Seven Star, and overcome insurmountable odds in his quest to search for a missing girl from his past.",
+    "trailerUrl": "https://youtu.be/zOOPVdfSwAo"
+  },
+  {
+    "slug": "kawagoe-boys-sing",
+    "title": "Kawagoe Boys Sing",
+    "titleEnglish": "Kawagoe Boys Sing -Now or Never-",
+    "titleJapanese": "川越ボーイズ・シング",
+    "images": {
+      "cover": "assets/AnimeImages/Kawagoe_Boys_Sing.jpg",
+      "alternatives": []
+    },
+    "releaseYear": 2023,
+    "studios": [
+      "evg"
+    ],
+    "type": "TV",
+    "demographic": null,
+    "themes": [
+      "Music",
+      "Performing Arts",
+      "School"
+    ],
+    "genres": [
+      "Slice of Life"
+    ],
+    "explicitGenres": [],
+    "episodes": 12,
+    "synopsis": "It has been a month since genius orchestra conductor Haruo Hibiki was unceremoniously dismissed from his position at the Cosmopolitan Philharmonic Orchestra. Unable to find a similar position, the eccentric Haruo gets roped into teaching music at Kawagoe Private Academy instead. It is here that he receives an ultimatum: if he can put together a boys' choir at the school and win the annual competition, he can return to his former job.\n\r\nDesperate to return to the limelight, Haruo searches the entire school for suitable voices for the choir. Unfortunately, his inability to communicate normally puts him at odds with almost everyone he encounters—including Tenshi Dei, a boy who loves to sing but cannot do so in front of others. With only a year to complete this lofty goal, Haruo will need to learn how to get along with the boys he can manage to recruit while also supporting their growth into a formidable choir.",
+    "trailerUrl": "https://youtu.be/uvaAF0C02hM"
   }
 ]
